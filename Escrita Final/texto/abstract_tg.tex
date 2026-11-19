@@ -1,0 +1,17 @@
+\clearpage{\thispagestyle{empty}\origcleardoublepage}
+\thispagestyle{empty}
+\begin{center}
+{\LARGE Abstract}
+\end{center}
+\medskip
+
+This study examines how long careers last for quarterbacks (QB), running backs (RB), and wide receivers (WR) in the National Football League, across the 2012 to 2024 seasons, and which characteristics of a season accompany leaving the league. The data form an annual panel of players and seasons, in which departure is a player's last season in the league, with covariates measuring performance, usage, team role, availability and lagged career history up to the previous season.
+
+In the inferential analysis, a Cox model with time-dependent covariates estimates the average effect of each covariate, and the Aalen additive model and the hybrid Cox--Aalen model show how this effect accumulates over the career. In the predictive analysis, penalized Cox, Gradient Boosting Survival Analysis (GBSA) and Random Survival Forests (RSF) are compared with Kaplan--Meier through walk-forward validation from 2018 to 2021, with hyperparameters chosen only on the training data, over a set of 21 to 25 covariates per position. The main metric is Harrell's concordance index ($C$).
+
+Passing efficiency is the most stable signal for QBs, with a hazard ratio of $0.65$ per standard deviation. Games missed are associated with a higher risk of leaving among RBs and WRs, and each standard deviation, about five games, adds on average about 0.1 to the risk of each mid-career year. The fraction of team targets has the largest magnitude among WRs, with a hazard ratio of $0.27$ per standard deviation. In prediction, the models with covariates rank players well above chance, with $C$ between $0.66$ and $0.71$, against $0.56$ to $0.62$ for a Cox model with experience only. In the highest-risk quintile, 45\% of QBs, 52\% of RBs and 50\% of WRs do not return the next season, against no QB, 1\% of RBs and 2\% of WRs in the lowest-risk quintile.
+
+For roster evaluation, absences and a player's role on the team serve as signals to monitor from season to season. In years, the mean absolute error lies between $1.27$ and $1.40$, against $1.41$ to $1.52$ for Kaplan--Meier, and 37\% to 53\% of the predictions are off by at most one year, against 35\% to 39\%. Since 47\% to 63\% of the predictions miss by more than one year, the model serves better to rank players than to set a deadline.
+
+\medskip
+\noindent\textbf{Keywords}: survival analysis, time-dependent covariates, Aalen additive model, Cox model, survival prediction, National Football League.

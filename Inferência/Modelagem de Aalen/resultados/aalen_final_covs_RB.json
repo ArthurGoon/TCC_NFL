@@ -1,0 +1,11 @@
+[
+  "age",
+  "depth_team",
+  "draft_ovr",
+  "games_missed",
+  "observed_career_lag_rush_touchdown_redzone",
+  "observed_career_lag_yards_after_catch",
+  "observed_career_lag_ypc",
+  "offense_pct",
+  "team_rushing_yards_share"
+]

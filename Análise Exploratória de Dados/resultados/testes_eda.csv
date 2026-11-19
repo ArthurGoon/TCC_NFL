@@ -1,0 +1,19 @@
+posicao,teste,comparacao,estatistica,p,n
+QB,kruskal_wallis,longevidade por estrato de draft,20.8352,0.0040219415654794,182
+QB,mann_whitney,longevidade: >4 vs <=4 jogos perdidos,1081.5,0.16896278108676077,182
+QB,logrank_draft_tiers,elite (1-2) vs mid (3-5) vs late (6+),9.4268,0.008974101269276625,182
+QB,logrank_faixa_etaria,<=22 vs 23-25 vs >25 anos,7.0356,0.0296642532699882,182
+QB,logrank_profundidade,titular (depth=1) vs reserva (2) vs profundo (3+),30.3517,2.565696882371949e-07,182
+QB,logrank_r1r2_vs_udfa,rounds 1-2 vs nao draftados,0.5702,0.45017988231113193,97
+RB,kruskal_wallis,longevidade por estrato de draft,40.4209,1.0455506216569851e-06,397
+RB,mann_whitney,longevidade: >4 vs <=4 jogos perdidos,8137.0,0.04771024004030122,397
+RB,logrank_draft_tiers,elite (1-2) vs mid (3-5) vs late (6+),28.403,6.797631631069235e-07,397
+RB,logrank_faixa_etaria,<=22 vs 23-25 vs >25 anos,8.6506,0.01322969343538674,397
+RB,logrank_profundidade,titular (depth=1) vs reserva (2) vs profundo (3+),19.5313,5.739087072526285e-05,397
+RB,logrank_r1r2_vs_udfa,rounds 1-2 vs nao draftados,11.185,0.0008245984953269211,156
+WR,kruskal_wallis,longevidade por estrato de draft,39.3325,1.6887811789014914e-06,573
+WR,mann_whitney,longevidade: >4 vs <=4 jogos perdidos,20931.0,0.0015638618455567378,573
+WR,logrank_draft_tiers,elite (1-2) vs mid (3-5) vs late (6+),57.6638,3.0092285944871377e-13,573
+WR,logrank_faixa_etaria,<=22 vs 23-25 vs >25 anos,24.0579,5.968813784098276e-06,573
+WR,logrank_profundidade,titular (depth=1) vs reserva (2) vs profundo (3+),37.5812,6.907797884276999e-09,573
+WR,logrank_r1r2_vs_udfa,rounds 1-2 vs nao draftados,43.1665,5.0273028410987765e-11,282

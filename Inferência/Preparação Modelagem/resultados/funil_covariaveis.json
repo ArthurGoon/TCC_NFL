@@ -1,0 +1,1251 @@
+{
+  "QB": {
+    "limiar_colinearidade": 0.85,
+    "candidatas": [
+      "observed_career_lag_qb_dropback",
+      "observed_career_lag_pass_attempts",
+      "observed_career_lag_complete_pass",
+      "observed_career_lag_passing_yards",
+      "observed_career_lag_pass_touchdown",
+      "observed_career_lag_interception",
+      "observed_career_lag_qb_scramble",
+      "observed_career_lag_rush_attempts",
+      "observed_career_lag_offense_snaps",
+      "observed_career_lag_fantasy_points_ppr",
+      "observed_career_lag_rushing_yards",
+      "observed_career_lag_pass_attempts_redzone",
+      "observed_career_lag_pass_touchdown_redzone",
+      "observed_career_lag_fumble",
+      "observed_career_lag_fumble_lost",
+      "observed_career_lag_comp_pct",
+      "observed_career_lag_ypa",
+      "observed_career_lag_int_pct",
+      "observed_career_lag_td_pct",
+      "observed_career_lag_ypc_qb",
+      "depth_team",
+      "offense_pct",
+      "games_missed",
+      "age",
+      "years_exp",
+      "unobs_career_years",
+      "pre_window_veteran",
+      "first_observed_season",
+      "unobserved_history_flag",
+      "within_window_gap_years_before_t",
+      "had_prior_gap_flag",
+      "passer_rating",
+      "team_pass_attempts_share",
+      "height",
+      "weight",
+      "draft_ovr",
+      "undrafted_flag",
+      "observed_career_lag_comp_pct_missing",
+      "observed_career_lag_ypa_missing",
+      "observed_career_lag_int_pct_missing",
+      "observed_career_lag_td_pct_missing",
+      "observed_career_lag_ypc_qb_missing"
+    ],
+    "n_candidatas": 42,
+    "n_sem_nao_identificaveis": 37,
+    "n_apos_colinearidade": 26,
+    "removidas_por_colinearidade": [
+      "games_missed",
+      "observed_career_lag_complete_pass",
+      "observed_career_lag_fantasy_points_ppr",
+      "observed_career_lag_fumble",
+      "observed_career_lag_fumble_lost",
+      "observed_career_lag_interception",
+      "observed_career_lag_offense_snaps",
+      "observed_career_lag_pass_attempts",
+      "observed_career_lag_pass_attempts_redzone",
+      "observed_career_lag_pass_touchdown",
+      "observed_career_lag_pass_touchdown_redzone",
+      "observed_career_lag_passing_yards",
+      "observed_career_lag_qb_scramble",
+      "observed_career_lag_rush_attempts"
+    ],
+    "removidas_detalhe": [
+      {
+        "variavel": "observed_career_lag_complete_pass",
+        "n_pares_acima": 11,
+        "pares": [
+          {
+            "com": "observed_career_lag_fantasy_points_ppr",
+            "r": 0.983101
+          },
+          {
+            "com": "observed_career_lag_fumble",
+            "r": 0.926166
+          },
+          {
+            "com": "observed_career_lag_fumble_lost",
+            "r": 0.910515
+          },
+          {
+            "com": "observed_career_lag_interception",
+            "r": 0.948287
+          },
+          {
+            "com": "observed_career_lag_offense_snaps",
+            "r": 0.994297
+          },
+          {
+            "com": "observed_career_lag_pass_attempts",
+            "r": 0.999087
+          },
+          {
+            "com": "observed_career_lag_pass_attempts_redzone",
+            "r": 0.994167
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown",
+            "r": 0.984416
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown_redzone",
+            "r": 0.983052
+          },
+          {
+            "com": "observed_career_lag_passing_yards",
+            "r": 0.998751
+          },
+          {
+            "com": "observed_career_lag_qb_dropback",
+            "r": 0.997715
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_fantasy_points_ppr",
+        "n_pares_acima": 10,
+        "pares": [
+          {
+            "com": "observed_career_lag_fumble",
+            "r": 0.925151
+          },
+          {
+            "com": "observed_career_lag_fumble_lost",
+            "r": 0.892498
+          },
+          {
+            "com": "observed_career_lag_interception",
+            "r": 0.912987
+          },
+          {
+            "com": "observed_career_lag_offense_snaps",
+            "r": 0.987754
+          },
+          {
+            "com": "observed_career_lag_pass_attempts",
+            "r": 0.982188
+          },
+          {
+            "com": "observed_career_lag_pass_attempts_redzone",
+            "r": 0.985728
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown",
+            "r": 0.993274
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown_redzone",
+            "r": 0.988802
+          },
+          {
+            "com": "observed_career_lag_passing_yards",
+            "r": 0.987686
+          },
+          {
+            "com": "observed_career_lag_qb_dropback",
+            "r": 0.985865
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_fumble",
+        "n_pares_acima": 9,
+        "pares": [
+          {
+            "com": "observed_career_lag_fumble_lost",
+            "r": 0.963608
+          },
+          {
+            "com": "observed_career_lag_interception",
+            "r": 0.907466
+          },
+          {
+            "com": "observed_career_lag_offense_snaps",
+            "r": 0.944073
+          },
+          {
+            "com": "observed_career_lag_pass_attempts",
+            "r": 0.929926
+          },
+          {
+            "com": "observed_career_lag_pass_attempts_redzone",
+            "r": 0.910938
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown",
+            "r": 0.908405
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown_redzone",
+            "r": 0.901008
+          },
+          {
+            "com": "observed_career_lag_passing_yards",
+            "r": 0.92657
+          },
+          {
+            "com": "observed_career_lag_qb_dropback",
+            "r": 0.937989
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_fumble_lost",
+        "n_pares_acima": 8,
+        "pares": [
+          {
+            "com": "observed_career_lag_interception",
+            "r": 0.898532
+          },
+          {
+            "com": "observed_career_lag_offense_snaps",
+            "r": 0.918603
+          },
+          {
+            "com": "observed_career_lag_pass_attempts",
+            "r": 0.913516
+          },
+          {
+            "com": "observed_career_lag_pass_attempts_redzone",
+            "r": 0.895576
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown",
+            "r": 0.885068
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown_redzone",
+            "r": 0.879466
+          },
+          {
+            "com": "observed_career_lag_passing_yards",
+            "r": 0.909682
+          },
+          {
+            "com": "observed_career_lag_qb_dropback",
+            "r": 0.918177
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_interception",
+        "n_pares_acima": 7,
+        "pares": [
+          {
+            "com": "observed_career_lag_offense_snaps",
+            "r": 0.951431
+          },
+          {
+            "com": "observed_career_lag_pass_attempts",
+            "r": 0.953285
+          },
+          {
+            "com": "observed_career_lag_pass_attempts_redzone",
+            "r": 0.928592
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown",
+            "r": 0.909987
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown_redzone",
+            "r": 0.906805
+          },
+          {
+            "com": "observed_career_lag_passing_yards",
+            "r": 0.948048
+          },
+          {
+            "com": "observed_career_lag_qb_dropback",
+            "r": 0.953333
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_offense_snaps",
+        "n_pares_acima": 6,
+        "pares": [
+          {
+            "com": "observed_career_lag_pass_attempts",
+            "r": 0.996038
+          },
+          {
+            "com": "observed_career_lag_pass_attempts_redzone",
+            "r": 0.986852
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown",
+            "r": 0.980745
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown_redzone",
+            "r": 0.977499
+          },
+          {
+            "com": "observed_career_lag_passing_yards",
+            "r": 0.994753
+          },
+          {
+            "com": "observed_career_lag_qb_dropback",
+            "r": 0.998198
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_pass_attempts",
+        "n_pares_acima": 5,
+        "pares": [
+          {
+            "com": "observed_career_lag_pass_attempts_redzone",
+            "r": 0.992952
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown",
+            "r": 0.981926
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown_redzone",
+            "r": 0.980462
+          },
+          {
+            "com": "observed_career_lag_passing_yards",
+            "r": 0.997981
+          },
+          {
+            "com": "observed_career_lag_qb_dropback",
+            "r": 0.999046
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_pass_attempts_redzone",
+        "n_pares_acima": 4,
+        "pares": [
+          {
+            "com": "observed_career_lag_pass_touchdown",
+            "r": 0.991597
+          },
+          {
+            "com": "observed_career_lag_pass_touchdown_redzone",
+            "r": 0.992306
+          },
+          {
+            "com": "observed_career_lag_passing_yards",
+            "r": 0.994941
+          },
+          {
+            "com": "observed_career_lag_qb_dropback",
+            "r": 0.991375
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_pass_touchdown",
+        "n_pares_acima": 3,
+        "pares": [
+          {
+            "com": "observed_career_lag_pass_touchdown_redzone",
+            "r": 0.997784
+          },
+          {
+            "com": "observed_career_lag_passing_yards",
+            "r": 0.988745
+          },
+          {
+            "com": "observed_career_lag_qb_dropback",
+            "r": 0.982441
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_pass_touchdown_redzone",
+        "n_pares_acima": 2,
+        "pares": [
+          {
+            "com": "observed_career_lag_passing_yards",
+            "r": 0.986647
+          },
+          {
+            "com": "observed_career_lag_qb_dropback",
+            "r": 0.980181
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_qb_scramble",
+        "n_pares_acima": 2,
+        "pares": [
+          {
+            "com": "observed_career_lag_rush_attempts",
+            "r": 0.935838
+          },
+          {
+            "com": "observed_career_lag_rushing_yards",
+            "r": 0.911632
+          }
+        ]
+      },
+      {
+        "variavel": "games_missed",
+        "n_pares_acima": 1,
+        "pares": [
+          {
+            "com": "team_pass_attempts_share",
+            "r": 0.9269
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_passing_yards",
+        "n_pares_acima": 1,
+        "pares": [
+          {
+            "com": "observed_career_lag_qb_dropback",
+            "r": 0.997396
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_rush_attempts",
+        "n_pares_acima": 1,
+        "pares": [
+          {
+            "com": "observed_career_lag_rushing_yards",
+            "r": 0.96474
+          }
+        ]
+      }
+    ],
+    "mantidas": [
+      "age",
+      "depth_team",
+      "draft_ovr",
+      "had_prior_gap_flag",
+      "height",
+      "observed_career_lag_comp_pct",
+      "observed_career_lag_comp_pct_missing",
+      "observed_career_lag_int_pct",
+      "observed_career_lag_qb_dropback",
+      "observed_career_lag_rushing_yards",
+      "observed_career_lag_td_pct",
+      "observed_career_lag_ypa",
+      "observed_career_lag_ypc_qb",
+      "observed_career_lag_ypc_qb_missing",
+      "offense_pct",
+      "passer_rating",
+      "pre_window_veteran",
+      "team_pass_attempts_share",
+      "undrafted_flag",
+      "unobs_career_years",
+      "unobserved_history_flag",
+      "weight",
+      "within_window_gap_years_before_t"
+    ],
+    "n_mantidas": 23,
+    "pares_citados": [
+      {
+        "a": "observed_career_lag_passing_yards",
+        "b": "observed_career_lag_pass_attempts",
+        "r": 0.997981
+      }
+    ],
+    "gerado_por": "pipeline/50_estatisticas_eda.py"
+  },
+  "RB": {
+    "limiar_colinearidade": 0.85,
+    "candidatas": [
+      "observed_career_lag_rush_attempts",
+      "observed_career_lag_rushing_yards",
+      "observed_career_lag_rush_touchdown",
+      "observed_career_lag_touches",
+      "observed_career_lag_total_yards",
+      "observed_career_lag_offense_snaps",
+      "observed_career_lag_fantasy_points_ppr",
+      "observed_career_lag_receptions",
+      "observed_career_lag_receiving_yards",
+      "observed_career_lag_targets",
+      "observed_career_lag_rush_attempts_redzone",
+      "observed_career_lag_rush_touchdown_redzone",
+      "observed_career_lag_fumble",
+      "observed_career_lag_fumble_lost",
+      "observed_career_lag_yards_after_catch",
+      "observed_career_lag_ypc",
+      "observed_career_lag_rush_td_pct",
+      "depth_team",
+      "offense_pct",
+      "games_missed",
+      "age",
+      "years_exp",
+      "unobs_career_years",
+      "pre_window_veteran",
+      "first_observed_season",
+      "unobserved_history_flag",
+      "within_window_gap_years_before_t",
+      "had_prior_gap_flag",
+      "team_rush_attempts_share",
+      "team_rushing_yards_share",
+      "height",
+      "weight",
+      "draft_ovr",
+      "undrafted_flag",
+      "observed_career_lag_ypc_missing",
+      "observed_career_lag_rush_td_pct_missing"
+    ],
+    "n_candidatas": 36,
+    "n_sem_nao_identificaveis": 33,
+    "n_apos_colinearidade": 20,
+    "removidas_por_colinearidade": [
+      "had_prior_gap_flag",
+      "observed_career_lag_fantasy_points_ppr",
+      "observed_career_lag_fumble",
+      "observed_career_lag_offense_snaps",
+      "observed_career_lag_receiving_yards",
+      "observed_career_lag_receptions",
+      "observed_career_lag_rush_attempts",
+      "observed_career_lag_rush_attempts_redzone",
+      "observed_career_lag_rush_touchdown",
+      "observed_career_lag_rushing_yards",
+      "observed_career_lag_targets",
+      "observed_career_lag_total_yards",
+      "observed_career_lag_touches",
+      "team_rush_attempts_share"
+    ],
+    "removidas_detalhe": [
+      {
+        "variavel": "observed_career_lag_total_yards",
+        "n_pares_acima": 13,
+        "pares": [
+          {
+            "com": "observed_career_lag_fantasy_points_ppr",
+            "r": 0.992605
+          },
+          {
+            "com": "observed_career_lag_fumble",
+            "r": 0.87091
+          },
+          {
+            "com": "observed_career_lag_offense_snaps",
+            "r": 0.981133
+          },
+          {
+            "com": "observed_career_lag_receiving_yards",
+            "r": 0.860373
+          },
+          {
+            "com": "observed_career_lag_receptions",
+            "r": 0.880295
+          },
+          {
+            "com": "observed_career_lag_rush_attempts",
+            "r": 0.974757
+          },
+          {
+            "com": "observed_career_lag_rush_attempts_redzone",
+            "r": 0.966829
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown",
+            "r": 0.941775
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown_redzone",
+            "r": 0.926658
+          },
+          {
+            "com": "observed_career_lag_rushing_yards",
+            "r": 0.977525
+          },
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.878314
+          },
+          {
+            "com": "observed_career_lag_touches",
+            "r": 0.992064
+          },
+          {
+            "com": "observed_career_lag_yards_after_catch",
+            "r": 0.887441
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_fantasy_points_ppr",
+        "n_pares_acima": 11,
+        "pares": [
+          {
+            "com": "observed_career_lag_offense_snaps",
+            "r": 0.979885
+          },
+          {
+            "com": "observed_career_lag_receiving_yards",
+            "r": 0.90533
+          },
+          {
+            "com": "observed_career_lag_receptions",
+            "r": 0.921061
+          },
+          {
+            "com": "observed_career_lag_rush_attempts",
+            "r": 0.946745
+          },
+          {
+            "com": "observed_career_lag_rush_attempts_redzone",
+            "r": 0.948232
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown",
+            "r": 0.934451
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown_redzone",
+            "r": 0.922326
+          },
+          {
+            "com": "observed_career_lag_rushing_yards",
+            "r": 0.949045
+          },
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.918354
+          },
+          {
+            "com": "observed_career_lag_touches",
+            "r": 0.975866
+          },
+          {
+            "com": "observed_career_lag_yards_after_catch",
+            "r": 0.926491
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_offense_snaps",
+        "n_pares_acima": 10,
+        "pares": [
+          {
+            "com": "observed_career_lag_receiving_yards",
+            "r": 0.888301
+          },
+          {
+            "com": "observed_career_lag_receptions",
+            "r": 0.910612
+          },
+          {
+            "com": "observed_career_lag_rush_attempts",
+            "r": 0.947496
+          },
+          {
+            "com": "observed_career_lag_rush_attempts_redzone",
+            "r": 0.936251
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown",
+            "r": 0.894263
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown_redzone",
+            "r": 0.883028
+          },
+          {
+            "com": "observed_career_lag_rushing_yards",
+            "r": 0.940857
+          },
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.913353
+          },
+          {
+            "com": "observed_career_lag_touches",
+            "r": 0.974522
+          },
+          {
+            "com": "observed_career_lag_yards_after_catch",
+            "r": 0.903836
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_rush_attempts",
+        "n_pares_acima": 6,
+        "pares": [
+          {
+            "com": "observed_career_lag_fumble",
+            "r": 0.882235
+          },
+          {
+            "com": "observed_career_lag_rush_attempts_redzone",
+            "r": 0.984155
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown",
+            "r": 0.947794
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown_redzone",
+            "r": 0.937332
+          },
+          {
+            "com": "observed_career_lag_rushing_yards",
+            "r": 0.995054
+          },
+          {
+            "com": "observed_career_lag_touches",
+            "r": 0.99291
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_rush_attempts_redzone",
+        "n_pares_acima": 5,
+        "pares": [
+          {
+            "com": "observed_career_lag_fumble",
+            "r": 0.859445
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown",
+            "r": 0.966725
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown_redzone",
+            "r": 0.963652
+          },
+          {
+            "com": "observed_career_lag_rushing_yards",
+            "r": 0.981126
+          },
+          {
+            "com": "observed_career_lag_touches",
+            "r": 0.98026
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_rushing_yards",
+        "n_pares_acima": 4,
+        "pares": [
+          {
+            "com": "observed_career_lag_fumble",
+            "r": 0.886281
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown",
+            "r": 0.956056
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown_redzone",
+            "r": 0.939078
+          },
+          {
+            "com": "observed_career_lag_touches",
+            "r": 0.987684
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_receiving_yards",
+        "n_pares_acima": 3,
+        "pares": [
+          {
+            "com": "observed_career_lag_receptions",
+            "r": 0.990253
+          },
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.99025
+          },
+          {
+            "com": "observed_career_lag_yards_after_catch",
+            "r": 0.987709
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_touches",
+        "n_pares_acima": 3,
+        "pares": [
+          {
+            "com": "observed_career_lag_fumble",
+            "r": 0.877799
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown",
+            "r": 0.943808
+          },
+          {
+            "com": "observed_career_lag_rush_touchdown_redzone",
+            "r": 0.933661
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_receptions",
+        "n_pares_acima": 2,
+        "pares": [
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.997235
+          },
+          {
+            "com": "observed_career_lag_yards_after_catch",
+            "r": 0.989365
+          }
+        ]
+      },
+      {
+        "variavel": "had_prior_gap_flag",
+        "n_pares_acima": 1,
+        "pares": [
+          {
+            "com": "within_window_gap_years_before_t",
+            "r": 0.941516
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_fumble",
+        "n_pares_acima": 1,
+        "pares": [
+          {
+            "com": "observed_career_lag_fumble_lost",
+            "r": 0.948518
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_rush_touchdown",
+        "n_pares_acima": 1,
+        "pares": [
+          {
+            "com": "observed_career_lag_rush_touchdown_redzone",
+            "r": 0.992028
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_targets",
+        "n_pares_acima": 1,
+        "pares": [
+          {
+            "com": "observed_career_lag_yards_after_catch",
+            "r": 0.983838
+          }
+        ]
+      },
+      {
+        "variavel": "team_rush_attempts_share",
+        "n_pares_acima": 1,
+        "pares": [
+          {
+            "com": "team_rushing_yards_share",
+            "r": 0.98799
+          }
+        ]
+      }
+    ],
+    "mantidas": [
+      "age",
+      "depth_team",
+      "draft_ovr",
+      "games_missed",
+      "height",
+      "observed_career_lag_fumble_lost",
+      "observed_career_lag_rush_td_pct",
+      "observed_career_lag_rush_touchdown_redzone",
+      "observed_career_lag_yards_after_catch",
+      "observed_career_lag_ypc",
+      "observed_career_lag_ypc_missing",
+      "offense_pct",
+      "pre_window_veteran",
+      "team_rushing_yards_share",
+      "undrafted_flag",
+      "unobs_career_years",
+      "unobserved_history_flag",
+      "weight",
+      "within_window_gap_years_before_t"
+    ],
+    "n_mantidas": 19,
+    "pares_citados": [
+      {
+        "a": "team_rush_attempts_share",
+        "b": "team_rushing_yards_share",
+        "r": 0.98799
+      }
+    ],
+    "gerado_por": "pipeline/50_estatisticas_eda.py"
+  },
+  "WR": {
+    "limiar_colinearidade": 0.85,
+    "candidatas": [
+      "observed_career_lag_targets",
+      "observed_career_lag_receptions",
+      "observed_career_lag_receiving_yards",
+      "observed_career_lag_receiving_air_yards",
+      "observed_career_lag_offense_snaps",
+      "observed_career_lag_fantasy_points_ppr",
+      "observed_career_lag_rush_attempts",
+      "observed_career_lag_rushing_yards",
+      "observed_career_lag_receiving_touchdown",
+      "observed_career_lag_targets_redzone",
+      "observed_career_lag_receptions_redzone",
+      "observed_career_lag_yards_after_catch",
+      "observed_career_lag_fumble",
+      "observed_career_lag_fumble_lost",
+      "observed_career_lag_yptarget",
+      "observed_career_lag_ypr",
+      "observed_career_lag_catch_rate",
+      "observed_career_lag_adot_acc",
+      "depth_team",
+      "offense_pct",
+      "games_missed",
+      "age",
+      "years_exp",
+      "unobs_career_years",
+      "pre_window_veteran",
+      "first_observed_season",
+      "unobserved_history_flag",
+      "within_window_gap_years_before_t",
+      "had_prior_gap_flag",
+      "team_targets_share",
+      "adot",
+      "height",
+      "weight",
+      "draft_ovr",
+      "undrafted_flag",
+      "observed_career_lag_yptarget_missing",
+      "observed_career_lag_ypr_missing",
+      "observed_career_lag_catch_rate_missing",
+      "observed_career_lag_adot_acc_missing"
+    ],
+    "n_candidatas": 39,
+    "n_sem_nao_identificaveis": 35,
+    "n_apos_colinearidade": 25,
+    "removidas_por_colinearidade": [
+      "had_prior_gap_flag",
+      "observed_career_lag_fantasy_points_ppr",
+      "observed_career_lag_fumble",
+      "observed_career_lag_offense_snaps",
+      "observed_career_lag_receiving_air_yards",
+      "observed_career_lag_receiving_touchdown",
+      "observed_career_lag_receiving_yards",
+      "observed_career_lag_receptions",
+      "observed_career_lag_receptions_redzone",
+      "observed_career_lag_rush_attempts",
+      "observed_career_lag_targets",
+      "observed_career_lag_yards_after_catch"
+    ],
+    "removidas_detalhe": [
+      {
+        "variavel": "observed_career_lag_yards_after_catch",
+        "n_pares_acima": 10,
+        "pares": [
+          {
+            "com": "observed_career_lag_fantasy_points_ppr",
+            "r": 0.969014
+          },
+          {
+            "com": "observed_career_lag_fumble",
+            "r": 0.850149
+          },
+          {
+            "com": "observed_career_lag_offense_snaps",
+            "r": 0.933974
+          },
+          {
+            "com": "observed_career_lag_receiving_air_yards",
+            "r": 0.894598
+          },
+          {
+            "com": "observed_career_lag_receiving_touchdown",
+            "r": 0.917423
+          },
+          {
+            "com": "observed_career_lag_receiving_yards",
+            "r": 0.960955
+          },
+          {
+            "com": "observed_career_lag_receptions",
+            "r": 0.973934
+          },
+          {
+            "com": "observed_career_lag_receptions_redzone",
+            "r": 0.946715
+          },
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.962208
+          },
+          {
+            "com": "observed_career_lag_targets_redzone",
+            "r": 0.943959
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_fantasy_points_ppr",
+        "n_pares_acima": 8,
+        "pares": [
+          {
+            "com": "observed_career_lag_offense_snaps",
+            "r": 0.97146
+          },
+          {
+            "com": "observed_career_lag_receiving_air_yards",
+            "r": 0.96723
+          },
+          {
+            "com": "observed_career_lag_receiving_touchdown",
+            "r": 0.973289
+          },
+          {
+            "com": "observed_career_lag_receiving_yards",
+            "r": 0.99616
+          },
+          {
+            "com": "observed_career_lag_receptions",
+            "r": 0.994316
+          },
+          {
+            "com": "observed_career_lag_receptions_redzone",
+            "r": 0.960663
+          },
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.993775
+          },
+          {
+            "com": "observed_career_lag_targets_redzone",
+            "r": 0.973205
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_offense_snaps",
+        "n_pares_acima": 7,
+        "pares": [
+          {
+            "com": "observed_career_lag_receiving_air_yards",
+            "r": 0.958256
+          },
+          {
+            "com": "observed_career_lag_receiving_touchdown",
+            "r": 0.937341
+          },
+          {
+            "com": "observed_career_lag_receiving_yards",
+            "r": 0.969268
+          },
+          {
+            "com": "observed_career_lag_receptions",
+            "r": 0.972686
+          },
+          {
+            "com": "observed_career_lag_receptions_redzone",
+            "r": 0.931339
+          },
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.980979
+          },
+          {
+            "com": "observed_career_lag_targets_redzone",
+            "r": 0.95312
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_receiving_air_yards",
+        "n_pares_acima": 6,
+        "pares": [
+          {
+            "com": "observed_career_lag_receiving_touchdown",
+            "r": 0.953258
+          },
+          {
+            "com": "observed_career_lag_receiving_yards",
+            "r": 0.978172
+          },
+          {
+            "com": "observed_career_lag_receptions",
+            "r": 0.951954
+          },
+          {
+            "com": "observed_career_lag_receptions_redzone",
+            "r": 0.893
+          },
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.972
+          },
+          {
+            "com": "observed_career_lag_targets_redzone",
+            "r": 0.934056
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_receiving_touchdown",
+        "n_pares_acima": 5,
+        "pares": [
+          {
+            "com": "observed_career_lag_receiving_yards",
+            "r": 0.964726
+          },
+          {
+            "com": "observed_career_lag_receptions",
+            "r": 0.95255
+          },
+          {
+            "com": "observed_career_lag_receptions_redzone",
+            "r": 0.944175
+          },
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.957209
+          },
+          {
+            "com": "observed_career_lag_targets_redzone",
+            "r": 0.959301
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_receiving_yards",
+        "n_pares_acima": 4,
+        "pares": [
+          {
+            "com": "observed_career_lag_receptions",
+            "r": 0.989598
+          },
+          {
+            "com": "observed_career_lag_receptions_redzone",
+            "r": 0.943513
+          },
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.99269
+          },
+          {
+            "com": "observed_career_lag_targets_redzone",
+            "r": 0.96345
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_receptions",
+        "n_pares_acima": 3,
+        "pares": [
+          {
+            "com": "observed_career_lag_receptions_redzone",
+            "r": 0.96692
+          },
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.995623
+          },
+          {
+            "com": "observed_career_lag_targets_redzone",
+            "r": 0.974447
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_receptions_redzone",
+        "n_pares_acima": 2,
+        "pares": [
+          {
+            "com": "observed_career_lag_targets",
+            "r": 0.954983
+          },
+          {
+            "com": "observed_career_lag_targets_redzone",
+            "r": 0.983363
+          }
+        ]
+      },
+      {
+        "variavel": "had_prior_gap_flag",
+        "n_pares_acima": 1,
+        "pares": [
+          {
+            "com": "within_window_gap_years_before_t",
+            "r": 0.924869
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_fumble",
+        "n_pares_acima": 1,
+        "pares": [
+          {
+            "com": "observed_career_lag_fumble_lost",
+            "r": 0.909299
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_rush_attempts",
+        "n_pares_acima": 1,
+        "pares": [
+          {
+            "com": "observed_career_lag_rushing_yards",
+            "r": 0.96896
+          }
+        ]
+      },
+      {
+        "variavel": "observed_career_lag_targets",
+        "n_pares_acima": 1,
+        "pares": [
+          {
+            "com": "observed_career_lag_targets_redzone",
+            "r": 0.974627
+          }
+        ]
+      }
+    ],
+    "mantidas": [
+      "adot",
+      "age",
+      "depth_team",
+      "draft_ovr",
+      "games_missed",
+      "height",
+      "observed_career_lag_adot_acc",
+      "observed_career_lag_catch_rate",
+      "observed_career_lag_fumble_lost",
+      "observed_career_lag_rushing_yards",
+      "observed_career_lag_targets_redzone",
+      "observed_career_lag_ypr",
+      "observed_career_lag_ypr_missing",
+      "observed_career_lag_yptarget",
+      "observed_career_lag_yptarget_missing",
+      "offense_pct",
+      "pre_window_veteran",
+      "team_targets_share",
+      "undrafted_flag",
+      "unobs_career_years",
+      "unobserved_history_flag",
+      "weight",
+      "within_window_gap_years_before_t"
+    ],
+    "n_mantidas": 23,
+    "pares_citados": [],
+    "gerado_por": "pipeline/50_estatisticas_eda.py"
+  }
+}

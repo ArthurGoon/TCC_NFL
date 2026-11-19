@@ -1,0 +1,5 @@
+posicao,fold,player_id,player_name,T,tau,evento,motivo,n_modelos_excluidos
+QB,2018,00-0033357,Taysom Hill,5.0,6.0,0,censura_pre_tau,3
+QB,2019,00-0033357,Taysom Hill,4.0,5.0,0,censura_pre_tau,3
+QB,2020,00-0033357,Taysom Hill,3.0,4.0,0,censura_pre_tau,3
+QB,2021,00-0033357,Taysom Hill,2.0,3.0,0,censura_pre_tau,3

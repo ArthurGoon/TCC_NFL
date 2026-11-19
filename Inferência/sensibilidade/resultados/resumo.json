@@ -1,0 +1,1717 @@
+{
+  "gerado_por": "pipeline/51_sensibilidade_inferencial.py",
+  "metodo": {
+    "teste_aceitacao": {
+      "regra": "a selecao substantiva reconstruida com o limiar 50 tem de ser igual ao conteudo de Inferência/Modelagem de COX/resultados/final_covs_{POS}.json ignorando as entradas terminadas em _missing",
+      "resultado": {
+        "QB": true,
+        "RB": true,
+        "WR": true
+      },
+      "aprovado": true
+    },
+    "limiar_taxa": {
+      "descricao": "o corte do denominador das taxas de carreira (den_lag > limiar) e varrido de 25 a 100; para cada limiar o painel Cox e reconstruido do zero e a cadeia de selecao dos passos 11/12/13 e repetida integralmente",
+      "limiar_padrao": 50,
+      "limiares_testados": [
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "similaridade": "Jaccard entre os conjuntos de covariaveis substantivas selecionadas (sem as flags _missing), contra a selecao do limiar 50",
+      "cadeia_reproduzida": "load_clean_position_data -> codificacao de draft -> filtro de inclusao minima -> add_gap_aware_survival_structure -> lags de carreira (clip em 0) -> taxas com den_lag > limiar -> flags _missing -> fit_imputation_stats/apply_imputation_stats -> StandardScaler -> filter_collinear_covariates(0.85) -> force_missing_flags -> covariaveis_identificaveis_cox -> backward_cox_tdv(sem penalizacao, p < 0.05)",
+      "fonte_da_cadeia": "logica de painel dos passos 04/05/06 e selecao dos passos 11/12/13; backward_cox_tdv e executada a partir do codigo do passo 11, sem reimplementacao"
+    },
+    "undrafted": {
+      "descricao": "quatro codificacoes alternativas para nao draftados, comparadas por Jaccard contra o cenario A (o do pipeline), todas no limiar de taxa 50",
+      "cenarios": {
+        "A": "codificacao do pipeline: draft_round.fillna(8), undrafted_flag = (draft_round == 8) e draft_ovr = 0 para nao draftados",
+        "B": "draft_ovr permanece ausente para nao draftados (sem zerar); draft_round.fillna(8) e undrafted_flag identicos a A, de modo que a imputacao por mediana dos draftados do proprio pipeline preenche draft_ovr",
+        "C": "draft_round.fillna(9) no lugar de 8, com undrafted_flag mantendo os valores de A (o indicador de nao draftado continua informativo) e draft_ovr = 0 para nao draftados como em A; muda apenas o codigo sentinela",
+        "D": "draft_ovr e draft_round fora do conjunto candidato; permanece apenas undrafted_flag, com a codificacao de A"
+      },
+      "referencia": "A"
+    },
+    "imputacao_multipla": {
+      "descricao": "analise exploratoria condicional: modelo final de cada posicao, com covariaveis de final_covs_{POS}.json fixadas pela selecao original e sem flags _missing, reajustado sobre m = 10 paineis imputados; nao e teste formal de White–Royston nem prova de robustez inferencial",
+      "m": 10,
+      "imputador": "sklearn.impute.IterativeImputer(sample_posterior=True, initial_strategy='median', max_iter=10) com random_state = 42 + m; preditores extras so da imputacao: aux_evento (evento do intervalo) e aux_nelson_aalen_stop (Nelson-Aalen marginal com entrada tardia, em stop; n(s) = linhas com start < s <= stop); inspiracao em White–Royston, sem alegar implementacao formal validada para este painel",
+      "linhas": "todas as linhas do painel usado no ajuste final do pipeline (mesmas linhas de df_fit)",
+      "colunas_imputadas": "covariaveis finais com ao menos um valor ausente no painel: QB: observed_career_lag_td_pct, passer_rating; RB: observed_career_lag_ypc; WR: nenhuma",
+      "escala": "StandardScaler restrito as covariaveis finais, equivalente ao escalonamento coluna a coluna do passo 11",
+      "ajuste": "CoxTimeVaryingFitter sem penalizacao, por imputacao",
+      "ajuste_unico": "HR e p de ajuste unico vem de cox_hr_{POS}.csv (passos 11/12/13) quando o arquivo existe; o ajuste unico reconstruido aqui e conferido contra ele em validacao_ajuste_unico_vs_cox_hr",
+      "pooling": "regras de Rubin: Qbar = media dos coeficientes; Ubar = media das variancias intra; B = variancia entre as m estimativas; T = Ubar + (1 + 1/m) B; p pela t de Student com graus de liberdade classicos de Rubin, nu = (m - 1)(1 + Ubar/((1 + 1/m)B))^2 (normal quando B = 0)",
+      "alfa": 0.05,
+      "veredito_inalterado": "indicador descritivo e condicional: compara p < 0,05 no ajuste unico like-for-like (imputacao por mediana, sem flags _missing) com p < 0,05 agrupado por Rubin, mantendo fixo o conjunto selecionado originalmente; nao demonstra robustez formal nem compatibilidade White–Royston",
+      "separacao_dos_mecanismos": "inflacao_se_pct mede a variacao do erro-padrao agrupado contra o do ajuste unico; p_inflacao_apenas reavalia o veredito mantendo o coeficiente do ajuste unico e trocando apenas o erro-padrao pelo agrupado; esta decomposicao descritiva e condicional a selecao original e as flags _missing omitidas; n_imputacoes_p_menor_alfa conta em quantas das m imputacoes a covariavel tem p < 0,05, sem constituir criterio formal de robustez",
+      "diagnostico_das_imputacoes": "media, desvio, minimo e maximo dos valores imputados (empilhados nas m imputacoes) contra os observados, e percentual de valores imputados fora do intervalo observado"
+    }
+  },
+  "destaques": {
+    "limiar_50_reproduz_selecao_do_pipeline": true,
+    "limiares_adjacentes_estaveis": {
+      "QB": {
+        "jaccard_minimo_entre_limiares_adjacentes": 0.8,
+        "todos_os_pares_adjacentes_identicos": false
+      },
+      "RB": {
+        "jaccard_minimo_entre_limiares_adjacentes": 0.75,
+        "todos_os_pares_adjacentes_identicos": false
+      },
+      "WR": {
+        "jaccard_minimo_entre_limiares_adjacentes": 0.7,
+        "todos_os_pares_adjacentes_identicos": false
+      }
+    },
+    "undrafted_nao_altera_selecao_final": {
+      "QB": true,
+      "RB": false,
+      "WR": false
+    },
+    "imputacao_multipla_altera_algum_veredito_alfa_005": false,
+    "inflacao_conservadora_do_erro_padrao_sob_imputacao_multipla": {
+      "QB": true,
+      "RB": false,
+      "WR": false
+    },
+    "veredito_mudaria_apenas_pela_inflacao_do_erro_padrao": {
+      "QB": false,
+      "RB": false,
+      "WR": false
+    }
+  },
+  "aceitacao_limiar_50": {
+    "QB": {
+      "reproduz_selecao_do_pipeline": true,
+      "selecao_reconstruida_limiar_50": [
+        "observed_career_lag_td_pct",
+        "offense_pct",
+        "passer_rating",
+        "team_pass_attempts_share"
+      ],
+      "final_covs_json": [
+        "observed_career_lag_td_pct",
+        "offense_pct",
+        "passer_rating",
+        "team_pass_attempts_share",
+        "observed_career_lag_comp_pct_missing"
+      ],
+      "final_covs_json_sem_missing": [
+        "observed_career_lag_td_pct",
+        "offense_pct",
+        "passer_rating",
+        "team_pass_attempts_share"
+      ],
+      "apenas_no_json": [],
+      "apenas_na_reconstrucao": []
+    },
+    "RB": {
+      "reproduz_selecao_do_pipeline": true,
+      "selecao_reconstruida_limiar_50": [
+        "depth_team",
+        "draft_ovr",
+        "games_missed",
+        "observed_career_lag_ypc",
+        "team_rushing_yards_share"
+      ],
+      "final_covs_json": [
+        "depth_team",
+        "draft_ovr",
+        "games_missed",
+        "observed_career_lag_ypc",
+        "team_rushing_yards_share"
+      ],
+      "final_covs_json_sem_missing": [
+        "depth_team",
+        "draft_ovr",
+        "games_missed",
+        "observed_career_lag_ypc",
+        "team_rushing_yards_share"
+      ],
+      "apenas_no_json": [],
+      "apenas_na_reconstrucao": []
+    },
+    "WR": {
+      "reproduz_selecao_do_pipeline": true,
+      "selecao_reconstruida_limiar_50": [
+        "age",
+        "games_missed",
+        "height",
+        "observed_career_lag_rushing_yards",
+        "observed_career_lag_targets_redzone",
+        "offense_pct",
+        "team_targets_share"
+      ],
+      "final_covs_json": [
+        "age",
+        "games_missed",
+        "height",
+        "observed_career_lag_rushing_yards",
+        "observed_career_lag_targets_redzone",
+        "offense_pct",
+        "team_targets_share"
+      ],
+      "final_covs_json_sem_missing": [
+        "age",
+        "games_missed",
+        "height",
+        "observed_career_lag_rushing_yards",
+        "observed_career_lag_targets_redzone",
+        "offense_pct",
+        "team_targets_share"
+      ],
+      "apenas_no_json": [],
+      "apenas_na_reconstrucao": []
+    }
+  },
+  "afirmacoes_da_escrita": {
+    "1_limiar_das_taxas_entre_25_e_100": {
+      "afirmacao": "cortes entre 25 e 100 mantiveram estavel a selecao de covariaveis do Cox entre limiares adjacentes",
+      "teste": "16 limiares x 3 posicoes, com reconstrucao integral do painel e da cadeia de selecao; Jaccard entre limiares adjacentes e contra o limiar 50",
+      "por_posicao": {
+        "QB": {
+          "todos_os_pares_adjacentes_identicos": false,
+          "jaccard_minimo_entre_limiares_adjacentes": 0.8,
+          "limiares_com_selecao_diferente_do_padrao_50": [
+            95,
+            100
+          ]
+        },
+        "RB": {
+          "todos_os_pares_adjacentes_identicos": false,
+          "jaccard_minimo_entre_limiares_adjacentes": 0.75,
+          "limiares_com_selecao_diferente_do_padrao_50": [
+            65,
+            70,
+            75,
+            80,
+            85,
+            90,
+            95,
+            100
+          ]
+        },
+        "WR": {
+          "todos_os_pares_adjacentes_identicos": false,
+          "jaccard_minimo_entre_limiares_adjacentes": 0.7,
+          "limiares_com_selecao_diferente_do_padrao_50": [
+            25,
+            30,
+            35
+          ]
+        }
+      },
+      "sustentada_em_todas_as_posicoes": false
+    },
+    "2_codificacao_de_nao_draftados": {
+      "afirmacao": "codificacoes alternativas para nao draftados nao alteraram a selecao final em QB, RB ou WR",
+      "teste": "4 cenarios (A a D) x 3 posicoes no limiar de taxa 50; Jaccard contra o cenario A",
+      "por_posicao": {
+        "QB": {
+          "jaccard_vs_A": {
+            "A": 1.0,
+            "B": 1.0,
+            "C": 1.0,
+            "D": 1.0
+          },
+          "cenarios_com_selecao_diferente_de_A": []
+        },
+        "RB": {
+          "jaccard_vs_A": {
+            "A": 1.0,
+            "B": 0.833333,
+            "C": 1.0,
+            "D": 0.666667
+          },
+          "cenarios_com_selecao_diferente_de_A": [
+            "B",
+            "D"
+          ]
+        },
+        "WR": {
+          "jaccard_vs_A": {
+            "A": 1.0,
+            "B": 0.75,
+            "C": 1.0,
+            "D": 1.0
+          },
+          "cenarios_com_selecao_diferente_de_A": [
+            "B"
+          ]
+        }
+      },
+      "sustentada_em_todas_as_posicoes": false
+    },
+    "3_imputacao_multipla_e_alfa_005": {
+      "afirmacao": "analise exploratoria condicional da imputacao multipla, nao uma demonstracao formal de compatibilidade com White–Royston ou de robustez inferencial",
+      "teste": "m = 10 imputacoes por IterativeImputer nas covariaveis finais com ausentes, ajuste Cox por imputacao e pooling de Rubin; compara descritivamente p < 0,05 do ajuste unico like-for-like (sem flags _missing) com p < 0,05 agrupado. A comparacao e condicional ao conjunto de covariaveis selecionado no modelo original; n_imputacoes_p_menor_alfa conta, entre m, quantos ajustes individuais tiveram p < 0,05, sem constituir criterio formal de robustez",
+      "por_posicao": {
+        "QB": {
+          "testavel": true,
+          "colunas_imputadas": [
+            "observed_career_lag_td_pct",
+            "passer_rating"
+          ],
+          "verditos_alterados": [],
+          "erro_padrao_inflado": true,
+          "veredito_mudaria_apenas_pela_inflacao_do_erro_padrao": false
+        },
+        "RB": {
+          "testavel": true,
+          "colunas_imputadas": [
+            "observed_career_lag_ypc"
+          ],
+          "verditos_alterados": [],
+          "erro_padrao_inflado": true,
+          "veredito_mudaria_apenas_pela_inflacao_do_erro_padrao": false
+        },
+        "WR": {
+          "testavel": false,
+          "colunas_imputadas": [],
+          "verditos_alterados": [],
+          "erro_padrao_inflado": true,
+          "veredito_mudaria_apenas_pela_inflacao_do_erro_padrao": false
+        }
+      },
+      "sustentada_em_todas_as_posicoes": true
+    }
+  },
+  "limiares_taxa": {
+    "jaccard_vs_50": {
+      "QB": {
+        "25": 1.0,
+        "30": 1.0,
+        "35": 1.0,
+        "40": 1.0,
+        "45": 1.0,
+        "50": 1.0,
+        "55": 1.0,
+        "60": 1.0,
+        "65": 1.0,
+        "70": 1.0,
+        "75": 1.0,
+        "80": 1.0,
+        "85": 1.0,
+        "90": 1.0,
+        "95": 0.8,
+        "100": 0.8
+      },
+      "RB": {
+        "25": 1.0,
+        "30": 1.0,
+        "35": 1.0,
+        "40": 1.0,
+        "45": 1.0,
+        "50": 1.0,
+        "55": 1.0,
+        "60": 1.0,
+        "65": 0.8,
+        "70": 0.8,
+        "75": 0.8,
+        "80": 0.8,
+        "85": 0.8,
+        "90": 0.8,
+        "95": 0.8,
+        "100": 0.6
+      },
+      "WR": {
+        "25": 0.777778,
+        "30": 0.875,
+        "35": 0.875,
+        "40": 1.0,
+        "45": 1.0,
+        "50": 1.0,
+        "55": 1.0,
+        "60": 1.0,
+        "65": 1.0,
+        "70": 1.0,
+        "75": 1.0,
+        "80": 1.0,
+        "85": 1.0,
+        "90": 1.0,
+        "95": 1.0,
+        "100": 1.0
+      }
+    },
+    "adjacentes": {
+      "QB": {
+        "jaccard_minimo_entre_limiares_adjacentes": 0.8,
+        "todos_os_pares_adjacentes_identicos": false
+      },
+      "RB": {
+        "jaccard_minimo_entre_limiares_adjacentes": 0.75,
+        "todos_os_pares_adjacentes_identicos": false
+      },
+      "WR": {
+        "jaccard_minimo_entre_limiares_adjacentes": 0.7,
+        "todos_os_pares_adjacentes_identicos": false
+      }
+    },
+    "selecoes": {
+      "QB": {
+        "25": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "30": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "35": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "40": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "45": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "50": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "55": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "60": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "65": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "70": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "75": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "80": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "85": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "90": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "95": [
+          "observed_career_lag_qb_dropback",
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "100": [
+          "observed_career_lag_qb_dropback",
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ]
+      },
+      "RB": {
+        "25": [
+          "depth_team",
+          "draft_ovr",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "30": [
+          "depth_team",
+          "draft_ovr",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "35": [
+          "depth_team",
+          "draft_ovr",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "40": [
+          "depth_team",
+          "draft_ovr",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "45": [
+          "depth_team",
+          "draft_ovr",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "50": [
+          "depth_team",
+          "draft_ovr",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "55": [
+          "depth_team",
+          "draft_ovr",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "60": [
+          "depth_team",
+          "draft_ovr",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "65": [
+          "depth_team",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "70": [
+          "depth_team",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "75": [
+          "depth_team",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "80": [
+          "depth_team",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "85": [
+          "depth_team",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "90": [
+          "depth_team",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "95": [
+          "depth_team",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ],
+        "100": [
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ]
+      },
+      "WR": {
+        "25": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_adot_acc",
+          "observed_career_lag_catch_rate",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "30": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "observed_career_lag_yptarget",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "35": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "observed_career_lag_yptarget",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "40": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "45": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "50": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "55": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "60": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "65": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "70": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "75": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "80": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "85": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "90": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "95": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "100": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ]
+      }
+    }
+  },
+  "undrafted": {
+    "QB": {
+      "A": {
+        "jaccard_vs_A": 1.0,
+        "covariaveis": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ]
+      },
+      "B": {
+        "jaccard_vs_A": 1.0,
+        "covariaveis": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ]
+      },
+      "C": {
+        "jaccard_vs_A": 1.0,
+        "covariaveis": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ]
+      },
+      "D": {
+        "jaccard_vs_A": 1.0,
+        "covariaveis": [
+          "observed_career_lag_td_pct",
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ]
+      }
+    },
+    "RB": {
+      "A": {
+        "jaccard_vs_A": 1.0,
+        "covariaveis": [
+          "depth_team",
+          "draft_ovr",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ]
+      },
+      "B": {
+        "jaccard_vs_A": 0.833333,
+        "covariaveis": [
+          "depth_team",
+          "draft_ovr",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "pre_window_veteran",
+          "team_rushing_yards_share"
+        ]
+      },
+      "C": {
+        "jaccard_vs_A": 1.0,
+        "covariaveis": [
+          "depth_team",
+          "draft_ovr",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "team_rushing_yards_share"
+        ]
+      },
+      "D": {
+        "jaccard_vs_A": 0.666667,
+        "covariaveis": [
+          "depth_team",
+          "games_missed",
+          "observed_career_lag_ypc",
+          "pre_window_veteran",
+          "team_rushing_yards_share"
+        ]
+      }
+    },
+    "WR": {
+      "A": {
+        "jaccard_vs_A": 1.0,
+        "covariaveis": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ]
+      },
+      "B": {
+        "jaccard_vs_A": 0.75,
+        "covariaveis": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "offense_pct",
+          "pre_window_veteran",
+          "team_targets_share"
+        ]
+      },
+      "C": {
+        "jaccard_vs_A": 1.0,
+        "covariaveis": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ]
+      },
+      "D": {
+        "jaccard_vs_A": 1.0,
+        "covariaveis": [
+          "age",
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone",
+          "offense_pct",
+          "team_targets_share"
+        ]
+      }
+    }
+  },
+  "imputacao_multipla": {
+    "QB": {
+      "colunas_imputadas": [
+        "observed_career_lag_td_pct",
+        "passer_rating"
+      ],
+      "n_imputacoes": 10,
+      "n_covariaveis": 4,
+      "n_verditos_alterados": 0,
+      "verditos_alterados": [],
+      "inflacao_do_erro_padrao_pct": {
+        "observed_career_lag_td_pct": -0.9782,
+        "offense_pct": 1.6474,
+        "passer_rating": 6.6015,
+        "team_pass_attempts_share": 1.2069
+      },
+      "veredito_mudaria_apenas_pela_inflacao_do_erro_padrao": false,
+      "diagnostico_imputacao": {
+        "observed_career_lag_td_pct": {
+          "n_ausentes": 254,
+          "pct_ausentes": 29.953,
+          "observado": {
+            "media": 0.04304760656551651,
+            "sd": 0.01223170878373095,
+            "min": 0.0,
+            "max": 0.09693877551020408
+          },
+          "imputado": {
+            "media": 0.03758334839081974,
+            "sd": 0.012136105768113118,
+            "min": -0.003468574409779636,
+            "max": 0.07901258378544093
+          },
+          "pct_fora_do_intervalo_observado": 0.079
+        },
+        "passer_rating": {
+          "n_ausentes": 26,
+          "pct_ausentes": 3.066,
+          "observado": {
+            "media": 84.60536496350365,
+            "sd": 21.64111869381399,
+            "min": 0.0,
+            "max": 150.77
+          },
+          "imputado": {
+            "media": 70.97031897599146,
+            "sd": 19.866393449950746,
+            "min": 9.67663969637023,
+            "max": 126.20620543566463
+          },
+          "pct_fora_do_intervalo_observado": 0.0
+        }
+      },
+      "covariaveis": [
+        {
+          "covariavel": "observed_career_lag_td_pct",
+          "hr_unica_original": 0.62642,
+          "p_unica_original": 0.0006431590922624,
+          "hr_unica_sem_flag": 0.699432,
+          "p_unica_sem_flag": 0.0035252996827795174,
+          "hr_pooled": 0.694771,
+          "p_pooled": 0.003066920835310517,
+          "p_pooled_normal": 0.0026845963413134077,
+          "p_inflacao_apenas": 0.0036391090502414128,
+          "coef_unico": -0.35748681188085785,
+          "coef_pooled": -0.36417307316508796,
+          "se_unica": 0.1225200273835431,
+          "se_pooled": 0.12132149682928575,
+          "inflacao_se_pct": -0.9782,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "offense_pct",
+          "hr_unica_original": 1.707202,
+          "p_unica_original": 2.467780749190377e-05,
+          "hr_unica_sem_flag": 1.699456,
+          "p_unica_sem_flag": 3.476526076063574e-05,
+          "hr_pooled": 1.793067,
+          "p_pooled": 7.381655013434955e-06,
+          "p_pooled_normal": 7.309840567611195e-06,
+          "p_inflacao_apenas": 4.6791897046007354e-05,
+          "coef_unico": 0.5303084569109272,
+          "coef_pooled": 0.5839274410989596,
+          "se_unica": 0.12810091426987577,
+          "se_pooled": 0.13021128186347627,
+          "inflacao_se_pct": 1.6474,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "passer_rating",
+          "hr_unica_original": 0.647375,
+          "p_unica_original": 5.589022168628599e-06,
+          "hr_unica_sem_flag": 0.641845,
+          "p_unica_sem_flag": 3.373878568524349e-06,
+          "hr_pooled": 0.624007,
+          "p_pooled": 3.680160616304171e-06,
+          "p_pooled_normal": 3.5529994766109847e-06,
+          "p_inflacao_apenas": 1.344113389324492e-05,
+          "coef_unico": -0.4434082460172562,
+          "coef_pooled": -0.4715928952705399,
+          "se_unica": 0.0954255982010852,
+          "se_pooled": 0.10172516583720183,
+          "inflacao_se_pct": 6.6015,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "team_pass_attempts_share",
+          "hr_unica_original": 0.288973,
+          "p_unica_original": 1.2744561562388918e-08,
+          "hr_unica_sem_flag": 0.271797,
+          "p_unica_sem_flag": 2.227180174515052e-09,
+          "hr_pooled": 0.288251,
+          "p_pooled": 1.6957239706571443e-08,
+          "p_pooled_normal": 1.6770485722771374e-08,
+          "p_inflacao_apenas": 3.4880446225138414e-09,
+          "coef_unico": -1.3026985412568663,
+          "coef_pooled": -1.243924099571461,
+          "se_unica": 0.21783139710593477,
+          "se_pooled": 0.22046046318813234,
+          "inflacao_se_pct": 1.2069,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        }
+      ]
+    },
+    "RB": {
+      "colunas_imputadas": [
+        "observed_career_lag_ypc"
+      ],
+      "n_imputacoes": 10,
+      "n_covariaveis": 5,
+      "n_verditos_alterados": 0,
+      "verditos_alterados": [],
+      "inflacao_do_erro_padrao_pct": {
+        "depth_team": 1.5389,
+        "draft_ovr": 0.2371,
+        "games_missed": 0.0687,
+        "observed_career_lag_ypc": -5.4903,
+        "team_rushing_yards_share": 0.101
+      },
+      "veredito_mudaria_apenas_pela_inflacao_do_erro_padrao": false,
+      "diagnostico_imputacao": {
+        "observed_career_lag_ypc": {
+          "n_ausentes": 598,
+          "pct_ausentes": 41.128,
+          "observado": {
+            "media": 4.344211452157747,
+            "sd": 0.6052666636656111,
+            "min": 2.6320754716981134,
+            "max": 8.541176470588235
+          },
+          "imputado": {
+            "media": 4.242396996813767,
+            "sd": 0.6092312068012472,
+            "min": 1.9686762775525302,
+            "max": 6.672745733074647
+          },
+          "pct_fora_do_intervalo_observado": 0.351
+        }
+      },
+      "covariaveis": [
+        {
+          "covariavel": "depth_team",
+          "hr_unica_original": 1.168427,
+          "p_unica_original": 0.0279201596346128,
+          "hr_unica_sem_flag": 1.168427,
+          "p_unica_sem_flag": 0.027920159634612873,
+          "hr_pooled": 1.158174,
+          "p_pooled": 0.04111859539404993,
+          "p_pooled_normal": 0.04110266265424549,
+          "p_inflacao_apenas": 0.030395361285244706,
+          "coef_unico": 0.15565824758524816,
+          "coef_pooled": 0.14684437172832246,
+          "se_unica": 0.07080503822227016,
+          "se_pooled": 0.07189467903828185,
+          "inflacao_se_pct": 1.5389,
+          "n_imputacoes_p_menor_alfa": 7,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "draft_ovr",
+          "hr_unica_original": 1.124894,
+          "p_unica_original": 0.0392804459143654,
+          "hr_unica_sem_flag": 1.124894,
+          "p_unica_sem_flag": 0.039280445914365476,
+          "hr_pooled": 1.121641,
+          "p_pooled": 0.044881786961319975,
+          "p_pooled_normal": 0.04488135252312129,
+          "p_inflacao_apenas": 0.039748223961021116,
+          "coef_unico": 0.1176884537071778,
+          "coef_pooled": 0.1147928013435153,
+          "se_unica": 0.05709603509748412,
+          "se_pooled": 0.05723143802222086,
+          "inflacao_se_pct": 0.2371,
+          "n_imputacoes_p_menor_alfa": 6,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "games_missed",
+          "hr_unica_original": 1.547486,
+          "p_unica_original": 4.264912682797374e-07,
+          "hr_unica_sem_flag": 1.547486,
+          "p_unica_sem_flag": 4.264912682797374e-07,
+          "hr_pooled": 1.538277,
+          "p_pooled": 6.226998108168788e-07,
+          "p_pooled_normal": 6.222373925039835e-07,
+          "p_inflacao_apenas": 4.3466116623884566e-07,
+          "coef_unico": 0.43663182251703714,
+          "coef_pooled": 0.4306628528969171,
+          "se_unica": 0.08634655947660153,
+          "se_pooled": 0.08640588394353427,
+          "inflacao_se_pct": 0.0687,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "observed_career_lag_ypc",
+          "hr_unica_original": 0.820692,
+          "p_unica_original": 0.0023350542066948,
+          "hr_unica_sem_flag": 0.820692,
+          "p_unica_sem_flag": 0.0023350542066948267,
+          "hr_pooled": 0.844949,
+          "p_pooled": 0.007803897962532226,
+          "p_pooled_normal": 0.006032656581673088,
+          "p_inflacao_apenas": 0.0020020133248181676,
+          "coef_unico": -0.19760730189332304,
+          "coef_pooled": -0.16847850329063474,
+          "se_unica": 0.06491836654039573,
+          "se_pooled": 0.06135412865617709,
+          "inflacao_se_pct": -5.4903,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "team_rushing_yards_share",
+          "hr_unica_original": 0.503734,
+          "p_unica_original": 4.501795578960117e-06,
+          "hr_unica_sem_flag": 0.503734,
+          "p_unica_sem_flag": 4.501795578960117e-06,
+          "hr_pooled": 0.502164,
+          "p_pooled": 4.165468911368516e-06,
+          "p_pooled_normal": 4.164701836176351e-06,
+          "p_inflacao_apenas": 4.603485690127659e-06,
+          "coef_unico": -0.6857076766183126,
+          "coef_pooled": -0.688829305848432,
+          "se_unica": 0.1494972065091942,
+          "se_pooled": 0.14964826162180844,
+          "inflacao_se_pct": 0.101,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        }
+      ]
+    },
+    "WR": {
+      "colunas_imputadas": [],
+      "n_imputacoes": 10,
+      "n_covariaveis": 7,
+      "n_verditos_alterados": 0,
+      "verditos_alterados": [],
+      "inflacao_do_erro_padrao_pct": {
+        "age": 0.0,
+        "games_missed": 0.0,
+        "height": 0.0,
+        "observed_career_lag_rushing_yards": 0.0,
+        "observed_career_lag_targets_redzone": 0.0,
+        "offense_pct": 0.0,
+        "team_targets_share": 0.0
+      },
+      "veredito_mudaria_apenas_pela_inflacao_do_erro_padrao": false,
+      "diagnostico_imputacao": {},
+      "covariaveis": [
+        {
+          "covariavel": "age",
+          "hr_unica_original": 1.69013,
+          "p_unica_original": 0.0033700959349206,
+          "hr_unica_sem_flag": 1.69013,
+          "p_unica_sem_flag": 0.003370095934920694,
+          "hr_pooled": 1.69013,
+          "p_pooled": 0.0033700959349206934,
+          "p_pooled_normal": 0.0033700959349206934,
+          "p_inflacao_apenas": 0.0033700959349206934,
+          "coef_unico": 0.5248055214616995,
+          "coef_pooled": 0.5248055214616995,
+          "se_unica": 0.17900487544464364,
+          "se_pooled": 0.17900487544464364,
+          "inflacao_se_pct": 0.0,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "games_missed",
+          "hr_unica_original": 1.274919,
+          "p_unica_original": 0.0127215203275973,
+          "hr_unica_sem_flag": 1.274919,
+          "p_unica_sem_flag": 0.012721520327597326,
+          "hr_pooled": 1.274919,
+          "p_pooled": 0.012721520327597317,
+          "p_pooled_normal": 0.012721520327597317,
+          "p_inflacao_apenas": 0.012721520327597317,
+          "coef_unico": 0.24288288981031775,
+          "coef_pooled": 0.24288288981031775,
+          "se_unica": 0.09748572203473453,
+          "se_pooled": 0.09748572203473453,
+          "inflacao_se_pct": 0.0,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "height",
+          "hr_unica_original": 1.130951,
+          "p_unica_original": 0.0219897981897498,
+          "hr_unica_sem_flag": 1.130951,
+          "p_unica_sem_flag": 0.02198979818974982,
+          "hr_pooled": 1.130951,
+          "p_pooled": 0.021989798189749835,
+          "p_pooled_normal": 0.021989798189749814,
+          "p_inflacao_apenas": 0.021989798189749853,
+          "coef_unico": 0.12305882228674939,
+          "coef_pooled": 0.1230588222867494,
+          "se_unica": 0.05372471330084749,
+          "se_pooled": 0.0537247133008475,
+          "inflacao_se_pct": 0.0,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "observed_career_lag_rushing_yards",
+          "hr_unica_original": 0.837896,
+          "p_unica_original": 0.0290689252171187,
+          "hr_unica_sem_flag": 0.837896,
+          "p_unica_sem_flag": 0.029068925217118777,
+          "hr_pooled": 0.837896,
+          "p_pooled": 0.0290689252171187,
+          "p_pooled_normal": 0.029068925217118673,
+          "p_inflacao_apenas": 0.02906892521711872,
+          "coef_unico": -0.17686116259988474,
+          "coef_pooled": -0.17686116259988477,
+          "se_unica": 0.08103416577375219,
+          "se_pooled": 0.0810341657737522,
+          "inflacao_se_pct": 0.0,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "observed_career_lag_targets_redzone",
+          "hr_unica_original": 0.802507,
+          "p_unica_original": 0.0073538154005497,
+          "hr_unica_sem_flag": 0.802507,
+          "p_unica_sem_flag": 0.007353815400549703,
+          "hr_pooled": 0.802507,
+          "p_pooled": 0.007353815400549703,
+          "p_pooled_normal": 0.007353815400549698,
+          "p_inflacao_apenas": 0.007353815400549719,
+          "coef_unico": -0.22001479906567478,
+          "coef_pooled": -0.2200147990656748,
+          "se_unica": 0.08208336979413657,
+          "se_pooled": 0.08208336979413657,
+          "inflacao_se_pct": 0.0,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "offense_pct",
+          "hr_unica_original": 1.183553,
+          "p_unica_original": 0.0263001206424034,
+          "hr_unica_sem_flag": 1.183553,
+          "p_unica_sem_flag": 0.026300120642403453,
+          "hr_pooled": 1.183553,
+          "p_pooled": 0.026300120642403425,
+          "p_pooled_normal": 0.026300120642403405,
+          "p_inflacao_apenas": 0.026300120642403446,
+          "coef_unico": 0.16852053121170077,
+          "coef_pooled": 0.1685205312117008,
+          "se_unica": 0.07585031442236474,
+          "se_pooled": 0.07585031442236474,
+          "inflacao_se_pct": 0.0,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        },
+        {
+          "covariavel": "team_targets_share",
+          "hr_unica_original": 0.272889,
+          "p_unica_original": 4.850978908810159e-11,
+          "hr_unica_sem_flag": 0.272889,
+          "p_unica_sem_flag": 4.850978908810159e-11,
+          "hr_pooled": 0.272889,
+          "p_pooled": 4.8509789088101414e-11,
+          "p_pooled_normal": 4.8509789088101414e-11,
+          "p_inflacao_apenas": 4.8509789088101414e-11,
+          "coef_unico": -1.2986886363509385,
+          "coef_pooled": -1.2986886363509385,
+          "se_unica": 0.1975059935444191,
+          "se_pooled": 0.1975059935444191,
+          "inflacao_se_pct": 0.0,
+          "n_imputacoes_p_menor_alfa": 10,
+          "significancia_inalterada": true
+        }
+      ]
+    }
+  },
+  "validacao_ajuste_unico_vs_cox_hr": {
+    "QB": {
+      "arquivo": "Inferência/Modelagem de COX/resultados/cox_hr_QB.csv",
+      "disponivel": true,
+      "covariaveis_comparadas": [
+        "observed_career_lag_td_pct",
+        "offense_pct",
+        "passer_rating",
+        "team_pass_attempts_share"
+      ],
+      "max_abs_diff_coef": 0.11024703080478765,
+      "identico_tolerancia_1e-8": false
+    },
+    "RB": {
+      "arquivo": "Inferência/Modelagem de COX/resultados/cox_hr_RB.csv",
+      "disponivel": true,
+      "covariaveis_comparadas": [
+        "depth_team",
+        "draft_ovr",
+        "games_missed",
+        "observed_career_lag_ypc",
+        "team_rushing_yards_share"
+      ],
+      "max_abs_diff_coef": 5.551115123125783e-17,
+      "identico_tolerancia_1e-8": true
+    },
+    "WR": {
+      "arquivo": "Inferência/Modelagem de COX/resultados/cox_hr_WR.csv",
+      "disponivel": true,
+      "covariaveis_comparadas": [
+        "age",
+        "games_missed",
+        "height",
+        "observed_career_lag_rushing_yards",
+        "observed_career_lag_targets_redzone",
+        "offense_pct",
+        "team_targets_share"
+      ],
+      "max_abs_diff_coef": 8.326672684688674e-17,
+      "identico_tolerancia_1e-8": true
+    }
+  },
+  "sensibilidade_cox_final": {
+    "QB": {
+      "n_linhas": 848,
+      "n_eventos": 107,
+      "eventos_empatados": 104,
+      "pct_eventos_empatados": 97.2,
+      "validacao_efron_r_vs_lifelines_max_abs_diff": 2.772058138589273e-10,
+      "ep_robusto_veredito_muda": [],
+      "breslow_veredito_muda": [
+        "observed_career_lag_comp_pct_missing"
+      ]
+    },
+    "RB": {
+      "n_linhas": 1454,
+      "n_eventos": 289,
+      "eventos_empatados": 288,
+      "pct_eventos_empatados": 99.65,
+      "validacao_efron_r_vs_lifelines_max_abs_diff": 8.39525116091977e-11,
+      "ep_robusto_veredito_muda": [
+        "draft_ovr"
+      ],
+      "breslow_veredito_muda": [
+        "depth_team",
+        "draft_ovr"
+      ]
+    },
+    "WR": {
+      "n_linhas": 2171,
+      "n_eventos": 394,
+      "eventos_empatados": 392,
+      "pct_eventos_empatados": 99.49,
+      "validacao_efron_r_vs_lifelines_max_abs_diff": 8.315570454442422e-13,
+      "ep_robusto_veredito_muda": [],
+      "breslow_veredito_muda": [
+        "games_missed",
+        "observed_career_lag_rushing_yards",
+        "offense_pct"
+      ]
+    }
+  },
+  "sensibilidade_tempo_discreto": {
+    "QB": {
+      "modelo": "GLM binomial cloglog sobre intervalos pessoa-periodo, com efeito fixo por grupo de tempo",
+      "modelo_principal": "agrupado (fallback: efeito por ano nao convergiu: Erro: separacao: EP explosivo)",
+      "n_niveis_tempo_principal": 15,
+      "n_linhas_pessoa_periodo": 848,
+      "grupos_de_tempo_agrupados": [
+        {
+          "tempos": "1-1",
+          "eventos": 13
+        },
+        {
+          "tempos": "2-2",
+          "eventos": 13
+        },
+        {
+          "tempos": "3-3",
+          "eventos": 5
+        },
+        {
+          "tempos": "4-4",
+          "eventos": 7
+        },
+        {
+          "tempos": "5-5",
+          "eventos": 6
+        },
+        {
+          "tempos": "6-6",
+          "eventos": 8
+        },
+        {
+          "tempos": "7-7",
+          "eventos": 12
+        },
+        {
+          "tempos": "8-9",
+          "eventos": 7
+        },
+        {
+          "tempos": "10-10",
+          "eventos": 7
+        },
+        {
+          "tempos": "11-11",
+          "eventos": 7
+        },
+        {
+          "tempos": "12-12",
+          "eventos": 3
+        },
+        {
+          "tempos": "13-14",
+          "eventos": 4
+        },
+        {
+          "tempos": "15-15",
+          "eventos": 4
+        },
+        {
+          "tempos": "16-17",
+          "eventos": 5
+        },
+        {
+          "tempos": "18-23",
+          "eventos": 6
+        }
+      ],
+      "min_eventos_por_grupo_agrupado": 3,
+      "covariaveis_mudam_de_lado_0_05_efron_cloglog_por_ano": [],
+      "n_mudam_de_lado_0_05_efron_cloglog_por_ano": 0,
+      "covariaveis_mudam_de_lado_0_05_efron_cloglog_agrupado": [],
+      "n_mudam_de_lado_0_05_efron_cloglog_agrupado": 0
+    },
+    "RB": {
+      "modelo": "GLM binomial cloglog sobre intervalos pessoa-periodo, com efeito fixo por grupo de tempo",
+      "modelo_principal": "agrupado (fallback: efeito por ano nao convergiu: Erro: separacao: EP explosivo)",
+      "n_niveis_tempo_principal": 13,
+      "n_linhas_pessoa_periodo": 1454,
+      "grupos_de_tempo_agrupados": [
+        {
+          "tempos": "1-1",
+          "eventos": 42
+        },
+        {
+          "tempos": "2-2",
+          "eventos": 40
+        },
+        {
+          "tempos": "3-3",
+          "eventos": 35
+        },
+        {
+          "tempos": "4-4",
+          "eventos": 34
+        },
+        {
+          "tempos": "5-5",
+          "eventos": 35
+        },
+        {
+          "tempos": "6-6",
+          "eventos": 29
+        },
+        {
+          "tempos": "7-7",
+          "eventos": 23
+        },
+        {
+          "tempos": "8-8",
+          "eventos": 14
+        },
+        {
+          "tempos": "9-9",
+          "eventos": 13
+        },
+        {
+          "tempos": "10-10",
+          "eventos": 10
+        },
+        {
+          "tempos": "11-11",
+          "eventos": 7
+        },
+        {
+          "tempos": "12-12",
+          "eventos": 4
+        },
+        {
+          "tempos": "13-16",
+          "eventos": 3
+        }
+      ],
+      "min_eventos_por_grupo_agrupado": 3,
+      "covariaveis_mudam_de_lado_0_05_efron_cloglog_por_ano": [],
+      "n_mudam_de_lado_0_05_efron_cloglog_por_ano": 0,
+      "covariaveis_mudam_de_lado_0_05_efron_cloglog_agrupado": [],
+      "n_mudam_de_lado_0_05_efron_cloglog_agrupado": 0
+    },
+    "WR": {
+      "modelo": "GLM binomial cloglog sobre intervalos pessoa-periodo, com efeito fixo por grupo de tempo",
+      "modelo_principal": "efeito por ano (stop inteiro)",
+      "n_niveis_tempo_principal": 17,
+      "n_linhas_pessoa_periodo": 2171,
+      "grupos_de_tempo_agrupados": [
+        {
+          "tempos": "1-1",
+          "eventos": 53
+        },
+        {
+          "tempos": "2-2",
+          "eventos": 50
+        },
+        {
+          "tempos": "3-3",
+          "eventos": 51
+        },
+        {
+          "tempos": "4-4",
+          "eventos": 50
+        },
+        {
+          "tempos": "5-5",
+          "eventos": 38
+        },
+        {
+          "tempos": "6-6",
+          "eventos": 33
+        },
+        {
+          "tempos": "7-7",
+          "eventos": 21
+        },
+        {
+          "tempos": "8-8",
+          "eventos": 26
+        },
+        {
+          "tempos": "9-9",
+          "eventos": 25
+        },
+        {
+          "tempos": "10-10",
+          "eventos": 10
+        },
+        {
+          "tempos": "11-11",
+          "eventos": 13
+        },
+        {
+          "tempos": "12-12",
+          "eventos": 9
+        },
+        {
+          "tempos": "13-13",
+          "eventos": 3
+        },
+        {
+          "tempos": "14-14",
+          "eventos": 7
+        },
+        {
+          "tempos": "15-17",
+          "eventos": 5
+        }
+      ],
+      "min_eventos_por_grupo_agrupado": 3,
+      "covariaveis_mudam_de_lado_0_05_efron_cloglog_por_ano": [],
+      "n_mudam_de_lado_0_05_efron_cloglog_por_ano": 0,
+      "covariaveis_mudam_de_lado_0_05_efron_cloglog_agrupado": [],
+      "n_mudam_de_lado_0_05_efron_cloglog_agrupado": 0
+    }
+  },
+  "covariaveis_defasadas": {
+    "gerado_por": "sens_covariaveis_defasadas_{POS}.csv",
+    "metodo": "Cox final (mesmos finais do passo 11, lifelines, Efron, sem penalizacao) em duas versoes na amostra comum (linhas com linha do mesmo jogador em season - 1): (i) covariaveis de temporada corrente medidas em t; (ii) as mesmas trocadas pelo valor de t-1. Fixas/defasadas (draft, altura, unobs_career_years, observed_career_lag_*, flags _missing, hiato) ficam iguais. A escala da versao (ii) e a da corrente. HR oficial: cox_hr_{POS}.csv.",
+    "por_posicao": {
+      "QB": {
+        "correntes": [
+          "offense_pct",
+          "passer_rating",
+          "team_pass_attempts_share"
+        ],
+        "fixas_defasadas": [
+          "observed_career_lag_td_pct",
+          "observed_career_lag_comp_pct_missing"
+        ],
+        "n_linhas_amostra_completa": 848,
+        "n_eventos_amostra_completa": 107,
+        "n_linhas_amostra_comum": 611,
+        "n_eventos_amostra_comum": 65,
+        "n_linhas_sem_t1": 237,
+        "validacao_completa_vs_cox_hr_max_abs_diff": 5.551115123125783e-17,
+        "covariaveis_mudam_veredito_0_05": [
+          "offense_pct",
+          "team_pass_attempts_share"
+        ]
+      },
+      "RB": {
+        "correntes": [
+          "depth_team",
+          "games_missed",
+          "team_rushing_yards_share"
+        ],
+        "fixas_defasadas": [
+          "draft_ovr",
+          "observed_career_lag_ypc"
+        ],
+        "n_linhas_amostra_completa": 1454,
+        "n_eventos_amostra_completa": 289,
+        "n_linhas_amostra_comum": 1010,
+        "n_eventos_amostra_comum": 205,
+        "n_linhas_sem_t1": 444,
+        "validacao_completa_vs_cox_hr_max_abs_diff": 5.551115123125783e-17,
+        "covariaveis_mudam_veredito_0_05": []
+      },
+      "WR": {
+        "correntes": [
+          "age",
+          "games_missed",
+          "offense_pct",
+          "team_targets_share"
+        ],
+        "fixas_defasadas": [
+          "height",
+          "observed_career_lag_rushing_yards",
+          "observed_career_lag_targets_redzone"
+        ],
+        "n_linhas_amostra_completa": 2171,
+        "n_eventos_amostra_completa": 394,
+        "n_linhas_amostra_comum": 1518,
+        "n_eventos_amostra_comum": 271,
+        "n_linhas_sem_t1": 653,
+        "validacao_completa_vs_cox_hr_max_abs_diff": 8.326672684688674e-17,
+        "covariaveis_mudam_veredito_0_05": [
+          "games_missed",
+          "height",
+          "observed_career_lag_rushing_yards"
+        ]
+      }
+    }
+  },
+  "sensibilidade_passer_rating_zero_QB": {
+    "linhas_sem_tentativas": 26,
+    "validacao_cenario_a_vs_cox_hr_max_abs_diff": 5.551115123125783e-17,
+    "tabela": [
+      {
+        "cenario": "a_mediana",
+        "descricao": "mediana global do pipeline (atual)",
+        "n_linhas": 848,
+        "n_eventos": 107,
+        "n_linhas_sem_tentativas_no_modelo": 26,
+        "HR_passer_rating": 0.647375,
+        "coef_passer_rating": -0.43482912674240787,
+        "EP_passer_rating": 0.09574847739914065,
+        "p_passer_rating": 5.5890221686285985e-06
+      },
+      {
+        "cenario": "b_zero",
+        "descricao": "valor 0 nas linhas sem tentativas",
+        "n_linhas": 848,
+        "n_eventos": 107,
+        "n_linhas_sem_tentativas_no_modelo": 26,
+        "HR_passer_rating": 0.630858,
+        "coef_passer_rating": -0.46067457499192127,
+        "EP_passer_rating": 0.10359076082668164,
+        "p_passer_rating": 8.70525660454476e-06
+      },
+      {
+        "cenario": "c_excluir",
+        "descricao": "exclui as linhas sem tentativas",
+        "n_linhas": 822,
+        "n_eventos": 100,
+        "n_linhas_sem_tentativas_no_modelo": 0,
+        "HR_passer_rating": 0.602951,
+        "coef_passer_rating": -0.5059198542521791,
+        "EP_passer_rating": 0.10504393247829168,
+        "p_passer_rating": 1.4626718281815675e-06
+      }
+    ]
+  },
+  "detalhe_por_posicao": {
+    "QB": {
+      "n_candidatas_apos_colinearidade": 23,
+      "limiar_p_usado": 0.05,
+      "max_vars": 10,
+      "tempos_s": {
+        "base_s": 60.06,
+        "limiares_s": 15.45,
+        "cenarios_s": 2.81,
+        "imputacao_s": 1.7,
+        "defasadas_s": 0.17,
+        "total_s": 80.19
+      }
+    },
+    "RB": {
+      "n_candidatas_apos_colinearidade": 19,
+      "limiar_p_usado": 0.05,
+      "max_vars": 28,
+      "tempos_s": {
+        "base_s": 104.99,
+        "limiares_s": 12.7,
+        "cenarios_s": 2.2,
+        "imputacao_s": 1.72,
+        "defasadas_s": 0.15,
+        "total_s": 121.76
+      }
+    },
+    "WR": {
+      "n_candidatas_apos_colinearidade": 23,
+      "limiar_p_usado": 0.05,
+      "max_vars": 39,
+      "tempos_s": {
+        "base_s": 155.04,
+        "limiares_s": 15.37,
+        "cenarios_s": 2.85,
+        "imputacao_s": 0.53,
+        "defasadas_s": 0.18,
+        "total_s": 173.96
+      }
+    }
+  },
+  "tempo_s": {
+    "total": 442.19,
+    "por_posicao": {
+      "QB": 80.19,
+      "RB": 121.76,
+      "WR": 173.96
+    }
+  },
+  "limitacoes": [
+    "A amostra comum das covariaveis defasadas exige linha em t-1: jogadores com um unico episodio ou com hiato antes do evento saem dela, e a comparacao com o HR oficial (amostra completa) mede tambem esse efeito de selecao. A troca por t-1 nao corrige a endogeneidade por completo: o valor de t-1 pode tambem refletir o desempenho que levou ao corte.",
+    "Em WR nenhuma covariavel do modelo final tem valor ausente no painel, entao a imputacao multipla nao tem o que imputar: as m = 10 copias sao identicas ao ajuste unico e o criterio se mantem por construcao, nao por evidencia. A comparacao exploratoria e testavel apenas em QB e RB e permanece condicional a selecao original; nao e prova formal White–Royston.",
+    "O cenario C muda apenas o codigo sentinela de draft_round (8 -> 9); undrafted_flag mantem os valores do cenario A para isolar uma unica mudanca de codificacao.",
+    "As covariaveis imputadas sao as covariaveis finais com algum valor ausente no painel (nao apenas as que casam com as palavras-chave de taxa), porque sao as unicas que a imputacao multipla pode afetar.",
+    "O modelo de imputacao (IterativeImputer) inclui o desfecho: o indicador de evento do intervalo e o risco acumulado de Nelson-Aalen em stop (entrada tardia), como preditores extras que nao entram no Cox, em inspiracao a White & Royston (2009), nao como implementacao formal validada para este painel temporal. O conjunto final de covariaveis fica fixo na selecao original e as flags _missing nao entram na MI; as comparacoes sao exploratorias e condicionais. A comparacao com a imputacao deterministica por mediana tambem troca o modelo de imputacao."
+  ]
+}

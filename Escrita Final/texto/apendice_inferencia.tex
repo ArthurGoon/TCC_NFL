@@ -1,0 +1,73 @@
+% ============================================================
+%  Apêndice B: escolhas da parte inferencial (para \input após o Capítulo 4)
+%  Referência de entrada: sec:apend_inferencia
+% ============================================================
+
+\section{Escolhas da inferência}
+\label{sec:apend_inferencia}
+
+\subsection{Experiência como tempo e Cox sem penalização}
+\label{subsec:apend_years_exp}
+
+No Cox, o tempo é a própria experiência, por isso \texttt{years\_exp} não entra como covariável. Em cada tempo de saída, todas as linhas em risco têm o mesmo valor. No QB, no tempo $11$, há $34$ linhas em risco, todas com experiência $10$, e $7$ saídas. Uma coluna constante no conjunto de risco não contribui para a verossimilhança parcial e deixa a matriz singular. Esse efeito já está na linha de base, que o Cox estima tempo a tempo.
+
+O modelo final não usa penalização. Com penalização $L_2$, o coeficiente de \texttt{years\_exp} vai a zero para qualquer $\lambda > 0$, sem mudar os demais. Mas, no \texttt{lifelines} \citep{lifelines}, a penalização é multiplicada pelo número de linhas e encolhe os demais coeficientes. Como sensibilidade, com $\lambda = 0{,}1$ o HR da fatia de passes do QB vai de $0{,}29$ para $0{,}75$, e a seleção do QB cai para Jaccard de $0{,}5$. Com $\lambda = 0{,}1$, a seleção também muda no RB (Jaccard de $0{,}67$, com a participação ofensiva no lugar do \textit{draft}) e no WR (Jaccard de $0{,}75$, com a profundidade no lugar da idade). Com $\lambda = 0{,}01$, só a seleção do WR muda, com uma covariável a menos (Jaccard de $0{,}86$). A estimativa sem penalização coincide com a de uma implementação independente, com diferença máxima de $3\cdot10^{-10}$.
+
+\subsection{Empates e tempo discreto}
+\label{subsec:apend_empates}
+
+Como o tempo é anual, $97\%$ das saídas do QB, $99{,}7\%$ do RB e $99{,}5\%$ do WR empatam com outra saída, caso em que \citet{grambsch1994} advertem para viés nas estimativas de $\beta(t)$ a partir dos resíduos, e por isso só a direção é usada.
+
+No tratamento de Breslow \citep{breslow1974}, a verossimilhança parcial é
+\begin{equation}
+    L_{\mathrm{B}}(\boldsymbol{\beta})
+    = \prod_{k=1}^{D}
+      \frac{\exp\!\left(\boldsymbol{\beta}^{\top}\mathbf{S}_k\right)}
+           {\left[\sum_{j \in \mathcal{R}(t_{(k)})} \exp\!\left(\boldsymbol{\beta}^{\top}\mathbf{X}_j\right)\right]^{d_k}},
+    \label{eq:pl_breslow}
+\end{equation}
+em que cada saída empatada é comparada com o conjunto de risco inteiro, e o viés cresce quanto mais grosso é o agrupamento do tempo \citep{prentice1978}. O de Efron \eqref{eq:pl_efron} desconta do conjunto de risco uma fração dos que saem no mesmo tempo, e é um pouco mais preciso \citep{efron1977}, diferença que importa com muitos empates, como aqui. O ajuste principal usa Efron.
+
+Com Breslow, os coeficientes encolhem de $4\%$ a $29\%$, e seis termos deixam de ter $p < 0{,}05$; com Efron, eles tinham $p$ entre $0{,}013$ e $0{,}039$. O sinal de todos os efeitos se mantém. Para decidir entre as duas aproximações, a referência é o modelo exato de tempo discreto, descrito a seguir.
+
+O estimador de Aalen \eqref{eq:aalen_est} regride, em cada tempo de saída, os indicadores sobre as covariáveis do conjunto de risco. Ordenar artificialmente as saídas de um mesmo ano as empurraria para o ano seguinte, e tiraria do conjunto de risco quem terminou a temporada sem sair. Por isso as saídas de cada ano são tratadas em bloco, contra o elenco daquele ano. No RB, há $34$ saídas no tempo $4$ contra $182$ linhas em risco. Em bloco, cada incremento é a regressão linear do indicador de saída naquele ano (diferença menor que $10^{-13}$), de modo que o Aalen já é um modelo discreto aditivo. Um modelo de probabilidade linear agregado, com efeito fixo por ano e erro por jogador, concorda com ele a 5\% em 29 das 32 covariáveis.
+
+\paragraph{Tempo discreto.}\label{subsec:apend_discreto}
+Para tempo agrupado, o modelo de riscos proporcionais equivale a um modelo binomial com ligação complementar log-log \citep{prentice1978}, que dispensa aproximação dos empates. Nele, a probabilidade de saída no ano $j$ é
+\begin{equation}
+    h_j(\mathbf{x}) = 1 - \exp\!\big(-\exp(\gamma_j + \mathbf{x}^{\top}\boldsymbol{\beta})\big),
+    \label{eq:cloglog}
+\end{equation}
+com um intercepto $\gamma_j$ por ano, e ajustamos esse modelo como GLM binomial sobre os intervalos pessoa-período. No QB e no RB, o intercepto por ano não converge, por separação nos anos finais, e os anos com menos de três saídas são agrupados. No WR, o efeito é por ano. Nenhuma covariável muda de lado de $0{,}05$; o HR da eficiência do QB é $0{,}64$ (contra $0{,}65$ no Efron), e o dos jogos perdidos do RB é $1{,}59$ (contra $1{,}55$). O modelo exato confirma, assim, sinal e significância dos termos finais e sustenta o uso do Cox para ler o efeito médio de cada covariável. Refeita a seleção retroativa no próprio modelo discreto, a lista do RB não muda, a do QB ganha a idade (Jaccard de $0{,}83$), e a do WR é a que mais muda (Jaccard de $0{,}50$): saem jardas de corrida e \textit{red zone}, e entram \textit{draft}, anos sem estatísticas e hiato. As nove associações estão nas três listas.
+
+\subsection{Aalen: posto completo, janela e blocos}
+\label{subsec:apend_janela}
+
+O incremento do Aalen \eqref{eq:aalen_est} só existe com posto completo das covariáveis do conjunto de risco, e exigimos pelo menos três linhas em risco por covariável. Como ele é estimado tempo a tempo, cada ano precisa cumprir isso. No primeiro ano, ninguém tem histórico defasado, e as colunas correspondentes ficam constantes: o posto é $6$ de $11$ no QB, $7$ de $10$ no RB e $8$ de $14$ no WR. No segundo ano do WR, o posto é $13$ de $14$. Nas carreiras longas, o número em risco cai abaixo do mínimo: no QB, $34$ linhas no tempo $11$ e $25$ no tempo $12$, contra $30$; no RB, $26$ no tempo $10$, contra $27$; no WR, $38$ no tempo $11$, contra $39$. As listas finais são: no QB, profundidade, \textit{draft}, participação ofensiva, eficiência, fatia de passes e, em histórico defasado, comp\%, INT\%, \textit{dropbacks}, jardas de corrida e TD\%; no RB, idade, profundidade, \textit{draft}, jogos perdidos, participação ofensiva, fatia de jardas e, em histórico defasado, TD de corrida na \textit{red zone}, jardas após a recepção e YPC; no WR, idade, profundidade, \textit{draft}, não draftado, jogos perdidos, participação ofensiva, fatia de alvos, hiato na janela e, em histórico defasado, taxa de recepção, \textit{fumbles} perdidos, jardas de corrida, alvos na \textit{red zone} e jardas por alvo. As janelas ficam, assim, de $2$ a $11$ no QB, de $2$ a $9$ no RB e de $3$ a $10$ no WR, com $72$, $223$ e $254$ saídas.
+
+O teto $\lfloor E/10 \rfloor$, com as $107$ saídas do QB, dá $10$ covariáveis. Dentro da janela, as $72$ saídas ficam em cerca de $7$ por covariável, razão que \citet{vittinghoff2007} encontram aceitável em parte dos cenários simulados de regressão logística e de Cox; no Aalen, com uma regressão por ano, é só uma referência. Com uma linha por covariável, em vez de três, a janela iria até o 17º ano no QB, o 11º no RB e o 12º no WR. Até o último ano da janela principal, as curvas coincidem, com diferença máxima de $3\cdot10^{-14}$. Os valores-$p$ do teste usam o \texttt{aareg} \citep{survival-package} com as linhas ordenadas por tempo, porque a soma final das influências por jogador depende dessa ordem na versão 3.5-8 do pacote. As listas são as da triagem original. Com a triagem refeita com as linhas ordenadas, saem \textit{draft} e jardas de corrida do QB, entram hiato anterior e YPA, a janela do QB cai para 59 saídas, e a fatia e a participação ofensiva perdem 5\% ($p=0{,}184$ e $0{,}140$); no RB, entram dois termos e os três sinais se mantêm; o WR não muda. O método pode exigir muitas observações por covariável \citep{aalen1980}, e o teste de constância vale para a janela inteira \citep{martinussen2006}.
+
+\subsection{Cox--Aalen e a ordem dentro do ano}
+\label{subsec:apend_cox_aalen}
+
+O híbrido \eqref{eq:cox_aalen} combina termos aditivos, que mudam com o tempo, e termos multiplicativos, que têm HR constante. O estimador exige tempos distintos. Por isso cada saída recebe um tempo sorteado na última metade do próprio ano. Cada saída é comparada só com o elenco do seu ano, e nenhuma linha do ano seguinte entra no seu conjunto de risco. O sorteio, com semente fixa (20241012), decide apenas a ordem entre as saídas do mesmo ano, e não altera quais jogadores saem em cada temporada. Em 20 sementes, nenhum sinal das nove associações se perde no QB e no RB; no WR, a idade fica abaixo de 5\% em 18 delas, e a fatia de alvos e os jogos perdidos, em todas. Entre os demais termos, a altura fica abaixo de 5\% em 15 sementes, e as jardas de corrida, em 12. O teste de proporcionalidade do próprio ajuste \citep{martinussen2006} não rejeita nenhum termo multiplicativo (menor $p=0{,}129$, na participação ofensiva do QB).
+
+\subsection{Estabilidade da seleção}
+\label{subsec:apend_frequencia}
+
+A seleção do Cox parte de 23, 19 e 23 candidatas, contra um teto final de 10, 28 e 39, e foi repetida em 50 reamostras de jogadores \citep{harrell2001}. A frequência de cada covariável final é: no QB, eficiência e fatia de passes, $100\%$; participação ofensiva, $98\%$; TD\% defasado, $68\%$; indicador de comp\% ausente, $40\%$. No RB, jogos perdidos e fatia de jardas, $100\%$; YPC defasado, $78\%$; profundidade, $64\%$; posição no \textit{draft}, $50\%$. No WR, fatia de alvos, $100\%$; idade, $76\%$; participação ofensiva, $72\%$; altura, jardas de corrida defasadas e jogos perdidos, $62\%$; alvos na \textit{red zone}, $18\%$. As nove associações da Seção~\ref{sec:sintese_inferencial} aparecem em pelo menos $62\%$ das reamostras. Os dois termos menos frequentes são os que perdem significância com a censura no início do intervalo (Apêndice~\ref{subsec:apend_censura_inicio}). A lista mediana tem 7, 6 e 8 covariáveis, e o teste global das candidatas contra o modelo nulo rejeita nas três posições ($p<0{,}001$).
+
+\subsection{Forma funcional e colinearidade}
+\label{subsec:apend_forma}
+
+Trocando cada termo contínuo do Cox final por uma \textit{spline} natural de três graus de liberdade, só as jardas de corrida do WR rejeitam a forma linear a 5\% ($p=0{,}042$), em 15 testes. O maior VIF das listas finais é $4{,}06$, na fatia de alvos do WR; no QB, a participação e a fatia têm $2{,}62$ e $2{,}80$, e é entre elas que o sinal da participação depende do modelo: sozinha, a participação tem HR de $0{,}63$, e, sem a fatia no modelo, de $1{,}00$.
+
+\subsection{Variância robusta por jogador}
+\label{subsec:apend_robvar}
+
+O mesmo jogador aparece em várias temporadas. No processo de contagem, com uma saída por jogador, o erro-padrão usual é válido sob o modelo correto, e o agrupado por jogador protege contra má especificação. Ele fica entre $0{,}88$ e $1{,}09$ vez o do ajuste comum. Só a posição no \textit{draft} do RB muda de lado, com $p$ de $0{,}039$ para $0{,}059$.
+
+\subsection{Temporada anterior no lugar da corrente}
+\label{subsec:apend_temp_ant}
+
+As covariáveis de $t$ são trocadas pelas de $t-1$ na amostra comum, formada pelas linhas que têm temporada anterior. A amostra comum tem $611$ linhas e $65$ saídas no QB, menos que a original, e parte da diferença vem daí. A eficiência e o TD\% do QB se mantêm (HR de $0{,}73$ e $0{,}57$). A participação e a fatia de passes, que medem a própria temporada da saída, perdem significância. Na amostra comum, os jogos perdidos do RB vão de HR $1{,}45$ para $1{,}23$ ($p=0{,}025$), e a fatia de jardas, de $0{,}52$ para $0{,}76$ ($p=0{,}019$): o sinal se mantém, mais fraco. No WR, a fatia de alvos vai de $0{,}30$ para $0{,}57$ ($p<0{,}001$), e os jogos perdidos, de $1{,}31$ para $1{,}21$ ($p=0{,}055$); as jardas defasadas perdem, e a altura ganha. Frente ao modelo principal, o \textit{draft} do RB perde significância ($p$ de $0{,}039$ para $0{,}154$), e a participação ofensiva do WR também ($p$ de $0{,}026$ para $0{,}637$). A leitura do QB sobre eficiência e TD\% se mantém com a temporada anterior.

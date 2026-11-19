@@ -1,0 +1,77 @@
+{
+  "listas_glm": {
+    "QB": {
+      "cox": [
+        "observed_career_lag_td_pct",
+        "offense_pct",
+        "passer_rating",
+        "team_pass_attempts_share",
+        "observed_career_lag_comp_pct_missing"
+      ],
+      "glm": [
+        "age",
+        "observed_career_lag_td_pct",
+        "offense_pct",
+        "passer_rating",
+        "team_pass_attempts_share",
+        "observed_career_lag_comp_pct_missing"
+      ],
+      "jaccard": 0.8333333333333334,
+      "janela_aalen_lista_cox": [
+        1,
+        17,
+        88
+      ]
+    },
+    "RB": {
+      "cox": [
+        "depth_team",
+        "draft_ovr",
+        "games_missed",
+        "observed_career_lag_ypc",
+        "team_rushing_yards_share"
+      ],
+      "glm": [
+        "depth_team",
+        "draft_ovr",
+        "games_missed",
+        "observed_career_lag_ypc",
+        "team_rushing_yards_share"
+      ],
+      "jaccard": 1.0,
+      "janela_aalen_lista_cox": [
+        1,
+        11,
+        240
+      ]
+    },
+    "WR": {
+      "cox": [
+        "age",
+        "games_missed",
+        "height",
+        "observed_career_lag_rushing_yards",
+        "observed_career_lag_targets_redzone",
+        "offense_pct",
+        "team_targets_share"
+      ],
+      "glm": [
+        "age",
+        "draft_ovr",
+        "games_missed",
+        "height",
+        "offense_pct",
+        "team_targets_share",
+        "unobs_career_years",
+        "within_window_gap_years_before_t"
+      ],
+      "jaccard": 0.5,
+      "janela_aalen_lista_cox": [
+        1,
+        12,
+        326
+      ]
+    }
+  },
+  "n_sementes": 20
+}

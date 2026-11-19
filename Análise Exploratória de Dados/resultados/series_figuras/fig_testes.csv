@@ -1,0 +1,7 @@
+posicao,figura,teste,estatistica,p_valor,n_grupos,n_observacoes
+QB,draft_QB,kruskal_longevidade_por_faixa_draft,20.835157,0.0040219415654794,8,182
+QB,games_missed_QB,mannwhitney_longevidade_por_jogos_perdidos,1081.5,0.16896278108676077,2,182
+RB,draft_RB,kruskal_longevidade_por_faixa_draft,40.420902,1.0455506216569851e-06,8,397
+RB,games_missed_RB,mannwhitney_longevidade_por_jogos_perdidos,8137.0,0.04771024004030122,2,397
+WR,draft_WR,kruskal_longevidade_por_faixa_draft,39.332463,1.6887811789014914e-06,8,573
+WR,games_missed_WR,mannwhitney_longevidade_por_jogos_perdidos,20931.0,0.0015638618455567378,2,573

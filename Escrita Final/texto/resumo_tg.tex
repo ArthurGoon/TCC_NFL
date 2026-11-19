@@ -1,0 +1,17 @@
+\clearpage{\thispagestyle{empty}\origcleardoublepage}
+\thispagestyle{empty}
+\begin{center}
+{\LARGE Resumo}
+\end{center}
+\medskip
+
+Este trabalho estuda quanto tempo dura a carreira de \textit{quarterbacks} (QB), \textit{running backs} (RB) e \textit{wide receivers} (WR) na \textit{National Football League}, nas temporadas de 2012 a 2024, e quais características de uma temporada acompanham a saída da liga. Os dados formam um painel anual por jogador e temporada, em que a saída é a última temporada do jogador na liga, com covariáveis de desempenho, uso, papel na equipe, disponibilidade e histórico de carreira defasado até a temporada anterior.
+
+Na inferência, o modelo de Cox com covariáveis dependentes do tempo estima o efeito médio de cada covariável, e os modelos aditivo de Aalen e híbrido de Cox--Aalen mostram como esse efeito se acumula ao longo da carreira. Na predição, o Cox penalizado, o \textit{Gradient Boosting Survival Analysis} (GBSA) e as \textit{Random Survival Forests} (RSF) são comparados ao Kaplan--Meier por validação \textit{walk-forward} de 2018 a 2021, com hiperparâmetros escolhidos apenas no treino, sobre um conjunto de 21 a 25 covariáveis por posição. A métrica principal é o índice de concordância de Harrell ($C$).
+
+A eficiência de passe é o sinal mais estável do QB, com razão de riscos de $0{,}65$ por desvio-padrão. Os jogos perdidos se associam a maior risco de saída no RB e no WR, e cada desvio-padrão, cerca de cinco jogos, soma em média cerca de 0,1 ao risco de cada ano no meio da carreira. A fatia de alvos da equipe tem a maior magnitude no WR, com razão de riscos de $0{,}27$ por desvio-padrão. Na predição, os modelos com covariáveis ordenam os jogadores bem acima do acaso, com $C$ entre $0{,}66$ e $0{,}71$, contra $0{,}56$ a $0{,}62$ de um Cox só com a experiência. No quintil de maior risco, 45\% dos QBs, 52\% dos RBs e 50\% dos WRs não voltam na temporada seguinte, contra nenhum QB, 1\% dos RBs e 2\% dos WRs no de menor risco.
+
+Para avaliar elencos, as ausências e o papel do jogador na equipe servem de sinais a acompanhar a cada temporada. Em anos, o erro absoluto médio fica entre $1{,}27$ e $1{,}40$, contra $1{,}41$ a $1{,}52$ do Kaplan--Meier, e 37\% a 53\% das previsões erram por até um ano, contra 35\% a 39\%. Como de 47\% a 63\% das previsões erram por mais de um ano, o modelo serve mais para ordenar jogadores que para fixar um prazo.
+
+\medskip
+\noindent\textbf{Palavras-chave}: análise de sobrevivência, covariáveis dependentes do tempo, modelo aditivo de Aalen, modelo de Cox, predição de sobrevivência, \textit{National Football League}.

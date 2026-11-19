@@ -1,0 +1,819 @@
+{
+  "ablacao": [
+    {
+      "posicao": "QB",
+      "modelo": "cox",
+      "spec": "pool",
+      "n_folds": 4,
+      "c_index": 0.7053369887889983,
+      "c_sd": 0.07271678378711889,
+      "ibs": 0.19718740715341326
+    },
+    {
+      "posicao": "QB",
+      "modelo": "cox",
+      "spec": "sem_years_exp",
+      "n_folds": 4,
+      "c_index": 0.6863336842845666,
+      "c_sd": 0.06728349643478711,
+      "ibs": 0.2007565558628731
+    },
+    {
+      "posicao": "QB",
+      "modelo": "cox",
+      "spec": "so_years_exp",
+      "n_folds": 4,
+      "c_index": 0.6203536080259181,
+      "c_sd": 0.03578010166404906,
+      "ibs": 0.21958530467932114
+    },
+    {
+      "posicao": "QB",
+      "modelo": "gbsa",
+      "spec": "pool",
+      "n_folds": 4,
+      "c_index": 0.6758307685556466,
+      "c_sd": 0.07941332821873022,
+      "ibs": 0.223770425618706
+    },
+    {
+      "posicao": "QB",
+      "modelo": "gbsa",
+      "spec": "sem_years_exp",
+      "n_folds": 4,
+      "c_index": 0.6629627422785236,
+      "c_sd": 0.07699983916091807,
+      "ibs": 0.22803280765662923
+    },
+    {
+      "posicao": "QB",
+      "modelo": "gbsa",
+      "spec": "so_years_exp",
+      "n_folds": 4,
+      "c_index": 0.5885357066401506,
+      "c_sd": 0.05251397740744446,
+      "ibs": 0.21683285364227917
+    },
+    {
+      "posicao": "QB",
+      "modelo": "km",
+      "spec": "pool",
+      "n_folds": 4,
+      "c_index": 0.5,
+      "c_sd": 0.0,
+      "ibs": 0.22107452676404882
+    },
+    {
+      "posicao": "QB",
+      "modelo": "rsf",
+      "spec": "pool",
+      "n_folds": 4,
+      "c_index": 0.7093209828735393,
+      "c_sd": 0.06302981996677084,
+      "ibs": 0.19371689815933468
+    },
+    {
+      "posicao": "QB",
+      "modelo": "rsf",
+      "spec": "sem_years_exp",
+      "n_folds": 4,
+      "c_index": 0.6949673688056791,
+      "c_sd": 0.060548785726847305,
+      "ibs": 0.19779729221394685
+    },
+    {
+      "posicao": "QB",
+      "modelo": "rsf",
+      "spec": "so_years_exp",
+      "n_folds": 4,
+      "c_index": 0.5754833537543694,
+      "c_sd": 0.096342037310809,
+      "ibs": 0.21240870435883566
+    },
+    {
+      "posicao": "RB",
+      "modelo": "cox",
+      "spec": "pool",
+      "n_folds": 4,
+      "c_index": 0.7040501275030606,
+      "c_sd": 0.026509093263461844,
+      "ibs": 0.22306903433536146
+    },
+    {
+      "posicao": "RB",
+      "modelo": "cox",
+      "spec": "sem_years_exp",
+      "n_folds": 4,
+      "c_index": 0.698043237916984,
+      "c_sd": 0.02698562055516955,
+      "ibs": 0.22596616110094514
+    },
+    {
+      "posicao": "RB",
+      "modelo": "cox",
+      "spec": "so_years_exp",
+      "n_folds": 4,
+      "c_index": 0.6034637054215427,
+      "c_sd": 0.027606563573431893,
+      "ibs": 0.23969235801894245
+    },
+    {
+      "posicao": "RB",
+      "modelo": "gbsa",
+      "spec": "pool",
+      "n_folds": 4,
+      "c_index": 0.6647556037747289,
+      "c_sd": 0.028941130633106715,
+      "ibs": 0.2376708933538727
+    },
+    {
+      "posicao": "RB",
+      "modelo": "gbsa",
+      "spec": "sem_years_exp",
+      "n_folds": 4,
+      "c_index": 0.653575806508272,
+      "c_sd": 0.01634094585110778,
+      "ibs": 0.23905260594215585
+    },
+    {
+      "posicao": "RB",
+      "modelo": "gbsa",
+      "spec": "so_years_exp",
+      "n_folds": 4,
+      "c_index": 0.5936559011814142,
+      "c_sd": 0.0353056323465832,
+      "ibs": 0.23885418309473633
+    },
+    {
+      "posicao": "RB",
+      "modelo": "km",
+      "spec": "pool",
+      "n_folds": 4,
+      "c_index": 0.5,
+      "c_sd": 0.0,
+      "ibs": 0.2407054494143462
+    },
+    {
+      "posicao": "RB",
+      "modelo": "rsf",
+      "spec": "pool",
+      "n_folds": 4,
+      "c_index": 0.6613451768446466,
+      "c_sd": 0.02666453884857153,
+      "ibs": 0.21884841371038016
+    },
+    {
+      "posicao": "RB",
+      "modelo": "rsf",
+      "spec": "sem_years_exp",
+      "n_folds": 4,
+      "c_index": 0.6523153301285727,
+      "c_sd": 0.024129166567482083,
+      "ibs": 0.22214461008416697
+    },
+    {
+      "posicao": "RB",
+      "modelo": "rsf",
+      "spec": "so_years_exp",
+      "n_folds": 4,
+      "c_index": 0.5739343260865569,
+      "c_sd": 0.03299060962795122,
+      "ibs": 0.22819803888596196
+    },
+    {
+      "posicao": "WR",
+      "modelo": "cox",
+      "spec": "pool",
+      "n_folds": 4,
+      "c_index": 0.7036686074018171,
+      "c_sd": 0.019278272194113506,
+      "ibs": 0.2192769928919117
+    },
+    {
+      "posicao": "WR",
+      "modelo": "cox",
+      "spec": "sem_years_exp",
+      "n_folds": 4,
+      "c_index": 0.6790928501510921,
+      "c_sd": 0.016517083152316016,
+      "ibs": 0.22596101378900318
+    },
+    {
+      "posicao": "WR",
+      "modelo": "cox",
+      "spec": "so_years_exp",
+      "n_folds": 4,
+      "c_index": 0.5630522812847498,
+      "c_sd": 0.024893708691408122,
+      "ibs": 0.24273570660939697
+    },
+    {
+      "posicao": "WR",
+      "modelo": "gbsa",
+      "spec": "pool",
+      "n_folds": 4,
+      "c_index": 0.6868487908341705,
+      "c_sd": 0.017998253355516716,
+      "ibs": 0.2266382091134666
+    },
+    {
+      "posicao": "WR",
+      "modelo": "gbsa",
+      "spec": "sem_years_exp",
+      "n_folds": 4,
+      "c_index": 0.6732304836665653,
+      "c_sd": 0.006551378622442037,
+      "ibs": 0.22970604291374608
+    },
+    {
+      "posicao": "WR",
+      "modelo": "gbsa",
+      "spec": "so_years_exp",
+      "n_folds": 4,
+      "c_index": 0.5605793187319399,
+      "c_sd": 0.024700679110655904,
+      "ibs": 0.24118207633182484
+    },
+    {
+      "posicao": "WR",
+      "modelo": "km",
+      "spec": "pool",
+      "n_folds": 4,
+      "c_index": 0.5,
+      "c_sd": 0.0,
+      "ibs": 0.24365863680830618
+    },
+    {
+      "posicao": "WR",
+      "modelo": "rsf",
+      "spec": "pool",
+      "n_folds": 4,
+      "c_index": 0.6933904479265647,
+      "c_sd": 0.023081846643231898,
+      "ibs": 0.2108677981950422
+    },
+    {
+      "posicao": "WR",
+      "modelo": "rsf",
+      "spec": "sem_years_exp",
+      "n_folds": 4,
+      "c_index": 0.6752222280465169,
+      "c_sd": 0.016525378878798798,
+      "ibs": 0.2181504937559013
+    },
+    {
+      "posicao": "WR",
+      "modelo": "rsf",
+      "spec": "so_years_exp",
+      "n_folds": 4,
+      "c_index": 0.5591569867165762,
+      "c_sd": 0.023141599184965885,
+      "ibs": 0.23921158227707334
+    }
+  ],
+  "folga": [
+    {
+      "posicao": "QB",
+      "par": "gbsa-cox",
+      "delta_medio": -0.029506220233351782,
+      "delta_sd": 0.03979604878896509,
+      "se": 0.019898024394482544,
+      "folds_gbsa_ganha": 1,
+      "n_folds": 4
+    },
+    {
+      "posicao": "QB",
+      "par": "gbsa-rsf",
+      "delta_medio": -0.0334902143178927,
+      "delta_sd": 0.024871614328958225,
+      "se": 0.012435807164479113,
+      "folds_gbsa_ganha": 1,
+      "n_folds": 4
+    },
+    {
+      "posicao": "QB",
+      "par": "rsf-cox",
+      "delta_medio": 0.0039839940845409205,
+      "delta_sd": 0.01992346666005164,
+      "se": 0.00996173333002582,
+      "folds_gbsa_ganha": 3,
+      "n_folds": 4
+    },
+    {
+      "posicao": "RB",
+      "par": "gbsa-cox",
+      "delta_medio": -0.03929452372833178,
+      "delta_sd": 0.02204985866873007,
+      "se": 0.011024929334365035,
+      "folds_gbsa_ganha": 0,
+      "n_folds": 4
+    },
+    {
+      "posicao": "RB",
+      "par": "gbsa-rsf",
+      "delta_medio": 0.0034104269300823387,
+      "delta_sd": 0.016927657508707502,
+      "se": 0.008463828754353751,
+      "folds_gbsa_ganha": 3,
+      "n_folds": 4
+    },
+    {
+      "posicao": "RB",
+      "par": "rsf-cox",
+      "delta_medio": -0.04270495065841412,
+      "delta_sd": 0.03475363498601299,
+      "se": 0.017376817493006496,
+      "folds_gbsa_ganha": 0,
+      "n_folds": 4
+    },
+    {
+      "posicao": "WR",
+      "par": "gbsa-cox",
+      "delta_medio": -0.01681981656764664,
+      "delta_sd": 0.012157104694027423,
+      "se": 0.006078552347013711,
+      "folds_gbsa_ganha": 0,
+      "n_folds": 4
+    },
+    {
+      "posicao": "WR",
+      "par": "gbsa-rsf",
+      "delta_medio": -0.006541657092394126,
+      "delta_sd": 0.007763517552337721,
+      "se": 0.0038817587761688604,
+      "folds_gbsa_ganha": 1,
+      "n_folds": 4
+    },
+    {
+      "posicao": "WR",
+      "par": "rsf-cox",
+      "delta_medio": -0.010278159475252513,
+      "delta_sd": 0.01939949688471318,
+      "se": 0.00969974844235659,
+      "folds_gbsa_ganha": 1,
+      "n_folds": 4
+    }
+  ],
+  "elasticnet_vs_cox": [
+    {
+      "posicao": "QB",
+      "modelo": "elasticnet",
+      "x_fonte": "Predição/shared/covs_preditivas_QB.json",
+      "n_covs": 25,
+      "n_folds": 4,
+      "c_index_medio": 0.706193129508329,
+      "c_index_sd": 0.07370246663918796,
+      "ibs_medio": 0.20547247319530265,
+      "delta_vs_cox_oficial": 0.0008561407193307113,
+      "veredito": "empata"
+    },
+    {
+      "posicao": "QB",
+      "modelo": "cox_oficial",
+      "x_fonte": "Predição/shared/covs_preditivas_QB.json",
+      "n_covs": 25,
+      "n_folds": 4,
+      "c_index_medio": 0.7053369887889983,
+      "c_index_sd": 0.0727167837871188,
+      "ibs_medio": 0.1971874071534132,
+      "delta_vs_cox_oficial": 0.0,
+      "veredito": "empata"
+    },
+    {
+      "posicao": "RB",
+      "modelo": "elasticnet",
+      "x_fonte": "Predição/shared/covs_preditivas_RB.json",
+      "n_covs": 21,
+      "n_folds": 4,
+      "c_index_medio": 0.7106124416880051,
+      "c_index_sd": 0.020318379828494295,
+      "ibs_medio": 0.22283954308047882,
+      "delta_vs_cox_oficial": 0.006562314184944462,
+      "veredito": "melhora"
+    },
+    {
+      "posicao": "RB",
+      "modelo": "cox_oficial",
+      "x_fonte": "Predição/shared/covs_preditivas_RB.json",
+      "n_covs": 21,
+      "n_folds": 4,
+      "c_index_medio": 0.7040501275030606,
+      "c_index_sd": 0.0265090932634618,
+      "ibs_medio": 0.2230690343353614,
+      "delta_vs_cox_oficial": 0.0,
+      "veredito": "empata"
+    },
+    {
+      "posicao": "WR",
+      "modelo": "elasticnet",
+      "x_fonte": "Predição/shared/covs_preditivas_WR.json",
+      "n_covs": 25,
+      "n_folds": 4,
+      "c_index_medio": 0.711403984284543,
+      "c_index_sd": 0.01886733973399319,
+      "ibs_medio": 0.2137468876484076,
+      "delta_vs_cox_oficial": 0.007735376882725742,
+      "veredito": "melhora"
+    },
+    {
+      "posicao": "WR",
+      "modelo": "cox_oficial",
+      "x_fonte": "Predição/shared/covs_preditivas_WR.json",
+      "n_covs": 25,
+      "n_folds": 4,
+      "c_index_medio": 0.7036686074018172,
+      "c_index_sd": 0.0192782721941135,
+      "ibs_medio": 0.2192769928919117,
+      "delta_vs_cox_oficial": 0.0,
+      "veredito": "empata"
+    }
+  ],
+  "elasticnet_folds": [
+    {
+      "posicao": "QB",
+      "modelo": "elasticnet",
+      "teste_em_temporada": 2018,
+      "n_train": 352,
+      "n_test": 68,
+      "n_covs": 25,
+      "alpha": 1.0,
+      "c_index": 0.6294617563739376,
+      "ibs": 0.23010587826493836
+    },
+    {
+      "posicao": "QB",
+      "modelo": "elasticnet",
+      "teste_em_temporada": 2019,
+      "n_train": 420,
+      "n_test": 64,
+      "n_covs": 25,
+      "alpha": 1.7782794100389228,
+      "c_index": 0.7407147862648914,
+      "ibs": 0.2093568701397001
+    },
+    {
+      "posicao": "QB",
+      "modelo": "elasticnet",
+      "teste_em_temporada": 2020,
+      "n_train": 484,
+      "n_test": 73,
+      "n_covs": 25,
+      "alpha": 0.31622776601683794,
+      "c_index": 0.662777129521587,
+      "ibs": 0.1985989351711456
+    },
+    {
+      "posicao": "QB",
+      "modelo": "elasticnet",
+      "teste_em_temporada": 2021,
+      "n_train": 557,
+      "n_test": 70,
+      "n_covs": 25,
+      "alpha": 0.5623413251903491,
+      "c_index": 0.7918188458729,
+      "ibs": 0.18382820920542647
+    },
+    {
+      "posicao": "RB",
+      "modelo": "elasticnet",
+      "teste_em_temporada": 2018,
+      "n_train": 589,
+      "n_test": 121,
+      "n_covs": 21,
+      "alpha": 0.5623413251903491,
+      "c_index": 0.6823853508345487,
+      "ibs": 0.20135648563183434
+    },
+    {
+      "posicao": "RB",
+      "modelo": "elasticnet",
+      "teste_em_temporada": 2019,
+      "n_train": 710,
+      "n_test": 123,
+      "n_covs": 21,
+      "alpha": 0.31622776601683794,
+      "c_index": 0.7166720205589463,
+      "ibs": 0.2112310425882357
+    },
+    {
+      "posicao": "RB",
+      "modelo": "elasticnet",
+      "teste_em_temporada": 2020,
+      "n_train": 833,
+      "n_test": 134,
+      "n_covs": 21,
+      "alpha": 0.31622776601683794,
+      "c_index": 0.7306215332100697,
+      "ibs": 0.21997326996896902
+    },
+    {
+      "posicao": "RB",
+      "modelo": "elasticnet",
+      "teste_em_temporada": 2021,
+      "n_train": 967,
+      "n_test": 133,
+      "n_covs": 21,
+      "alpha": 0.31622776601683794,
+      "c_index": 0.7127708621484555,
+      "ibs": 0.25879737413287623
+    },
+    {
+      "posicao": "WR",
+      "modelo": "elasticnet",
+      "teste_em_temporada": 2018,
+      "n_train": 825,
+      "n_test": 182,
+      "n_covs": 25,
+      "alpha": 0.1778279410038923,
+      "c_index": 0.7321505841627002,
+      "ibs": 0.20459462446705634
+    },
+    {
+      "posicao": "WR",
+      "modelo": "elasticnet",
+      "teste_em_temporada": 2019,
+      "n_train": 1007,
+      "n_test": 193,
+      "n_covs": 25,
+      "alpha": 0.1778279410038923,
+      "c_index": 0.6866666666666666,
+      "ibs": 0.21496061056130134
+    },
+    {
+      "posicao": "WR",
+      "modelo": "elasticnet",
+      "teste_em_temporada": 2020,
+      "n_train": 1200,
+      "n_test": 204,
+      "n_covs": 25,
+      "alpha": 0.1778279410038923,
+      "c_index": 0.7104319939634032,
+      "ibs": 0.208447883652347
+    },
+    {
+      "posicao": "WR",
+      "modelo": "elasticnet",
+      "teste_em_temporada": 2021,
+      "n_train": 1404,
+      "n_test": 202,
+      "n_covs": 25,
+      "alpha": 0.05623413251903491,
+      "c_index": 0.7163666923454023,
+      "ibs": 0.22698443191292572
+    }
+  ],
+  "face": [
+    {
+      "posicao": "QB",
+      "player_name": "Josh Allen",
+      "years_exp": 6.0,
+      "passer_rating": 102.63,
+      "team_pass_attempts_share": 0.8533,
+      "depth_team": 1.0,
+      "offense_pct": 0.9471106758080312,
+      "residual_duration": 0.0,
+      "games_missed": NaN,
+      "team_rushing_yards_share": NaN,
+      "draft_ovr": NaN,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Sam Darnold",
+      "years_exp": 6.0,
+      "passer_rating": 104.8,
+      "team_pass_attempts_share": 0.9944,
+      "depth_team": 1.0,
+      "offense_pct": 0.9937332139659804,
+      "residual_duration": 0.0,
+      "games_missed": NaN,
+      "team_rushing_yards_share": NaN,
+      "draft_ovr": NaN,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "QB",
+      "player_name": "C.J. Stroud",
+      "years_exp": 1.0,
+      "passer_rating": 89.0,
+      "team_pass_attempts_share": 0.8874,
+      "depth_team": 1.0,
+      "offense_pct": 0.934115523465704,
+      "residual_duration": 0.0,
+      "games_missed": NaN,
+      "team_rushing_yards_share": NaN,
+      "draft_ovr": NaN,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Patrick Mahomes",
+      "years_exp": 7.0,
+      "passer_rating": 95.27,
+      "team_pass_attempts_share": 0.8507,
+      "depth_team": 1.0,
+      "offense_pct": 0.992818671454219,
+      "residual_duration": 0.0,
+      "games_missed": NaN,
+      "team_rushing_yards_share": NaN,
+      "draft_ovr": NaN,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Trey Lance",
+      "years_exp": 3.0,
+      "passer_rating": 81.25,
+      "team_pass_attempts_share": 0.0566,
+      "depth_team": 2.0,
+      "offense_pct": 0.5869565217391305,
+      "residual_duration": 0.0,
+      "games_missed": NaN,
+      "team_rushing_yards_share": NaN,
+      "draft_ovr": NaN,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Lamar Jackson",
+      "years_exp": 6.0,
+      "passer_rating": 120.63,
+      "team_pass_attempts_share": 0.9457,
+      "depth_team": 1.0,
+      "offense_pct": 0.9675675675675676,
+      "residual_duration": 0.0,
+      "games_missed": NaN,
+      "team_rushing_yards_share": NaN,
+      "draft_ovr": NaN,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "QB",
+      "player_name": "(mediana 2024)",
+      "years_exp": 4.0,
+      "passer_rating": 88.72,
+      "team_pass_attempts_share": 0.38755,
+      "depth_team": 2.0,
+      "offense_pct": 0.8483989767564946,
+      "residual_duration": NaN,
+      "games_missed": NaN,
+      "team_rushing_yards_share": NaN,
+      "draft_ovr": NaN,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "RB",
+      "player_name": "Christian McCaffrey",
+      "years_exp": 7.0,
+      "passer_rating": NaN,
+      "team_pass_attempts_share": NaN,
+      "depth_team": NaN,
+      "offense_pct": 0.25,
+      "residual_duration": 0.0,
+      "games_missed": 16.0,
+      "team_rushing_yards_share": 0.0303,
+      "draft_ovr": 8.0,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "RB",
+      "player_name": "Derrick Henry",
+      "years_exp": 8.0,
+      "passer_rating": NaN,
+      "team_pass_attempts_share": NaN,
+      "depth_team": NaN,
+      "offense_pct": 0.5710431654676259,
+      "residual_duration": 0.0,
+      "games_missed": 0.0,
+      "team_rushing_yards_share": 0.5717,
+      "draft_ovr": 45.0,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "RB",
+      "player_name": "Jahmyr Gibbs",
+      "years_exp": 1.0,
+      "passer_rating": NaN,
+      "team_pass_attempts_share": NaN,
+      "depth_team": NaN,
+      "offense_pct": 0.5580786026200873,
+      "residual_duration": 0.0,
+      "games_missed": 0.0,
+      "team_rushing_yards_share": 0.5357,
+      "draft_ovr": 12.0,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "RB",
+      "player_name": "Ezekiel Elliott",
+      "years_exp": 8.0,
+      "passer_rating": NaN,
+      "team_pass_attempts_share": NaN,
+      "depth_team": NaN,
+      "offense_pct": 0.2555831265508685,
+      "residual_duration": 0.0,
+      "games_missed": 5.0,
+      "team_rushing_yards_share": 0.1227,
+      "draft_ovr": 4.0,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "RB",
+      "player_name": "Bijan Robinson",
+      "years_exp": 1.0,
+      "passer_rating": NaN,
+      "team_pass_attempts_share": NaN,
+      "depth_team": NaN,
+      "offense_pct": 0.7526223776223776,
+      "residual_duration": 0.0,
+      "games_missed": 0.0,
+      "team_rushing_yards_share": 0.6606,
+      "draft_ovr": 8.0,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "RB",
+      "player_name": "(mediana 2024)",
+      "years_exp": 2.0,
+      "passer_rating": NaN,
+      "team_pass_attempts_share": NaN,
+      "depth_team": NaN,
+      "offense_pct": 0.289738430583501,
+      "residual_duration": NaN,
+      "games_missed": 4.0,
+      "team_rushing_yards_share": 0.1514,
+      "draft_ovr": 86.0,
+      "team_targets_share": NaN
+    },
+    {
+      "posicao": "WR",
+      "player_name": "Justin Jefferson",
+      "years_exp": 4.0,
+      "passer_rating": NaN,
+      "team_pass_attempts_share": NaN,
+      "depth_team": NaN,
+      "offense_pct": 0.9337511190689346,
+      "residual_duration": 0.0,
+      "games_missed": 0.0,
+      "team_rushing_yards_share": NaN,
+      "draft_ovr": 22.0,
+      "team_targets_share": 0.2974
+    },
+    {
+      "posicao": "WR",
+      "player_name": "Ja'Marr Chase",
+      "years_exp": 3.0,
+      "passer_rating": NaN,
+      "team_pass_attempts_share": NaN,
+      "depth_team": NaN,
+      "offense_pct": 0.9270008795074758,
+      "residual_duration": 0.0,
+      "games_missed": 0.0,
+      "team_rushing_yards_share": NaN,
+      "draft_ovr": 5.0,
+      "team_targets_share": 0.2847
+    },
+    {
+      "posicao": "WR",
+      "player_name": "Zay Flowers",
+      "years_exp": 1.0,
+      "passer_rating": NaN,
+      "team_pass_attempts_share": NaN,
+      "depth_team": NaN,
+      "offense_pct": 0.7495495495495496,
+      "residual_duration": 0.0,
+      "games_missed": 0.0,
+      "team_rushing_yards_share": NaN,
+      "draft_ovr": 22.0,
+      "team_targets_share": 0.2473
+    },
+    {
+      "posicao": "WR",
+      "player_name": "Adam Thielen",
+      "years_exp": 11.0,
+      "passer_rating": NaN,
+      "team_pass_attempts_share": NaN,
+      "depth_team": NaN,
+      "offense_pct": 0.6022099447513812,
+      "residual_duration": 0.0,
+      "games_missed": 14.0,
+      "team_rushing_yards_share": NaN,
+      "draft_ovr": 0.0,
+      "team_targets_share": 0.0286
+    },
+    {
+      "posicao": "WR",
+      "player_name": "(mediana 2024)",
+      "years_exp": 3.0,
+      "passer_rating": NaN,
+      "team_pass_attempts_share": NaN,
+      "depth_team": NaN,
+      "offense_pct": 0.5994004269211451,
+      "residual_duration": NaN,
+      "games_missed": 5.0,
+      "team_rushing_yards_share": NaN,
+      "draft_ovr": 56.0,
+      "team_targets_share": 0.0847
+    }
+  ]
+}

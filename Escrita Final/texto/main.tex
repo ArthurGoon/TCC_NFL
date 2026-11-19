@@ -1,0 +1,551 @@
+%%% ---  TEMPLATE PARA ELABORAÇÃO DO TRABALHO DE CONCLUSÃO DE CURSO
+% DO CURSO DE ESTATÍSTICA DA UFSCar
+
+\documentclass[12pt,twoside]{book} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[brazil]{babel}\pdfmapfile{+pdftex.map}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{mathrsfs}
+\usepackage{graphicx}      			% Inclusão de gráficos
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit}
+\graphicspath{{figuras/}{../figuras/}}
+\usepackage{flafter}
+\usepackage{float}                  % Controle rígido de floats
+\usepackage{microtype}
+\usepackage{longtable}
+\usepackage{geometry, calc, setspace}
+\usepackage[table]{xcolor}
+\usepackage{indentfirst}
+\usepackage[round]{natbib}
+\usepackage{booktabs}
+\usepackage[hyphens]{url}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+% Tabelas: fonte, espaçamento e largura padronizados
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\thesistablesetup}{%
+  \small
+  \setlength{\tabcolsep}{6pt}%
+  \renewcommand{\arraystretch}{1.12}%
+}
+% Rótulos legíveis de covariáveis (glossário, Tabela~\ref{tab:variaveis})
+\newcommand{\vGamesMissed}{Jogos perdidos}
+\newcommand{\vDepthTeam}{Profundidade no elenco}
+\newcommand{\vOffensePct}{Participação ofensiva}
+\newcommand{\vPasserRating}{Eficiência de passe}
+\newcommand{\vTeamPassShare}{Fatia de passes}
+\newcommand{\vTeamTargetsShare}{Fatia de alvos}
+\newcommand{\vTeamRushShare}{Fatia de jardas terrestres}
+\newcommand{\vPreVeteran}{Veterano pré-janela}
+\newcommand{\vUndrafted}{Não draftado}
+\newcommand{\vDraftOvr}{Posição no \textit{draft}}
+\newcommand{\vGapYears}{Hiato acumulado}
+\newcommand{\vUnobsHist}{Histórico pré-janela não observado}
+\newcommand{\vLagTdPct}{Hist. defasado TD\%}
+\newcommand{\vLagYpc}{Hist. defasado YPC}
+\newcommand{\vLagFumble}{Hist. defasado fumbles perdidos}
+\newcommand{\vLagRushYds}{Hist. defasado jardas de corrida}
+\newcommand{\vHeight}{Altura}
+\newcommand{\vLagCatchRate}{Hist. defasado taxa de recepção}
+\newcommand{\vPreExp}{Experiência pré-janela}
+\newcommand{\vLagCompMiss}{Hist. defasado comp\% (ausente)}
+\newcommand{\vLagRedzone}{Hist. defasado alvos na \textit{red zone}}
+\newcommand{\vAge}{Idade}
+\usepackage{needspace}
+\usepackage[section,above]{placeins}
+\usepackage{caption}
+\usepackage{hyperref} \hypersetup{colorlinks, citecolor=blue, filecolor=red, linkcolor=blue, urlcolor=blue}
+
+% Reduz espaçamento entre figuras/tabelas e texto
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{2pt}
+
+% Permite que o LaTeX preencha mais da página com figuras
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.92}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.85}
+
+% Reduz overfull hbox em parágrafos justificados
+\emergencystretch=1em
+
+\def\us{\char`\_}       % inserir underline no texto.  
+
+% Figuras calibradas: largura = \textwidth, sem height cap
+\newcommand{\thesisfig}[1]{\includegraphics[width=\textwidth,height=0.60\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigwide}[1]{\includegraphics[width=\textwidth,height=0.22\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigforestfull}[1]{\includegraphics[width=\textwidth,height=0.28\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigforestcompact}[1]{\includegraphics[width=\textwidth,height=0.19\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigfit}[1]{\includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigkm}[1]{\includegraphics[width=\textwidth,height=0.28\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigfitfill}[1]{\includegraphics[width=\textwidth,height=0.40\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigfitpair}[1]{\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigdraft}[1]{\thesisfigwide{#1}}
+\newcommand{\thesisfigdrafttrio}[1]{\includegraphics[width=\textwidth,height=0.28\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigdraftfill}[1]{\includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigdraftpair}[1]{\includegraphics[width=\textwidth,height=0.41\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigcompact}[1]{\includegraphics[width=\textwidth,height=0.30\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigcompacttrio}[1]{\includegraphics[width=\textwidth,height=0.29\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigaalenpar}[1]{\includegraphics[width=\textwidth,height=0.22\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigsolo}[1]{\includegraphics[width=\textwidth,height=0.60\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigtall}[1]{\includegraphics[width=\textwidth,height=0.60\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigaalen}[1]{\includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigaalenq}[1]{\includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigaalenpack}[1]{\includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigaalenwr}[1]{\includegraphics[width=\textwidth,height=0.65\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigaalenpage}[1]{\includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{#1}}
+\newcommand{\paneltag}[1]{%
+  \par\vspace{0.15em}%
+  \noindent\textbf{(#1)}%
+  \par\vspace{0.08em}%
+}
+\newcommand{\paneltagpad}[1]{%
+  \par\vspace{0.25em}%
+  \noindent\textbf{(#1)}%
+  \par\vspace{0.85em}%
+}
+\newcommand{\thesisfigpanel}[3]{%
+  \paneltag{#1}%
+  #2{#3}%
+}
+\newcommand{\thesisfigcareerlag}{%
+  \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{figuras/career_lag_evo_QB.pdf}%
+}
+\newcommand{\thesisfigcareerlagtop}{%
+  \includegraphics[width=\textwidth,height=0.48\textheight,clip,trim=0 295.4pt 0 0,keepaspectratio]{figuras/career_lag_evo_QB.pdf}%
+}
+\newcommand{\thesisfigcareerlagbot}{%
+  \includegraphics[width=\textwidth,height=0.36\textheight,clip,trim=0 0 0 295.4pt,keepaspectratio]{figuras/career_lag_evo_QB.pdf}%
+}
+% Schoenfeld / forest: caixa fixa para pares com alturas nativas distintas
+\newcommand{\thesisfigschoen}[1]{\includegraphics[width=\textwidth,height=0.34\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigschoenqb}[1]{\includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigschoenpanel}[1]{\includegraphics[width=\textwidth,height=0.39\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisschoenpair}[4]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfigschoen{#1}
+  \captionof{figure}{#2}
+  \vspace{0.25em}
+  \thesisfigschoen{#3}
+  \captionof{figure}{#4}
+  \end{figure}%
+}
+\newcommand{\thesisfigcomp}[1]{\includegraphics[width=\textwidth,height=0.62\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisfigforest}[1]{\includegraphics[width=\textwidth,height=0.20\textheight,keepaspectratio]{#1}}
+\newcommand{\thesisforestpair}[5]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfigforest{#1}
+  \captionof{figure}{#2}
+  \vspace{0.1em}
+  \thesisfigforest{#3}
+  \captionof{figure}{#4}
+  \label{#5}
+  \end{figure}%
+}
+% Mantém parágrafo + figura QB juntos (evita figura órfã na página seguinte)
+\newcommand{\thesiskeep}[1]{\par\needspace{#1}}
+\newcommand{\thesiskeepfig}[1]{\thesiskeep{#1}}
+% Trio comparativo: 1ª figura sob o parágrafo; par RB+WR na página seguinte
+\newcommand{\thesisone}[2]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfig{#1}
+  \caption{#2}
+  \end{figure}%
+}
+\newcommand{\thesisonekm}[2]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfig{#1}
+  \caption{#2}
+  \end{figure}%
+}
+\newcommand{\thesisonefit}[2]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfigsolo{#1}
+  \caption{#2}
+  \end{figure}%
+}
+\newcommand{\thesispair}[4]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfig{#1}
+  \captionof{figure}{#2}
+  \vspace{0.35em}
+  \thesisfig{#3}
+  \captionof{figure}{#4}
+  \end{figure}%
+}
+\newcommand{\thesispairfit}[4]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfigfit{#1}
+  \captionof{figure}{#2}
+  \vspace{0.3em}
+  \thesisfigfit{#3}
+  \captionof{figure}{#4}
+  \end{figure}%
+}
+% Figura fit inline (flui após parágrafo, sem float único — evita página vazia)
+\newcommand{\thesisonefitinline}[2]{%
+  \thesisonefit{#1}{#2}%
+}
+\newcommand{\thesispairfitinline}[4]{%
+  \thesispairfit{#1}{#2}{#3}{#4}%
+}
+\newcommand{\thesispairdraftinline}[4]{%
+  \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.34\textheight,keepaspectratio]{#1}
+  \captionof{figure}{#2}
+  \medskip
+  \includegraphics[width=\textwidth,height=0.34\textheight,keepaspectratio]{#3}
+  \captionof{figure}{#4}
+  \end{figure}%
+}
+% Par compacto inline (2 figuras na mesma página do parágrafo, ex.: dist_carreira)
+\newcommand{\thesispaircompact}[4]{%
+  \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{#1}
+  \captionof{figure}{#2}
+  \medskip
+  \includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{#3}
+  \captionof{figure}{#4}
+  \end{figure}%
+}
+\newcommand{\thesispairlabeled}[5]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfig{#1}
+  \captionof{figure}{#2}
+  \vspace{0.35em}
+  \thesisfig{#3}
+  \captionof{figure}{#4}
+  \label{#5}
+  \end{figure}%
+}
+\newcommand{\thesispairfitlabeled}[5]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfigfit{#1}
+  \captionof{figure}{#2}
+  \vspace{0.3em}
+  \thesisfigfit{#3}
+  \captionof{figure}{#4}
+  \label{#5}
+  \end{figure}%
+}
+\newcommand{\thesisstack}[3]{%
+  \thesisfig{#1}\\[0.35em]
+  \thesisfig{#2}\\[0.35em]
+  \thesisfig{#3}%
+}
+\newcommand{\figtriocite}[3]{Figuras~\ref{#1}, \ref{#2} e~\ref{#3}}
+\newcommand{\figtrio}[1]{Figura~\ref{#1}}
+\newcommand{\thesispaircompactlabeled}[6]{%
+  \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{#1}
+  \captionof{figure}{#2}\label{#3}
+  \medskip
+  \includegraphics[width=\textwidth,height=0.3\textheight,keepaspectratio]{#4}
+  \captionof{figure}{#5}\label{#6}
+  \end{figure}%
+}
+\newcommand{\thesispairdraftlabeled}[6]{%
+  \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.34\textheight,keepaspectratio]{#1}
+  \captionof{figure}{#2}\label{#3}
+  \medskip
+  \includegraphics[width=\textwidth,height=0.34\textheight,keepaspectratio]{#4}
+  \captionof{figure}{#5}\label{#6}
+  \end{figure}%
+}
+\newcommand{\thesistriodraftlabeled}[9]{%
+  \begin{figure}[p]
+  \centering
+  \includegraphics[width=\textwidth,height=0.25\textheight,keepaspectratio]{#1}
+  \captionof{figure}{#2}\label{#3}
+  \medskip
+  \includegraphics[width=\textwidth,height=0.25\textheight,keepaspectratio]{#4}
+  \captionof{figure}{#5}\label{#6}
+  \medskip
+  \includegraphics[width=\textwidth,height=0.25\textheight,keepaspectratio]{#7}
+  \captionof{figure}{#8}\label{#9}
+  \end{figure}%
+}
+\newcommand{\thesisonedraftinlinelabeled}[3]{%
+  \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{#1}
+  \caption{#2}\label{#3}
+  \end{figure}%
+}
+\newcommand{\thesispairdraftpagelabeled}[6]{%
+  \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.34\textheight,keepaspectratio]{#1}
+  \captionof{figure}{#2}\label{#3}
+  \medskip
+  \includegraphics[width=\textwidth,height=0.34\textheight,keepaspectratio]{#4}
+  \captionof{figure}{#5}\label{#6}
+  \end{figure}%
+}
+\newcommand{\thesisonefitinlinelabeled}[3]{%
+  \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{#1}
+  \caption{#2}\label{#3}
+  \end{figure}%
+}
+\newcommand{\thesispairfitpagelabeled}[6]{%
+  \begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{#1}
+  \captionof{figure}{#2}\label{#3}
+  \medskip
+  \includegraphics[width=\textwidth,height=0.35\textheight,keepaspectratio]{#4}
+  \captionof{figure}{#5}\label{#6}
+  \end{figure}%
+}
+\newcommand{\thesistriocompactlabeled}[9]{%
+  \begin{figure}[p]
+  \centering
+  \includegraphics[width=\textwidth,height=0.25\textheight,keepaspectratio]{#1}
+  \captionof{figure}{#2}\label{#3}
+  \medskip
+  \includegraphics[width=\textwidth,height=0.25\textheight,keepaspectratio]{#4}
+  \captionof{figure}{#5}\label{#6}
+  \medskip
+  \includegraphics[width=\textwidth,height=0.25\textheight,keepaspectratio]{#7}
+  \captionof{figure}{#8}\label{#9}
+  \end{figure}%
+}
+\newcommand{\thesispairfitlabeledtwo}[6]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfigfit{#1}
+  \captionof{figure}{#2}
+  \label{#3}
+  \vspace{0.3em}
+  \thesisfigfit{#4}
+  \captionof{figure}{#5}
+  \label{#6}
+  \end{figure}%
+}
+\newcommand{\thesisonecompactlabeled}[3]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfigcompact{#1}
+  \caption{#2}
+  \label{#3}
+  \end{figure}%
+}
+\newcommand{\thesisonedraftlabeled}[3]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfigsolo{#1}
+  \caption{#2}
+  \label{#3}
+  \end{figure}%
+}
+\newcommand{\thesisonefitlabeled}[3]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfigsolo{#1}
+  \caption{#2}
+  \label{#3}
+  \end{figure}%
+}
+\newcommand{\thesisonefitwrlabeled}[3]{%
+  \begin{figure}[H]
+  \centering
+  \thesisfigfit{#1}
+  \caption{#2}
+  \label{#3}
+  \end{figure}%
+}
+
+\geometry{a4paper, headsep=1.0cm, footskip=1cm, lmargin=3cm, rmargin=2cm, tmargin=2.5cm, bmargin=2cm, headheight=2.5cm}
+
+% Evita páginas em branco entre capítulos e elementos pré-textuais
+\let\origcleardoublepage\cleardoublepage % página em branco só nos elementos pré-textuais
+\let\cleardoublepage\clearpage
+
+% Remove espaço vertical excessivo antes dos títulos de capítulos e listas
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{0pt}
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \huge\bfseries \@chapapp\space \thechapter
+        \par\nobreak
+        \vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 20\p@
+  }}
+\def\@makeschapterhead#1{%
+  \vspace*{0pt}
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \Huge \bfseries  #1\par\nobreak
+    \vskip 20\p@
+  }}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{theorem}
+%\theorembodyfont{\normalfont\upshape} %  fonte normal para teoremas
+
+\numberwithin{equation}{chapter} % usar contador associado ao capítulo
+\newtheorem{teo}[equation]{Teorema} 
+\newtheorem{axi}[equation]{Axioma}
+\newtheorem{defn}[equation]{Definição}
+\newtheorem{result}[equation]{Resultado}
+\newtheorem{propdd}[equation]{Propriedades}
+\newtheorem{obs}[equation]{Observação}
+\newtheorem{exerc}[equation]{Exercício}
+\newtheorem{explo}[equation]{Exemplo}
+\newtheorem{aplic}[equation]{Aplicações}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newcommand*{\nomemes}{\ifcase\month\or Janeiro\or Fevereiro\or Mar\c{c}o\or
+                       Abril\or Maio\or Junho\or Julho\or Agosto\or Setembro\or
+                       Outubro\or Novembro\or Dezembro \fi}
+\newcommand*{\nomemesEN}{\ifcase\month\or January\or February\or March\or
+                       April\or May\or June\or July\or August\or September\or
+                       October\or November\or December \fi}
+
+\renewcommand{\baselinestretch}{1.4}  % Espaço entre linhas
+\raggedbottom  % Evita espaços verticais esticados entre floats
+\widowpenalty=9999       % Penaliza viúvas (linha isolada no topo da página)
+\clubpenalty=9999        % Penaliza orfãs (linha isolada no fim da página)
+\displaywidowpenalty=9999
+
+%%% --- Início do documento ---%%%
+\begin{document}
+
+%%% --- Inclusão de gráficos e figuras ---%%%
+\DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png}      
+
+%%% --- ELEMENTOS PRÉ-TEXTUAIS --- %%%
+\pagestyle{empty}
+
+%%% --- Inclusão da capa --- %%%
+\include{capa_tg}
+\setcounter{page}{0}
+
+%%% --- Inclusão da folha de rosto 1 --- %%%
+\include{folha_rosto_1}   
+
+%%% --- Inclusão da folha de rosto 2 --- %%%
+\include{folha_rosto_2}   
+% incluir somente para o depósito, após incluir as correções propostas pela banca
+
+%%% --- Inclusão da folha de rosto 3 --- %%%
+\include{folha_rosto_3}  
+% incluir somente para o depósito, após incluir as correções propostas pela banca
+
+%%% --- Dedicatória --- %%%
+\include{dedicatoria_tg}
+% incluir somente para o depósito, após incluir as correções propostas pela banca (opcional)
+
+%%% --- Agradecimentos --- %%%
+\include{agradecimentos_tg}
+% incluir somente para o depósito, após incluir as correções propostas pela banca (opcional)
+
+%%% --- Epígrafe --- %%%
+% \include{epigrafe_tg}
+% incluir somente para o depósito, após incluir as correções propostas pela banca (opcional)
+
+%%% --- Resumo --- %%%
+\include{resumo_tg}
+
+%%% --- Abstract --- %%%
+\include{abstract_tg}
+% incluir somente para o depósito, após incluir as correções propostas pela banca
+
+
+%%% --- Lista de figuras --- %%%
+\clearpage{\thispagestyle{empty}\origcleardoublepage}
+\listoffigures
+\thispagestyle{empty}
+\clearpage{\thispagestyle{empty}\origcleardoublepage}
+% opcional
+
+%%% --- Lista de tabelas --- %%%
+\clearpage{\thispagestyle{empty}\origcleardoublepage}
+\listoftables
+\thispagestyle{empty}
+\clearpage{\thispagestyle{empty}\origcleardoublepage}
+%opcional
+
+%%% --- Sumário --- %%%
+\setcounter{tocdepth}{1}
+\clearpage{\thispagestyle{empty}\origcleardoublepage}
+\tableofcontents
+\thispagestyle{empty}
+\clearpage{\thispagestyle{empty}\origcleardoublepage}
+
+%%% --- CORPO DO TEXTO --- %%%
+\pagestyle{myheadings}
+
+
+%%% --- Capítulo 1--- %%%
+\include{c1_introd_tg}
+
+%%% --- Capítulo 2 --- %%%
+\include{c2_exemplos_tg}
+
+%%% --- Capítulo 3 --- %%%
+\include{c3_material_tg}
+
+%%% --- Capítulo 4 --- %%%
+\include{c4_resultados_inferenciais}
+
+%%% --- Capítulo 5 --- %%%
+\include{c5_resultados_preditivos}
+
+%%% --- Capítulo 6 --- %%%
+\include{c6_discussao_tg}
+\include{c7_conclusao_tg}
+
+%%% --- Apêndices --- %%%
+\appendix
+\chapter{Detalhes dos dados}\label{apx:cap_dados}
+\input{apendice_dados}
+
+\chapter{Detalhes da inferência}\label{apx:cap_inferencia}
+\input{apendice_inferencia}
+
+\chapter{Detalhes da predição}\label{apx:cap_predicao}
+\input{apendice_predicao}
+
+%%% --- ELEMENTOS PÓS-TEXTUAIS --- %%%
+
+%%% --- Bibliográfia --- %%%
+\clearpage\phantomsection
+\addcontentsline{toc}{chapter}{Referências Bibliográficas}
+\bibliographystyle{natbib} 
+\bibliography{bibliografia}
+%\thispagestyle{empty}
+
+\end{document}

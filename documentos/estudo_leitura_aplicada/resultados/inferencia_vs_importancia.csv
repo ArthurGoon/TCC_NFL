@@ -1,0 +1,74 @@
+posicao,covariavel,esta_no_pool_preditivo,esta_no_cox_final,cox_HR,cox_sentido,cox_p,esta_no_aalen_final,aalen_B_ultimo_tempo,aalen_sentido,aalen_p_nulo_triagem,rank_perm_cox,perm_drop_cox,rank_perm_gbsa,perm_drop_gbsa,rank_perm_rsf,perm_drop_rsf
+QB,depth_team,True,False,,,,True,0.3533,aumenta risco de saida,0.0,7.0,0.0014,7.0,0.0043,5.0,0.0052
+QB,draft_ovr,True,False,,,,True,0.2098,aumenta risco de saida,0.0001,11.0,0.0001,25.0,-0.0148,20.0,-0.0025
+QB,first_observed_season,True,False,,,,False,,,,10.0,0.0002,15.0,0.0003,13.0,-0.0002
+QB,height,True,False,,,,False,,,,8.0,0.0012,9.0,0.0034,8.0,0.0023
+QB,observed_career_lag_comp_pct,True,False,,,,True,-0.1062,reduz risco de saida,0.0,24.0,-0.0091,10.0,0.0021,25.0,-0.0053
+QB,observed_career_lag_comp_pct_missing,True,True,1.3148,aumenta risco de saida,0.0361,False,,,,13.0,-0.0004,13.0,0.0008,17.0,-0.0006
+QB,observed_career_lag_int_pct,True,False,,,,True,0.0764,aumenta risco de saida,0.0,18.0,-0.0017,22.0,-0.0003,22.0,-0.0034
+QB,observed_career_lag_int_pct_missing,True,False,,,,False,,,,17.0,-0.0012,18.0,0.0001,19.0,-0.0007
+QB,observed_career_lag_qb_dropback,True,False,,,,True,-0.3364,reduz risco de saida,0.0,25.0,-0.0187,8.0,0.0036,21.0,-0.0033
+QB,observed_career_lag_rushing_yards,True,False,,,,True,0.1425,aumenta risco de saida,0.0003,23.0,-0.0052,14.0,0.0004,9.0,0.0021
+QB,observed_career_lag_td_pct,True,True,0.6264,reduz risco de saida,0.0006,True,-0.1393,reduz risco de saida,0.0,22.0,-0.0031,24.0,-0.0047,24.0,-0.0047
+QB,observed_career_lag_td_pct_missing,True,False,,,,False,,,,14.0,-0.0006,20.0,-0.0001,18.0,-0.0006
+QB,observed_career_lag_ypa,True,False,,,,False,,,,19.0,-0.002,23.0,-0.0005,23.0,-0.0036
+QB,observed_career_lag_ypa_missing,True,False,,,,False,,,,15.0,-0.0006,17.0,0.0001,15.0,-0.0003
+QB,observed_career_lag_ypc_qb,True,False,,,,False,,,,5.0,0.0063,21.0,-0.0003,6.0,0.0047
+QB,observed_career_lag_ypc_qb_missing,True,False,,,,False,,,,20.0,-0.0026,11.0,0.0013,12.0,-0.0001
+QB,offense_pct,True,True,1.7072,aumenta risco de saida,0.0,True,0.4777,aumenta risco de saida,0.0,21.0,-0.003,4.0,0.0168,4.0,0.0117
+QB,passer_rating,True,True,0.6474,reduz risco de saida,0.0,True,-0.7408,reduz risco de saida,0.0,2.0,0.0147,1.0,0.0368,1.0,0.0377
+QB,pre_window_veteran,True,False,,,,False,,,,6.0,0.0042,12.0,0.0013,11.0,0.0
+QB,team_pass_attempts_share,True,True,0.289,reduz risco de saida,0.0,True,-0.5036,reduz risco de saida,0.0,3.0,0.0077,2.0,0.0263,2.0,0.021
+QB,undrafted_flag,True,False,,,,False,,,,12.0,-0.0002,19.0,0.0,10.0,0.0007
+QB,unobserved_history_flag,True,False,,,,False,,,,16.0,-0.0011,16.0,0.0002,14.0,-0.0002
+QB,weight,True,False,,,,False,,,,9.0,0.0009,5.0,0.0049,16.0,-0.0004
+QB,within_window_gap_years_before_t,True,False,,,,False,,,,4.0,0.0069,6.0,0.0048,7.0,0.0038
+QB,years_exp,True,False,,,,False,,,,1.0,0.0283,3.0,0.0194,3.0,0.0154
+RB,depth_team,True,True,1.1684,aumenta risco de saida,0.0279,True,0.3425,aumenta risco de saida,0.0,6.0,0.0084,8.0,0.0013,8.0,0.0008
+RB,draft_ovr,True,True,1.1249,aumenta risco de saida,0.0393,True,0.2735,aumenta risco de saida,0.0,8.0,0.0042,7.0,0.0023,16.0,-0.0017
+RB,first_observed_season,True,False,,,,False,,,,12.0,0.0018,14.0,-0.0,9.0,0.0002
+RB,games_missed,True,True,1.5475,aumenta risco de saida,0.0,True,0.7641,aumenta risco de saida,0.0,1.0,0.0406,1.0,0.0663,1.0,0.0483
+RB,height,True,False,,,,False,,,,20.0,-0.0028,19.0,-0.0075,20.0,-0.0061
+RB,observed_career_lag_fumble_lost,True,False,,,,False,,,,9.0,0.0035,11.0,0.0002,7.0,0.0023
+RB,observed_career_lag_rush_td_pct,True,False,,,,False,,,,11.0,0.0025,9.0,0.001,6.0,0.0028
+RB,observed_career_lag_rush_td_pct_missing,True,False,,,,False,,,,13.0,0.0017,16.0,-0.0001,17.0,-0.0019
+RB,observed_career_lag_rush_touchdown_redzone,True,False,,,,True,0.1158,aumenta risco de saida,0.0,17.0,-0.0009,10.0,0.0007,12.0,-0.0006
+RB,observed_career_lag_yards_after_catch,True,False,,,,True,-0.14,reduz risco de saida,0.0,18.0,-0.0011,17.0,-0.0001,13.0,-0.0008
+RB,observed_career_lag_ypc,True,True,0.8207,reduz risco de saida,0.0023,True,-0.2024,reduz risco de saida,0.0,5.0,0.01,6.0,0.0029,15.0,-0.0016
+RB,observed_career_lag_ypc_missing,True,False,,,,False,,,,10.0,0.0032,18.0,-0.0002,14.0,-0.0012
+RB,offense_pct,True,False,,,,True,-0.3494,reduz risco de saida,0.0,2.0,0.0261,2.0,0.0244,2.0,0.0275
+RB,pre_window_veteran,True,False,,,,False,,,,7.0,0.006,5.0,0.005,5.0,0.0035
+RB,team_rushing_yards_share,True,True,0.5037,reduz risco de saida,0.0,True,-0.0062,reduz risco de saida,0.0,4.0,0.0123,4.0,0.011,4.0,0.0116
+RB,undrafted_flag,True,False,,,,False,,,,16.0,-0.0003,12.0,0.0,18.0,-0.0037
+RB,unobs_career_years,True,False,,,,False,,,,14.0,0.0015,20.0,-0.0087,19.0,-0.0055
+RB,unobserved_history_flag,True,False,,,,False,,,,15.0,0.0002,15.0,-0.0001,11.0,0.0
+RB,weight,True,False,,,,False,,,,21.0,-0.006,21.0,-0.0131,21.0,-0.0122
+RB,within_window_gap_years_before_t,True,False,,,,False,,,,19.0,-0.002,13.0,0.0,10.0,0.0002
+RB,years_exp,True,False,,,,False,,,,3.0,0.0245,3.0,0.0116,3.0,0.0147
+WR,adot,True,False,,,,False,,,,11.0,-0.0003,18.0,-0.0008,15.0,-0.0011
+WR,depth_team,True,False,,,,True,0.3037,aumenta risco de saida,0.0,7.0,0.0039,7.0,0.002,6.0,0.0018
+WR,draft_ovr,True,False,,,,True,0.0798,aumenta risco de saida,0.0004,14.0,-0.0004,24.0,-0.0045,23.0,-0.0043
+WR,first_observed_season,True,False,,,,False,,,,9.0,0.0018,9.0,0.0005,9.0,-0.0001
+WR,games_missed,True,True,1.2749,aumenta risco de saida,0.0127,True,0.727,aumenta risco de saida,0.0,2.0,0.0453,3.0,0.0423,2.0,0.0366
+WR,height,True,True,1.131,aumenta risco de saida,0.022,False,,,,19.0,-0.002,23.0,-0.0042,22.0,-0.0041
+WR,observed_career_lag_adot_acc,True,False,,,,False,,,,22.0,-0.0024,19.0,-0.0021,20.0,-0.003
+WR,observed_career_lag_adot_acc_missing,True,False,,,,False,,,,13.0,-0.0004,13.0,-0.0001,10.0,-0.0001
+WR,observed_career_lag_catch_rate,True,False,,,,True,-0.128,reduz risco de saida,0.0004,23.0,-0.0025,11.0,0.0001,16.0,-0.0014
+WR,observed_career_lag_catch_rate_missing,True,False,,,,False,,,,16.0,-0.0006,15.0,-0.0002,14.0,-0.0005
+WR,observed_career_lag_fumble_lost,True,False,,,,True,0.024,aumenta risco de saida,0.0,21.0,-0.0022,17.0,-0.0004,17.0,-0.0015
+WR,observed_career_lag_rushing_yards,True,True,0.8379,reduz risco de saida,0.0291,True,-0.1856,reduz risco de saida,0.0012,10.0,0.0003,22.0,-0.0027,21.0,-0.0035
+WR,observed_career_lag_yards_after_catch,True,False,,,,False,,,,17.0,-0.0009,8.0,0.0006,19.0,-0.0023
+WR,observed_career_lag_ypr,True,False,,,,False,,,,20.0,-0.0022,21.0,-0.0026,18.0,-0.0016
+WR,observed_career_lag_ypr_missing,True,False,,,,False,,,,18.0,-0.0011,10.0,0.0001,11.0,-0.0004
+WR,observed_career_lag_yptarget,True,False,,,,True,0.02,aumenta risco de saida,0.0002,8.0,0.0034,12.0,-0.0,7.0,0.0014
+WR,observed_career_lag_yptarget_missing,True,False,,,,False,,,,12.0,-0.0004,14.0,-0.0001,13.0,-0.0005
+WR,offense_pct,True,True,1.1836,aumenta risco de saida,0.0263,True,-0.1186,reduz risco de saida,0.0,4.0,0.014,4.0,0.0109,4.0,0.0158
+WR,pre_window_veteran,True,False,,,,False,,,,5.0,0.0095,6.0,0.0027,5.0,0.0071
+WR,team_targets_share,True,True,0.2729,reduz risco de saida,0.0,True,-0.3253,reduz risco de saida,0.0,3.0,0.021,1.0,0.0713,1.0,0.0524
+WR,undrafted_flag,True,False,,,,True,-0.3224,reduz risco de saida,0.0002,24.0,-0.0046,20.0,-0.0025,24.0,-0.0051
+WR,unobserved_history_flag,True,False,,,,False,,,,15.0,-0.0005,16.0,-0.0003,12.0,-0.0004
+WR,weight,True,False,,,,False,,,,25.0,-0.0097,25.0,-0.0122,25.0,-0.0086
+WR,within_window_gap_years_before_t,True,False,,,,True,-0.0024,reduz risco de saida,0.0,6.0,0.0079,5.0,0.0028,8.0,0.0011
+WR,years_exp,True,False,,,,False,,,,1.0,0.048,2.0,0.0445,3.0,0.0351
+WR,age,False,True,1.6901,aumenta risco de saida,0.0034,True,0.9146,aumenta risco de saida,0.0,,,,,,
+WR,observed_career_lag_targets_redzone,False,True,0.8025,reduz risco de saida,0.0074,True,-0.2411,reduz risco de saida,0.0,,,,,,

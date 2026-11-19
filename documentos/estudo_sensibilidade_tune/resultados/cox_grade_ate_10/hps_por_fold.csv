@@ -1,0 +1,13 @@
+braco,posicao,modelo,teste_em_temporada,hp,inner_c
+cox_grade_ate_10,QB,cox,2018,"{""penalizer"": 2.0}",0.7411602209944751
+cox_grade_ate_10,QB,cox,2019,"{""penalizer"": 2.0}",0.8000839102160688
+cox_grade_ate_10,QB,cox,2020,"{""penalizer"": 1.0}",0.7700693756194251
+cox_grade_ate_10,QB,cox,2021,"{""penalizer"": 10.0}",0.7263806481058878
+cox_grade_ate_10,RB,cox,2018,"{""penalizer"": 5.0}",0.6472314245149077
+cox_grade_ate_10,RB,cox,2019,"{""penalizer"": 2.0}",0.6751368575864041
+cox_grade_ate_10,RB,cox,2020,"{""penalizer"": 10.0}",0.7746833319352403
+cox_grade_ate_10,RB,cox,2021,"{""penalizer"": 10.0}",0.7304210670689891
+cox_grade_ate_10,WR,cox,2018,"{""penalizer"": 10.0}",0.7426122793050157
+cox_grade_ate_10,WR,cox,2019,"{""penalizer"": 5.0}",0.7373727224008575
+cox_grade_ate_10,WR,cox,2020,"{""penalizer"": 0.5}",0.7532815852581093
+cox_grade_ate_10,WR,cox,2021,"{""penalizer"": 2.0}",0.7277397746302972

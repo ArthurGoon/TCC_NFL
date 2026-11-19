@@ -1,0 +1,24 @@
+{
+  "fonte": "aalen_final_covs_RB.json",
+  "regra": "Lista inferencial selecionada no painel completo 2012-2024 (screening univariado p<0.05, teto eventos/10, years_exp proibido), sem dummies _missing. Uso pos-selecao, apenas diagnostico computacional.",
+  "covariaveis": [
+    "age",
+    "depth_team",
+    "draft_ovr",
+    "games_missed",
+    "observed_career_lag_rush_touchdown_redzone",
+    "observed_career_lag_yards_after_catch",
+    "observed_career_lag_ypc",
+    "offense_pct",
+    "team_rushing_yards_share"
+  ],
+  "removidas_missing": [],
+  "n": 9,
+  "p_plus_1": 10,
+  "protocolo_poshoc": true,
+  "avaliacao_prospectiva": false,
+  "comparavel_com_ranking_principal": false,
+  "backtest_honesto": false,
+  "periodo_selecao_covariaveis": "2012-2024",
+  "periodo_folds_diagnosticos": "2018-2021"
+}

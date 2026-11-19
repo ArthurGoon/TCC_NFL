@@ -1,0 +1,56 @@
+variavel,rotulo,descricao
+games_missed,Jogos perdidos,Jogos da temporada regular não disputados pelo jogador
+depth_team,Profundidade no elenco,Posição na hierarquia do time (1 = titular)
+offense_pct,Participação ofensiva,Fração dos snaps ofensivos do time disputados pelo jogador
+passer_rating,Eficiência de passe,Índice composto de eficiência de passe (QB)
+team_pass_attempts_share,Fatia de passes,Fração das tentativas de passe da equipe atribuídas ao QB
+team_targets_share,Fatia de alvos,Fração dos alvos ofensivos da equipe recebidos pelo WR
+team_rushing_yards_share,Fatia de jardas terrestres,Fração das jardas terrestres da equipe obtidas pelo RB
+pre_window_veteran,Veterano pré-2012,Carreira iniciada antes de 2012 (início = min(temporada - years_exp, ano do draft)); constante por jogador
+undrafted_flag,Não draftado,Indicador de jogador não selecionado no draft
+draft_ovr,Posição no draft,Pick global no recrutamento (0 para não draftados)
+draft_round,Rodada do draft,Rodada do recrutamento
+height,Altura,Altura do jogador
+weight,Peso,Peso do jogador
+years_exp,Anos de experiência,Temporadas de experiência na NFL até t
+unobs_career_years,Anos sem estatísticas antes da 1ª linha,Anos de carreira (years_exp) que antecedem a primeira linha observada e não têm linha no painel (inclui a temporada de estreia quando o jogador não aparece)
+within_window_gap_years_before_t,Hiato acumulado,Temporadas de ausência acumuladas na janela até t
+unobserved_history_flag,Primeira linha com anos sem estatísticas,Primeira linha observada de jogador com unobs_career_years > 0 (anos de carreira sem linha antes dela)
+seasons_since_gap,Temporadas desde o hiato,Temporadas observadas antes de t para quem nunca teve hiato; vale 0 depois do primeiro hiato
+first_observed_season,Primeira temporada observada,Indicador da primeira temporada do jogador no painel
+rookie_flag,Primeira temporada observada,Indicador da primeira temporada do jogador no painel (inclui veteranos que entram em 2012)
+adot,aDOT,Profundidade média dos alvos (WR)
+observed_career_lag_td_pct,Hist. defasado TD%,Percentual de passes para touchdown acumulado até t-1
+observed_career_lag_comp_pct,Hist. defasado comp%,Percentual de passes completos acumulado até t-1
+observed_career_lag_int_pct,Hist. defasado INT%,Percentual de interceptações acumulado até t-1
+observed_career_lag_ypa,Hist. defasado YPA,Jardas por tentativa de passe acumuladas até t-1
+observed_career_lag_ypc,Hist. defasado YPC,Jardas por corrida acumuladas até t-1
+observed_career_lag_ypc_qb,Hist. defasado YPC (QB),Jardas por corrida do QB acumuladas até t-1
+observed_career_lag_rushing_yards,Hist. defasado jardas de corrida,Jardas terrestres acumuladas até t-1
+observed_career_lag_touches,Hist. defasado toques,Corridas mais recepções acumuladas até t-1
+observed_career_lag_fumble_lost,Hist. defasado fumbles perdidos,Fumbles perdidos acumulados até t-1
+observed_career_lag_catch_rate,Hist. defasado taxa de recepção,Recepções por alvo acumuladas até t-1
+observed_career_lag_yptarget,Hist. defasado jardas por alvo,Jardas por alvo acumuladas até t-1
+observed_career_lag_ypr,Hist. defasado jardas por recepção,Jardas por recepção acumuladas até t-1
+observed_career_lag_targets_redzone,Hist. defasado alvos na red zone,Alvos dentro da red zone acumulados até t-1
+depth_worsened_lag,Profundidade piorou,Indicador de que a profundidade no elenco piorou entre t-2 e t-1
+offense_pct_declined_lag,Participação caiu,Indicador de que a participação ofensiva caiu entre t-2 e t-1
+games_missed_increased_lag,Jogos perdidos aumentaram,Indicador de que os jogos perdidos aumentaram entre t-2 e t-1
+efficiency_declined_lag,Eficiência caiu,Indicador de queda da métrica de eficiência da posição entre as duas temporadas anteriores
+observed_career_lag_qb_dropback,Hist. defasado dropbacks,Recuos para passe (dropbacks) acumulados até t-1
+observed_career_lag_rush_td_pct,Hist. defasado TD por corrida,Percentual de corridas que terminaram em touchdown acumulado até t-1
+observed_career_lag_rush_touchdown_redzone,Hist. defasado TDs terrestres na red zone,Touchdowns terrestres dentro da red zone acumulados até t-1
+observed_career_lag_yards_after_catch,Hist. defasado jardas após recepção,Jardas após a recepção acumuladas até t-1
+observed_career_lag_adot_acc,Hist. defasado aDOT,Profundidade média dos alvos acumulada até t-1
+had_prior_gap_flag,Hiato anterior,Indicador de que o jogador já teve ao menos uma temporada de ausência antes de t
+age,Idade,Idade do jogador na temporada t
+career_length,Duração da carreira,Temporadas na NFL entre a primeira e a última observada
+season_rushing_yards,Jardas terrestres (temporada),Jardas terrestres do jogador na temporada
+season_rush_attempts,Corridas (temporada),Corridas do jogador na temporada
+season_receptions,Recepções (temporada),Recepções do jogador na temporada
+season_receiving_yards,Jardas de recepção (temporada),Jardas de recepção do jogador na temporada
+season_pass_attempts,Tentativas de passe (temporada),Tentativas de passe do jogador na temporada
+season_passing_yards,Jardas de passe (temporada),Jardas de passe do jogador na temporada
+season_targets,Alvos (temporada),Alvos recebidos pelo jogador na temporada
+season_receiving_touchdown,TDs de recepção (temporada),Touchdowns de recepção do jogador na temporada
+season_total_yards,Jardas totais (temporada),Jardas totais (corrida e recepção) do jogador na temporada

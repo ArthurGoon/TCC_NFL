@@ -1,0 +1,169 @@
+{
+  "janela_inicio": 1,
+  "janela_fim": 11,
+  "position": "RB",
+  "n_subjects": 337,
+  "n_periods": 1150,
+  "n_events": 240,
+  "covariates_tested": ["age", "depth_team", "draft_ovr", "games_missed", "observed_career_lag_rush_touchdown_redzone", "observed_career_lag_yards_after_catch", "observed_career_lag_ypc", "offense_pct", "team_rushing_yards_share"],
+  "model": "aalen_tied_survival_aareg",
+  "estimator": "survival::aareg(Surv(start,stop,event) ~ X, cluster=player_id, dfbeta=TRUE, taper=1)",
+  "nmin_policy": "nmin1",
+  "nmin_value": 1,
+  "tests_null_effect": {
+    "(Intercept)": {
+      "p_value": 0,
+      "significant": true
+    },
+    "age": {
+      "p_value": 0.518849,
+      "significant": false
+    },
+    "depth_team": {
+      "p_value": 0.013117,
+      "significant": true
+    },
+    "draft_ovr": {
+      "p_value": 0.206814,
+      "significant": false
+    },
+    "games_missed": {
+      "p_value": 0,
+      "significant": true
+    },
+    "observed_career_lag_rush_touchdown_redzone": {
+      "p_value": 0.56777,
+      "significant": false
+    },
+    "observed_career_lag_yards_after_catch": {
+      "p_value": 0.98936800000000003,
+      "significant": false
+    },
+    "observed_career_lag_ypc": {
+      "p_value": 0.0023860000000000001,
+      "significant": true
+    },
+    "offense_pct": {
+      "p_value": 0.21177799999999999,
+      "significant": false
+    },
+    "team_rushing_yards_share": {
+      "p_value": 0.30765199999999998,
+      "significant": false
+    }
+  },
+  "tests_constant_effect": {},
+  "var_cum_interpretation": "Interval-row influence diagnostic only; not a formal martingale/model-based variance.",
+  "robvar_cum_interpretation": "Player-clustered cumulative OLS influence covariance; cross-checked against aareg dfbeta.",
+  "implementation_validation": {
+    "rank_and_nmin_window": "PASS",
+    "window_risk_membership": "PASS",
+    "tied_OLS_increment": "PASS",
+    "robust_influence_variance": "PASS",
+    "maximum_OLS_increment_abs_difference": 7.7271522513910895e-14,
+    "maximum_robust_annual_variance_abs_difference": 1.1879386363489175e-13,
+    "event_time_risk_checks": {
+      "2": {
+        "risk_n": 256,
+        "tied_events": 40,
+        "risk_design_rank": 10,
+        "manual_ols_max_abs_difference": 3.0045410603918299e-15
+      },
+      "3": {
+        "risk_n": 215,
+        "tied_events": 35,
+        "risk_design_rank": 10,
+        "manual_ols_max_abs_difference": 9.9226182825873366e-16
+      },
+      "4": {
+        "risk_n": 182,
+        "tied_events": 34,
+        "risk_design_rank": 10,
+        "manual_ols_max_abs_difference": 4.9179410543942481e-16
+      },
+      "5": {
+        "risk_n": 155,
+        "tied_events": 35,
+        "risk_design_rank": 10,
+        "manual_ols_max_abs_difference": 9.298117831235686e-16
+      },
+      "6": {
+        "risk_n": 117,
+        "tied_events": 29,
+        "risk_design_rank": 10,
+        "manual_ols_max_abs_difference": 4.8433479449272454e-15
+      },
+      "7": {
+        "risk_n": 81,
+        "tied_events": 23,
+        "risk_design_rank": 10,
+        "manual_ols_max_abs_difference": 1.0963452368173421e-15
+      },
+      "8": {
+        "risk_n": 63,
+        "tied_events": 14,
+        "risk_design_rank": 10,
+        "manual_ols_max_abs_difference": 3.1962280044872671e-16
+      },
+      "9": {
+        "risk_n": 40,
+        "tied_events": 13,
+        "risk_design_rank": 10,
+        "manual_ols_max_abs_difference": 7.9936057773011271e-15
+      },
+      "10": {
+        "risk_n": 26,
+        "tied_events": 10,
+        "risk_design_rank": 10,
+        "manual_ols_max_abs_difference": 4.4408920985006262e-16
+      },
+      "11": {
+        "risk_n": 15,
+        "tied_events": 7,
+        "risk_design_rank": 10,
+        "manual_ols_max_abs_difference": 7.7271522513910895e-14
+      }
+    }
+  },
+  "test_family": "weighted_mean_aareg",
+  "test_scope": "weighted temporal mean",
+  "confidence_band_type": "pointwise_conditional",
+  "selection_conditioning": "conditional_X_selected_by_univariate_screening",
+  "covariate_selection_status": "X vem da triagem univariada (run_aalen_univariate_screening.R, semente 42, sem jitter); sem reselecao aqui; claims condicionais a este X fixo",
+  "test_description": "Teste robusto de coeficiente medio ponderado de survival::aareg restrito a janela; nao e teste supremo nem teste de constancia. Empates tratados nativamente pelo aareg (sem sorteio nem jitter); X condicional a triagem univariada.",
+  "n_subjects_input": 397,
+  "n_periods_input": 1454,
+  "n_events_input": 289,
+  "n_events_in_window": 240,
+  "n_event_times_supported": 10,
+  "input_counts_before_window": {
+    "n_subjects": 397,
+    "n_periods": 1454,
+    "n_events": 289
+  },
+  "effective_support": {
+    "policy": "rank-only extension with nmin=1; same lower boundary as primary",
+    "integer_risk_years": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "event_years": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "n_integer_risk_years": 10,
+    "n_event_years": 10
+  },
+  "window_selection": {
+    "rule": "same lower boundary as primary; extend over consecutive integer years while [Intercept + X] risk rank remains full; no nmin requirement",
+    "supported_integer_risk_times": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+    "start_stop_convention": "(a,b]",
+    "intervals_truncated_or_censored_at_end": 0,
+    "events_retained": 240,
+    "sensitivity_only": true,
+    "never_fallback_for_primary": true
+  },
+  "common_endpoint_comparison": {
+    "endpoint": 9,
+    "primary_curve_time": 9,
+    "sensitivity_curve_time": 9,
+    "primary_robvar_time": 9,
+    "sensitivity_robvar_time": 9,
+    "max_abs_B_difference": 1.5709655798445965e-14,
+    "max_abs_robvar_difference": 0
+  }
+}

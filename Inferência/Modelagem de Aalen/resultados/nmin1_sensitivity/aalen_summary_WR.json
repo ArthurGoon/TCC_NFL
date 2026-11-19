@@ -1,0 +1,185 @@
+{
+  "janela_inicio": 2,
+  "janela_fim": 12,
+  "position": "WR",
+  "n_subjects": 403,
+  "n_periods": 1390,
+  "n_events": 276,
+  "covariates_tested": ["age", "depth_team", "draft_ovr", "games_missed", "observed_career_lag_catch_rate", "observed_career_lag_fumble_lost", "observed_career_lag_rushing_yards", "observed_career_lag_targets_redzone", "observed_career_lag_yptarget", "offense_pct", "team_targets_share", "undrafted_flag", "within_window_gap_years_before_t"],
+  "model": "aalen_tied_survival_aareg",
+  "estimator": "survival::aareg(Surv(start,stop,event) ~ X, cluster=player_id, dfbeta=TRUE, taper=1)",
+  "nmin_policy": "nmin1",
+  "nmin_value": 1,
+  "tests_null_effect": {
+    "(Intercept)": {
+      "p_value": 0,
+      "significant": true
+    },
+    "age": {
+      "p_value": 0.0014,
+      "significant": true
+    },
+    "depth_team": {
+      "p_value": 0.048807999999999997,
+      "significant": true
+    },
+    "draft_ovr": {
+      "p_value": 0.79392300000000005,
+      "significant": false
+    },
+    "games_missed": {
+      "p_value": 0,
+      "significant": true
+    },
+    "observed_career_lag_catch_rate": {
+      "p_value": 0.79586599999999996,
+      "significant": false
+    },
+    "observed_career_lag_fumble_lost": {
+      "p_value": 0.78318600000000005,
+      "significant": false
+    },
+    "observed_career_lag_rushing_yards": {
+      "p_value": 3.0000000000000001e-06,
+      "significant": true
+    },
+    "observed_career_lag_targets_redzone": {
+      "p_value": 0.034325000000000001,
+      "significant": true
+    },
+    "observed_career_lag_yptarget": {
+      "p_value": 0.84936800000000001,
+      "significant": false
+    },
+    "offense_pct": {
+      "p_value": 0.97970100000000004,
+      "significant": false
+    },
+    "team_targets_share": {
+      "p_value": 0.011528,
+      "significant": true
+    },
+    "undrafted_flag": {
+      "p_value": 0.011632999999999999,
+      "significant": true
+    },
+    "within_window_gap_years_before_t": {
+      "p_value": 0.17918400000000001,
+      "significant": false
+    }
+  },
+  "tests_constant_effect": {},
+  "var_cum_interpretation": "Interval-row influence diagnostic only; not a formal martingale/model-based variance.",
+  "robvar_cum_interpretation": "Player-clustered cumulative OLS influence covariance; cross-checked against aareg dfbeta.",
+  "implementation_validation": {
+    "rank_and_nmin_window": "PASS",
+    "window_risk_membership": "PASS",
+    "tied_OLS_increment": "PASS",
+    "robust_influence_variance": "PASS",
+    "maximum_OLS_increment_abs_difference": 3.3384406350478457e-13,
+    "maximum_robust_annual_variance_abs_difference": 2.0566881531181025e-13,
+    "event_time_risk_checks": {
+      "3": {
+        "risk_n": 304,
+        "tied_events": 51,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 3.6012859361278515e-15
+      },
+      "4": {
+        "risk_n": 263,
+        "tied_events": 50,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 4.2049697057677804e-15
+      },
+      "5": {
+        "risk_n": 213,
+        "tied_events": 38,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 1.3045120539345589e-15
+      },
+      "6": {
+        "risk_n": 177,
+        "tied_events": 33,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 2.2343238370581275e-15
+      },
+      "7": {
+        "risk_n": 138,
+        "tied_events": 21,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 2.4182045255116691e-15
+      },
+      "8": {
+        "risk_n": 108,
+        "tied_events": 26,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 2.2759572004815709e-15
+      },
+      "9": {
+        "risk_n": 74,
+        "tied_events": 25,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 3.6970426720017713e-14
+      },
+      "10": {
+        "risk_n": 52,
+        "tied_events": 10,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 1.5498713423767185e-13
+      },
+      "11": {
+        "risk_n": 38,
+        "tied_events": 13,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 3.3384406350478457e-13
+      },
+      "12": {
+        "risk_n": 23,
+        "tied_events": 9,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 1.9584334154387761e-13
+      }
+    }
+  },
+  "test_family": "weighted_mean_aareg",
+  "test_scope": "weighted temporal mean",
+  "confidence_band_type": "pointwise_conditional",
+  "selection_conditioning": "conditional_X_selected_by_univariate_screening",
+  "covariate_selection_status": "X vem da triagem univariada (run_aalen_univariate_screening.R, semente 42, sem jitter); sem reselecao aqui; claims condicionais a este X fixo",
+  "test_description": "Teste robusto de coeficiente medio ponderado de survival::aareg restrito a janela; nao e teste supremo nem teste de constancia. Empates tratados nativamente pelo aareg (sem sorteio nem jitter); X condicional a triagem univariada.",
+  "n_subjects_input": 573,
+  "n_periods_input": 2171,
+  "n_events_input": 394,
+  "n_events_in_window": 276,
+  "n_event_times_supported": 10,
+  "input_counts_before_window": {
+    "n_subjects": 573,
+    "n_periods": 2171,
+    "n_events": 394
+  },
+  "effective_support": {
+    "policy": "rank-only extension with nmin=1; same lower boundary as primary",
+    "integer_risk_years": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "event_years": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "n_integer_risk_years": 10,
+    "n_event_years": 10
+  },
+  "window_selection": {
+    "rule": "same lower boundary as primary; extend over consecutive integer years while [Intercept + X] risk rank remains full; no nmin requirement",
+    "supported_integer_risk_times": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "start_stop_convention": "(a,b]",
+    "intervals_truncated_or_censored_at_end": 0,
+    "events_retained": 276,
+    "sensitivity_only": true,
+    "never_fallback_for_primary": true
+  },
+  "common_endpoint_comparison": {
+    "endpoint": 10,
+    "primary_curve_time": 10,
+    "sensitivity_curve_time": 10,
+    "primary_robvar_time": 10,
+    "sensitivity_robvar_time": 10,
+    "max_abs_B_difference": 2.9976021664879227e-14,
+    "max_abs_robvar_difference": 0
+  }
+}

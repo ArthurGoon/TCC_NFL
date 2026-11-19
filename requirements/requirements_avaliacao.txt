@@ -1,0 +1,15 @@
+# Versoes exatas da execucao oficial da escrita final (TG-B). O GBSA muda na
+# terceira casa decimal com outras versoes do scikit-learn/scikit-survival,
+# mesmo com random_state fixo; por isso as versoes ficam travadas.
+# Python 3.12.10
+lifelines==0.30.3
+scikit-survival==0.27.0
+pandas==2.3.3
+numpy==2.4.4
+matplotlib==3.10.9
+seaborn==0.13.2
+scipy==1.17.1
+scikit-learn==1.8.0
+nbformat==5.10.4
+# Usado pela auditoria escrita x figuras quando o pdftotext (Poppler) nao existe
+PyMuPDF==1.27.2.2

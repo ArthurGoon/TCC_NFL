@@ -1,0 +1,185 @@
+{
+  "janela_inicio": 2,
+  "janela_fim": 10,
+  "position": "WR",
+  "n_subjects": 399,
+  "n_periods": 1329,
+  "n_events": 254,
+  "covariates_tested": ["age", "depth_team", "draft_ovr", "games_missed", "observed_career_lag_catch_rate", "observed_career_lag_fumble_lost", "observed_career_lag_rushing_yards", "observed_career_lag_targets_redzone", "observed_career_lag_yptarget", "offense_pct", "team_targets_share", "undrafted_flag", "within_window_gap_years_before_t"],
+  "model": "aalen_tied_survival_aareg",
+  "estimator": "survival::aareg(Surv(start,stop,event) ~ X, cluster=player_id, dfbeta=TRUE, taper=1)",
+  "nmin_policy": "default",
+  "nmin_value": 39,
+  "tests_null_effect": {
+    "(Intercept)": {
+      "p_value": 0,
+      "significant": true
+    },
+    "age": {
+      "p_value": 0.0053439999999999998,
+      "significant": true
+    },
+    "depth_team": {
+      "p_value": 0.059306999999999999,
+      "significant": false
+    },
+    "draft_ovr": {
+      "p_value": 0.78608900000000004,
+      "significant": false
+    },
+    "games_missed": {
+      "p_value": 0,
+      "significant": true
+    },
+    "observed_career_lag_catch_rate": {
+      "p_value": 0.63034599999999996,
+      "significant": false
+    },
+    "observed_career_lag_fumble_lost": {
+      "p_value": 0.73381300000000005,
+      "significant": false
+    },
+    "observed_career_lag_rushing_yards": {
+      "p_value": 2.0000000000000002e-05,
+      "significant": true
+    },
+    "observed_career_lag_targets_redzone": {
+      "p_value": 0.062419000000000002,
+      "significant": false
+    },
+    "observed_career_lag_yptarget": {
+      "p_value": 0.73926700000000001,
+      "significant": false
+    },
+    "offense_pct": {
+      "p_value": 0.94839200000000001,
+      "significant": false
+    },
+    "team_targets_share": {
+      "p_value": 0.020768999999999999,
+      "significant": true
+    },
+    "undrafted_flag": {
+      "p_value": 0.018572999999999999,
+      "significant": true
+    },
+    "within_window_gap_years_before_t": {
+      "p_value": 0.20530000000000001,
+      "significant": false
+    }
+  },
+  "tests_constant_effect": {},
+  "var_cum_interpretation": "Interval-row influence diagnostic only; not a formal martingale/model-based variance.",
+  "robvar_cum_interpretation": "Player-clustered cumulative OLS influence covariance; cross-checked against aareg dfbeta.",
+  "implementation_validation": {
+    "rank_and_nmin_window": "PASS",
+    "window_risk_membership": "PASS",
+    "tied_OLS_increment": "PASS",
+    "robust_influence_variance": "PASS",
+    "maximum_OLS_increment_abs_difference": 1.1429746038515987e-13,
+    "maximum_robust_annual_variance_abs_difference": 7.024936188315678e-14,
+    "event_time_risk_checks": {
+      "3": {
+        "risk_n": 304,
+        "tied_events": 51,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 1.3322676295501878e-15
+      },
+      "4": {
+        "risk_n": 263,
+        "tied_events": 50,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 3.0253577421035516e-15
+      },
+      "5": {
+        "risk_n": 213,
+        "tied_events": 38,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 1.0269562977782698e-15
+      },
+      "6": {
+        "risk_n": 177,
+        "tied_events": 33,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 1.3461454173580023e-15
+      },
+      "7": {
+        "risk_n": 138,
+        "tied_events": 21,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 2.6680047060523293e-15
+      },
+      "8": {
+        "risk_n": 108,
+        "tied_events": 26,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 5.5511151231257827e-15
+      },
+      "9": {
+        "risk_n": 74,
+        "tied_events": 25,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 2.3647750424515834e-14
+      },
+      "10": {
+        "risk_n": 52,
+        "tied_events": 10,
+        "risk_design_rank": 14,
+        "manual_ols_max_abs_difference": 1.1429746038515987e-13
+      }
+    }
+  },
+  "test_family": "weighted_mean_aareg",
+  "test_scope": "weighted temporal mean",
+  "confidence_band_type": "pointwise_conditional",
+  "selection_conditioning": "conditional_X_selected_by_univariate_screening",
+  "covariate_selection_status": "X vem da triagem univariada (run_aalen_univariate_screening.R, semente 42, sem jitter); sem reselecao aqui; claims condicionais a este X fixo",
+  "test_description": "Teste robusto de coeficiente medio ponderado de survival::aareg restrito a janela; nao e teste supremo nem teste de constancia. Empates tratados nativamente pelo aareg (sem sorteio nem jitter); X condicional a triagem univariada.",
+  "n_subjects_input": 573,
+  "n_periods_input": 2171,
+  "n_events_input": 394,
+  "n_events_in_window": 254,
+  "n_event_times_supported": 8,
+  "supported_integer_risk_times": [3, 4, 5, 6, 7, 8, 9, 10],
+  "effective_support": {
+    "policy": "nmin default = 3*nvar intersected with full risk-set rank",
+    "integer_risk_years": [3, 4, 5, 6, 7, 8, 9, 10],
+    "event_years": [3, 4, 5, 6, 7, 8, 9, 10],
+    "n_integer_risk_years": 8,
+    "n_event_years": 8
+  },
+  "input_counts_before_window": {
+    "n_subjects": 573,
+    "n_periods": 2171,
+    "n_events": 394
+  },
+  "window_selection": {
+    "rule": "longest consecutive integer risk-time grid run with full [Intercept + X] rank and risk_n >= 3*nvar; zero-risk/unsupported years break runs; earliest run wins ties",
+    "supported_integer_risk_times": [3, 4, 5, 6, 7, 8, 9, 10],
+    "start_stop_convention": "(a,b]",
+    "excluded_events_at_or_before_start": 103,
+    "intervals_truncated_or_censored_at_end": 0,
+    "events_retained": 254,
+    "event_times_selected_by_rank_and_default_nmin": [3, 4, 5, 6, 7, 8, 9, 10]
+  },
+  "sensitivity_nmin1_outputs": {
+    "directory": "nmin1_sensitivity",
+    "files": ["nmin1_sensitivity/aalen_cum_coefs_WR.csv", "nmin1_sensitivity/aalen_var_cum_WR.csv", "nmin1_sensitivity/aalen_robvar_cum_WR.csv", "nmin1_sensitivity/aalen_fit_WR.rds", "nmin1_sensitivity/aalen_summary_WR.json"],
+    "janela_inicio": 2,
+    "janela_fim": 12,
+    "nmin": 1,
+    "supported_integer_risk_times": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "event_times_supported": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "selection": "same lower boundary as primary; extend over consecutive integer years while [Intercept + X] risk rank remains full; no nmin requirement",
+    "comparison_endpoint_common": 10
+  },
+  "nmin1_common_endpoint_comparison": {
+    "endpoint": 10,
+    "primary_curve_time": 10,
+    "sensitivity_curve_time": 10,
+    "primary_robvar_time": 10,
+    "sensitivity_robvar_time": 10,
+    "max_abs_B_difference": 2.9976021664879227e-14,
+    "max_abs_robvar_difference": 0
+  }
+}

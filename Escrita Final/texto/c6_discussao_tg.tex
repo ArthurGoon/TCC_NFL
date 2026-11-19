@@ -1,0 +1,83 @@
+% ============================================================
+%  Capítulo 6: Discussão
+% ============================================================
+
+\chapter{Discussão}
+\label{cap:discussao}
+
+Este capítulo interpreta os resultados: o que a inferência sustenta, o que a predição acrescenta, onde as duas se encontram e o que acompanhar em cada posição.
+
+\section{O que a inferência sustenta}
+\label{sec:disc_inferencia}
+
+O Cox e o Aalen respondem a perguntas complementares, mesmo com o tempo anual. O Cox dá o efeito de cada covariável em HR, e o Aalen mostra como esse efeito se comporta ao longo da carreira, justamente onde a proporcionalidade não se sustenta. O modelo de tempo discreto, forma exata dos riscos proporcionais para tempo agrupado, concorda com o Cox em sinal e em significância em todos os termos finais (Seção~\ref{sec:res_procedimentos}), de modo que os empates não mudam a leitura.
+
+Nove associações têm $p<0{,}05$ nos três ajustes (Seção~\ref{sec:sintese_inferencial}), e elas mudam de uma posição para outra: não há um perfil único de quem permanece.
+
+No QB, permanece quem produz. A eficiência de passe é o sinal mais firme, com $p<0{,}001$ nos três modelos, e não há evidência contra um HR único. A participação ofensiva se lê junto com a fatia de passes, que está no mesmo modelo.
+
+No RB, pesam a disponibilidade e o lugar no elenco. Nos jogos perdidos, o resultado mais informativo está em como agem: a razão de riscos enfraquece com a carreira, e o risco absoluto é compatível com um acréscimo constante na janela do Aalen. Por isso a leitura útil é esse acréscimo anual, e não o HR único. A posição no \textit{draft} só se separa de zero no Cox. Isso está em linha com \citet{ducking2015}, em que jogos disputados e jogos como titular se associam a carreira mais longa. Sem as covariáveis de uso, o HR da posição no \textit{draft} é bem maior ($1{,}58$; Seção~\ref{subsec:rb}). Isso é compatível com parte da associação passar pelo papel que o jogador recebe, sem separá-la, porque o ajuste não é uma análise de mediação, e contrasta com o efeito persistente que \citet{staw1995} encontraram na NBA.
+
+No WR, o papel de alvo principal é o sinal que mais se repete. A fatia de alvos está associada a menor risco, e a idade e os jogos perdidos, a maior. Como a experiência é o eixo do tempo, a idade indica quem entrou mais velho na liga, e não o envelhecimento.
+
+\section{O que a predição acrescenta}
+\label{sec:interpretacao_posicao}
+
+A predição testa se o retrato de uma temporada serve para o futuro, e serve: em toda posição, o modelo ordena os jogadores bem acima do acaso e separa quem está perto da saída. As posições diferem no prazo. O QB tem a carreira restante mais longa. O RB tem a mais curta, e o WR fica entre os dois. O erro em anos não compara posições com segurança, porque depende de $\tau$, da fração além do horizonte e do modelo.
+
+O erro se concentra quando a saída não está no retrato, como em Rivers, que saiu um ano depois de uma temporada de 4.615 jardas, e em Evans, que durou além do previsto. A ordem entre os jogadores é, por isso, a leitura mais firme da previsão, já que o tempo até o evento de cada indivíduo não se prevê bem por si só \citep{graf1999}. No RB e no WR, o Cox também aproxima da média as probabilidades dos extremos, e os grupos de maior risco saem mais do que o previsto.
+
+\section{Onde as duas leituras se encontram}
+\label{sec:disc_encontro}
+
+A inferência mede o efeito ajustado numa lista curta, e a permutação mede quanto a ordenação depende da covariável no conjunto completo. Por isso o encontro não se faz com o HR de um modelo: partimos das nove associações da inferência e vemos se elas movem a previsão (Tabela~\ref{tab:leituras_cruzadas}).
+
+As associações da inferência tendem a mover a previsão. Das nove associações, cinco ficam entre as quatro primeiras nas três famílias: a eficiência e a fatia de passes no QB, os jogos perdidos no RB e no WR, e a fatia de alvos no WR. É o núcleo do trabalho: o mesmo sinal acompanha a saída e melhora a ordenação. A idade do WR cai no filtro de colinearidade, e a idade de entrada fica sem representante direto no modelo preditivo. A participação ofensiva do QB oscila do 21º ao 4º lugar, e a profundidade e o YPC do RB ficam no meio da lista. A profundidade, por exemplo, anda junto com a participação ofensiva, que está no topo (Spearman de $-0{,}65$).
+
+\begin{table}[H]
+\centering
+\caption{Covariáveis do Cox final: sentido do risco, ajustes inferenciais com $p<0{,}05$ (Cox, Aalen, Cox--Aalen) e postos por permutação. Célula vazia: fora do conjunto preditivo.}
+\label{tab:leituras_cruzadas}
+\thesistablesetup
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llccccc@{}}
+\toprule
+\textbf{Pos.} & \textbf{Covariável} & \textbf{Sentido} & \textbf{Ajustes (de 3)} & \textbf{Cox pen.} & \textbf{GBSA} & \textbf{RSF} \\
+\midrule
+QB & Eficiência de passe & $-$ & 3 & 2 & 1 & 1 \\
+QB & Fatia de passes da equipe & $-$ & 3 & 3 & 2 & 2 \\
+QB & Participação ofensiva & $+$ & 3 & 21 & 4 & 4 \\
+QB & Hist. defasado TD\% & $-$ & 2 & 22 & 24 & 24 \\
+QB & Hist. defasado comp\% ausente & $+$ & 2 & 13 & 13 & 17 \\
+\midrule
+RB & Jogos perdidos & $+$ & 3 & 1 & 1 & 1 \\
+RB & Hist. defasado YPC & $-$ & 3 & 5 & 6 & 15 \\
+RB & Profundidade no elenco & $+$ & 3 & 6 & 8 & 8 \\
+RB & Fatia de jardas terrestres & $-$ & 2 & 4 & 4 & 4 \\
+RB & Posição no \textit{draft} & $+$ & 1 & 8 & 7 & 16 \\
+\midrule
+WR & Fatia de alvos da equipe & $-$ & 3 & 3 & 1 & 1 \\
+WR & Jogos perdidos & $+$ & 3 & 2 & 3 & 2 \\
+WR & Idade & $+$ & 3 & & & \\
+WR & Hist. defasado jardas de corrida & $-$ & 2 & 10 & 22 & 21 \\
+WR & Hist. defasado alvos na \textit{red zone} & $-$ & 2 & & & \\
+WR & Altura & $+$ & 2 & 19 & 23 & 22 \\
+WR & Participação ofensiva & $+$ & 1 & 4 & 4 & 4 \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+Fora das nove, as leituras se separam nos dois sentidos. O TD\% histórico do QB e a altura e as jardas de corrida do WR quase não movem a ordenação deste conjunto, em que outras covariáveis correlacionadas podem substituí-las. Já a fatia de jardas do RB e a participação ofensiva do WR e do RB ficam no topo das três famílias, com apoio inferencial parcial ou nulo: na predição, elas marcam o papel no elenco.
+
+\section{O que acompanhar em cada posição}
+\label{sec:discussao_elenco}
+
+Juntas, as duas leituras dizem o que acompanhar em cada posição e como usar a previsão na avaliação de um elenco.
+
+No QB, o que se acompanha é a produção. A eficiência de passe e a fatia de passes acompanham a saída e movem a previsão, e a eficiência é o sinal mais firme: um QB 21 pontos de \textit{passer rating} acima da média tem cerca de 35\% menos risco. Como a carreira restante é a mais longa, a ordem da lista ajuda a planejar a posição.
+
+No RB, o que se acompanha são a disponibilidade e o lugar no elenco. As ausências se leem como um acréscimo anual de risco, e cada degrau para baixo no \textit{depth chart} está associado a cerca de $23\%$ mais risco, controladas as demais covariáveis, inclusive as ausências. Como a saída é frequente no maior quintil de risco, esse quintil é a leitura mais útil numa decisão de renovação.
+
+No WR, o que se acompanha são o papel de alvo principal e as ausências. As duas covariáveis acompanham a saída nos três ajustes e ficam entre as três primeiras por permutação nas três famílias: cada 5 pontos percentuais a mais de fatia de alvos correspondem a cerca de metade do risco, e cinco jogos perdidos a mais, a cerca de 27\% mais risco. Na lista de 2024, o grupo de maior risco tem participação ofensiva mediana de $0{,}33$, contra $0{,}80$ no de menor risco: é ali que estão os recebedores fora do papel principal.
+
+Nas três posições, esses sinais servem para acompanhar o jogador, e a lista ordena o elenco.

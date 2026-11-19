@@ -1,0 +1,152 @@
+{
+ "QB": {
+  "cox": {
+   "lista_base": [
+    "observed_career_lag_td_pct",
+    "offense_pct",
+    "passer_rating",
+    "team_pass_attempts_share",
+    "observed_career_lag_comp_pct_missing"
+   ],
+   "lista_nova": [
+    "observed_career_lag_td_pct",
+    "offense_pct",
+    "passer_rating",
+    "team_pass_attempts_share",
+    "observed_career_lag_comp_pct_missing"
+   ],
+   "entram": [],
+   "saem": [],
+   "lr": 7.094116598049595,
+   "gl": 5,
+   "p_lr": 0.21373431807852086
+  },
+  "aalen": {
+   "triagem": {
+    "seasons_since_gap": 6.94991543323166e-07,
+    "games_missed_increased_lag": 0.211175996090171,
+    "efficiency_declined_lag": 0.28873923304494,
+    "offense_pct_declined_lag": 0.658770533699771,
+    "depth_worsened_lag": 0.842908311087491
+   },
+   "entram": [
+    "seasons_since_gap"
+   ],
+   "janela": [
+    1,
+    11
+   ],
+   "janela_oficial": [
+    1,
+    11
+   ]
+  }
+ },
+ "RB": {
+  "cox": {
+   "lista_base": [
+    "depth_team",
+    "draft_ovr",
+    "games_missed",
+    "observed_career_lag_ypc",
+    "team_rushing_yards_share"
+   ],
+   "lista_nova": [
+    "depth_team",
+    "efficiency_declined_lag",
+    "games_missed",
+    "observed_career_lag_ypc",
+    "pre_window_veteran",
+    "team_rushing_yards_share"
+   ],
+   "entram": [
+    "efficiency_declined_lag",
+    "pre_window_veteran"
+   ],
+   "saem": [
+    "draft_ovr"
+   ],
+   "lr": 4.413848443941788,
+   "gl": 5,
+   "p_lr": 0.4914922950693249
+  },
+  "aalen": {
+   "triagem": {
+    "depth_worsened_lag": 0.0230562424708735,
+    "seasons_since_gap": 0.133375286734678,
+    "offense_pct_declined_lag": 0.32620404180022,
+    "games_missed_increased_lag": 0.872275097809211,
+    "efficiency_declined_lag": 0.929439216927016
+   },
+   "entram": [
+    "depth_worsened_lag"
+   ],
+   "janela": [
+    2,
+    9
+   ],
+   "janela_oficial": [
+    1,
+    9
+   ]
+  }
+ },
+ "WR": {
+  "cox": {
+   "lista_base": [
+    "age",
+    "games_missed",
+    "height",
+    "observed_career_lag_rushing_yards",
+    "observed_career_lag_targets_redzone",
+    "offense_pct",
+    "team_targets_share"
+   ],
+   "lista_nova": [
+    "age",
+    "depth_worsened_lag",
+    "games_missed",
+    "games_missed_increased_lag",
+    "height",
+    "observed_career_lag_rushing_yards",
+    "offense_pct",
+    "seasons_since_gap",
+    "team_targets_share"
+   ],
+   "entram": [
+    "depth_worsened_lag",
+    "games_missed_increased_lag",
+    "seasons_since_gap"
+   ],
+   "saem": [
+    "observed_career_lag_targets_redzone"
+   ],
+   "lr": 21.968369053084643,
+   "gl": 5,
+   "p_lr": 0.000530897341086324
+  },
+  "aalen": {
+   "triagem": {
+    "seasons_since_gap": 8.27809531330613e-07,
+    "depth_worsened_lag": 0.0003484488918061,
+    "efficiency_declined_lag": 0.0081692596896423,
+    "games_missed_increased_lag": 0.0217071933856996,
+    "offense_pct_declined_lag": 0.152427893615431
+   },
+   "entram": [
+    "depth_worsened_lag",
+    "efficiency_declined_lag",
+    "games_missed_increased_lag",
+    "seasons_since_gap"
+   ],
+   "janela": [
+    3,
+    10
+   ],
+   "janela_oficial": [
+    2,
+    10
+   ]
+  }
+ }
+}

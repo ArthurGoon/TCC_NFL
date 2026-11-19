@@ -1,0 +1,559 @@
+{
+  "hp_modo": "default",
+  "hps_fonte": "tgb_protocol.DEFAULT_*",
+  "landmark_hp": "fold walk-forward de mesma temporada t_L (sem busca por horizonte)",
+  "seed": 42,
+  "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+  "numpy": "2.4.4",
+  "pandas": "2.3.3",
+  "lifelines": "0.30.3",
+  "scikit_survival": "0.27.0",
+  "n_jobs": 1,
+  "oficial_walkforward": [
+    {
+      "modelo": "cox",
+      "posicao": "QB",
+      "n_folds": 4,
+      "c_index": 0.710456033260636,
+      "c_index_sd": 0.0691545600422833,
+      "ibs": 0.19909927694671986,
+      "mean_time_auc": 0.7333314250858874
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "QB",
+      "n_folds": 4,
+      "c_index": 0.6852142865949162,
+      "c_index_sd": 0.052403865873884396,
+      "ibs": 0.21108778624099334,
+      "mean_time_auc": 0.7017936899136349
+    },
+    {
+      "modelo": "km",
+      "posicao": "QB",
+      "n_folds": 4,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": 0.22107452676404882,
+      "mean_time_auc": 0.5
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "QB",
+      "n_folds": 4,
+      "c_index": 0.6877794706488107,
+      "c_index_sd": 0.07485754461319633,
+      "ibs": 0.20218829509784247,
+      "mean_time_auc": 0.7034668759011616
+    },
+    {
+      "modelo": "cox",
+      "posicao": "RB",
+      "n_folds": 4,
+      "c_index": 0.6784438672028269,
+      "c_index_sd": 0.033490814052338246,
+      "ibs": 0.23283482200627853,
+      "mean_time_auc": 0.7177185382713474
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "RB",
+      "n_folds": 4,
+      "c_index": 0.6323174380971421,
+      "c_index_sd": 0.03372582531643212,
+      "ibs": 0.24028431092445074,
+      "mean_time_auc": 0.6566662506701528
+    },
+    {
+      "modelo": "km",
+      "posicao": "RB",
+      "n_folds": 4,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": 0.2407054494143462,
+      "mean_time_auc": 0.5
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "RB",
+      "n_folds": 4,
+      "c_index": 0.6269439574634315,
+      "c_index_sd": 0.017188290752042992,
+      "ibs": 0.23106134192764494,
+      "mean_time_auc": 0.6506150737110595
+    },
+    {
+      "modelo": "cox",
+      "posicao": "WR",
+      "n_folds": 4,
+      "c_index": 0.6993356196563081,
+      "c_index_sd": 0.018762449357645882,
+      "ibs": 0.22262496634029305,
+      "mean_time_auc": 0.7478296053465795
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "WR",
+      "n_folds": 4,
+      "c_index": 0.6773790999509649,
+      "c_index_sd": 0.00759324053042111,
+      "ibs": 0.22413877545042726,
+      "mean_time_auc": 0.7194413422590377
+    },
+    {
+      "modelo": "km",
+      "posicao": "WR",
+      "n_folds": 4,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": 0.24365863680830618,
+      "mean_time_auc": 0.5
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "WR",
+      "n_folds": 4,
+      "c_index": 0.6731324454758756,
+      "c_index_sd": 0.02578541982873059,
+      "ibs": 0.2221940014722878,
+      "mean_time_auc": 0.7109739606996338
+    }
+  ],
+  "apendice_2022_2023": [
+    {
+      "modelo": "cox",
+      "posicao": "QB",
+      "n_folds": 2,
+      "c_index": 0.7774731612101855,
+      "c_index_sd": 0.040666011495441426,
+      "ibs": NaN,
+      "mean_time_auc": 0.8250330299471521
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "QB",
+      "n_folds": 2,
+      "c_index": 0.7287685209830539,
+      "c_index_sd": 0.011675323571893912,
+      "ibs": NaN,
+      "mean_time_auc": 0.7500917498532002
+    },
+    {
+      "modelo": "km",
+      "posicao": "QB",
+      "n_folds": 2,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN,
+      "mean_time_auc": 0.5
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "QB",
+      "n_folds": 2,
+      "c_index": 0.7236003903823973,
+      "c_index_sd": 0.04096087458403837,
+      "ibs": NaN,
+      "mean_time_auc": 0.6897203464474456
+    },
+    {
+      "modelo": "cox",
+      "posicao": "RB",
+      "n_folds": 2,
+      "c_index": 0.7880934553387076,
+      "c_index_sd": 0.04930661995933889,
+      "ibs": NaN,
+      "mean_time_auc": 0.7652757078986587
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "RB",
+      "n_folds": 2,
+      "c_index": 0.700931247184055,
+      "c_index_sd": 0.05188168039045178,
+      "ibs": NaN,
+      "mean_time_auc": 0.6783407848981619
+    },
+    {
+      "modelo": "km",
+      "posicao": "RB",
+      "n_folds": 2,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN,
+      "mean_time_auc": 0.5
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "RB",
+      "n_folds": 2,
+      "c_index": 0.6514014087017967,
+      "c_index_sd": 0.059452151778049536,
+      "ibs": NaN,
+      "mean_time_auc": 0.6231992051664184
+    },
+    {
+      "modelo": "cox",
+      "posicao": "WR",
+      "n_folds": 2,
+      "c_index": 0.8035020350296807,
+      "c_index_sd": 0.015052356329781302,
+      "ibs": NaN,
+      "mean_time_auc": 0.8165886600628516
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "WR",
+      "n_folds": 2,
+      "c_index": 0.7967853671935998,
+      "c_index_sd": 0.02653185034134997,
+      "ibs": NaN,
+      "mean_time_auc": 0.7961652946769864
+    },
+    {
+      "modelo": "km",
+      "posicao": "WR",
+      "n_folds": 2,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN,
+      "mean_time_auc": 0.5
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "WR",
+      "n_folds": 2,
+      "c_index": 0.7789466239506995,
+      "c_index_sd": 0.011353541189062536,
+      "ibs": NaN,
+      "mean_time_auc": 0.7961492967407202
+    }
+  ],
+  "landmark": [
+    {
+      "modelo": "cox",
+      "posicao": "QB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7715896309713405,
+      "c_index_sd": 0.11069256706900589,
+      "ibs": NaN
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "QB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.737693051923772,
+      "c_index_sd": 0.05681048432076812,
+      "ibs": NaN
+    },
+    {
+      "modelo": "km",
+      "posicao": "QB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "QB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7569484636258043,
+      "c_index_sd": 0.06740973341240393,
+      "ibs": NaN
+    },
+    {
+      "modelo": "cox",
+      "posicao": "QB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7308445461243165,
+      "c_index_sd": 0.07486738787971106,
+      "ibs": NaN
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "QB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7250099036568074,
+      "c_index_sd": 0.03973169667982475,
+      "ibs": NaN
+    },
+    {
+      "modelo": "km",
+      "posicao": "QB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "QB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7271005446487242,
+      "c_index_sd": 0.05536956456744691,
+      "ibs": NaN
+    },
+    {
+      "modelo": "cox",
+      "posicao": "QB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.6866977829638273,
+      "c_index_sd": NaN,
+      "ibs": 0.18153987636718596
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "QB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.6621936989498249,
+      "c_index_sd": NaN,
+      "ibs": 0.17378412472704596
+    },
+    {
+      "modelo": "km",
+      "posicao": "QB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.5,
+      "c_index_sd": NaN,
+      "ibs": 0.19530895397253079
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "QB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.6551925320886814,
+      "c_index_sd": NaN,
+      "ibs": 0.18668501903413964
+    },
+    {
+      "modelo": "cox",
+      "posicao": "RB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7497905643458914,
+      "c_index_sd": 0.027548755384116917,
+      "ibs": NaN
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "RB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7265634997999215,
+      "c_index_sd": 0.023442296163121996,
+      "ibs": NaN
+    },
+    {
+      "modelo": "km",
+      "posicao": "RB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "RB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7315147434232316,
+      "c_index_sd": 0.015493603203218756,
+      "ibs": NaN
+    },
+    {
+      "modelo": "cox",
+      "posicao": "RB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7111134891770816,
+      "c_index_sd": 0.0012571930251500246,
+      "ibs": NaN
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "RB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.6933980705941543,
+      "c_index_sd": 0.0032728285000405842,
+      "ibs": NaN
+    },
+    {
+      "modelo": "km",
+      "posicao": "RB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "RB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7037625099488425,
+      "c_index_sd": 0.016217130043733922,
+      "ibs": NaN
+    },
+    {
+      "modelo": "cox",
+      "posicao": "RB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.7055895320722515,
+      "c_index_sd": NaN,
+      "ibs": 0.2199194537654982
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "RB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.6629213483146067,
+      "c_index_sd": NaN,
+      "ibs": 0.2291259634781609
+    },
+    {
+      "modelo": "km",
+      "posicao": "RB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.5,
+      "c_index_sd": NaN,
+      "ibs": 0.24520536864414585
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "RB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.6686104394822927,
+      "c_index_sd": NaN,
+      "ibs": 0.2096627752946174
+    },
+    {
+      "modelo": "cox",
+      "posicao": "WR",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7822262605028194,
+      "c_index_sd": 0.025832661119276925,
+      "ibs": NaN
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "WR",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7513634054672234,
+      "c_index_sd": 0.052704181502347076,
+      "ibs": NaN
+    },
+    {
+      "modelo": "km",
+      "posicao": "WR",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "WR",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7747275219514682,
+      "c_index_sd": 0.040092065984962975,
+      "ibs": NaN
+    },
+    {
+      "modelo": "cox",
+      "posicao": "WR",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7284776194024478,
+      "c_index_sd": 0.01931983428739062,
+      "ibs": NaN
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "WR",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.6934443829479808,
+      "c_index_sd": 0.0007618612909006612,
+      "ibs": NaN
+    },
+    {
+      "modelo": "km",
+      "posicao": "WR",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "WR",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7086534885411295,
+      "c_index_sd": 0.004470420002762395,
+      "ibs": NaN
+    },
+    {
+      "modelo": "cox",
+      "posicao": "WR",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.7018172671822926,
+      "c_index_sd": NaN,
+      "ibs": 0.20433045557534119
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "WR",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.6742124127523109,
+      "c_index_sd": NaN,
+      "ibs": 0.21601472158277063
+    },
+    {
+      "modelo": "km",
+      "posicao": "WR",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.5,
+      "c_index_sd": NaN,
+      "ibs": 0.23809304786232344
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "WR",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.676098849273722,
+      "c_index_sd": NaN,
+      "ibs": 0.20899379466161666
+    }
+  ],
+  "secs": 151.2
+}

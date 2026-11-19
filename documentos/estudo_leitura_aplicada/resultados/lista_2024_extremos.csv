@@ -1,0 +1,38 @@
+grupo,posicao,rank_principal_posicao,player_id,jogador,modelo_principal,previsao_principal_anos,previsao_cox_anos,previsao_gbsa_anos,previsao_rsf_anos,tau_efetivo,idade_crua_2024,experiencia_crua_2024_anos,estatistica_chave,estatistica_valor_2024,nome_referencia_nominal
+maior_previsao,QB,1,00-0034796,Lamar Jackson,rsf,9.3509,8.1829,8.9074,9.3509,11.0,27.0,6.0,passing_yards,4172.0,True
+maior_previsao,QB,2,00-0039163,C.J. Stroud,rsf,8.8609,7.5197,8.9385,8.8609,11.0,22.0,1.0,passing_yards,3727.0,False
+maior_previsao,QB,3,00-0036389,Jalen Hurts,rsf,8.8032,7.359,8.8028,8.8032,11.0,26.0,4.0,passing_yards,2903.0,False
+maior_previsao,QB,4,00-0039732,Bo Nix,rsf,8.7385,7.5635,8.8654,8.7385,11.0,24.0,0.0,passing_yards,3775.0,False
+maior_previsao,QB,5,00-0035228,Kyler Murray,rsf,8.5632,8.0437,8.7141,8.5632,11.0,27.0,5.0,passing_yards,3851.0,False
+maior_previsao,QB,6,00-0034855,Baker Mayfield,rsf,8.4382,7.3,8.2907,8.4382,11.0,29.0,6.0,passing_yards,4500.0,False
+menor_previsao,QB,69,00-0034771,Mason Rudolph,rsf,3.4823,4.3801,2.6836,3.4823,11.0,29.0,6.0,passing_yards,1530.0,False
+menor_previsao,QB,70,00-0038583,Dorian Thompson-Robinson,rsf,3.4649,3.8605,2.7047,3.4649,11.0,24.0,1.0,passing_yards,440.0,False
+menor_previsao,QB,71,00-0035704,Drew Lock,rsf,3.2623,4.4878,2.3139,3.2623,11.0,27.0,5.0,passing_yards,1071.0,False
+menor_previsao,QB,72,00-0037327,Skylar Thompson,rsf,2.9924,3.6221,1.9219,2.9924,11.0,27.0,2.0,passing_yards,187.0,False
+menor_previsao,QB,73,00-0026300,Josh Johnson,rsf,2.676,0.8049,1.6801,2.676,11.0,38.0,16.0,passing_yards,17.0,False
+menor_previsao,QB,74,00-0032434,Brandon Allen,rsf,2.2603,3.2962,0.9993,2.2603,11.0,31.0,8.0,passing_yards,199.0,False
+referencia_nominal,QB,8,00-0037834,Brock Purdy,rsf,8.3763,7.3,8.347,8.3763,11.0,24.0,2.0,passing_yards,3864.0,True
+maior_previsao,RB,1,00-0039040,Devon Achane,cox,6.874,6.874,4.3012,5.0744,11.0,22.0,1.0,rushing_yards + receiving_yards,1499.0,False
+maior_previsao,RB,2,00-0038542,Bijan Robinson,cox,5.3367,5.3367,4.3656,5.2603,11.0,22.0,1.0,rushing_yards + receiving_yards,1887.0,False
+maior_previsao,RB,3,00-0037525,Jordan Mason,cox,5.2176,5.2176,4.0134,5.3253,11.0,25.0,2.0,rushing_yards + receiving_yards,879.0,False
+maior_previsao,RB,4,00-0038120,Breece Hall,cox,5.1865,5.1865,4.3306,5.5513,11.0,23.0,2.0,rushing_yards + receiving_yards,1359.0,False
+maior_previsao,RB,5,00-0039139,Jahmyr Gibbs,cox,5.1763,5.1763,4.2658,5.2562,11.0,22.0,1.0,rushing_yards + receiving_yards,1888.0,False
+maior_previsao,RB,6,00-0037840,Kyren Williams,cox,5.1234,5.1234,4.191,4.7831,11.0,24.0,2.0,rushing_yards + receiving_yards,1481.0,False
+menor_previsao,RB,102,00-0033280,Christian McCaffrey,cox,1.9936,1.9936,2.5433,1.6482,11.0,28.0,7.0,rushing_yards + receiving_yards,67.0,False
+menor_previsao,RB,103,00-0033699,Austin Ekeler,cox,1.9934,1.9934,3.4503,2.6046,11.0,29.0,7.0,rushing_yards + receiving_yards,701.0,False
+menor_previsao,RB,104,00-0033045,Ezekiel Elliott,cox,1.9684,1.9684,3.1191,2.2288,11.0,29.0,8.0,rushing_yards + receiving_yards,243.0,False
+menor_previsao,RB,105,00-0033955,Jeremy McNichols,cox,1.9112,1.9112,2.8953,2.2038,11.0,28.0,7.0,rushing_yards + receiving_yards,288.0,False
+menor_previsao,RB,106,00-0036370,Joshua Kelley,cox,1.5314,1.5314,2.3876,1.5115,11.0,26.0,4.0,rushing_yards + receiving_yards,2.0,False
+menor_previsao,RB,107,00-0035311,Myles Gaskin,cox,1.4007,1.4007,2.4101,1.3461,11.0,27.0,5.0,rushing_yards + receiving_yards,13.0,False
+maior_previsao,WR,1,00-0039337,Malik Nabers,cox,6.8028,6.8028,6.5474,8.0866,11.0,21.0,0.0,receiving_yards,1204.0,False
+maior_previsao,WR,2,00-0039893,Brian Thomas,cox,6.5121,6.5121,6.4433,7.9577,11.0,21.0,0.0,receiving_yards,1282.0,False
+maior_previsao,WR,3,00-0038117,Wan'Dale Robinson,cox,6.3795,6.3795,6.1295,6.4791,11.0,23.0,2.0,receiving_yards,699.0,False
+maior_previsao,WR,4,00-0036322,Justin Jefferson,cox,6.319,6.319,6.2556,7.9952,11.0,25.0,4.0,receiving_yards,1533.0,False
+maior_previsao,WR,5,00-0036900,Ja'Marr Chase,cox,6.3166,6.3166,6.327,7.9877,11.0,24.0,3.0,receiving_yards,1708.0,False
+maior_previsao,WR,6,00-0039849,Marvin Harrison,cox,6.3131,6.3131,6.3805,7.5798,11.0,22.0,0.0,receiving_yards,885.0,False
+menor_previsao,WR,173,00-0031941,Jamison Crowder,cox,1.8459,1.8459,1.8913,1.3334,11.0,31.0,9.0,receiving_yards,5.0,False
+menor_previsao,WR,174,00-0032128,Chris Conley,cox,1.7879,1.7879,1.8995,1.1418,11.0,31.0,9.0,receiving_yards,76.0,False
+menor_previsao,WR,175,00-0037093,Dareke Young,cox,1.7471,1.7471,2.1553,1.5104,11.0,25.0,2.0,receiving_yards,0.0,False
+menor_previsao,WR,176,00-0034860,Dante Pettis,cox,1.6819,1.6819,2.0227,1.4895,11.0,28.0,6.0,receiving_yards,48.0,False
+menor_previsao,WR,177,00-0031428,Allen Robinson,cox,1.6782,1.6782,1.8138,0.8846,11.0,31.0,10.0,receiving_yards,28.0,False
+menor_previsao,WR,178,00-0034928,Steven Sims,cox,1.4217,1.4217,2.039,1.1855,11.0,27.0,5.0,receiving_yards,0.0,False

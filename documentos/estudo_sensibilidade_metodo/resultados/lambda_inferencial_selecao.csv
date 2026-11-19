@@ -1,0 +1,13 @@
+posicao,lambda,n_final,final,jaccard_vs_oficial,erro
+QB,0.0,5,observed_career_lag_comp_pct_missing;observed_career_lag_td_pct;offense_pct;passer_rating;team_pass_attempts_share,1.0,
+QB,0.001,5,observed_career_lag_comp_pct_missing;observed_career_lag_td_pct;offense_pct;passer_rating;team_pass_attempts_share,1.0,
+QB,0.01,5,observed_career_lag_comp_pct_missing;observed_career_lag_td_pct;offense_pct;passer_rating;team_pass_attempts_share,1.0,
+QB,0.1,4,depth_team;observed_career_lag_td_pct;passer_rating;team_pass_attempts_share,0.5,
+RB,0.0,5,depth_team;draft_ovr;games_missed;observed_career_lag_ypc;team_rushing_yards_share,1.0,
+RB,0.001,5,depth_team;draft_ovr;games_missed;observed_career_lag_ypc;team_rushing_yards_share,1.0,
+RB,0.01,5,depth_team;draft_ovr;games_missed;observed_career_lag_ypc;team_rushing_yards_share,1.0,
+RB,0.1,5,depth_team;games_missed;observed_career_lag_ypc;offense_pct;team_rushing_yards_share,0.6666666666666666,
+WR,0.0,7,age;games_missed;height;observed_career_lag_rushing_yards;observed_career_lag_targets_redzone;offense_pct;team_targets_share,1.0,
+WR,0.001,6,age;games_missed;height;observed_career_lag_rushing_yards;observed_career_lag_targets_redzone;team_targets_share,0.8571428571428571,
+WR,0.01,6,age;games_missed;height;observed_career_lag_rushing_yards;observed_career_lag_targets_redzone;team_targets_share,0.8571428571428571,
+WR,0.1,7,depth_team;games_missed;height;observed_career_lag_rushing_yards;observed_career_lag_targets_redzone;offense_pct;team_targets_share,0.75,

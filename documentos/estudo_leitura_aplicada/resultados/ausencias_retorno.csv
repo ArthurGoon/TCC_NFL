@@ -1,0 +1,3 @@
+populacao,descricao,n_jogadores_com_ausencia,n_ausencias_uma_temporada,n_com_retorno_depois,fracao_com_retorno
+QB_RB_WR,"temporada regular, QB, RB ou WR",756,872,182,0.2087
+todas_posicoes,"temporada regular, todas as posicoes do CSV",1060,1227,258,0.2103

@@ -1,0 +1,7 @@
+posicao,modelo,x_fonte,n_covs,n_folds,c_index_medio,c_index_sd,ibs_medio,delta_vs_cox_oficial,veredito
+QB,elasticnet,Predição/shared/covs_preditivas_QB.json,25,4,0.706193129508329,0.07370246663918796,0.20547247319530265,0.0008561407193307113,empata
+QB,cox_oficial,Predição/shared/covs_preditivas_QB.json,25,4,0.7053369887889983,0.0727167837871188,0.1971874071534132,0.0,empata
+RB,elasticnet,Predição/shared/covs_preditivas_RB.json,21,4,0.7106124416880051,0.020318379828494295,0.22283954308047882,0.006562314184944462,melhora
+RB,cox_oficial,Predição/shared/covs_preditivas_RB.json,21,4,0.7040501275030606,0.0265090932634618,0.2230690343353614,0.0,empata
+WR,elasticnet,Predição/shared/covs_preditivas_WR.json,25,4,0.711403984284543,0.01886733973399319,0.2137468876484076,0.007735376882725742,melhora
+WR,cox_oficial,Predição/shared/covs_preditivas_WR.json,25,4,0.7036686074018172,0.0192782721941135,0.2192769928919117,0.0,empata

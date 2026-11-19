@@ -1,0 +1,182 @@
+{
+ "QB|cox|1": {
+  "prevista": 0.8205,
+  "km": 0.7805
+ },
+ "QB|cox|2": {
+  "prevista": 0.7621,
+  "km": 0.6829
+ },
+ "QB|cox|3": {
+  "prevista": 0.6787,
+  "km": 0.6341
+ },
+ "QB|cox|4": {
+  "prevista": 0.5645,
+  "km": 0.4878
+ },
+ "QB|cox|5": {
+  "prevista": 0.4364,
+  "km": 0.2683
+ },
+ "QB|gbsa|1": {
+  "prevista": 0.8188,
+  "km": 0.8049
+ },
+ "QB|gbsa|2": {
+  "prevista": 0.7675,
+  "km": 0.6829
+ },
+ "QB|gbsa|3": {
+  "prevista": 0.6795,
+  "km": 0.561
+ },
+ "QB|gbsa|4": {
+  "prevista": 0.5775,
+  "km": 0.3659
+ },
+ "QB|gbsa|5": {
+  "prevista": 0.4478,
+  "km": 0.439
+ },
+ "QB|rsf|1": {
+  "prevista": 0.898,
+  "km": 0.7317
+ },
+ "QB|rsf|2": {
+  "prevista": 0.7863,
+  "km": 0.8049
+ },
+ "QB|rsf|3": {
+  "prevista": 0.6373,
+  "km": 0.5854
+ },
+ "QB|rsf|4": {
+  "prevista": 0.5124,
+  "km": 0.3415
+ },
+ "QB|rsf|5": {
+  "prevista": 0.4022,
+  "km": 0.3902
+ },
+ "RB|cox|1": {
+  "prevista": 0.6163,
+  "km": 0.5921
+ },
+ "RB|cox|2": {
+  "prevista": 0.5298,
+  "km": 0.4667
+ },
+ "RB|cox|3": {
+  "prevista": 0.4689,
+  "km": 0.3378
+ },
+ "RB|cox|4": {
+  "prevista": 0.4097,
+  "km": 0.1818
+ },
+ "RB|cox|5": {
+  "prevista": 0.3187,
+  "km": 0.1711
+ },
+ "RB|gbsa|1": {
+  "prevista": 0.5777,
+  "km": 0.5467
+ },
+ "RB|gbsa|2": {
+  "prevista": 0.508,
+  "km": 0.4026
+ },
+ "RB|gbsa|3": {
+  "prevista": 0.4598,
+  "km": 0.2821
+ },
+ "RB|gbsa|4": {
+  "prevista": 0.4268,
+  "km": 0.2917
+ },
+ "RB|gbsa|5": {
+  "prevista": 0.3573,
+  "km": 0.2237
+ },
+ "RB|rsf|1": {
+  "prevista": 0.6716,
+  "km": 0.6053
+ },
+ "RB|rsf|2": {
+  "prevista": 0.537,
+  "km": 0.3867
+ },
+ "RB|rsf|3": {
+  "prevista": 0.447,
+  "km": 0.2973
+ },
+ "RB|rsf|4": {
+  "prevista": 0.3716,
+  "km": 0.2208
+ },
+ "RB|rsf|5": {
+  "prevista": 0.2577,
+  "km": 0.2368
+ },
+ "WR|cox|1": {
+  "prevista": 0.6993,
+  "km": 0.7241
+ },
+ "WR|cox|2": {
+  "prevista": 0.6087,
+  "km": 0.4914
+ },
+ "WR|cox|3": {
+  "prevista": 0.5351,
+  "km": 0.3276
+ },
+ "WR|cox|4": {
+  "prevista": 0.4517,
+  "km": 0.287
+ },
+ "WR|cox|5": {
+  "prevista": 0.3089,
+  "km": 0.1983
+ },
+ "WR|gbsa|1": {
+  "prevista": 0.6795,
+  "km": 0.6552
+ },
+ "WR|gbsa|2": {
+  "prevista": 0.5978,
+  "km": 0.5603
+ },
+ "WR|gbsa|3": {
+  "prevista": 0.5141,
+  "km": 0.2931
+ },
+ "WR|gbsa|4": {
+  "prevista": 0.4293,
+  "km": 0.3391
+ },
+ "WR|gbsa|5": {
+  "prevista": 0.3129,
+  "km": 0.181
+ },
+ "WR|rsf|1": {
+  "prevista": 0.7935,
+  "km": 0.6897
+ },
+ "WR|rsf|2": {
+  "prevista": 0.6655,
+  "km": 0.5172
+ },
+ "WR|rsf|3": {
+  "prevista": 0.5297,
+  "km": 0.3621
+ },
+ "WR|rsf|4": {
+  "prevista": 0.4067,
+  "km": 0.2696
+ },
+ "WR|rsf|5": {
+  "prevista": 0.2723,
+  "km": 0.1897
+ }
+}

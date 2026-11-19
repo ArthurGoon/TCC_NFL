@@ -1,0 +1,63 @@
+{
+  "position": "RB",
+  "model": "cox_aalen_scheike_zhang_2002",
+  "janela_inicio": 1,
+  "janela_fim": 9,
+  "formula": "Surv(start, stop, event) ~ games_missed + team_rushing_yards_share +      prop(depth_team) + prop(draft_ovr) + prop(observed_career_lag_ypc)",
+  "n_subjects": 397,
+  "n_periods": 1454,
+  "n_events": 289,
+  "n_events_janela": 223,
+  "additive_covariates": [
+    "games_missed",
+    "team_rushing_yards_share"
+  ],
+  "multiplicative_covariates": [
+    "depth_team",
+    "draft_ovr",
+    "observed_career_lag_ypc"
+  ],
+  "converged": true,
+  "tests_null_effect": {
+    "(Intercept)": {
+      "p_value": 0,
+      "significant": true
+    },
+    "games_missed": {
+      "p_value": 0,
+      "significant": true
+    },
+    "team_rushing_yards_share": {
+      "p_value": 0.003,
+      "significant": true
+    }
+  },
+  "tests_constant_effect": {
+    "(Intercept)": {
+      "p_value": 0.001,
+      "is_constant": false
+    },
+    "games_missed": {
+      "p_value": 0.847,
+      "is_constant": true
+    },
+    "team_rushing_yards_share": {
+      "p_value": 0.509,
+      "is_constant": true
+    }
+  },
+  "tests_proportionality": {
+    "depth_team": {
+      "p_value": 0.37,
+      "proportional": true
+    },
+    "draft_ovr": {
+      "p_value": 0.463,
+      "proportional": true
+    },
+    "observed_career_lag_ypc": {
+      "p_value": 0.626,
+      "proportional": true
+    }
+  }
+}

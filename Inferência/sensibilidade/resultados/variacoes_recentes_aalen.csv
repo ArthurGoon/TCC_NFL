@@ -1,0 +1,16 @@
+posicao,covariavel,p_sem,p_com,p_triagem
+QB,passer_rating,5e-06,9e-06,
+QB,team_pass_attempts_share,0.024442,0.022993,
+QB,offense_pct,0.02177,0.018455,
+QB,seasons_since_gap,,0.040306,6.94991543323166e-07
+RB,games_missed,0.0,0.0,
+RB,depth_team,0.012592,0.002401,
+RB,observed_career_lag_ypc,0.009669,0.006294,
+RB,depth_worsened_lag,,0.650525,0.0230562424708735
+WR,games_missed,0.0,0.0,
+WR,age,0.005344,0.005535,
+WR,team_targets_share,0.020769,0.031737,
+WR,depth_worsened_lag,,0.013804,0.0003484488918061
+WR,efficiency_declined_lag,,0.607129,0.0081692596896423
+WR,games_missed_increased_lag,,0.032711,0.0217071933856996
+WR,seasons_since_gap,,0.295284,8.27809531330613e-07

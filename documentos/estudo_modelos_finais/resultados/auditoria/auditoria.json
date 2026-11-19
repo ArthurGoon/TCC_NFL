@@ -1,0 +1,4751 @@
+{
+  "inventario": [
+    {
+      "posicao": "QB",
+      "n_snapshots": 848,
+      "n_jogadores": 182,
+      "n_eventos_jogador": 107,
+      "n_covs_json": 25,
+      "n_ativos_2024": 74,
+      "residual_2024_mediana": 0.0,
+      "residual_2024_max": 0.0,
+      "eventos_2024": 0
+    },
+    {
+      "posicao": "RB",
+      "n_snapshots": 1454,
+      "n_jogadores": 397,
+      "n_eventos_jogador": 289,
+      "n_covs_json": 21,
+      "n_ativos_2024": 107,
+      "residual_2024_mediana": 0.0,
+      "residual_2024_max": 0.0,
+      "eventos_2024": 0
+    },
+    {
+      "posicao": "WR",
+      "n_snapshots": 2171,
+      "n_jogadores": 573,
+      "n_eventos_jogador": 394,
+      "n_covs_json": 25,
+      "n_ativos_2024": 178,
+      "residual_2024_mediana": 0.0,
+      "residual_2024_max": 0.0,
+      "eventos_2024": 0
+    }
+  ],
+  "protocolo": [
+    {
+      "ok": true,
+      "codigo": "hp_por_fold_walkforward",
+      "detalhe": "linhas conferidas=36; divergencias=0; modos=['nested']"
+    },
+    {
+      "ok": true,
+      "codigo": "hp_por_fold_landmark",
+      "detalhe": "origens conferidas=36; origem = HP do fold walk-forward de mesma temporada"
+    },
+    {
+      "ok": true,
+      "codigo": "rsf_todas_posicoes",
+      "detalhe": "folds oficiais com RSF por posicao={'QB': 4, 'RB': 4, 'WR': 4}"
+    },
+    {
+      "ok": true,
+      "codigo": "hp_sem_divergencia",
+      "detalhe": "nenhuma divergencia"
+    },
+    {
+      "ok": true,
+      "codigo": "km_piso",
+      "detalhe": "min=0.5 max=0.5"
+    },
+    {
+      "ok": true,
+      "codigo": "n_covs",
+      "detalhe": "folds={'QB': 25, 'RB': 21, 'WR': 25} json={'QB': 25, 'RB': 21, 'WR': 25}"
+    },
+    {
+      "ok": true,
+      "codigo": "rsf_qb_dentro",
+      "detalhe": "n_folds_rsf_qb=4 (mesmo numero de folds do Cox no QB)"
+    },
+    {
+      "ok": true,
+      "codigo": "rsf_regra_protocolo",
+      "detalhe": "rsf_permitido em tgb_protocol (RSF_MIN_EVENTOS=200, diagnóstico)"
+    },
+    {
+      "ok": true,
+      "codigo": "rsf_qb_eventos",
+      "detalhe": "QB eventos=107 (diagnóstico; limiar de referência 200)"
+    },
+    {
+      "ok": true,
+      "codigo": "2024_sem_rotulo",
+      "detalhe": "eventos em 2024: QB=0, RB=0, WR=0"
+    },
+    {
+      "ok": true,
+      "codigo": "2024_residual_zero",
+      "detalhe": "residual max 2024: QB=0.0, RB=0.0, WR=0.0"
+    },
+    {
+      "ok": true,
+      "codigo": "oficial_2018_2021",
+      "detalhe": "[np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021)]"
+    },
+    {
+      "ok": true,
+      "codigo": "landmark_vanhouwelingen",
+      "detalhe": "w=[np.int64(1), np.int64(2), np.int64(3)] tL=[np.int64(2020), np.int64(2021), np.int64(2022), np.int64(2023)]"
+    },
+    {
+      "ok": false,
+      "codigo": "uno_degenerado",
+      "detalhe": "Uno=Harrell neste recorte; não reportar Uno como métrica extra"
+    },
+    {
+      "ok": true,
+      "codigo": "ibs_2022_2023_vazio",
+      "detalhe": "IBS ausente nos folds curtos, como o protocolo prevê"
+    }
+  ],
+  "n_checks_ok": 14,
+  "n_checks": 15,
+  "rsf_diagnostico": [
+    {
+      "posicao": "QB",
+      "n_eventos": 107,
+      "rsf_ajustado": true,
+      "n_folds": 4,
+      "regra_aplicada": "posicao_em_RSF_POSICOES_COM_RSF",
+      "limiar_eventos": 200,
+      "fonte_regra": "Predição/shared/tgb_protocol.py::rsf_permitido"
+    },
+    {
+      "posicao": "RB",
+      "n_eventos": 289,
+      "rsf_ajustado": true,
+      "n_folds": 4,
+      "regra_aplicada": "posicao_em_RSF_POSICOES_COM_RSF",
+      "limiar_eventos": 200,
+      "fonte_regra": "Predição/shared/tgb_protocol.py::rsf_permitido"
+    },
+    {
+      "posicao": "WR",
+      "n_eventos": 394,
+      "rsf_ajustado": true,
+      "n_folds": 4,
+      "regra_aplicada": "posicao_em_RSF_POSICOES_COM_RSF",
+      "limiar_eventos": 200,
+      "fonte_regra": "Predição/shared/tgb_protocol.py::rsf_permitido"
+    }
+  ],
+  "followup_max": [
+    {
+      "posicao": "QB",
+      "landmark_tL": 2020,
+      "horizon_w": 1,
+      "max_followup_observado": 4.0,
+      "n_teste": 73,
+      "n_eventos": 15
+    },
+    {
+      "posicao": "QB",
+      "landmark_tL": 2020,
+      "horizon_w": 2,
+      "max_followup_observado": 4.0,
+      "n_teste": 73,
+      "n_eventos": 25
+    },
+    {
+      "posicao": "QB",
+      "landmark_tL": 2020,
+      "horizon_w": 3,
+      "max_followup_observado": 4.0,
+      "n_teste": 73,
+      "n_eventos": 33
+    },
+    {
+      "posicao": "QB",
+      "landmark_tL": 2021,
+      "horizon_w": 1,
+      "max_followup_observado": 3.0,
+      "n_teste": 70,
+      "n_eventos": 17
+    },
+    {
+      "posicao": "QB",
+      "landmark_tL": 2021,
+      "horizon_w": 2,
+      "max_followup_observado": 3.0,
+      "n_teste": 70,
+      "n_eventos": 26
+    },
+    {
+      "posicao": "QB",
+      "landmark_tL": 2021,
+      "horizon_w": 3,
+      "max_followup_observado": 3.0,
+      "n_teste": 70,
+      "n_eventos": 26
+    },
+    {
+      "posicao": "QB",
+      "landmark_tL": 2022,
+      "horizon_w": 1,
+      "max_followup_observado": 2.0,
+      "n_teste": 73,
+      "n_eventos": 20
+    },
+    {
+      "posicao": "QB",
+      "landmark_tL": 2022,
+      "horizon_w": 2,
+      "max_followup_observado": 2.0,
+      "n_teste": 73,
+      "n_eventos": 20
+    },
+    {
+      "posicao": "QB",
+      "landmark_tL": 2022,
+      "horizon_w": 3,
+      "max_followup_observado": 2.0,
+      "n_teste": 73,
+      "n_eventos": 20
+    },
+    {
+      "posicao": "QB",
+      "landmark_tL": 2023,
+      "horizon_w": 1,
+      "max_followup_observado": 1.0,
+      "n_teste": 74,
+      "n_eventos": 13
+    },
+    {
+      "posicao": "QB",
+      "landmark_tL": 2023,
+      "horizon_w": 2,
+      "max_followup_observado": 1.0,
+      "n_teste": 74,
+      "n_eventos": 13
+    },
+    {
+      "posicao": "QB",
+      "landmark_tL": 2023,
+      "horizon_w": 3,
+      "max_followup_observado": 1.0,
+      "n_teste": 74,
+      "n_eventos": 13
+    },
+    {
+      "posicao": "RB",
+      "landmark_tL": 2020,
+      "horizon_w": 1,
+      "max_followup_observado": 4.0,
+      "n_teste": 134,
+      "n_eventos": 49
+    },
+    {
+      "posicao": "RB",
+      "landmark_tL": 2020,
+      "horizon_w": 2,
+      "max_followup_observado": 4.0,
+      "n_teste": 134,
+      "n_eventos": 72
+    },
+    {
+      "posicao": "RB",
+      "landmark_tL": 2020,
+      "horizon_w": 3,
+      "max_followup_observado": 4.0,
+      "n_teste": 134,
+      "n_eventos": 92
+    },
+    {
+      "posicao": "RB",
+      "landmark_tL": 2021,
+      "horizon_w": 1,
+      "max_followup_observado": 3.0,
+      "n_teste": 133,
+      "n_eventos": 61
+    },
+    {
+      "posicao": "RB",
+      "landmark_tL": 2021,
+      "horizon_w": 2,
+      "max_followup_observado": 3.0,
+      "n_teste": 133,
+      "n_eventos": 88
+    },
+    {
+      "posicao": "RB",
+      "landmark_tL": 2021,
+      "horizon_w": 3,
+      "max_followup_observado": 3.0,
+      "n_teste": 133,
+      "n_eventos": 88
+    },
+    {
+      "posicao": "RB",
+      "landmark_tL": 2022,
+      "horizon_w": 1,
+      "max_followup_observado": 2.0,
+      "n_teste": 127,
+      "n_eventos": 61
+    },
+    {
+      "posicao": "RB",
+      "landmark_tL": 2022,
+      "horizon_w": 2,
+      "max_followup_observado": 2.0,
+      "n_teste": 127,
+      "n_eventos": 61
+    },
+    {
+      "posicao": "RB",
+      "landmark_tL": 2022,
+      "horizon_w": 3,
+      "max_followup_observado": 2.0,
+      "n_teste": 127,
+      "n_eventos": 61
+    },
+    {
+      "posicao": "RB",
+      "landmark_tL": 2023,
+      "horizon_w": 1,
+      "max_followup_observado": 1.0,
+      "n_teste": 120,
+      "n_eventos": 36
+    },
+    {
+      "posicao": "RB",
+      "landmark_tL": 2023,
+      "horizon_w": 2,
+      "max_followup_observado": 1.0,
+      "n_teste": 120,
+      "n_eventos": 36
+    },
+    {
+      "posicao": "RB",
+      "landmark_tL": 2023,
+      "horizon_w": 3,
+      "max_followup_observado": 1.0,
+      "n_teste": 120,
+      "n_eventos": 36
+    },
+    {
+      "posicao": "WR",
+      "landmark_tL": 2020,
+      "horizon_w": 1,
+      "max_followup_observado": 4.0,
+      "n_teste": 204,
+      "n_eventos": 68
+    },
+    {
+      "posicao": "WR",
+      "landmark_tL": 2020,
+      "horizon_w": 2,
+      "max_followup_observado": 4.0,
+      "n_teste": 204,
+      "n_eventos": 100
+    },
+    {
+      "posicao": "WR",
+      "landmark_tL": 2020,
+      "horizon_w": 3,
+      "max_followup_observado": 4.0,
+      "n_teste": 204,
+      "n_eventos": 129
+    },
+    {
+      "posicao": "WR",
+      "landmark_tL": 2021,
+      "horizon_w": 1,
+      "max_followup_observado": 3.0,
+      "n_teste": 202,
+      "n_eventos": 82
+    },
+    {
+      "posicao": "WR",
+      "landmark_tL": 2021,
+      "horizon_w": 2,
+      "max_followup_observado": 3.0,
+      "n_teste": 202,
+      "n_eventos": 113
+    },
+    {
+      "posicao": "WR",
+      "landmark_tL": 2021,
+      "horizon_w": 3,
+      "max_followup_observado": 3.0,
+      "n_teste": 202,
+      "n_eventos": 113
+    },
+    {
+      "posicao": "WR",
+      "landmark_tL": 2022,
+      "horizon_w": 1,
+      "max_followup_observado": 2.0,
+      "n_teste": 195,
+      "n_eventos": 87
+    },
+    {
+      "posicao": "WR",
+      "landmark_tL": 2022,
+      "horizon_w": 2,
+      "max_followup_observado": 2.0,
+      "n_teste": 195,
+      "n_eventos": 87
+    },
+    {
+      "posicao": "WR",
+      "landmark_tL": 2022,
+      "horizon_w": 3,
+      "max_followup_observado": 2.0,
+      "n_teste": 195,
+      "n_eventos": 87
+    },
+    {
+      "posicao": "WR",
+      "landmark_tL": 2023,
+      "horizon_w": 1,
+      "max_followup_observado": 1.0,
+      "n_teste": 192,
+      "n_eventos": 51
+    },
+    {
+      "posicao": "WR",
+      "landmark_tL": 2023,
+      "horizon_w": 2,
+      "max_followup_observado": 1.0,
+      "n_teste": 192,
+      "n_eventos": 51
+    },
+    {
+      "posicao": "WR",
+      "landmark_tL": 2023,
+      "horizon_w": 3,
+      "max_followup_observado": 1.0,
+      "n_teste": 192,
+      "n_eventos": 51
+    }
+  ],
+  "fold_winners": [
+    {
+      "posicao": "QB",
+      "temporada": 2018,
+      "vencedor_fold": "rsf",
+      "c_vencedor": 0.632,
+      "campeao_oficial": "rsf",
+      "c_campeao": 0.632,
+      "campeao_venceu_fold": true
+    },
+    {
+      "posicao": "QB",
+      "temporada": 2019,
+      "vencedor_fold": "gbsa",
+      "c_vencedor": 0.768,
+      "campeao_oficial": "rsf",
+      "c_campeao": 0.767,
+      "campeao_venceu_fold": false
+    },
+    {
+      "posicao": "QB",
+      "temporada": 2020,
+      "vencedor_fold": "rsf",
+      "c_vencedor": 0.684,
+      "campeao_oficial": "rsf",
+      "c_campeao": 0.684,
+      "campeao_venceu_fold": true
+    },
+    {
+      "posicao": "QB",
+      "temporada": 2021,
+      "vencedor_fold": "cox",
+      "c_vencedor": 0.78,
+      "campeao_oficial": "rsf",
+      "c_campeao": 0.755,
+      "campeao_venceu_fold": false
+    },
+    {
+      "posicao": "RB",
+      "temporada": 2018,
+      "vencedor_fold": "cox",
+      "c_vencedor": 0.665,
+      "campeao_oficial": "cox",
+      "c_campeao": 0.665,
+      "campeao_venceu_fold": true
+    },
+    {
+      "posicao": "RB",
+      "temporada": 2019,
+      "vencedor_fold": "cox",
+      "c_vencedor": 0.715,
+      "campeao_oficial": "cox",
+      "c_campeao": 0.715,
+      "campeao_venceu_fold": true
+    },
+    {
+      "posicao": "RB",
+      "temporada": 2020,
+      "vencedor_fold": "cox",
+      "c_vencedor": 0.724,
+      "campeao_oficial": "cox",
+      "c_campeao": 0.724,
+      "campeao_venceu_fold": true
+    },
+    {
+      "posicao": "RB",
+      "temporada": 2021,
+      "vencedor_fold": "cox",
+      "c_vencedor": 0.712,
+      "campeao_oficial": "cox",
+      "c_campeao": 0.712,
+      "campeao_venceu_fold": true
+    },
+    {
+      "posicao": "WR",
+      "temporada": 2018,
+      "vencedor_fold": "rsf",
+      "c_vencedor": 0.725,
+      "campeao_oficial": "cox",
+      "c_campeao": 0.714,
+      "campeao_venceu_fold": false
+    },
+    {
+      "posicao": "WR",
+      "temporada": 2019,
+      "vencedor_fold": "cox",
+      "c_vencedor": 0.68,
+      "campeao_oficial": "cox",
+      "c_campeao": 0.68,
+      "campeao_venceu_fold": true
+    },
+    {
+      "posicao": "WR",
+      "temporada": 2020,
+      "vencedor_fold": "cox",
+      "c_vencedor": 0.696,
+      "campeao_oficial": "cox",
+      "c_campeao": 0.696,
+      "campeao_venceu_fold": true
+    },
+    {
+      "posicao": "WR",
+      "temporada": 2021,
+      "vencedor_fold": "cox",
+      "c_vencedor": 0.724,
+      "campeao_oficial": "cox",
+      "c_campeao": 0.724,
+      "campeao_venceu_fold": true
+    }
+  ],
+  "notas_fold": [
+    "QB 2021: Cox 0.780 vs GBSA 0.703 (Cox ganha o fold; média ainda é GBSA).",
+    "RB 2021: RSF 0.676 vs GBSA 0.683 (RSF ganha o fold; média ainda é GBSA).",
+    "WR: RSF vence 1/4 folds oficiais."
+  ],
+  "oficial_c": [
+    {
+      "modelo": "cox",
+      "posicao": "QB",
+      "n_folds": 4,
+      "c_index": 0.7053369887889983,
+      "c_index_sd": 0.0727167837871188,
+      "ibs": 0.1971874071534132,
+      "mean_time_auc": 0.7232012292811485
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "QB",
+      "n_folds": 4,
+      "c_index": 0.6758307685556466,
+      "c_index_sd": 0.0794133282187302,
+      "ibs": 0.223770425618706,
+      "mean_time_auc": 0.6873121771790043
+    },
+    {
+      "modelo": "km",
+      "posicao": "QB",
+      "n_folds": 4,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": 0.2210745267640488,
+      "mean_time_auc": 0.5
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "QB",
+      "n_folds": 4,
+      "c_index": 0.7093209828735393,
+      "c_index_sd": 0.0630298199667708,
+      "ibs": 0.1937168981593346,
+      "mean_time_auc": 0.7310002251528158
+    },
+    {
+      "modelo": "cox",
+      "posicao": "RB",
+      "n_folds": 4,
+      "c_index": 0.7040501275030606,
+      "c_index_sd": 0.0265090932634618,
+      "ibs": 0.2230690343353614,
+      "mean_time_auc": 0.7502892152573186
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "RB",
+      "n_folds": 4,
+      "c_index": 0.6647556037747289,
+      "c_index_sd": 0.0289411306331067,
+      "ibs": 0.2376708933538727,
+      "mean_time_auc": 0.6964780929635734
+    },
+    {
+      "modelo": "km",
+      "posicao": "RB",
+      "n_folds": 4,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": 0.2407054494143462,
+      "mean_time_auc": 0.5
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "RB",
+      "n_folds": 4,
+      "c_index": 0.6613451768446466,
+      "c_index_sd": 0.0266645388485715,
+      "ibs": 0.2188484137103802,
+      "mean_time_auc": 0.6931152705039332
+    },
+    {
+      "modelo": "cox",
+      "posicao": "WR",
+      "n_folds": 4,
+      "c_index": 0.7036686074018172,
+      "c_index_sd": 0.0192782721941135,
+      "ibs": 0.2192769928919117,
+      "mean_time_auc": 0.7501500130049632
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "WR",
+      "n_folds": 4,
+      "c_index": 0.6868487908341705,
+      "c_index_sd": 0.0179982533555167,
+      "ibs": 0.2266382091134666,
+      "mean_time_auc": 0.7266553423903279
+    },
+    {
+      "modelo": "km",
+      "posicao": "WR",
+      "n_folds": 4,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": 0.2436586368083061,
+      "mean_time_auc": 0.5
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "WR",
+      "n_folds": 4,
+      "c_index": 0.6933904479265647,
+      "c_index_sd": 0.0230818466432318,
+      "ibs": 0.2108677981950422,
+      "mean_time_auc": 0.7363311059660881
+    }
+  ],
+  "landmark_c": [
+    {
+      "modelo": "cox",
+      "posicao": "QB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7328647310801965,
+      "c_index_sd": 0.137709178866709,
+      "ibs": NaN
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "QB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7013746403708391,
+      "c_index_sd": 0.0981130017243409,
+      "ibs": NaN
+    },
+    {
+      "modelo": "km",
+      "posicao": "QB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "QB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7744013293104249,
+      "c_index_sd": 0.0624536475652315,
+      "ibs": NaN
+    },
+    {
+      "modelo": "cox",
+      "posicao": "QB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7062905512826021,
+      "c_index_sd": 0.0837663127113526,
+      "ibs": NaN
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "QB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.6642735012728034,
+      "c_index_sd": 0.0502149910238993,
+      "ibs": NaN
+    },
+    {
+      "modelo": "km",
+      "posicao": "QB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "QB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7338892655888274,
+      "c_index_sd": 0.0416367565133546,
+      "ibs": NaN
+    },
+    {
+      "modelo": "cox",
+      "posicao": "QB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.6715285880980163,
+      "c_index_sd": NaN,
+      "ibs": 0.1832546907688947
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "QB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.6566511085180864,
+      "c_index_sd": NaN,
+      "ibs": 0.1879003711097399
+    },
+    {
+      "modelo": "km",
+      "posicao": "QB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.5,
+      "c_index_sd": NaN,
+      "ibs": 0.1953089539725307
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "QB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.6878646441073513,
+      "c_index_sd": NaN,
+      "ibs": 0.17481129950129
+    },
+    {
+      "modelo": "cox",
+      "posicao": "RB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7629927413829742,
+      "c_index_sd": 0.0236893212186359,
+      "ibs": NaN
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "RB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7379593585665148,
+      "c_index_sd": 0.0291475564602016,
+      "ibs": NaN
+    },
+    {
+      "modelo": "km",
+      "posicao": "RB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "RB",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7504702156135504,
+      "c_index_sd": 0.0187172537988652,
+      "ibs": NaN
+    },
+    {
+      "modelo": "cox",
+      "posicao": "RB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7307252229914695,
+      "c_index_sd": 0.0011238453286786,
+      "ibs": NaN
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "RB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7103426842710074,
+      "c_index_sd": 0.0070200269054368,
+      "ibs": NaN
+    },
+    {
+      "modelo": "km",
+      "posicao": "RB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "RB",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7293891619817154,
+      "c_index_sd": 0.0035067969244338,
+      "ibs": NaN
+    },
+    {
+      "modelo": "cox",
+      "posicao": "RB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.7245057602048073,
+      "c_index_sd": NaN,
+      "ibs": 0.2181462888112034
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "RB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.7097141231688238,
+      "c_index_sd": NaN,
+      "ibs": 0.2325572947152728
+    },
+    {
+      "modelo": "km",
+      "posicao": "RB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.5,
+      "c_index_sd": NaN,
+      "ibs": 0.2452053686441458
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "RB",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.7136964869862039,
+      "c_index_sd": NaN,
+      "ibs": 0.201809330864436
+    },
+    {
+      "modelo": "cox",
+      "posicao": "WR",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7821457005059775,
+      "c_index_sd": 0.0231988344120991,
+      "ibs": NaN
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "WR",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7687681640380832,
+      "c_index_sd": 0.0482563818228214,
+      "ibs": NaN
+    },
+    {
+      "modelo": "km",
+      "posicao": "WR",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "WR",
+      "horizon_w": 1,
+      "n_folds": 3,
+      "c_index": 0.7836028957597231,
+      "c_index_sd": 0.0334561202489575,
+      "ibs": NaN
+    },
+    {
+      "modelo": "cox",
+      "posicao": "WR",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7330243768621368,
+      "c_index_sd": 0.0210111511304653,
+      "ibs": NaN
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "WR",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7072418263710984,
+      "c_index_sd": 0.0018526741160198,
+      "ibs": NaN
+    },
+    {
+      "modelo": "km",
+      "posicao": "WR",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.5,
+      "c_index_sd": 0.0,
+      "ibs": NaN
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "WR",
+      "horizon_w": 2,
+      "n_folds": 2,
+      "c_index": 0.7300395452325297,
+      "c_index_sd": 0.0174080620916796,
+      "ibs": NaN
+    },
+    {
+      "modelo": "cox",
+      "posicao": "WR",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.7079796264855688,
+      "c_index_sd": NaN,
+      "ibs": 0.2044399457916625
+    },
+    {
+      "modelo": "gbsa",
+      "posicao": "WR",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.6964094824875809,
+      "c_index_sd": NaN,
+      "ibs": 0.2071889457592492
+    },
+    {
+      "modelo": "km",
+      "posicao": "WR",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.5,
+      "c_index_sd": NaN,
+      "ibs": 0.2380930478623234
+    },
+    {
+      "modelo": "rsf",
+      "posicao": "WR",
+      "horizon_w": 3,
+      "n_folds": 1,
+      "c_index": 0.7074136955291455,
+      "c_index_sd": NaN,
+      "ibs": 0.1957786895332885
+    }
+  ],
+  "topk": {
+    "listas": {
+      "QB": {
+        "top": [
+          {
+            "player_id": "00-0034796",
+            "player_name": "Lamar Jackson",
+            "years_exp": 6.0,
+            "age": 27.0,
+            "depth": 1.0,
+            "anos_cox": 8.18,
+            "rank_cox": 1,
+            "anos_gbsa": 8.91,
+            "rank_gbsa": 2,
+            "anos_rsf": 9.35,
+            "rank_rsf": 1
+          },
+          {
+            "player_id": "00-0039163",
+            "player_name": "C.J. Stroud",
+            "years_exp": 1.0,
+            "age": 22.0,
+            "depth": 1.0,
+            "anos_cox": 7.52,
+            "rank_cox": 4,
+            "anos_gbsa": 8.94,
+            "rank_gbsa": 1,
+            "anos_rsf": 8.86,
+            "rank_rsf": 2
+          },
+          {
+            "player_id": "00-0036389",
+            "player_name": "Jalen Hurts",
+            "years_exp": 4.0,
+            "age": 26.0,
+            "depth": 1.0,
+            "anos_cox": 7.36,
+            "rank_cox": 10,
+            "anos_gbsa": 8.8,
+            "rank_gbsa": 4,
+            "anos_rsf": 8.8,
+            "rank_rsf": 3
+          },
+          {
+            "player_id": "00-0039732",
+            "player_name": "Bo Nix",
+            "years_exp": 0.0,
+            "age": 24.0,
+            "depth": 1.0,
+            "anos_cox": 7.56,
+            "rank_cox": 3,
+            "anos_gbsa": 8.87,
+            "rank_gbsa": 3,
+            "anos_rsf": 8.74,
+            "rank_rsf": 4
+          },
+          {
+            "player_id": "00-0035228",
+            "player_name": "Kyler Murray",
+            "years_exp": 5.0,
+            "age": 27.0,
+            "depth": 1.0,
+            "anos_cox": 8.04,
+            "rank_cox": 2,
+            "anos_gbsa": 8.71,
+            "rank_gbsa": 5,
+            "anos_rsf": 8.56,
+            "rank_rsf": 5
+          },
+          {
+            "player_id": "00-0034855",
+            "player_name": "Baker Mayfield",
+            "years_exp": 6.0,
+            "age": 29.0,
+            "depth": 1.0,
+            "anos_cox": 7.3,
+            "rank_cox": 11,
+            "anos_gbsa": 8.29,
+            "rank_gbsa": 11,
+            "anos_rsf": 8.44,
+            "rank_rsf": 6
+          },
+          {
+            "player_id": "00-0036212",
+            "player_name": "Tua Tagovailoa",
+            "years_exp": 4.0,
+            "age": 26.0,
+            "depth": 1.0,
+            "anos_cox": 7.14,
+            "rank_cox": 13,
+            "anos_gbsa": 8.58,
+            "rank_gbsa": 7,
+            "anos_rsf": 8.4,
+            "rank_rsf": 7
+          },
+          {
+            "player_id": "00-0037834",
+            "player_name": "Brock Purdy",
+            "years_exp": 2.0,
+            "age": 24.0,
+            "depth": 1.0,
+            "anos_cox": 7.3,
+            "rank_cox": 12,
+            "anos_gbsa": 8.35,
+            "rank_gbsa": 9,
+            "anos_rsf": 8.38,
+            "rank_rsf": 8
+          },
+          {
+            "player_id": "00-0033873",
+            "player_name": "Patrick Mahomes",
+            "years_exp": 7.0,
+            "age": 28.0,
+            "depth": 1.0,
+            "anos_cox": 7.45,
+            "rank_cox": 7,
+            "anos_gbsa": 8.64,
+            "rank_gbsa": 6,
+            "anos_rsf": 8.27,
+            "rank_rsf": 9
+          },
+          {
+            "player_id": "00-0036264",
+            "player_name": "Jordan Love",
+            "years_exp": 4.0,
+            "age": 25.0,
+            "depth": 1.0,
+            "anos_cox": 7.07,
+            "rank_cox": 14,
+            "anos_gbsa": 8.19,
+            "rank_gbsa": 12,
+            "anos_rsf": 8.12,
+            "rank_rsf": 10
+          }
+        ],
+        "bottom": [
+          {
+            "player_id": "00-0032434",
+            "player_name": "Brandon Allen",
+            "years_exp": 8.0,
+            "anos_cox": 3.3,
+            "rank_cox": 73,
+            "anos_gbsa": 1.0,
+            "rank_gbsa": 74,
+            "anos_rsf": 2.26,
+            "rank_rsf": 74
+          },
+          {
+            "player_id": "00-0026300",
+            "player_name": "Josh Johnson",
+            "years_exp": 16.0,
+            "anos_cox": 0.8,
+            "rank_cox": 74,
+            "anos_gbsa": 1.68,
+            "rank_gbsa": 73,
+            "anos_rsf": 2.68,
+            "rank_rsf": 73
+          },
+          {
+            "player_id": "00-0037327",
+            "player_name": "Skylar Thompson",
+            "years_exp": 2.0,
+            "anos_cox": 3.62,
+            "rank_cox": 71,
+            "anos_gbsa": 1.92,
+            "rank_gbsa": 71,
+            "anos_rsf": 2.99,
+            "rank_rsf": 72
+          },
+          {
+            "player_id": "00-0035704",
+            "player_name": "Drew Lock",
+            "years_exp": 5.0,
+            "anos_cox": 4.49,
+            "rank_cox": 61,
+            "anos_gbsa": 2.31,
+            "rank_gbsa": 70,
+            "anos_rsf": 3.26,
+            "rank_rsf": 71
+          },
+          {
+            "player_id": "00-0038583",
+            "player_name": "Dorian Thompson-Robinson",
+            "years_exp": 1.0,
+            "anos_cox": 3.86,
+            "rank_cox": 70,
+            "anos_gbsa": 2.7,
+            "rank_gbsa": 68,
+            "anos_rsf": 3.46,
+            "rank_rsf": 70
+          },
+          {
+            "player_id": "00-0034771",
+            "player_name": "Mason Rudolph",
+            "years_exp": 6.0,
+            "anos_cox": 4.38,
+            "rank_cox": 64,
+            "anos_gbsa": 2.68,
+            "rank_gbsa": 69,
+            "anos_rsf": 3.48,
+            "rank_rsf": 69
+          },
+          {
+            "player_id": "00-0037012",
+            "player_name": "Trey Lance",
+            "years_exp": 3.0,
+            "anos_cox": 4.93,
+            "rank_cox": 51,
+            "anos_gbsa": 1.92,
+            "rank_gbsa": 72,
+            "anos_rsf": 3.64,
+            "rank_rsf": 68
+          },
+          {
+            "player_id": "00-0036898",
+            "player_name": "Davis Mills",
+            "years_exp": 3.0,
+            "anos_cox": 4.49,
+            "rank_cox": 60,
+            "anos_gbsa": 4.14,
+            "rank_gbsa": 60,
+            "anos_rsf": 3.81,
+            "rank_rsf": 67
+          },
+          {
+            "player_id": "00-0031800",
+            "player_name": "Taylor Heinicke",
+            "years_exp": 9.0,
+            "anos_cox": 4.48,
+            "rank_cox": 62,
+            "anos_gbsa": 2.92,
+            "rank_gbsa": 66,
+            "anos_rsf": 3.93,
+            "rank_rsf": 66
+          },
+          {
+            "player_id": "00-0038122",
+            "player_name": "Desmond Ridder",
+            "years_exp": 2.0,
+            "anos_cox": 4.83,
+            "rank_cox": 52,
+            "anos_gbsa": 3.67,
+            "rank_gbsa": 63,
+            "anos_rsf": 3.94,
+            "rank_rsf": 65
+          }
+        ],
+        "n": 74
+      },
+      "RB": {
+        "top": [
+          {
+            "player_id": "00-0039040",
+            "player_name": "Devon Achane",
+            "years_exp": 1.0,
+            "age": 22.0,
+            "depth": 1.0,
+            "anos_cox": 6.87,
+            "rank_cox": 1,
+            "anos_gbsa": 4.3,
+            "rank_gbsa": 4,
+            "anos_rsf": 5.07,
+            "rank_rsf": 6
+          },
+          {
+            "player_id": "00-0038542",
+            "player_name": "Bijan Robinson",
+            "years_exp": 1.0,
+            "age": 22.0,
+            "depth": 1.0,
+            "anos_cox": 5.34,
+            "rank_cox": 2,
+            "anos_gbsa": 4.37,
+            "rank_gbsa": 2,
+            "anos_rsf": 5.26,
+            "rank_rsf": 3
+          },
+          {
+            "player_id": "00-0037525",
+            "player_name": "Jordan Mason",
+            "years_exp": 2.0,
+            "age": 25.0,
+            "depth": 1.0,
+            "anos_cox": 5.22,
+            "rank_cox": 3,
+            "anos_gbsa": 4.01,
+            "rank_gbsa": 18,
+            "anos_rsf": 5.33,
+            "rank_rsf": 2
+          },
+          {
+            "player_id": "00-0038120",
+            "player_name": "Breece Hall",
+            "years_exp": 2.0,
+            "age": 23.0,
+            "depth": 1.0,
+            "anos_cox": 5.19,
+            "rank_cox": 4,
+            "anos_gbsa": 4.33,
+            "rank_gbsa": 3,
+            "anos_rsf": 5.55,
+            "rank_rsf": 1
+          },
+          {
+            "player_id": "00-0039139",
+            "player_name": "Jahmyr Gibbs",
+            "years_exp": 1.0,
+            "age": 22.0,
+            "depth": 2.0,
+            "anos_cox": 5.18,
+            "rank_cox": 5,
+            "anos_gbsa": 4.27,
+            "rank_gbsa": 5,
+            "anos_rsf": 5.26,
+            "rank_rsf": 4
+          },
+          {
+            "player_id": "00-0037840",
+            "player_name": "Kyren Williams",
+            "years_exp": 2.0,
+            "age": 24.0,
+            "depth": 1.0,
+            "anos_cox": 5.12,
+            "rank_cox": 6,
+            "anos_gbsa": 4.19,
+            "rank_gbsa": 10,
+            "anos_rsf": 4.78,
+            "rank_rsf": 11
+          },
+          {
+            "player_id": "00-0039384",
+            "player_name": "Tyrone Tracy",
+            "years_exp": 0.0,
+            "age": 24.0,
+            "depth": 2.0,
+            "anos_cox": 5.05,
+            "rank_cox": 7,
+            "anos_gbsa": 4.39,
+            "rank_gbsa": 1,
+            "anos_rsf": 5.21,
+            "rank_rsf": 5
+          },
+          {
+            "player_id": "00-0039361",
+            "player_name": "Bucky Irving",
+            "years_exp": 0.0,
+            "age": 22.0,
+            "depth": 2.0,
+            "anos_cox": 4.91,
+            "rank_cox": 8,
+            "anos_gbsa": 4.19,
+            "rank_gbsa": 9,
+            "anos_rsf": 5.0,
+            "rank_rsf": 7
+          },
+          {
+            "player_id": "00-0038597",
+            "player_name": "Chase Brown",
+            "years_exp": 1.0,
+            "age": 24.0,
+            "depth": 2.0,
+            "anos_cox": 4.9,
+            "rank_cox": 9,
+            "anos_gbsa": 4.25,
+            "rank_gbsa": 6,
+            "anos_rsf": 4.71,
+            "rank_rsf": 12
+          },
+          {
+            "player_id": "00-0036223",
+            "player_name": "Jonathan Taylor",
+            "years_exp": 4.0,
+            "age": 25.0,
+            "depth": 1.0,
+            "anos_cox": 4.61,
+            "rank_cox": 10,
+            "anos_gbsa": 4.09,
+            "rank_gbsa": 12,
+            "anos_rsf": 4.53,
+            "rank_rsf": 13
+          }
+        ],
+        "bottom": [
+          {
+            "player_id": "00-0035311",
+            "player_name": "Myles Gaskin",
+            "years_exp": 5.0,
+            "anos_cox": 1.4,
+            "rank_cox": 107,
+            "anos_gbsa": 2.41,
+            "rank_gbsa": 106,
+            "anos_rsf": 1.35,
+            "rank_rsf": 107
+          },
+          {
+            "player_id": "00-0036370",
+            "player_name": "Joshua Kelley",
+            "years_exp": 4.0,
+            "anos_cox": 1.53,
+            "rank_cox": 106,
+            "anos_gbsa": 2.39,
+            "rank_gbsa": 107,
+            "anos_rsf": 1.51,
+            "rank_rsf": 106
+          },
+          {
+            "player_id": "00-0033955",
+            "player_name": "Jeremy McNichols",
+            "years_exp": 7.0,
+            "anos_cox": 1.91,
+            "rank_cox": 105,
+            "anos_gbsa": 2.9,
+            "rank_gbsa": 88,
+            "anos_rsf": 2.2,
+            "rank_rsf": 90
+          },
+          {
+            "player_id": "00-0033045",
+            "player_name": "Ezekiel Elliott",
+            "years_exp": 8.0,
+            "anos_cox": 1.97,
+            "rank_cox": 104,
+            "anos_gbsa": 3.12,
+            "rank_gbsa": 70,
+            "anos_rsf": 2.23,
+            "rank_rsf": 88
+          },
+          {
+            "player_id": "00-0033699",
+            "player_name": "Austin Ekeler",
+            "years_exp": 7.0,
+            "anos_cox": 1.99,
+            "rank_cox": 103,
+            "anos_gbsa": 3.45,
+            "rank_gbsa": 50,
+            "anos_rsf": 2.6,
+            "rank_rsf": 71
+          },
+          {
+            "player_id": "00-0033280",
+            "player_name": "Christian McCaffrey",
+            "years_exp": 7.0,
+            "anos_cox": 1.99,
+            "rank_cox": 102,
+            "anos_gbsa": 2.54,
+            "rank_gbsa": 105,
+            "anos_rsf": 1.65,
+            "rank_rsf": 104
+          },
+          {
+            "player_id": "00-0033925",
+            "player_name": "D'Onta Foreman",
+            "years_exp": 7.0,
+            "anos_cox": 2.12,
+            "rank_cox": 101,
+            "anos_gbsa": 3.09,
+            "rank_gbsa": 73,
+            "anos_rsf": 2.31,
+            "rank_rsf": 82
+          },
+          {
+            "player_id": "00-0033948",
+            "player_name": "Jamaal Williams",
+            "years_exp": 7.0,
+            "anos_cox": 2.24,
+            "rank_cox": 100,
+            "anos_gbsa": 3.07,
+            "rank_gbsa": 77,
+            "anos_rsf": 2.02,
+            "rank_rsf": 95
+          },
+          {
+            "player_id": "00-0035567",
+            "player_name": "Craig Reynolds",
+            "years_exp": 5.0,
+            "anos_cox": 2.25,
+            "rank_cox": 99,
+            "anos_gbsa": 2.63,
+            "rank_gbsa": 102,
+            "anos_rsf": 2.22,
+            "rank_rsf": 89
+          },
+          {
+            "player_id": "00-0030578",
+            "player_name": "Cordarrelle Patterson",
+            "years_exp": 11.0,
+            "anos_cox": 2.27,
+            "rank_cox": 98,
+            "anos_gbsa": 3.11,
+            "rank_gbsa": 71,
+            "anos_rsf": 2.42,
+            "rank_rsf": 80
+          }
+        ],
+        "n": 107
+      },
+      "WR": {
+        "top": [
+          {
+            "player_id": "00-0039337",
+            "player_name": "Malik Nabers",
+            "years_exp": 0.0,
+            "age": 21.0,
+            "depth": 1.0,
+            "anos_cox": 6.8,
+            "rank_cox": 1,
+            "anos_gbsa": 6.55,
+            "rank_gbsa": 1,
+            "anos_rsf": 8.09,
+            "rank_rsf": 1
+          },
+          {
+            "player_id": "00-0039893",
+            "player_name": "Brian Thomas",
+            "years_exp": 0.0,
+            "age": 21.0,
+            "depth": 1.0,
+            "anos_cox": 6.51,
+            "rank_cox": 2,
+            "anos_gbsa": 6.44,
+            "rank_gbsa": 2,
+            "anos_rsf": 7.96,
+            "rank_rsf": 4
+          },
+          {
+            "player_id": "00-0038117",
+            "player_name": "Wan'Dale Robinson",
+            "years_exp": 2.0,
+            "age": 23.0,
+            "depth": 1.0,
+            "anos_cox": 6.38,
+            "rank_cox": 3,
+            "anos_gbsa": 6.13,
+            "rank_gbsa": 15,
+            "anos_rsf": 6.48,
+            "rank_rsf": 27
+          },
+          {
+            "player_id": "00-0036322",
+            "player_name": "Justin Jefferson",
+            "years_exp": 4.0,
+            "age": 25.0,
+            "depth": 1.0,
+            "anos_cox": 6.32,
+            "rank_cox": 4,
+            "anos_gbsa": 6.26,
+            "rank_gbsa": 9,
+            "anos_rsf": 8.0,
+            "rank_rsf": 2
+          },
+          {
+            "player_id": "00-0036900",
+            "player_name": "Ja'Marr Chase",
+            "years_exp": 3.0,
+            "age": 24.0,
+            "depth": 1.0,
+            "anos_cox": 6.32,
+            "rank_cox": 5,
+            "anos_gbsa": 6.33,
+            "rank_gbsa": 7,
+            "anos_rsf": 7.99,
+            "rank_rsf": 3
+          },
+          {
+            "player_id": "00-0039849",
+            "player_name": "Marvin Harrison",
+            "years_exp": 0.0,
+            "age": 22.0,
+            "depth": 1.0,
+            "anos_cox": 6.31,
+            "rank_cox": 6,
+            "anos_gbsa": 6.38,
+            "rank_gbsa": 4,
+            "anos_rsf": 7.58,
+            "rank_rsf": 9
+          },
+          {
+            "player_id": "00-0038543",
+            "player_name": "Jaxon Smith-Njigba",
+            "years_exp": 1.0,
+            "age": 22.0,
+            "depth": 1.0,
+            "anos_cox": 6.25,
+            "rank_cox": 7,
+            "anos_gbsa": 6.34,
+            "rank_gbsa": 6,
+            "anos_rsf": 7.41,
+            "rank_rsf": 11
+          },
+          {
+            "player_id": "00-0036963",
+            "player_name": "Amon-Ra St. Brown",
+            "years_exp": 3.0,
+            "age": 24.0,
+            "depth": 1.0,
+            "anos_cox": 6.24,
+            "rank_cox": 8,
+            "anos_gbsa": 5.88,
+            "rank_gbsa": 20,
+            "anos_rsf": 7.0,
+            "rank_rsf": 23
+          },
+          {
+            "player_id": "00-0039064",
+            "player_name": "Zay Flowers",
+            "years_exp": 1.0,
+            "age": 23.0,
+            "depth": 2.0,
+            "anos_cox": 6.23,
+            "rank_cox": 9,
+            "anos_gbsa": 6.28,
+            "rank_gbsa": 8,
+            "anos_rsf": 7.41,
+            "rank_rsf": 12
+          },
+          {
+            "player_id": "00-0038994",
+            "player_name": "Jordan Addison",
+            "years_exp": 1.0,
+            "age": 22.0,
+            "depth": 1.0,
+            "anos_cox": 6.09,
+            "rank_cox": 10,
+            "anos_gbsa": 6.39,
+            "rank_gbsa": 3,
+            "anos_rsf": 7.64,
+            "rank_rsf": 8
+          }
+        ],
+        "bottom": [
+          {
+            "player_id": "00-0034928",
+            "player_name": "Steven Sims",
+            "years_exp": 5.0,
+            "anos_cox": 1.42,
+            "rank_cox": 178,
+            "anos_gbsa": 2.04,
+            "rank_gbsa": 172,
+            "anos_rsf": 1.19,
+            "rank_rsf": 176
+          },
+          {
+            "player_id": "00-0031428",
+            "player_name": "Allen Robinson",
+            "years_exp": 10.0,
+            "anos_cox": 1.68,
+            "rank_cox": 177,
+            "anos_gbsa": 1.81,
+            "rank_gbsa": 178,
+            "anos_rsf": 0.88,
+            "rank_rsf": 178
+          },
+          {
+            "player_id": "00-0034860",
+            "player_name": "Dante Pettis",
+            "years_exp": 6.0,
+            "anos_cox": 1.68,
+            "rank_cox": 176,
+            "anos_gbsa": 2.02,
+            "rank_gbsa": 173,
+            "anos_rsf": 1.49,
+            "rank_rsf": 169
+          },
+          {
+            "player_id": "00-0037093",
+            "player_name": "Dareke Young",
+            "years_exp": 2.0,
+            "anos_cox": 1.75,
+            "rank_cox": 175,
+            "anos_gbsa": 2.16,
+            "rank_gbsa": 163,
+            "anos_rsf": 1.51,
+            "rank_rsf": 167
+          },
+          {
+            "player_id": "00-0032128",
+            "player_name": "Chris Conley",
+            "years_exp": 9.0,
+            "anos_cox": 1.79,
+            "rank_cox": 174,
+            "anos_gbsa": 1.9,
+            "rank_gbsa": 176,
+            "anos_rsf": 1.14,
+            "rank_rsf": 177
+          },
+          {
+            "player_id": "00-0031941",
+            "player_name": "Jamison Crowder",
+            "years_exp": 9.0,
+            "anos_cox": 1.85,
+            "rank_cox": 173,
+            "anos_gbsa": 1.89,
+            "rank_gbsa": 177,
+            "anos_rsf": 1.33,
+            "rank_rsf": 170
+          },
+          {
+            "player_id": "00-0035544",
+            "player_name": "Tom Kennedy",
+            "years_exp": 5.0,
+            "anos_cox": 1.88,
+            "rank_cox": 172,
+            "anos_gbsa": 2.06,
+            "rank_gbsa": 170,
+            "anos_rsf": 1.29,
+            "rank_rsf": 171
+          },
+          {
+            "player_id": "00-0031235",
+            "player_name": "Odell Beckham",
+            "years_exp": 10.0,
+            "anos_cox": 1.94,
+            "rank_cox": 171,
+            "anos_gbsa": 1.91,
+            "rank_gbsa": 175,
+            "anos_rsf": 1.2,
+            "rank_rsf": 175
+          },
+          {
+            "player_id": "00-0036862",
+            "player_name": "Ben Skowronek",
+            "years_exp": 3.0,
+            "anos_cox": 1.98,
+            "rank_cox": 170,
+            "anos_gbsa": 2.22,
+            "rank_gbsa": 162,
+            "anos_rsf": 1.73,
+            "rank_rsf": 160
+          },
+          {
+            "player_id": "00-0034646",
+            "player_name": "Brandon Powell",
+            "years_exp": 6.0,
+            "anos_cox": 2.12,
+            "rank_cox": 169,
+            "anos_gbsa": 2.24,
+            "rank_gbsa": 160,
+            "anos_rsf": 1.92,
+            "rank_rsf": 151
+          }
+        ],
+        "n": 178
+      }
+    },
+    "overlap": {
+      "QB": {
+        "5": {
+          "k": 5,
+          "n": 74,
+          "pares": [
+            {
+              "par": "cox-gbsa",
+              "intersecao": 4,
+              "jaccard": 0.667
+            },
+            {
+              "par": "cox-rsf",
+              "intersecao": 4,
+              "jaccard": 0.667
+            },
+            {
+              "par": "gbsa-rsf",
+              "intersecao": 5,
+              "jaccard": 1.0
+            }
+          ],
+          "intersecao_todos": 4,
+          "deslocamento": {
+            "cox-gbsa": {
+              "mediana_abs_rank": 6.5,
+              "pct_rank_gt5": 58.1,
+              "pct_rank_gt10": 27.0,
+              "mediana_abs_anos": 0.87
+            },
+            "cox-rsf": {
+              "mediana_abs_rank": 6.0,
+              "pct_rank_gt5": 55.4,
+              "pct_rank_gt10": 28.4,
+              "mediana_abs_anos": 0.61
+            },
+            "gbsa-rsf": {
+              "mediana_abs_rank": 3.0,
+              "pct_rank_gt5": 33.8,
+              "pct_rank_gt10": 12.2,
+              "mediana_abs_anos": 0.47
+            }
+          }
+        },
+        "10": {
+          "k": 10,
+          "n": 74,
+          "pares": [
+            {
+              "par": "cox-gbsa",
+              "intersecao": 7,
+              "jaccard": 0.538
+            },
+            {
+              "par": "cox-rsf",
+              "intersecao": 6,
+              "jaccard": 0.429
+            },
+            {
+              "par": "gbsa-rsf",
+              "intersecao": 8,
+              "jaccard": 0.667
+            }
+          ],
+          "intersecao_todos": 6,
+          "deslocamento": {
+            "cox-gbsa": {
+              "mediana_abs_rank": 6.5,
+              "pct_rank_gt5": 58.1,
+              "pct_rank_gt10": 27.0,
+              "mediana_abs_anos": 0.87
+            },
+            "cox-rsf": {
+              "mediana_abs_rank": 6.0,
+              "pct_rank_gt5": 55.4,
+              "pct_rank_gt10": 28.4,
+              "mediana_abs_anos": 0.61
+            },
+            "gbsa-rsf": {
+              "mediana_abs_rank": 3.0,
+              "pct_rank_gt5": 33.8,
+              "pct_rank_gt10": 12.2,
+              "mediana_abs_anos": 0.47
+            }
+          }
+        },
+        "20": {
+          "k": 20,
+          "n": 74,
+          "pares": [
+            {
+              "par": "cox-gbsa",
+              "intersecao": 17,
+              "jaccard": 0.739
+            },
+            {
+              "par": "cox-rsf",
+              "intersecao": 17,
+              "jaccard": 0.739
+            },
+            {
+              "par": "gbsa-rsf",
+              "intersecao": 19,
+              "jaccard": 0.905
+            }
+          ],
+          "intersecao_todos": 17,
+          "deslocamento": {
+            "cox-gbsa": {
+              "mediana_abs_rank": 6.5,
+              "pct_rank_gt5": 58.1,
+              "pct_rank_gt10": 27.0,
+              "mediana_abs_anos": 0.87
+            },
+            "cox-rsf": {
+              "mediana_abs_rank": 6.0,
+              "pct_rank_gt5": 55.4,
+              "pct_rank_gt10": 28.4,
+              "mediana_abs_anos": 0.61
+            },
+            "gbsa-rsf": {
+              "mediana_abs_rank": 3.0,
+              "pct_rank_gt5": 33.8,
+              "pct_rank_gt10": 12.2,
+              "mediana_abs_anos": 0.47
+            }
+          }
+        }
+      },
+      "RB": {
+        "5": {
+          "k": 5,
+          "n": 107,
+          "pares": [
+            {
+              "par": "cox-gbsa",
+              "intersecao": 4,
+              "jaccard": 0.667
+            },
+            {
+              "par": "cox-rsf",
+              "intersecao": 4,
+              "jaccard": 0.667
+            },
+            {
+              "par": "gbsa-rsf",
+              "intersecao": 4,
+              "jaccard": 0.667
+            }
+          ],
+          "intersecao_todos": 3,
+          "deslocamento": {
+            "cox-gbsa": {
+              "mediana_abs_rank": 10.0,
+              "pct_rank_gt5": 70.1,
+              "pct_rank_gt10": 43.9,
+              "mediana_abs_anos": 0.33
+            },
+            "cox-rsf": {
+              "mediana_abs_rank": 6.0,
+              "pct_rank_gt5": 51.4,
+              "pct_rank_gt10": 30.8,
+              "mediana_abs_anos": 0.26
+            },
+            "gbsa-rsf": {
+              "mediana_abs_rank": 8.0,
+              "pct_rank_gt5": 59.8,
+              "pct_rank_gt10": 37.4,
+              "mediana_abs_anos": 0.45
+            }
+          }
+        },
+        "10": {
+          "k": 10,
+          "n": 107,
+          "pares": [
+            {
+              "par": "cox-gbsa",
+              "intersecao": 8,
+              "jaccard": 0.667
+            },
+            {
+              "par": "cox-rsf",
+              "intersecao": 7,
+              "jaccard": 0.538
+            },
+            {
+              "par": "gbsa-rsf",
+              "intersecao": 8,
+              "jaccard": 0.667
+            }
+          ],
+          "intersecao_todos": 6,
+          "deslocamento": {
+            "cox-gbsa": {
+              "mediana_abs_rank": 10.0,
+              "pct_rank_gt5": 70.1,
+              "pct_rank_gt10": 43.9,
+              "mediana_abs_anos": 0.33
+            },
+            "cox-rsf": {
+              "mediana_abs_rank": 6.0,
+              "pct_rank_gt5": 51.4,
+              "pct_rank_gt10": 30.8,
+              "mediana_abs_anos": 0.26
+            },
+            "gbsa-rsf": {
+              "mediana_abs_rank": 8.0,
+              "pct_rank_gt5": 59.8,
+              "pct_rank_gt10": 37.4,
+              "mediana_abs_anos": 0.45
+            }
+          }
+        },
+        "20": {
+          "k": 20,
+          "n": 107,
+          "pares": [
+            {
+              "par": "cox-gbsa",
+              "intersecao": 16,
+              "jaccard": 0.667
+            },
+            {
+              "par": "cox-rsf",
+              "intersecao": 16,
+              "jaccard": 0.667
+            },
+            {
+              "par": "gbsa-rsf",
+              "intersecao": 15,
+              "jaccard": 0.6
+            }
+          ],
+          "intersecao_todos": 13,
+          "deslocamento": {
+            "cox-gbsa": {
+              "mediana_abs_rank": 10.0,
+              "pct_rank_gt5": 70.1,
+              "pct_rank_gt10": 43.9,
+              "mediana_abs_anos": 0.33
+            },
+            "cox-rsf": {
+              "mediana_abs_rank": 6.0,
+              "pct_rank_gt5": 51.4,
+              "pct_rank_gt10": 30.8,
+              "mediana_abs_anos": 0.26
+            },
+            "gbsa-rsf": {
+              "mediana_abs_rank": 8.0,
+              "pct_rank_gt5": 59.8,
+              "pct_rank_gt10": 37.4,
+              "mediana_abs_anos": 0.45
+            }
+          }
+        }
+      },
+      "WR": {
+        "5": {
+          "k": 5,
+          "n": 178,
+          "pares": [
+            {
+              "par": "cox-gbsa",
+              "intersecao": 2,
+              "jaccard": 0.25
+            },
+            {
+              "par": "cox-rsf",
+              "intersecao": 4,
+              "jaccard": 0.667
+            },
+            {
+              "par": "gbsa-rsf",
+              "intersecao": 2,
+              "jaccard": 0.25
+            }
+          ],
+          "intersecao_todos": 2,
+          "deslocamento": {
+            "cox-gbsa": {
+              "mediana_abs_rank": 8.5,
+              "pct_rank_gt5": 66.9,
+              "pct_rank_gt10": 42.1,
+              "mediana_abs_anos": 0.27
+            },
+            "cox-rsf": {
+              "mediana_abs_rank": 10.0,
+              "pct_rank_gt5": 68.5,
+              "pct_rank_gt10": 47.2,
+              "mediana_abs_anos": 0.59
+            },
+            "gbsa-rsf": {
+              "mediana_abs_rank": 6.0,
+              "pct_rank_gt5": 52.2,
+              "pct_rank_gt10": 27.0,
+              "mediana_abs_anos": 0.47
+            }
+          }
+        },
+        "10": {
+          "k": 10,
+          "n": 178,
+          "pares": [
+            {
+              "par": "cox-gbsa",
+              "intersecao": 8,
+              "jaccard": 0.667
+            },
+            {
+              "par": "cox-rsf",
+              "intersecao": 6,
+              "jaccard": 0.429
+            },
+            {
+              "par": "gbsa-rsf",
+              "intersecao": 8,
+              "jaccard": 0.667
+            }
+          ],
+          "intersecao_todos": 6,
+          "deslocamento": {
+            "cox-gbsa": {
+              "mediana_abs_rank": 8.5,
+              "pct_rank_gt5": 66.9,
+              "pct_rank_gt10": 42.1,
+              "mediana_abs_anos": 0.27
+            },
+            "cox-rsf": {
+              "mediana_abs_rank": 10.0,
+              "pct_rank_gt5": 68.5,
+              "pct_rank_gt10": 47.2,
+              "mediana_abs_anos": 0.59
+            },
+            "gbsa-rsf": {
+              "mediana_abs_rank": 6.0,
+              "pct_rank_gt5": 52.2,
+              "pct_rank_gt10": 27.0,
+              "mediana_abs_anos": 0.47
+            }
+          }
+        },
+        "20": {
+          "k": 20,
+          "n": 178,
+          "pares": [
+            {
+              "par": "cox-gbsa",
+              "intersecao": 16,
+              "jaccard": 0.667
+            },
+            {
+              "par": "cox-rsf",
+              "intersecao": 13,
+              "jaccard": 0.481
+            },
+            {
+              "par": "gbsa-rsf",
+              "intersecao": 16,
+              "jaccard": 0.667
+            }
+          ],
+          "intersecao_todos": 13,
+          "deslocamento": {
+            "cox-gbsa": {
+              "mediana_abs_rank": 8.5,
+              "pct_rank_gt5": 66.9,
+              "pct_rank_gt10": 42.1,
+              "mediana_abs_anos": 0.27
+            },
+            "cox-rsf": {
+              "mediana_abs_rank": 10.0,
+              "pct_rank_gt5": 68.5,
+              "pct_rank_gt10": 47.2,
+              "mediana_abs_anos": 0.59
+            },
+            "gbsa-rsf": {
+              "mediana_abs_rank": 6.0,
+              "pct_rank_gt5": 52.2,
+              "pct_rank_gt10": 27.0,
+              "mediana_abs_anos": 0.47
+            }
+          }
+        }
+      }
+    }
+  },
+  "nomes_conhecidos": [
+    {
+      "posicao": "QB",
+      "player_name": "Patrick Mahomes",
+      "presente": true,
+      "n_elenco": 74,
+      "anos_cox": 7.45,
+      "rank_cox": 7,
+      "anos_gbsa": 8.64,
+      "rank_gbsa": 6,
+      "anos_rsf": 8.27,
+      "rank_rsf": 9
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Josh Allen",
+      "presente": true,
+      "n_elenco": 74,
+      "anos_cox": 7.04,
+      "rank_cox": 15,
+      "anos_gbsa": 7.06,
+      "rank_gbsa": 22,
+      "anos_rsf": 6.51,
+      "rank_rsf": 25
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Lamar Jackson",
+      "presente": true,
+      "n_elenco": 74,
+      "anos_cox": 8.18,
+      "rank_cox": 1,
+      "anos_gbsa": 8.91,
+      "rank_gbsa": 2,
+      "anos_rsf": 9.35,
+      "rank_rsf": 1
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Joe Burrow",
+      "presente": true,
+      "n_elenco": 74,
+      "anos_cox": 7.37,
+      "rank_cox": 8,
+      "anos_gbsa": 7.99,
+      "rank_gbsa": 14,
+      "anos_rsf": 7.7,
+      "rank_rsf": 15
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Justin Herbert",
+      "presente": true,
+      "n_elenco": 74,
+      "anos_cox": 6.85,
+      "rank_cox": 17,
+      "anos_gbsa": 7.85,
+      "rank_gbsa": 15,
+      "anos_rsf": 6.93,
+      "rank_rsf": 20
+    },
+    {
+      "posicao": "QB",
+      "player_name": "C.J. Stroud",
+      "presente": true,
+      "n_elenco": 74,
+      "anos_cox": 7.52,
+      "rank_cox": 4,
+      "anos_gbsa": 8.94,
+      "rank_gbsa": 1,
+      "anos_rsf": 8.86,
+      "rank_rsf": 2
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Aaron Rodgers",
+      "presente": true,
+      "n_elenco": 74,
+      "anos_cox": 6.08,
+      "rank_cox": 32,
+      "anos_gbsa": 6.86,
+      "rank_gbsa": 24,
+      "anos_rsf": 7.02,
+      "rank_rsf": 19
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Joe Flacco",
+      "presente": true,
+      "n_elenco": 74,
+      "anos_cox": 3.41,
+      "rank_cox": 72,
+      "anos_gbsa": 2.79,
+      "rank_gbsa": 67,
+      "anos_rsf": 4.13,
+      "rank_rsf": 60
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Josh Johnson",
+      "presente": true,
+      "n_elenco": 74,
+      "anos_cox": 0.8,
+      "rank_cox": 74,
+      "anos_gbsa": 1.68,
+      "rank_gbsa": 73,
+      "anos_rsf": 2.68,
+      "rank_rsf": 73
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Matthew Stafford",
+      "presente": true,
+      "n_elenco": 74,
+      "anos_cox": 5.64,
+      "rank_cox": 40,
+      "anos_gbsa": 5.82,
+      "rank_gbsa": 40,
+      "anos_rsf": 6.31,
+      "rank_rsf": 27
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Dak Prescott",
+      "presente": true,
+      "n_elenco": 74,
+      "anos_cox": 6.26,
+      "rank_cox": 26,
+      "anos_gbsa": 6.02,
+      "rank_gbsa": 36,
+      "anos_rsf": 6.57,
+      "rank_rsf": 24
+    },
+    {
+      "posicao": "QB",
+      "player_name": "Jalen Hurts",
+      "presente": true,
+      "n_elenco": 74,
+      "anos_cox": 7.36,
+      "rank_cox": 10,
+      "anos_gbsa": 8.8,
+      "rank_gbsa": 4,
+      "anos_rsf": 8.8,
+      "rank_rsf": 3
+    },
+    {
+      "posicao": "RB",
+      "player_name": "Christian McCaffrey",
+      "presente": true,
+      "n_elenco": 107,
+      "anos_cox": 1.99,
+      "rank_cox": 102,
+      "anos_gbsa": 2.54,
+      "rank_gbsa": 105,
+      "anos_rsf": 1.65,
+      "rank_rsf": 104
+    },
+    {
+      "posicao": "RB",
+      "player_name": "Saquon Barkley",
+      "presente": true,
+      "n_elenco": 107,
+      "anos_cox": 4.19,
+      "rank_cox": 23,
+      "anos_gbsa": 4.05,
+      "rank_gbsa": 14,
+      "anos_rsf": 4.4,
+      "rank_rsf": 17
+    },
+    {
+      "posicao": "RB",
+      "player_name": "Derrick Henry",
+      "presente": true,
+      "n_elenco": 107,
+      "anos_cox": 3.34,
+      "rank_cox": 51,
+      "anos_gbsa": 3.97,
+      "rank_gbsa": 21,
+      "anos_rsf": 4.12,
+      "rank_rsf": 26
+    },
+    {
+      "posicao": "RB",
+      "player_name": "Bijan Robinson",
+      "presente": true,
+      "n_elenco": 107,
+      "anos_cox": 5.34,
+      "rank_cox": 2,
+      "anos_gbsa": 4.37,
+      "rank_gbsa": 2,
+      "anos_rsf": 5.26,
+      "rank_rsf": 3
+    },
+    {
+      "posicao": "RB",
+      "player_name": "Jahmyr Gibbs",
+      "presente": true,
+      "n_elenco": 107,
+      "anos_cox": 5.18,
+      "rank_cox": 5,
+      "anos_gbsa": 4.27,
+      "rank_gbsa": 5,
+      "anos_rsf": 5.26,
+      "rank_rsf": 4
+    },
+    {
+      "posicao": "RB",
+      "player_name": "Nick Chubb",
+      "presente": true,
+      "n_elenco": 107,
+      "anos_cox": 2.85,
+      "rank_cox": 78,
+      "anos_gbsa": 2.93,
+      "rank_gbsa": 83,
+      "anos_rsf": 2.6,
+      "rank_rsf": 70
+    },
+    {
+      "posicao": "RB",
+      "player_name": "Ezekiel Elliott",
+      "presente": true,
+      "n_elenco": 107,
+      "anos_cox": 1.97,
+      "rank_cox": 104,
+      "anos_gbsa": 3.12,
+      "rank_gbsa": 70,
+      "anos_rsf": 2.23,
+      "rank_rsf": 88
+    },
+    {
+      "posicao": "WR",
+      "player_name": "Justin Jefferson",
+      "presente": true,
+      "n_elenco": 178,
+      "anos_cox": 6.32,
+      "rank_cox": 4,
+      "anos_gbsa": 6.26,
+      "rank_gbsa": 9,
+      "anos_rsf": 8.0,
+      "rank_rsf": 2
+    },
+    {
+      "posicao": "WR",
+      "player_name": "Ja'Marr Chase",
+      "presente": true,
+      "n_elenco": 178,
+      "anos_cox": 6.32,
+      "rank_cox": 5,
+      "anos_gbsa": 6.33,
+      "rank_gbsa": 7,
+      "anos_rsf": 7.99,
+      "rank_rsf": 3
+    },
+    {
+      "posicao": "WR",
+      "player_name": "CeeDee Lamb",
+      "presente": true,
+      "n_elenco": 178,
+      "anos_cox": 5.92,
+      "rank_cox": 14,
+      "anos_gbsa": 6.19,
+      "rank_gbsa": 13,
+      "anos_rsf": 7.88,
+      "rank_rsf": 5
+    },
+    {
+      "posicao": "WR",
+      "player_name": "Tyreek Hill",
+      "presente": true,
+      "n_elenco": 178,
+      "anos_cox": 5.09,
+      "rank_cox": 36,
+      "anos_gbsa": 4.9,
+      "rank_gbsa": 53,
+      "anos_rsf": 5.98,
+      "rank_rsf": 41
+    },
+    {
+      "posicao": "WR",
+      "player_name": "Davante Adams",
+      "presente": true,
+      "n_elenco": 178,
+      "anos_cox": 3.9,
+      "rank_cox": 87,
+      "anos_gbsa": 4.53,
+      "rank_gbsa": 66,
+      "anos_rsf": 5.75,
+      "rank_rsf": 44
+    },
+    {
+      "posicao": "WR",
+      "player_name": "A.J. Brown",
+      "presente": true,
+      "n_elenco": 178,
+      "anos_cox": 4.99,
+      "rank_cox": 43,
+      "anos_gbsa": 5.51,
+      "rank_gbsa": 29,
+      "anos_rsf": 7.04,
+      "rank_rsf": 21
+    },
+    {
+      "posicao": "WR",
+      "player_name": "Mike Evans",
+      "presente": true,
+      "n_elenco": 178,
+      "anos_cox": 3.81,
+      "rank_cox": 90,
+      "anos_gbsa": 4.27,
+      "rank_gbsa": 75,
+      "anos_rsf": 4.54,
+      "rank_rsf": 70
+    },
+    {
+      "posicao": "WR",
+      "player_name": "Stefon Diggs",
+      "presente": true,
+      "n_elenco": 178,
+      "anos_cox": 3.4,
+      "rank_cox": 113,
+      "anos_gbsa": 3.61,
+      "rank_gbsa": 96,
+      "anos_rsf": 4.31,
+      "rank_rsf": 77
+    }
+  ],
+  "erros_oof": {
+    "resumo": [
+      {
+        "posicao": "QB",
+        "modelo": "cox",
+        "n_pares": 271,
+        "n_pares_total": 275,
+        "n_excluidos_censura_pre_tau": 4,
+        "n_censurados": 140,
+        "mae": 1.3,
+        "mediana_ae": 0.94,
+        "vies": 0.3,
+        "pct_superestima": 30.3,
+        "pct_subestima": 17.0,
+        "pct_acerto_1a": 52.8
+      },
+      {
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "n_pares": 271,
+        "n_pares_total": 275,
+        "n_excluidos_censura_pre_tau": 4,
+        "n_censurados": 140,
+        "mae": 1.37,
+        "mediana_ae": 1.02,
+        "vies": 0.42,
+        "pct_superestima": 32.1,
+        "pct_subestima": 18.5,
+        "pct_acerto_1a": 49.4
+      },
+      {
+        "posicao": "QB",
+        "modelo": "rsf",
+        "n_pares": 271,
+        "n_pares_total": 275,
+        "n_excluidos_censura_pre_tau": 4,
+        "n_censurados": 140,
+        "mae": 1.27,
+        "mediana_ae": 0.94,
+        "vies": 0.28,
+        "pct_superestima": 29.9,
+        "pct_subestima": 18.1,
+        "pct_acerto_1a": 52.0
+      },
+      {
+        "posicao": "RB",
+        "modelo": "cox",
+        "n_pares": 511,
+        "n_pares_total": 511,
+        "n_excluidos_censura_pre_tau": 0,
+        "n_censurados": 134,
+        "mae": 1.32,
+        "mediana_ae": 1.25,
+        "vies": 0.4,
+        "pct_superestima": 39.7,
+        "pct_subestima": 19.8,
+        "pct_acerto_1a": 40.5
+      },
+      {
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "n_pares": 511,
+        "n_pares_total": 511,
+        "n_excluidos_censura_pre_tau": 0,
+        "n_censurados": 134,
+        "mae": 1.38,
+        "mediana_ae": 1.24,
+        "vies": 0.39,
+        "pct_superestima": 40.7,
+        "pct_subestima": 22.3,
+        "pct_acerto_1a": 37.0
+      },
+      {
+        "posicao": "RB",
+        "modelo": "rsf",
+        "n_pares": 511,
+        "n_pares_total": 511,
+        "n_excluidos_censura_pre_tau": 0,
+        "n_censurados": 134,
+        "mae": 1.29,
+        "mediana_ae": 1.18,
+        "vies": 0.33,
+        "pct_superestima": 39.3,
+        "pct_subestima": 19.8,
+        "pct_acerto_1a": 40.9
+      },
+      {
+        "posicao": "WR",
+        "modelo": "cox",
+        "n_pares": 781,
+        "n_pares_total": 781,
+        "n_excluidos_censura_pre_tau": 0,
+        "n_censurados": 266,
+        "mae": 1.38,
+        "mediana_ae": 1.24,
+        "vies": 0.41,
+        "pct_superestima": 38.8,
+        "pct_subestima": 20.9,
+        "pct_acerto_1a": 40.3
+      },
+      {
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "n_pares": 781,
+        "n_pares_total": 781,
+        "n_excluidos_censura_pre_tau": 0,
+        "n_censurados": 266,
+        "mae": 1.4,
+        "mediana_ae": 1.24,
+        "vies": 0.41,
+        "pct_superestima": 38.2,
+        "pct_subestima": 22.3,
+        "pct_acerto_1a": 39.6
+      },
+      {
+        "posicao": "WR",
+        "modelo": "rsf",
+        "n_pares": 781,
+        "n_pares_total": 781,
+        "n_excluidos_censura_pre_tau": 0,
+        "n_censurados": 266,
+        "mae": 1.31,
+        "mediana_ae": 1.15,
+        "vies": 0.37,
+        "pct_superestima": 36.4,
+        "pct_subestima": 18.8,
+        "pct_acerto_1a": 44.8
+      }
+    ],
+    "extremos": [
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Andrew Luck",
+        "temporada": 2018,
+        "previsto": 5.04,
+        "observado": 0.0,
+        "erro": 5.04
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Cody Kessler",
+        "temporada": 2018,
+        "previsto": 4.58,
+        "observado": 0.0,
+        "erro": 4.58
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Sam Bradford",
+        "temporada": 2018,
+        "previsto": 4.49,
+        "observado": 0.0,
+        "erro": 4.48
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Brock Osweiler",
+        "temporada": 2018,
+        "previsto": 4.14,
+        "observado": 0.0,
+        "erro": 4.14
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Blake Bortles",
+        "temporada": 2018,
+        "previsto": 4.99,
+        "observado": 1.0,
+        "erro": 3.99
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Derek Anderson",
+        "temporada": 2018,
+        "previsto": 3.96,
+        "observado": 0.0,
+        "erro": 3.96
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Eli Manning",
+        "temporada": 2018,
+        "previsto": 4.95,
+        "observado": 1.0,
+        "erro": 3.95
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Chad Kelly",
+        "temporada": 2018,
+        "previsto": 3.75,
+        "observado": 0.0,
+        "erro": 3.75
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Taylor Heinicke",
+        "temporada": 2018,
+        "previsto": 3.15,
+        "observado": 6.0,
+        "erro": -2.85
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Josh Johnson",
+        "temporada": 2018,
+        "previsto": 3.29,
+        "observado": 6.0,
+        "erro": -2.71
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Joshua Dobbs",
+        "temporada": 2018,
+        "previsto": 3.35,
+        "observado": 6.0,
+        "erro": -2.65
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Nick Mullens",
+        "temporada": 2018,
+        "previsto": 3.58,
+        "observado": 6.0,
+        "erro": -2.42
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Geno Smith",
+        "temporada": 2018,
+        "previsto": 3.9,
+        "observado": 6.0,
+        "erro": -2.1
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Andrew Luck",
+        "temporada": 2018,
+        "previsto": 5.4,
+        "observado": 0.0,
+        "erro": 5.4
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Brock Osweiler",
+        "temporada": 2018,
+        "previsto": 5.35,
+        "observado": 0.0,
+        "erro": 5.35
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Matt Cassel",
+        "temporada": 2018,
+        "previsto": 5.31,
+        "observado": 0.0,
+        "erro": 5.31
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Derek Anderson",
+        "temporada": 2018,
+        "previsto": 4.79,
+        "observado": 0.0,
+        "erro": 4.79
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Brandon Weeden",
+        "temporada": 2018,
+        "previsto": 4.75,
+        "observado": 0.0,
+        "erro": 4.75
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Eli Manning",
+        "temporada": 2018,
+        "previsto": 5.7,
+        "observado": 1.0,
+        "erro": 4.7
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Sam Bradford",
+        "temporada": 2018,
+        "previsto": 4.38,
+        "observado": 0.0,
+        "erro": 4.38
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Joe Webb",
+        "temporada": 2018,
+        "previsto": 4.37,
+        "observado": 0.0,
+        "erro": 4.37
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Taylor Heinicke",
+        "temporada": 2018,
+        "previsto": 2.4,
+        "observado": 6.0,
+        "erro": -3.6
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Josh Johnson",
+        "temporada": 2018,
+        "previsto": 2.42,
+        "observado": 6.0,
+        "erro": -3.58
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Joshua Dobbs",
+        "temporada": 2018,
+        "previsto": 2.95,
+        "observado": 6.0,
+        "erro": -3.05
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Lamar Jackson",
+        "temporada": 2018,
+        "previsto": 2.99,
+        "observado": 6.0,
+        "erro": -3.01
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Tyrod Taylor",
+        "temporada": 2018,
+        "previsto": 3.21,
+        "observado": 6.0,
+        "erro": -2.79
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Andrew Luck",
+        "temporada": 2018,
+        "previsto": 5.26,
+        "observado": 0.0,
+        "erro": 5.26
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Eli Manning",
+        "temporada": 2018,
+        "previsto": 5.53,
+        "observado": 1.0,
+        "erro": 4.53
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Brandon Weeden",
+        "temporada": 2018,
+        "previsto": 4.27,
+        "observado": 0.0,
+        "erro": 4.27
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Brock Osweiler",
+        "temporada": 2018,
+        "previsto": 4.24,
+        "observado": 0.0,
+        "erro": 4.24
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Sam Bradford",
+        "temporada": 2018,
+        "previsto": 4.18,
+        "observado": 0.0,
+        "erro": 4.18
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Matt Cassel",
+        "temporada": 2018,
+        "previsto": 3.88,
+        "observado": 0.0,
+        "erro": 3.88
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Chad Kelly",
+        "temporada": 2018,
+        "previsto": 3.86,
+        "observado": 0.0,
+        "erro": 3.85
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Philip Rivers",
+        "temporada": 2020,
+        "previsto": 3.7,
+        "observado": 0.0,
+        "erro": 3.7
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Taylor Heinicke",
+        "temporada": 2018,
+        "previsto": 2.97,
+        "observado": 6.0,
+        "erro": -3.03
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Josh Johnson",
+        "temporada": 2018,
+        "previsto": 3.1,
+        "observado": 6.0,
+        "erro": -2.9
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Joshua Dobbs",
+        "temporada": 2018,
+        "previsto": 3.12,
+        "observado": 6.0,
+        "erro": -2.88
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Lamar Jackson",
+        "temporada": 2018,
+        "previsto": 3.33,
+        "observado": 6.0,
+        "erro": -2.67
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Jarrett Stidham",
+        "temporada": 2019,
+        "previsto": 2.61,
+        "observado": 5.0,
+        "erro": -2.39
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Lamar Miller",
+        "temporada": 2018,
+        "previsto": 3.82,
+        "observado": 0.0,
+        "erro": 3.82
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Doug Martin",
+        "temporada": 2018,
+        "previsto": 3.73,
+        "observado": 0.0,
+        "erro": 3.72
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Keith Ford",
+        "temporada": 2018,
+        "previsto": 3.58,
+        "observado": 0.0,
+        "erro": 3.58
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Marcus Murphy",
+        "temporada": 2018,
+        "previsto": 3.43,
+        "observado": 0.0,
+        "erro": 3.43
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Shaun Wilson",
+        "temporada": 2018,
+        "previsto": 3.38,
+        "observado": 0.0,
+        "erro": 3.38
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Taquan Mizzell",
+        "temporada": 2018,
+        "previsto": 3.35,
+        "observado": 0.0,
+        "erro": 3.35
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Roc Thomas",
+        "temporada": 2018,
+        "previsto": 3.33,
+        "observado": 0.0,
+        "erro": 3.33
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Detrez Newsome",
+        "temporada": 2018,
+        "previsto": 3.26,
+        "observado": 0.0,
+        "erro": 3.26
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Samaje Perine",
+        "temporada": 2018,
+        "previsto": 2.12,
+        "observado": 6.0,
+        "erro": -3.88
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Ameer Abdullah",
+        "temporada": 2018,
+        "previsto": 2.68,
+        "observado": 6.0,
+        "erro": -3.32
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Cordarrelle Patterson",
+        "temporada": 2018,
+        "previsto": 3.11,
+        "observado": 6.0,
+        "erro": -2.89
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Raheem Mostert",
+        "temporada": 2018,
+        "previsto": 3.18,
+        "observado": 6.0,
+        "erro": -2.82
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Jamaal Williams",
+        "temporada": 2018,
+        "previsto": 3.43,
+        "observado": 6.0,
+        "erro": -2.57
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Lamar Miller",
+        "temporada": 2018,
+        "previsto": 4.06,
+        "observado": 0.0,
+        "erro": 4.06
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Shaun Wilson",
+        "temporada": 2018,
+        "previsto": 3.69,
+        "observado": 0.0,
+        "erro": 3.68
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Taquan Mizzell",
+        "temporada": 2018,
+        "previsto": 3.62,
+        "observado": 0.0,
+        "erro": 3.62
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Jacquizz Rodgers",
+        "temporada": 2018,
+        "previsto": 3.49,
+        "observado": 0.0,
+        "erro": 3.49
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Darren Sproles",
+        "temporada": 2019,
+        "previsto": 3.45,
+        "observado": 0.0,
+        "erro": 3.45
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Doug Martin",
+        "temporada": 2018,
+        "previsto": 3.45,
+        "observado": 0.0,
+        "erro": 3.44
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Roc Thomas",
+        "temporada": 2018,
+        "previsto": 3.29,
+        "observado": 0.0,
+        "erro": 3.28
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Marcus Murphy",
+        "temporada": 2018,
+        "previsto": 3.27,
+        "observado": 0.0,
+        "erro": 3.27
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Raheem Mostert",
+        "temporada": 2018,
+        "previsto": 1.87,
+        "observado": 6.0,
+        "erro": -4.13
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Ameer Abdullah",
+        "temporada": 2018,
+        "previsto": 1.89,
+        "observado": 6.0,
+        "erro": -4.11
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Samaje Perine",
+        "temporada": 2018,
+        "previsto": 2.27,
+        "observado": 6.0,
+        "erro": -3.73
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Jamaal Williams",
+        "temporada": 2018,
+        "previsto": 3.12,
+        "observado": 6.0,
+        "erro": -2.88
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Cordarrelle Patterson",
+        "temporada": 2018,
+        "previsto": 3.15,
+        "observado": 6.0,
+        "erro": -2.85
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Lamar Miller",
+        "temporada": 2018,
+        "previsto": 4.2,
+        "observado": 0.0,
+        "erro": 4.2
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Doug Martin",
+        "temporada": 2018,
+        "previsto": 3.79,
+        "observado": 0.0,
+        "erro": 3.78
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "T.J. Logan",
+        "temporada": 2019,
+        "previsto": 3.31,
+        "observado": 0.0,
+        "erro": 3.3
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Keith Ford",
+        "temporada": 2018,
+        "previsto": 3.27,
+        "observado": 0.0,
+        "erro": 3.27
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Marcus Murphy",
+        "temporada": 2018,
+        "previsto": 3.2,
+        "observado": 0.0,
+        "erro": 3.2
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Jon Hilliman",
+        "temporada": 2019,
+        "previsto": 3.19,
+        "observado": 0.0,
+        "erro": 3.18
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Shaun Wilson",
+        "temporada": 2018,
+        "previsto": 3.15,
+        "observado": 0.0,
+        "erro": 3.15
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Alfred Blue",
+        "temporada": 2018,
+        "previsto": 3.14,
+        "observado": 0.0,
+        "erro": 3.14
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Raheem Mostert",
+        "temporada": 2018,
+        "previsto": 1.67,
+        "observado": 6.0,
+        "erro": -4.33
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Ameer Abdullah",
+        "temporada": 2018,
+        "previsto": 1.89,
+        "observado": 6.0,
+        "erro": -4.11
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Samaje Perine",
+        "temporada": 2018,
+        "previsto": 2.05,
+        "observado": 6.0,
+        "erro": -3.95
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Travis Homer",
+        "temporada": 2019,
+        "previsto": 1.38,
+        "observado": 5.0,
+        "erro": -3.62
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Myles Gaskin",
+        "temporada": 2019,
+        "previsto": 1.54,
+        "observado": 5.0,
+        "erro": -3.46
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Josh Doctson",
+        "temporada": 2018,
+        "previsto": 4.21,
+        "observado": 0.0,
+        "erro": 4.21
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Taywan Taylor",
+        "temporada": 2018,
+        "previsto": 3.96,
+        "observado": 0.0,
+        "erro": 3.96
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Maurice Harris",
+        "temporada": 2018,
+        "previsto": 3.93,
+        "observado": 0.0,
+        "erro": 3.93
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Deontay Burnett",
+        "temporada": 2018,
+        "previsto": 3.83,
+        "observado": 0.0,
+        "erro": 3.83
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Chad Williams",
+        "temporada": 2018,
+        "previsto": 3.78,
+        "observado": 0.0,
+        "erro": 3.78
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "J.J. Jones",
+        "temporada": 2018,
+        "previsto": 3.63,
+        "observado": 0.0,
+        "erro": 3.63
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "T.J. Jones",
+        "temporada": 2018,
+        "previsto": 3.63,
+        "observado": 0.0,
+        "erro": 3.63
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Cam Phillips",
+        "temporada": 2018,
+        "previsto": 3.56,
+        "observado": 0.0,
+        "erro": 3.55
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Noah Brown",
+        "temporada": 2018,
+        "previsto": 2.75,
+        "observado": 6.0,
+        "erro": -3.25
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Justin Watson",
+        "temporada": 2018,
+        "previsto": 2.83,
+        "observado": 6.0,
+        "erro": -3.17
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Mack Hollins",
+        "temporada": 2019,
+        "previsto": 2.24,
+        "observado": 5.0,
+        "erro": -2.76
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Ray-Ray McCloud",
+        "temporada": 2018,
+        "previsto": 3.39,
+        "observado": 6.0,
+        "erro": -2.61
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Noah Brown",
+        "temporada": 2020,
+        "previsto": 1.4,
+        "observado": 4.0,
+        "erro": -2.6
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Maurice Harris",
+        "temporada": 2018,
+        "previsto": 3.87,
+        "observado": 0.0,
+        "erro": 3.87
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Josh Doctson",
+        "temporada": 2018,
+        "previsto": 3.84,
+        "observado": 0.0,
+        "erro": 3.84
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Taywan Taylor",
+        "temporada": 2018,
+        "previsto": 3.76,
+        "observado": 0.0,
+        "erro": 3.76
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Chad Williams",
+        "temporada": 2018,
+        "previsto": 3.75,
+        "observado": 0.0,
+        "erro": 3.75
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Kelvin Benjamin",
+        "temporada": 2018,
+        "previsto": 3.73,
+        "observado": 0.0,
+        "erro": 3.73
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Geronimo Allison",
+        "temporada": 2019,
+        "previsto": 3.72,
+        "observado": 0.0,
+        "erro": 3.71
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Bruce Ellington",
+        "temporada": 2018,
+        "previsto": 3.65,
+        "observado": 0.0,
+        "erro": 3.65
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "J.J. Jones",
+        "temporada": 2018,
+        "previsto": 3.64,
+        "observado": 0.0,
+        "erro": 3.64
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Mack Hollins",
+        "temporada": 2019,
+        "previsto": 2.19,
+        "observado": 5.0,
+        "erro": -2.81
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Justin Watson",
+        "temporada": 2018,
+        "previsto": 3.22,
+        "observado": 6.0,
+        "erro": -2.78
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Noah Brown",
+        "temporada": 2018,
+        "previsto": 3.22,
+        "observado": 6.0,
+        "erro": -2.78
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Marquez Valdes-Scantling",
+        "temporada": 2019,
+        "previsto": 2.36,
+        "observado": 5.0,
+        "erro": -2.64
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Cedrick Wilson",
+        "temporada": 2019,
+        "previsto": 2.41,
+        "observado": 5.0,
+        "erro": -2.59
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Josh Doctson",
+        "temporada": 2018,
+        "previsto": 4.57,
+        "observado": 0.0,
+        "erro": 4.57
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Maurice Harris",
+        "temporada": 2018,
+        "previsto": 4.3,
+        "observado": 0.0,
+        "erro": 4.3
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Taywan Taylor",
+        "temporada": 2018,
+        "previsto": 4.23,
+        "observado": 0.0,
+        "erro": 4.23
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Geronimo Allison",
+        "temporada": 2019,
+        "previsto": 4.18,
+        "observado": 0.0,
+        "erro": 4.18
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Chad Williams",
+        "temporada": 2018,
+        "previsto": 4.11,
+        "observado": 0.0,
+        "erro": 4.11
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Kelvin Benjamin",
+        "temporada": 2018,
+        "previsto": 4.07,
+        "observado": 0.0,
+        "erro": 4.07
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Paul Richardson",
+        "temporada": 2019,
+        "previsto": 3.85,
+        "observado": 0.0,
+        "erro": 3.85
+      },
+      {
+        "tipo": "superestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Jarius Wright",
+        "temporada": 2019,
+        "previsto": 3.73,
+        "observado": 0.0,
+        "erro": 3.73
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Mack Hollins",
+        "temporada": 2019,
+        "previsto": 1.57,
+        "observado": 5.0,
+        "erro": -3.43
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Noah Brown",
+        "temporada": 2018,
+        "previsto": 2.62,
+        "observado": 6.0,
+        "erro": -3.38
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Justin Watson",
+        "temporada": 2018,
+        "previsto": 2.76,
+        "observado": 6.0,
+        "erro": -3.24
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Ashton Dulin",
+        "temporada": 2019,
+        "previsto": 2.01,
+        "observado": 5.0,
+        "erro": -2.99
+      },
+      {
+        "tipo": "subestima",
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Demarcus Robinson",
+        "temporada": 2018,
+        "previsto": 3.02,
+        "observado": 6.0,
+        "erro": -2.98
+      }
+    ],
+    "acertos": [
+      {
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Ryan Tannehill",
+        "temporada": 2018,
+        "previsto": 5.0,
+        "observado": 5.0,
+        "ae": 0.0
+      },
+      {
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Jeff Driskel",
+        "temporada": 2018,
+        "previsto": 4.0,
+        "observado": 4.0,
+        "ae": 0.0
+      },
+      {
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "P.J. Walker",
+        "temporada": 2021,
+        "previsto": 2.03,
+        "observado": 2.0,
+        "ae": 0.03
+      },
+      {
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Blaine Gabbert",
+        "temporada": 2021,
+        "previsto": 1.97,
+        "observado": 2.0,
+        "ae": 0.03
+      },
+      {
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Trace McSorley",
+        "temporada": 2019,
+        "previsto": 3.04,
+        "observado": 3.0,
+        "ae": 0.04
+      },
+      {
+        "posicao": "QB",
+        "modelo": "cox",
+        "player_name": "Colt McCoy",
+        "temporada": 2018,
+        "previsto": 4.04,
+        "observado": 4.0,
+        "ae": 0.04
+      },
+      {
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Davis Mills",
+        "temporada": 2021,
+        "previsto": 2.99,
+        "observado": 3.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Kirk Cousins",
+        "temporada": 2021,
+        "previsto": 2.98,
+        "observado": 3.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Derek Carr",
+        "temporada": 2021,
+        "previsto": 2.98,
+        "observado": 3.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Baker Mayfield",
+        "temporada": 2021,
+        "previsto": 2.98,
+        "observado": 3.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Russell Wilson",
+        "temporada": 2021,
+        "previsto": 2.98,
+        "observado": 3.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "player_name": "Lamar Jackson",
+        "temporada": 2021,
+        "previsto": 2.98,
+        "observado": 3.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "David Blough",
+        "temporada": 2019,
+        "previsto": 2.99,
+        "observado": 3.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Nick Foles",
+        "temporada": 2019,
+        "previsto": 3.02,
+        "observado": 3.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Logan Woodside",
+        "temporada": 2021,
+        "previsto": 1.98,
+        "observado": 2.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Kirk Cousins",
+        "temporada": 2020,
+        "previsto": 3.94,
+        "observado": 4.0,
+        "ae": 0.06
+      },
+      {
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Russell Wilson",
+        "temporada": 2020,
+        "previsto": 3.94,
+        "observado": 4.0,
+        "ae": 0.06
+      },
+      {
+        "posicao": "QB",
+        "modelo": "rsf",
+        "player_name": "Blaine Gabbert",
+        "temporada": 2021,
+        "previsto": 2.07,
+        "observado": 2.0,
+        "ae": 0.07
+      },
+      {
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Giovani Bernard",
+        "temporada": 2019,
+        "previsto": 3.0,
+        "observado": 3.0,
+        "ae": 0.0
+      },
+      {
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Boston Scott",
+        "temporada": 2021,
+        "previsto": 2.0,
+        "observado": 2.0,
+        "ae": 0.0
+      },
+      {
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Devontae Booker",
+        "temporada": 2018,
+        "previsto": 3.01,
+        "observado": 3.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Benny Snell",
+        "temporada": 2019,
+        "previsto": 3.02,
+        "observado": 3.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Devontae Booker",
+        "temporada": 2019,
+        "previsto": 1.98,
+        "observado": 2.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "RB",
+        "modelo": "cox",
+        "player_name": "Darrel Williams",
+        "temporada": 2019,
+        "previsto": 3.02,
+        "observado": 3.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Kenyan Drake",
+        "temporada": 2018,
+        "previsto": 3.99,
+        "observado": 4.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Benny Snell",
+        "temporada": 2019,
+        "previsto": 2.99,
+        "observado": 3.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Wayne Gallman",
+        "temporada": 2018,
+        "previsto": 3.02,
+        "observado": 3.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Giovani Bernard",
+        "temporada": 2019,
+        "previsto": 2.97,
+        "observado": 3.0,
+        "ae": 0.03
+      },
+      {
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "Malcolm Brown",
+        "temporada": 2019,
+        "previsto": 3.03,
+        "observado": 3.0,
+        "ae": 0.03
+      },
+      {
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "player_name": "David Johnson",
+        "temporada": 2018,
+        "previsto": 3.97,
+        "observado": 4.0,
+        "ae": 0.03
+      },
+      {
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Damien Harris",
+        "temporada": 2020,
+        "previsto": 3.0,
+        "observado": 3.0,
+        "ae": 0.0
+      },
+      {
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "David Johnson",
+        "temporada": 2018,
+        "previsto": 4.0,
+        "observado": 4.0,
+        "ae": 0.0
+      },
+      {
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Kenyan Drake",
+        "temporada": 2018,
+        "previsto": 4.0,
+        "observado": 4.0,
+        "ae": 0.0
+      },
+      {
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Elijhaa Penny",
+        "temporada": 2018,
+        "previsto": 2.99,
+        "observado": 3.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Kenjon Barner",
+        "temporada": 2019,
+        "previsto": 2.01,
+        "observado": 2.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "RB",
+        "modelo": "rsf",
+        "player_name": "Giovani Bernard",
+        "temporada": 2019,
+        "previsto": 2.99,
+        "observado": 3.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Laquon Treadwell",
+        "temporada": 2020,
+        "previsto": 1.99,
+        "observado": 2.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Chase Claypool",
+        "temporada": 2020,
+        "previsto": 2.99,
+        "observado": 3.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Ihmir Smith-Marsette",
+        "temporada": 2021,
+        "previsto": 2.01,
+        "observado": 2.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Randall Cobb",
+        "temporada": 2020,
+        "previsto": 2.99,
+        "observado": 3.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Sammy Watkins",
+        "temporada": 2018,
+        "previsto": 4.01,
+        "observado": 4.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "WR",
+        "modelo": "cox",
+        "player_name": "Jake Kumerow",
+        "temporada": 2019,
+        "previsto": 3.02,
+        "observado": 3.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Andy Isabella",
+        "temporada": 2019,
+        "previsto": 3.0,
+        "observado": 3.0,
+        "ae": 0.0
+      },
+      {
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Jamal Agnew",
+        "temporada": 2021,
+        "previsto": 2.0,
+        "observado": 2.0,
+        "ae": 0.0
+      },
+      {
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "T.Y. Hilton",
+        "temporada": 2019,
+        "previsto": 3.0,
+        "observado": 3.0,
+        "ae": 0.0
+      },
+      {
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Jarvis Landry",
+        "temporada": 2018,
+        "previsto": 4.0,
+        "observado": 4.0,
+        "ae": 0.0
+      },
+      {
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "T.Y. Hilton",
+        "temporada": 2018,
+        "previsto": 3.99,
+        "observado": 4.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "player_name": "Keke Coutee",
+        "temporada": 2019,
+        "previsto": 3.01,
+        "observado": 3.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Michael Gallup",
+        "temporada": 2021,
+        "previsto": 2.01,
+        "observado": 2.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Marvin Jones",
+        "temporada": 2020,
+        "previsto": 3.01,
+        "observado": 3.0,
+        "ae": 0.01
+      },
+      {
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Laquon Treadwell",
+        "temporada": 2018,
+        "previsto": 3.98,
+        "observado": 4.0,
+        "ae": 0.02
+      },
+      {
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Isaiah McKenzie",
+        "temporada": 2021,
+        "previsto": 2.04,
+        "observado": 2.0,
+        "ae": 0.04
+      },
+      {
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Tajae Sharpe",
+        "temporada": 2020,
+        "previsto": 1.06,
+        "observado": 1.0,
+        "ae": 0.06
+      },
+      {
+        "posicao": "WR",
+        "modelo": "rsf",
+        "player_name": "Hunter Renfrow",
+        "temporada": 2019,
+        "previsto": 4.06,
+        "observado": 4.0,
+        "ae": 0.06
+      }
+    ],
+    "compartilhados": [
+      {
+        "posicao": "QB",
+        "n_pares_identificaveis_alinhados": 271,
+        "superestima_todos": 48,
+        "subestima_todos": 4,
+        "pct_super_compartilhada": 100.0,
+        "por_modelo": {
+          "cox": {
+            "n_super": 54,
+            "n_sub": 7
+          },
+          "gbsa": {
+            "n_super": 59,
+            "n_sub": 6
+          },
+          "rsf": {
+            "n_super": 48,
+            "n_sub": 10
+          }
+        },
+        "exemplos_super": [
+          {
+            "player_name": "Luke Falk",
+            "temporada": 2019,
+            "observado": 0.0,
+            "cox": 3.08,
+            "gbsa": 3.13,
+            "rsf": 2.83
+          },
+          {
+            "player_name": "Sam Bradford",
+            "temporada": 2018,
+            "observado": 0.0,
+            "cox": 4.49,
+            "gbsa": 4.38,
+            "rsf": 4.18
+          },
+          {
+            "player_name": "Josh McCown",
+            "temporada": 2019,
+            "observado": 0.0,
+            "cox": 2.5,
+            "gbsa": 2.87,
+            "rsf": 2.77
+          },
+          {
+            "player_name": "Andrew Luck",
+            "temporada": 2018,
+            "observado": 0.0,
+            "cox": 5.04,
+            "gbsa": 5.4,
+            "rsf": 5.26
+          },
+          {
+            "player_name": "Dwayne Haskins",
+            "temporada": 2020,
+            "observado": 0.0,
+            "cox": 3.1,
+            "gbsa": 2.88,
+            "rsf": 2.38
+          },
+          {
+            "player_name": "Joe Webb",
+            "temporada": 2018,
+            "observado": 0.0,
+            "cox": 3.47,
+            "gbsa": 4.37,
+            "rsf": 3.5
+          },
+          {
+            "player_name": "Ben Roethlisberger",
+            "temporada": 2021,
+            "observado": 0.0,
+            "cox": 2.41,
+            "gbsa": 2.83,
+            "rsf": 2.42
+          },
+          {
+            "player_name": "Cam Newton",
+            "temporada": 2018,
+            "observado": 3.0,
+            "cox": 5.14,
+            "gbsa": 5.3,
+            "rsf": 5.05
+          }
+        ],
+        "exemplos_sub": [
+          {
+            "player_name": "Taylor Heinicke",
+            "temporada": 2018,
+            "observado": 6.0,
+            "cox": 3.15,
+            "gbsa": 2.4,
+            "rsf": 2.97
+          },
+          {
+            "player_name": "Joshua Dobbs",
+            "temporada": 2018,
+            "observado": 6.0,
+            "cox": 3.35,
+            "gbsa": 2.95,
+            "rsf": 3.12
+          },
+          {
+            "player_name": "Jarrett Stidham",
+            "temporada": 2019,
+            "observado": 5.0,
+            "cox": 2.99,
+            "gbsa": 2.94,
+            "rsf": 2.61
+          },
+          {
+            "player_name": "Josh Johnson",
+            "temporada": 2018,
+            "observado": 6.0,
+            "cox": 3.29,
+            "gbsa": 2.42,
+            "rsf": 3.1
+          }
+        ]
+      },
+      {
+        "posicao": "RB",
+        "n_pares_identificaveis_alinhados": 511,
+        "superestima_todos": 59,
+        "subestima_todos": 15,
+        "pct_super_compartilhada": 67.8,
+        "por_modelo": {
+          "cox": {
+            "n_super": 87,
+            "n_sub": 23
+          },
+          "gbsa": {
+            "n_super": 113,
+            "n_sub": 28
+          },
+          "rsf": {
+            "n_super": 77,
+            "n_sub": 28
+          }
+        },
+        "exemplos_super": [
+          {
+            "player_name": "Kerryon Johnson",
+            "temporada": 2020,
+            "observado": 0.0,
+            "cox": 2.68,
+            "gbsa": 2.6,
+            "rsf": 2.63
+          },
+          {
+            "player_name": "Keith Ford",
+            "temporada": 2018,
+            "observado": 0.0,
+            "cox": 3.58,
+            "gbsa": 3.22,
+            "rsf": 3.27
+          },
+          {
+            "player_name": "Bilal Powell",
+            "temporada": 2019,
+            "observado": 0.0,
+            "cox": 2.22,
+            "gbsa": 2.83,
+            "rsf": 2.48
+          },
+          {
+            "player_name": "Detrez Newsome",
+            "temporada": 2018,
+            "observado": 0.0,
+            "cox": 3.26,
+            "gbsa": 3.13,
+            "rsf": 2.81
+          },
+          {
+            "player_name": "Devontae Booker",
+            "temporada": 2021,
+            "observado": 0.0,
+            "cox": 2.16,
+            "gbsa": 2.12,
+            "rsf": 2.27
+          },
+          {
+            "player_name": "Mike Gillislee",
+            "temporada": 2018,
+            "observado": 0.0,
+            "cox": 2.98,
+            "gbsa": 2.48,
+            "rsf": 2.28
+          },
+          {
+            "player_name": "Roc Thomas",
+            "temporada": 2018,
+            "observado": 0.0,
+            "cox": 3.33,
+            "gbsa": 3.29,
+            "rsf": 3.03
+          },
+          {
+            "player_name": "Taquan Mizzell",
+            "temporada": 2018,
+            "observado": 0.0,
+            "cox": 3.35,
+            "gbsa": 3.62,
+            "rsf": 3.04
+          }
+        ],
+        "exemplos_sub": [
+          {
+            "player_name": "Raheem Mostert",
+            "temporada": 2018,
+            "observado": 6.0,
+            "cox": 3.18,
+            "gbsa": 1.87,
+            "rsf": 1.67
+          },
+          {
+            "player_name": "Ameer Abdullah",
+            "temporada": 2018,
+            "observado": 6.0,
+            "cox": 2.68,
+            "gbsa": 1.89,
+            "rsf": 1.89
+          },
+          {
+            "player_name": "Jamaal Williams",
+            "temporada": 2019,
+            "observado": 5.0,
+            "cox": 2.78,
+            "gbsa": 2.83,
+            "rsf": 2.81
+          },
+          {
+            "player_name": "Jeffery Wilson",
+            "temporada": 2018,
+            "observado": 6.0,
+            "cox": 3.49,
+            "gbsa": 3.26,
+            "rsf": 3.18
+          },
+          {
+            "player_name": "Myles Gaskin",
+            "temporada": 2019,
+            "observado": 5.0,
+            "cox": 2.85,
+            "gbsa": 2.45,
+            "rsf": 1.54
+          },
+          {
+            "player_name": "Samaje Perine",
+            "temporada": 2018,
+            "observado": 6.0,
+            "cox": 2.12,
+            "gbsa": 2.27,
+            "rsf": 2.05
+          }
+        ]
+      },
+      {
+        "posicao": "WR",
+        "n_pares_identificaveis_alinhados": 781,
+        "superestima_todos": 113,
+        "subestima_todos": 18,
+        "pct_super_compartilhada": 71.5,
+        "por_modelo": {
+          "cox": {
+            "n_super": 158,
+            "n_sub": 28
+          },
+          "gbsa": {
+            "n_super": 155,
+            "n_sub": 54
+          },
+          "rsf": {
+            "n_super": 133,
+            "n_sub": 36
+          }
+        },
+        "exemplos_super": [
+          {
+            "player_name": "Michael Walker",
+            "temporada": 2019,
+            "observado": 0.0,
+            "cox": 3.25,
+            "gbsa": 2.55,
+            "rsf": 2.33
+          },
+          {
+            "player_name": "Jawill Davis",
+            "temporada": 2018,
+            "observado": 0.0,
+            "cox": 3.44,
+            "gbsa": 3.47,
+            "rsf": 3.07
+          },
+          {
+            "player_name": "Ventell Bryant",
+            "temporada": 2019,
+            "observado": 0.0,
+            "cox": 2.85,
+            "gbsa": 2.82,
+            "rsf": 2.08
+          },
+          {
+            "player_name": "Chad Williams",
+            "temporada": 2018,
+            "observado": 0.0,
+            "cox": 3.78,
+            "gbsa": 3.75,
+            "rsf": 4.11
+          },
+          {
+            "player_name": "Bobo Wilson",
+            "temporada": 2019,
+            "observado": 0.0,
+            "cox": 3.24,
+            "gbsa": 3.02,
+            "rsf": 3.0
+          },
+          {
+            "player_name": "Chris Lacy",
+            "temporada": 2019,
+            "observado": 0.0,
+            "cox": 3.07,
+            "gbsa": 2.78,
+            "rsf": 2.77
+          },
+          {
+            "player_name": "John Hightower",
+            "temporada": 2020,
+            "observado": 0.0,
+            "cox": 2.7,
+            "gbsa": 2.71,
+            "rsf": 2.92
+          },
+          {
+            "player_name": "Marvin Hall",
+            "temporada": 2020,
+            "observado": 0.0,
+            "cox": 2.82,
+            "gbsa": 2.81,
+            "rsf": 2.56
+          }
+        ],
+        "exemplos_sub": [
+          {
+            "player_name": "David Moore",
+            "temporada": 2019,
+            "observado": 5.0,
+            "cox": 2.49,
+            "gbsa": 2.59,
+            "rsf": 2.13
+          },
+          {
+            "player_name": "Mack Hollins",
+            "temporada": 2019,
+            "observado": 5.0,
+            "cox": 2.24,
+            "gbsa": 2.19,
+            "rsf": 1.57
+          },
+          {
+            "player_name": "KhaDarel Hodge",
+            "temporada": 2018,
+            "observado": 6.0,
+            "cox": 3.52,
+            "gbsa": 3.47,
+            "rsf": 3.19
+          },
+          {
+            "player_name": "Justin Watson",
+            "temporada": 2018,
+            "observado": 6.0,
+            "cox": 2.83,
+            "gbsa": 3.22,
+            "rsf": 2.76
+          },
+          {
+            "player_name": "DeAndre Carter",
+            "temporada": 2018,
+            "observado": 6.0,
+            "cox": 3.86,
+            "gbsa": 3.68,
+            "rsf": 3.37
+          },
+          {
+            "player_name": "Noah Brown",
+            "temporada": 2020,
+            "observado": 4.0,
+            "cox": 1.4,
+            "gbsa": 1.84,
+            "rsf": 1.6
+          }
+        ]
+      }
+    ],
+    "acertos_horizonte": [
+      {
+        "posicao": "QB",
+        "modelo": "cox",
+        "n": 271,
+        "mae": 1.3,
+        "mediana_ae": 0.94,
+        "vies": 0.3,
+        "acerto_1a": 52.8,
+        "acerto_2a": 77.5,
+        "acerto_3a": 90.0,
+        "acerto_5a": 99.6
+      },
+      {
+        "posicao": "QB",
+        "modelo": "gbsa",
+        "n": 271,
+        "mae": 1.37,
+        "mediana_ae": 1.02,
+        "vies": 0.42,
+        "acerto_1a": 49.4,
+        "acerto_2a": 76.0,
+        "acerto_3a": 90.4,
+        "acerto_5a": 98.9
+      },
+      {
+        "posicao": "QB",
+        "modelo": "rsf",
+        "n": 271,
+        "mae": 1.27,
+        "mediana_ae": 0.94,
+        "vies": 0.28,
+        "acerto_1a": 52.0,
+        "acerto_2a": 78.6,
+        "acerto_3a": 91.1,
+        "acerto_5a": 99.6
+      },
+      {
+        "posicao": "RB",
+        "modelo": "cox",
+        "n": 511,
+        "mae": 1.32,
+        "mediana_ae": 1.25,
+        "vies": 0.4,
+        "acerto_1a": 40.5,
+        "acerto_2a": 78.5,
+        "acerto_3a": 97.1,
+        "acerto_5a": 100.0
+      },
+      {
+        "posicao": "RB",
+        "modelo": "gbsa",
+        "n": 511,
+        "mae": 1.38,
+        "mediana_ae": 1.24,
+        "vies": 0.39,
+        "acerto_1a": 37.0,
+        "acerto_2a": 72.4,
+        "acerto_3a": 97.1,
+        "acerto_5a": 100.0
+      },
+      {
+        "posicao": "RB",
+        "modelo": "rsf",
+        "n": 511,
+        "mae": 1.29,
+        "mediana_ae": 1.18,
+        "vies": 0.33,
+        "acerto_1a": 40.9,
+        "acerto_2a": 79.5,
+        "acerto_3a": 96.3,
+        "acerto_5a": 100.0
+      },
+      {
+        "posicao": "WR",
+        "modelo": "cox",
+        "n": 781,
+        "mae": 1.38,
+        "mediana_ae": 1.24,
+        "vies": 0.41,
+        "acerto_1a": 40.3,
+        "acerto_2a": 76.2,
+        "acerto_3a": 93.7,
+        "acerto_5a": 100.0
+      },
+      {
+        "posicao": "WR",
+        "modelo": "gbsa",
+        "n": 781,
+        "mae": 1.4,
+        "mediana_ae": 1.24,
+        "vies": 0.41,
+        "acerto_1a": 39.6,
+        "acerto_2a": 73.2,
+        "acerto_3a": 93.9,
+        "acerto_5a": 100.0
+      },
+      {
+        "posicao": "WR",
+        "modelo": "rsf",
+        "n": 781,
+        "mae": 1.31,
+        "mediana_ae": 1.15,
+        "vies": 0.37,
+        "acerto_1a": 44.8,
+        "acerto_2a": 78.4,
+        "acerto_3a": 95.1,
+        "acerto_5a": 100.0
+      }
+    ]
+  },
+  "years_exp_escala": {
+    "csv_years_exp_rodgers": 2.969,
+    "raw_years_exp_rodgers": 19.0,
+    "interpretacao": "O CSV predicao_2024_modelos.csv grava years_exp DEPOIS da escala do treino. Não ler como anos de carreira. Usar o painel cru."
+  },
+  "como_ler": {
+    "2024": "Sem rótulo. Concordância e face validity apenas. Residual=0 para quem está no último ano do painel.",
+    "oof": "Erros em anos nos folds 2018-2021 somente se evento==1 ou follow-up>=tau; censuras anteriores a tau são excluídas do mesmo modo em todos os modelos.",
+    "c_index": "Ordenação de pares, não calibração de anos. Spearman alto + MAE de anos alto podem coexistir.",
+    "landmark": "Estimando diferente do walk-forward. C maior não é inconsistência."
+  }
+}

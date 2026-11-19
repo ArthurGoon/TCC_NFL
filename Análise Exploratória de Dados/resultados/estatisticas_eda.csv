@@ -1,0 +1,91 @@
+posicao,metrica,valor
+QB,eda_jogadores,182
+QB,eda_registros_jogador_temporada,848
+QB,carreira_mediana_temporadas,4.0
+QB,carreira_media_temporadas,4.6593
+QB,carreira_p25_temporadas,2.0
+QB,carreira_p75_temporadas,7.0
+QB,carreira_pct_ate_3_temporadas,47.2527
+QB,carreira_max_temporadas,13
+QB,estreia_idade_mediana,23.0
+QB,estreia_idade_media,22.69
+QB,estreia_n,100
+QB,km_mediana_anos,7.0
+QB,km_mediana_ic95_inferior,6.0
+QB,km_mediana_ic95_superior,9.0
+QB,km_mediana_metodo_ic,Greenwood exponencial (lifelines confidence_interval_) invertido para a mediana
+QB,km_n_jogadores,182
+QB,km_n_eventos,107
+QB,painel_intervalos,848
+QB,painel_censura_jogador_pct,41.2088
+QB,pre_window_veterano_pct,29.1209
+QB,funil_candidatas,42
+QB,funil_sem_nao_identificaveis,37
+QB,funil_apos_colinearidade,26
+QB,funil_saturado_cox,23
+QB,correlacao_observed_career_lag_passing_yards_x_observed_career_lag_pass_attempts,0.997981
+RB,eda_jogadores,397
+RB,eda_registros_jogador_temporada,1454
+RB,carreira_mediana_temporadas,3.0
+RB,carreira_media_temporadas,3.6625
+RB,carreira_p25_temporadas,2.0
+RB,carreira_p75_temporadas,5.0
+RB,carreira_pct_ate_3_temporadas,56.1713
+RB,carreira_max_temporadas,12
+RB,estreia_idade_mediana,22.0
+RB,estreia_idade_media,22.1643
+RB,estreia_n,286
+RB,km_mediana_anos,5.0
+RB,km_mediana_ic95_inferior,4.0
+RB,km_mediana_ic95_superior,5.0
+RB,km_mediana_metodo_ic,Greenwood exponencial (lifelines confidence_interval_) invertido para a mediana
+RB,km_n_jogadores,397
+RB,km_n_eventos,289
+RB,painel_intervalos,1454
+RB,painel_censura_jogador_pct,27.204
+RB,pre_window_veterano_pct,19.8992
+RB,funil_candidatas,36
+RB,funil_sem_nao_identificaveis,33
+RB,funil_apos_colinearidade,20
+RB,funil_saturado_cox,19
+RB,correlacao_team_rush_attempts_share_x_team_rushing_yards_share,0.98799
+WR,eda_jogadores,573
+WR,eda_registros_jogador_temporada,2171
+WR,carreira_mediana_temporadas,3.0
+WR,carreira_media_temporadas,3.7888
+WR,carreira_p25_temporadas,2.0
+WR,carreira_p75_temporadas,5.0
+WR,carreira_pct_ate_3_temporadas,56.5445
+WR,carreira_max_temporadas,12
+WR,estreia_idade_mediana,22.0
+WR,estreia_idade_media,22.2168
+WR,estreia_n,392
+WR,km_mediana_anos,5.0
+WR,km_mediana_ic95_inferior,4.0
+WR,km_mediana_ic95_superior,5.0
+WR,km_mediana_metodo_ic,Greenwood exponencial (lifelines confidence_interval_) invertido para a mediana
+WR,km_n_jogadores,573
+WR,km_n_eventos,394
+WR,painel_intervalos,2171
+WR,painel_censura_jogador_pct,31.2391
+WR,pre_window_veterano_pct,18.8482
+WR,funil_candidatas,39
+WR,funil_sem_nao_identificaveis,35
+WR,funil_apos_colinearidade,25
+WR,funil_saturado_cox,23
+todas,protocolo_cox.penalizer,0.0
+todas,protocolo_cox.threshold_p,0.05
+todas,protocolo_cox.threshold_p_fallback,0.1
+todas,protocolo_cox.max_vars,"max(2, piso(E/10))"
+todas,protocolo_cox.ordem_colinearidade,"identificaveis antes do filtro |r|>0,85"
+todas,protocolo_colinearidade.limiar,0.85
+todas,protocolo_taxa_lag.denominador_minimo,50
+todas,protocolo_aalen.triagem,survival::aareg univariado; sem sorteio nem semente
+todas,protocolo_aalen.metodo,survival::aareg; empates nativos; sem sorteio
+todas,protocolo_aalen.janela,janela de suporte por covariavel (posto completo)
+todas,protocolo_cox_aalen.metodo,timereg::cox.aalen (Scheike & Zhang 2002)
+todas,protocolo_cox_aalen.n_sim,1000
+todas,protocolo_cox_aalen.desempate,"dentro da temporada (stop - 0,5; stop)"
+todas,protocolo_cox_aalen.semente_desempate,20241012
+todas,protocolo_predicao.seed,42
+todas,protocolo_km.entrada_tardia,entry = start

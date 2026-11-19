@@ -1,0 +1,179 @@
+{
+  "estimando": "C de Harrell; interno = calibracao de 2 anos; teste = fold externo",
+  "condicional": "demais eixos fixados nos valores escolhidos pelo tune",
+  "por_aresta": [
+    {
+      "modelo": "cox",
+      "eixo": "penalizer",
+      "borda": "teto",
+      "valor_na_borda": 1.0,
+      "valores_alem": [
+        2.0,
+        3.0,
+        5.0
+      ],
+      "n_combinacoes": 33,
+      "media_c_interno_borda": 0.724035042758024,
+      "media_c_interno_alem": 0.7299892983692075,
+      "media_c_teste_borda": 0.705085379520244,
+      "media_c_teste_alem": 0.7007368162729989,
+      "interno_prefere_alem": 29,
+      "teste_melhora_alem": 12
+    },
+    {
+      "modelo": "gbsa",
+      "eixo": "learning_rate",
+      "borda": "piso",
+      "valor_na_borda": 0.01,
+      "valores_alem": [
+        0.005
+      ],
+      "n_combinacoes": 5,
+      "media_c_interno_borda": 0.7389251916782127,
+      "media_c_interno_alem": 0.7326330020040361,
+      "media_c_teste_borda": 0.6791516162583713,
+      "media_c_teste_alem": 0.6802589262276463,
+      "interno_prefere_alem": 3,
+      "teste_melhora_alem": 2
+    },
+    {
+      "modelo": "gbsa",
+      "eixo": "learning_rate",
+      "borda": "teto",
+      "valor_na_borda": 0.2,
+      "valores_alem": [
+        0.3
+      ],
+      "n_combinacoes": 1,
+      "media_c_interno_borda": 0.7759014148790506,
+      "media_c_interno_alem": 0.765632131446828,
+      "media_c_teste_borda": 0.7034331628926224,
+      "media_c_teste_alem": 0.6712929145361578,
+      "interno_prefere_alem": 0,
+      "teste_melhora_alem": 0
+    },
+    {
+      "modelo": "gbsa",
+      "eixo": "n_estimators",
+      "borda": "piso",
+      "valor_na_borda": 100.0,
+      "valores_alem": [
+        50.0
+      ],
+      "n_combinacoes": 6,
+      "media_c_interno_borda": 0.74961642849407,
+      "media_c_interno_alem": 0.7373729134513577,
+      "media_c_teste_borda": 0.6776462173179465,
+      "media_c_teste_alem": 0.6756467722222098,
+      "interno_prefere_alem": 1,
+      "teste_melhora_alem": 2
+    },
+    {
+      "modelo": "gbsa",
+      "eixo": "n_estimators",
+      "borda": "teto",
+      "valor_na_borda": 800.0,
+      "valores_alem": [
+        1600.0
+      ],
+      "n_combinacoes": 1,
+      "media_c_interno_borda": 0.7859116022099447,
+      "media_c_interno_alem": 0.7947513812154696,
+      "media_c_teste_borda": 0.5807365439093485,
+      "media_c_teste_alem": 0.5841359773371105,
+      "interno_prefere_alem": 1,
+      "teste_melhora_alem": 1
+    },
+    {
+      "modelo": "gbsa",
+      "eixo": "subsample",
+      "borda": "piso",
+      "valor_na_borda": 0.5,
+      "valores_alem": [
+        0.3
+      ],
+      "n_combinacoes": 5,
+      "media_c_interno_borda": 0.7670851702764312,
+      "media_c_interno_alem": 0.7605174444571805,
+      "media_c_teste_borda": 0.701634712469479,
+      "media_c_teste_alem": 0.7041186774643007,
+      "interno_prefere_alem": 1,
+      "teste_melhora_alem": 2
+    },
+    {
+      "modelo": "rsf",
+      "eixo": "min_samples_split",
+      "borda": "piso",
+      "valor_na_borda": 6.0,
+      "valores_alem": [
+        2.0,
+        3.0,
+        4.0
+      ],
+      "n_combinacoes": 36,
+      "media_c_interno_borda": 0.7330251881194325,
+      "media_c_interno_alem": 0.7330251881194325,
+      "media_c_teste_borda": 0.6880188692149166,
+      "media_c_teste_alem": 0.6880188692149166,
+      "interno_prefere_alem": 0,
+      "teste_melhora_alem": 0
+    }
+  ],
+  "notas_por_modelo": [
+    {
+      "posicao": "QB",
+      "modelo": "cox",
+      "arestas_sondadas": 4,
+      "segundos": 3.6
+    },
+    {
+      "posicao": "QB",
+      "modelo": "rsf",
+      "arestas_sondadas": 4,
+      "segundos": 30.2
+    },
+    {
+      "posicao": "QB",
+      "modelo": "gbsa",
+      "arestas_sondadas": 6,
+      "segundos": 17.6
+    },
+    {
+      "posicao": "RB",
+      "modelo": "cox",
+      "arestas_sondadas": 4,
+      "segundos": 3.7
+    },
+    {
+      "posicao": "RB",
+      "modelo": "rsf",
+      "arestas_sondadas": 4,
+      "segundos": 46.6
+    },
+    {
+      "posicao": "RB",
+      "modelo": "gbsa",
+      "arestas_sondadas": 7,
+      "segundos": 17.9
+    },
+    {
+      "posicao": "WR",
+      "modelo": "cox",
+      "arestas_sondadas": 3,
+      "segundos": 2.5
+    },
+    {
+      "posicao": "WR",
+      "modelo": "rsf",
+      "arestas_sondadas": 4,
+      "segundos": 62.0
+    },
+    {
+      "posicao": "WR",
+      "modelo": "gbsa",
+      "arestas_sondadas": 5,
+      "segundos": 19.9
+    }
+  ],
+  "como_ler": "A aresta so esconderia ganho se o TESTE melhorasse alem dela. O C interno prefere alem na maioria das combinacoes, e o teste nao acompanha: e o sobreajuste de selecao, nao uma grade estreita demais."
+}

@@ -1,0 +1,16 @@
+posicao,covariavel,p_nao_linear
+QB,observed_career_lag_td_pct,0.559252061240246
+QB,offense_pct,0.245308847457051
+QB,passer_rating,0.061485673024435
+QB,team_pass_attempts_share,0.741765805050495
+RB,draft_ovr,0.119148576079919
+RB,games_missed,0.644458571314756
+RB,observed_career_lag_ypc,0.102449036838589
+RB,team_rushing_yards_share,0.345622327937921
+WR,age,0.436895215313439
+WR,games_missed,0.458370776784093
+WR,height,0.0542849268183804
+WR,observed_career_lag_rushing_yards,0.0417891635119369
+WR,observed_career_lag_targets_redzone,0.534459518922243
+WR,offense_pct,0.672928789897338
+WR,team_targets_share,0.481919150003956

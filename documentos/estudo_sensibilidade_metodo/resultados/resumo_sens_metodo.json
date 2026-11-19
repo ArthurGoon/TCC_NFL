@@ -1,0 +1,36 @@
+{
+  "replica_lambda_oficial": {
+    "QB": {
+      "mesmo_conjunto": true,
+      "max_dif_hr": 2.220446049250313e-16
+    },
+    "RB": {
+      "mesmo_conjunto": true,
+      "max_dif_hr": 2.220446049250313e-16
+    },
+    "WR": {
+      "mesmo_conjunto": true,
+      "max_dif_hr": 2.220446049250313e-16
+    }
+  },
+  "lambda_jaccard_min": {
+    "QB": 0.5,
+    "RB": 0.6666666666666666,
+    "WR": 0.75
+  },
+  "janela_x_jaccard_min": {
+    "QB": 0.8888888888888888,
+    "RB": 0.8636363636363636,
+    "WR": 0.8888888888888888
+  },
+  "janela_x_max_abs_dif_c": 0.015806182152543924,
+  "saidas_2023": {
+    "covariaveis_que_perdem_significancia": [
+      "RB depth_team",
+      "RB draft_ovr",
+      "WR offense_pct"
+    ],
+    "max_abs_dif_hr": 0.2326194015140468,
+    "max_abs_dif_c": 0.00733730591886661
+  }
+}

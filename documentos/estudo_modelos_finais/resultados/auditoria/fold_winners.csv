@@ -1,0 +1,13 @@
+posicao,temporada,vencedor_fold,c_vencedor,campeao_oficial,c_campeao,campeao_venceu_fold
+QB,2018,rsf,0.632,rsf,0.632,True
+QB,2019,gbsa,0.768,rsf,0.767,False
+QB,2020,rsf,0.684,rsf,0.684,True
+QB,2021,cox,0.78,rsf,0.755,False
+RB,2018,cox,0.665,cox,0.665,True
+RB,2019,cox,0.715,cox,0.715,True
+RB,2020,cox,0.724,cox,0.724,True
+RB,2021,cox,0.712,cox,0.712,True
+WR,2018,rsf,0.725,cox,0.714,False
+WR,2019,cox,0.68,cox,0.68,True
+WR,2020,cox,0.696,cox,0.696,True
+WR,2021,cox,0.724,cox,0.724,True

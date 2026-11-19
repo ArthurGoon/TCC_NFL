@@ -1,0 +1,92 @@
+% ============================================================
+%  Apêndice A: dados, painel e tratamento de ausências (para \input)
+% ============================================================
+
+\section{Dados, painel e tratamento de dados faltantes}
+\label{apx:dados}
+
+\subsection{Glossário das variáveis}
+\label{apx:glossario}
+
+A Tabela~\ref{tab:variaveis} traz o nome de cada variável no texto, o nome no banco e a definição usada. As defasagens acumulam até a temporada $t-1$.
+
+\begingroup
+\thesistablesetup
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{4.3cm}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}p{4.9cm}@{}}
+\caption{Glossário: nome no texto, nome no banco e definição de cada variável usada na modelagem e nas figuras.}
+\label{tab:variaveis}\\
+\toprule
+\textbf{Nome no trabalho} & \textbf{Nome no banco} & \textbf{Descrição} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\small\textit{Tabela~\ref{tab:variaveis}, continuação.}}\\
+\toprule
+\textbf{Nome no trabalho} & \textbf{Nome no banco} & \textbf{Descrição} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Jogos perdidos & \textit{games\_missed} & 16 ou 17 menos os jogos disputados na temporada, com mínimo zero; inclui lesão, banco e jogos depois de um corte. \\
+Profundidade no elenco & \textit{depth\_team} & Posição na hierarquia do time (1 = titular). \\
+Participação ofensiva & \textit{offense\_pct} & Fração dos \textit{snaps} ofensivos do time em que o jogador esteve. \\
+Eficiência de passe & \textit{passer\_rating} & Índice composto de eficiência do passe (QB). \\
+Fatia de passes & \textit{team\_pass\_\newline attempts\_share} & Fração das tentativas da equipe atribuídas ao QB. \\
+Fatia de alvos & \textit{team\_targets\_share} & Fração dos alvos da equipe recebidos pelo WR. \\
+Fatia de jardas terrestres & \textit{team\_rushing\_\newline yards\_share} & Fração das jardas terrestres da equipe obtidas pelo RB. \\
+Posição no \textit{draft} & \textit{draft\_ovr} & \textit{Pick} geral no \textit{draft}; 0 para não draftado. \\
+Não draftado & \textit{undrafted\_flag} & Indicador de não ter sido selecionado no \textit{draft}. \\
+Anos de experiência & \textit{years\_exp} & Tempo do modelo de Cox (anos desde o início da carreira). \\
+Veterano pré-janela & \textit{pre\_window\_veteran} & Carreira iniciada antes de 2012. \\
+Histórico defasado & \textit{observed\_career\_lag\_*} & Acumulado de carreira até $t-1$ (TD\%, comp\%, YPC, jardas e outros). \\
+Idade & \textit{age} & Idade do jogador na temporada. \\
+Altura & \textit{height} & Altura do jogador. \\
+Peso & \textit{weight} & Peso do jogador. \\
+Anos sem estatísticas antes da 1ª linha & \textit{unobs\_career\_years} & Anos de carreira (\textit{years\_exp}) que antecedem a primeira linha observada e não têm linha no painel. \\
+Primeira linha com anos sem estatísticas & \textit{unobserved\_history\_flag} & Primeira linha observada de jogador com anos sem estatísticas antes dela. \\
+Hiato acumulado na janela & \textit{within\_window\_gap\_\newline years\_before\_t} & Temporadas de ausência acumuladas dentro da janela até $t$. \\
+Alvos na \textit{red zone} & \textit{targets\_redzone} & Alvos a menos de 20 jardas da linha de gol; histórico defasado. \\
+Hiato anterior & \textit{had\_prior\_gap\_flag} & Já teve temporada sem jogar antes de $t$. \\
+Indicador de dado faltante & \textit{observed\_career\_lag\_*\_missing} & Taxa de carreira não calculada até $t-1$. \\
+Primeira temporada observada & \textit{first\_observed\_season} & Indicador da primeira temporada do jogador no painel (ramo preditivo). \\
+\end{longtable}
+\endgroup
+
+\subsection{Regras do painel e saídas de 2023}
+\label{apx:regras_painel}
+
+Trocar jogos perdidos pela fração da temporada, por causa do calendário de 17 jogos desde 2021, não muda nenhum HR em mais de $0{,}01$ nem o lado de 5\%. Três jogadores têm apenas temporada de \textit{playoffs} no último ano (Steven Jackson, Marshawn Lynch e Andy Isabella), e a saída deles é marcada na última temporada regular. São 3 de 790 saídas.
+
+\paragraph{Cobertura da base.}
+A razão entre as jardas recebidas e as passadas por equipe, na própria base, tem mediana de $0{,}84$ em 2012, $0{,}92$ em 2016 e cerca de $0{,}97$ desde 2019. A falha também atinge equipes e jogadores isolados: no Saints de 2017, a razão é de $0{,}64$. Como a saída é reconhecida pela falta de temporadas, a menor cobertura inicial pode gerar falsas saídas e hiatos e alterar as fatias da equipe. Com o Cox final ajustado só a partir de 2018, nenhum HR muda de sinal; entre as nove associações, a profundidade do RB e os jogos perdidos do WR deixam de ser significativos a 5\% ($p=0{,}093$ e $0{,}267$), com menos saídas.
+
+\paragraph{Saídas de 2023.}\label{subsec:apend_2023}
+Censurar as saídas de 2023, que não têm temporada seguinte para checar o retorno, é a alternativa testada. O número de saídas cai de $107$ para $94$ no QB, de $289$ para $253$ no RB e de $394$ para $343$ no WR. O QB mantém as conclusões, o RB perde profundidade e \textit{draft}, e o WR perde participação ofensiva; das nove associações, só a profundidade do RB deixa de ser significativa a 5\% no Cox. O HR da fatia de alvos do WR vai de $0{,}27$ para $0{,}34$. Censurar também as de 2022 dá o mesmo resultado entre as nove, e nenhum HR muda de sinal. Na métrica $C$ de Harrell, a mudança é de no máximo $0{,}008$, no Cox do WR, e o modelo de maior $C$ continua o mesmo.
+
+\paragraph{Censura no início do intervalo.}\label{subsec:apend_censura_inicio}
+Quem é censurado jogou até o tempo $t$, sem que se saiba se saiu depois dele, e o painel o mantém em risco em $t$, como em \citet{ducking2015}. \citet{prentice1978} censuram no início do intervalo. Retirando a última linha de cada censurado (75 no QB, 108 no RB e 179 no WR), nenhum HR muda de sinal, e dois termos deixam de ser significativos a 5\%: o indicador de comp\% ausente do QB ($p$ de $0{,}036$ para $0{,}106$) e a \textit{red zone} do WR ($p$ de $0{,}007$ para $0{,}116$). Refeita a seleção, a lista do RB não muda, a do QB perde esse indicador (Jaccard de $0{,}80$; o índice é a razão entre os termos em comum e o total), e a do WR perde a \textit{red zone} e a participação ofensiva e ganha a posição no \textit{draft} (Jaccard de $0{,}63$). A mediana do Kaplan--Meier passa de 5 para 4 anos no RB e no WR, e fica em 7 no QB.
+
+\subsection{Jogadores com mais de um time na temporada}
+\label{apx:multitime}
+
+Há $104$ pares jogador-temporada com mais de um time nas posições do painel: $8$ no QB, $45$ no RB e $51$ no WR, de $1\%$ a $3\%$ de cada posição. Cada par entra como uma linha. As colunas de temporada e de carreira recebem o máximo entre as passagens, porque cada passagem já traz o total da temporada, e somar dobraria esses valores. Posição e taxas vêm da passagem com mais \textit{snaps}. Na base completa, há $119$ pares de temporada regular, e em todos os totais coincidem entre os times, de modo que o máximo só evita a duplicação.
+
+\subsection{Imputação e dados faltantes}
+\label{subsec:imputacao_apend}
+
+A regra de preenchimento está na Seção~\ref{subsec:imputacao}. No QB final, fica o indicador da taxa de passes completos. Como preencher com a média geral e o método do indicador podem enviesar as estimativas em estudos não randomizados \citep{donders2006,groenwold2012}, a regra é comparada a seguir com outras escolhas.
+
+\paragraph{Limiar das taxas.}\label{subsec:apend_limiar}
+As taxas só são calculadas quando o denominador passa de $50$ oportunidades. Refizemos o painel e a seleção em cada limiar de $25$ a $100$, em passos de $5$. A seleção é a mesma de $50$ no QB de $25$ a $90$, no RB de $25$ a $60$ e no WR de $40$ a $100$. O índice de Jaccard compara a lista de cada variação ($X$) e a principal ($Y$): $J = |X\cap Y|/|X\cup Y|$, em que $J=1$ significa listas iguais. Fora dessas faixas, mudam uma ou duas covariáveis (Jaccard de $0{,}60$ a $0{,}88$).
+
+\paragraph{Eficiência sem tentativa.}
+Em $26$ linhas do QB ($3\%$) não houve tentativa, e a eficiência não existe. A mediana global, adotada, foi comparada a zero e à exclusão das linhas. A exclusão tira $26$ linhas e $7$ saídas. O HR da eficiência é $0{,}65$, $0{,}63$ e $0{,}60$, nessa ordem, com $p < 10^{-5}$ nos três casos.
+
+\paragraph{Imputação múltipla com o desfecho.}
+Geramos $m = 10$ cópias do conjunto de ajuste, com imputação iterativa e amostragem posterior das ausências das covariáveis finais (TD\% defasado e eficiência do QB; YPC defasado do RB). Seguindo \citet{white2009}, o modelo de imputação inclui o desfecho: o indicador de saída do intervalo e o risco acumulado de Nelson--Aalen, que não entram no Cox. Os coeficientes são combinados pelas regras de Rubin \citep{rubin1987}: a média das $m$ estimativas e a variância total $T = \bar{U} + (1 + 1/m)B$, em que $\bar{U}$ é a variância média dentro das cópias e $B$ a variância entre elas. Com a versão múltipla, nenhuma conclusão muda no QB nem no RB, e o erro-padrão cresce no máximo $6{,}6\%$. No WR, nenhuma covariável final tem ausência. Frente ao ajuste único sem o indicador de ausência, o maior deslocamento do HR é de $6\%$, na fatia de passes do QB. Frente ao ajuste principal, o HR do TD\% defasado sobe $11\%$. Esse aumento vem da retirada do indicador de ausência, e não da imputação: o ajuste único sem o indicador já dá $0{,}70$.
+
+\subsection{Não draftados}
+\label{apx:undrafted}
+
+Testamos quatro codificações para não draftados: a usada no ajuste (A); \textit{pick} sem zerar, preenchido pela mediana (B); código $9$ no lugar do código $8$ da rodada (C); e só o indicador, sem \textit{pick} nem rodada (D). A seleção do QB não muda em nenhuma. No RB, B acrescenta o indicador de veterano pré-janela, e D troca o \textit{pick} por esse indicador (Jaccard de $0{,}83$ e $0{,}67$). No WR, B acrescenta esse indicador e retira o acúmulo de alvos na \textit{red zone} (Jaccard de $0{,}75$). A codificação C não altera nenhuma seleção. Mantemos A, que não trata o não draftado como escolha de rodada média. Sem o indicador no modelo, como no Cox do RB, o HR não se lê por \textit{pick}.

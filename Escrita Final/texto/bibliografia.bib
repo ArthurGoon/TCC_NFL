@@ -1,0 +1,580 @@
+% Modelagem principal (COX com time dependent variables)
+@Book{kleinbaum2012,
+  title     = {Survival Analysis: A Self-Learning Text},
+  author    = {Kleinbaum, David G. and Klein, Mitchel},
+  year      = {2012},
+  publisher = {Springer},
+  address   = {New York},
+  edition   = {3.},
+  series    = {Statistics for Biology and Health}
+}
+
+% Teste de proporcionalidade
+% O algoritmo de seleção de variáveis (p<0.25 e backward)
+% Dataset do TCC (Fonte Original)
+@manual{nflverse,
+  title  = {nflverse: Easily Install and Load the 'nflverse'},
+  author = {Carl, Sebastian and Baldwin, Ben and Sharpe, Lee and Ho, Tan and Edwards, John},
+  year   = {2023},
+  note   = {R package version 1.0.3},
+  url    = {https://github.com/nflverse/nflverse}
+}
+
+% Biblioteca de acesso aos dados (Python)
+@manual{nfldatapy,
+  title  = {nfl\_data\_py: Python library for interacting with NFL data sourced from nflfastR},
+  author = {Ostrander, Alec},
+  year   = {2024},
+  note   = {Python package version 0.3.3},
+  url    = {https://github.com/nflverse/nfl_data_py}
+}
+
+@misc{hyde_nflstats,
+  title        = {{NFL} Stats 2012--2025},
+  author       = {Hyde, Philip},
+  year         = {2026},
+  howpublished = {Kaggle. Dispon\'ivel em: \url{https://www.kaggle.com/datasets/philiphyde1/nfl-stats-1999-2022}},
+  note         = {Vers\~ao com temporadas de 2012 a 2024, obtida antes da atualiza\c{c}\~ao de 22 mar. 2026}
+}
+
+% Biblioteca importante para modelagem COX
+
+% Biblioteca auxiliar para regressão e r^2
+
+% Teste de resíduos de Schoenfeld
+@article{schoenfeld1982,
+  title   = {Partial residuals for the proportional hazards regression model},
+  author  = {Schoenfeld, David},
+  journal = {Biometrika},
+  volume  = {69},
+  number  = {1},
+  pages   = {239--241},
+  year    = {1982},
+  doi     = {10.1093/biomet/69.1.239}
+}
+
+% C-index de Harrell
+@article{harrell1982,
+  title   = {Evaluating the yield of medical tests},
+  author  = {Harrell, Frank E. and Califf, Robert M. and Pryor, David B. and
+             Lee, Kerry L. and Rosati, Robert A.},
+  journal = {JAMA},
+  volume  = {247},
+  number  = {18},
+  pages   = {2543--2546},
+  year    = {1982},
+  doi     = {10.1001/jama.1982.03320430047030}
+}
+
+% Referência do template da UFSCar
+% Artigo seminal do modelo de Cox
+@article{cox1972,
+  title   = {Regression Models and Life-Tables},
+  author  = {Cox, David R.},
+  journal = {Journal of the Royal Statistical Society: Series B (Methodological)},
+  volume  = {34},
+  number  = {2},
+  pages   = {187--220},
+  year    = {1972},
+  doi     = {10.1111/j.2517-6161.1972.tb00899.x}
+}
+
+% Estrutura start-stop / covariáveis dependentes do tempo
+@article{andersen1982,
+  title   = {Cox's Regression Model for Counting Processes: A Large Sample Study},
+  author  = {Andersen, Per Kragh and Gill, Richard D.},
+  journal = {The Annals of Statistics},
+  volume  = {10},
+  number  = {4},
+  pages   = {1100--1120},
+  year    = {1982},
+  doi     = {10.1214/aos/1176345976}
+}
+
+@article{graf1999,
+  title   = {Assessment and comparison of prognostic classification schemes for survival data},
+  author  = {Graf, Erika and Schmoor, Claudia and Sauerbrei, Willi and Schumacher, Martin},
+  journal = {Statistics in Medicine},
+  volume  = {18},
+  number  = {17--18},
+  pages   = {2529--2545},
+  year    = {1999},
+  doi     = {10.1002/(SICI)1097-0258(19990915/30)18:17/18<2529::AID-SIM274>3.0.CO;2-5}
+}
+
+@article{cerqueira2020,
+  title   = {Evaluating time series forecasting models: an empirical study on performance estimation methods},
+  author  = {Cerqueira, Vitor and Torgo, Luís and Mozetič, Igor},
+  journal = {Machine Learning},
+  volume  = {109},
+  number  = {11},
+  pages   = {1997--2028},
+  year    = {2020},
+  doi     = {10.1007/s10994-020-05910-7}
+}
+
+% Livro-texto de análise de sobrevivência (alternativa ao Kleinbaum)
+% Modelo aditivo de Aalen (semiparamétrico/não-paramétrico)
+@InCollection{aalen1980,
+  title     = {A Model for Nonparametric Regression Analysis of Counting Processes},
+  author    = {Aalen, Odd O.},
+  booktitle = {Mathematical Statistics and Probability Theory},
+  editor    = {Klonecki, W. and Kozek, A. and Rosi{\'n}ski, J.},
+  series    = {Lecture Notes in Statistics},
+  publisher = {Springer},
+  address   = {New York},
+  volume    = {2},
+  pages     = {1--25},
+  year      = {1980},
+  doi       = {10.1007/978-1-4615-7397-5_1}
+}
+
+% Estimação por mínimos quadrados ponderados para o modelo aditivo de Aalen
+@article{scheike2002,
+  title   = {An Additive--Multiplicative {C}ox--{A}alen Regression Model},
+  author  = {Scheike, Thomas H. and Zhang, Mei-Jie},
+  journal = {Scandinavian Journal of Statistics},
+  volume  = {29},
+  number  = {1},
+  pages   = {75--88},
+  year    = {2002},
+  doi     = {10.1111/1467-9469.00065}
+}
+@book{martinussen2006,
+  title     = {Dynamic Regression Models for Survival Data},
+  author    = {Martinussen, Torben and Scheike, Thomas H.},
+  year      = {2006},
+  publisher = {Springer},
+  address   = {New York}
+}
+
+% Estratégias de modelagem de regressão (regra eventos/10, parcimônia)
+@book{harrell2001,
+  title     = {Regression Modeling Strategies: With Applications to Linear Models, Logistic Regression, and Survival Analysis},
+  author    = {Harrell, Frank E.},
+  year      = {2001},
+  publisher = {Springer},
+  address   = {New York},
+}
+
+% Análise de carreiras no baseball (revisão de literatura esportiva)
+@book{bradbury2010,
+  title     = {Hot Stove Economics: Understanding Baseball's Second Season},
+  author    = {Bradbury, J. C.},
+  year      = {2011},
+  publisher = {Springer},
+  address   = {New York},
+  doi       = {10.1007/978-1-4419-6269-0}
+}
+
+@article{ducking2015,
+  title   = {Exit Discrimination in the {NFL}: A Duration Analysis of Career Length},
+  author  = {Ducking, Johnny and Groothuis, Peter A. and Hill, James Richard},
+  journal = {The Review of Black Political Economy},
+  volume  = {42},
+  number  = {3},
+  pages   = {285--299},
+  year    = {2015},
+  doi     = {10.1007/s12114-014-9207-9}
+}
+
+@article{mann1947,
+  title   = {On a Test of Whether one of Two Random Variables is Stochastically Larger than the Other},
+  author  = {Mann, H. B. and Whitney, D. R.},
+  journal = {The Annals of Mathematical Statistics},
+  volume  = {18},
+  number  = {1},
+  pages   = {50--60},
+  year    = {1947},
+  doi     = {10.1214/aoms/1177730491}
+}
+
+@article{kruskal1952,
+  title   = {Use of Ranks in One-Criterion Variance Analysis},
+  author  = {Kruskal, William H. and Wallis, W. Allen},
+  journal = {Journal of the American Statistical Association},
+  volume  = {47},
+  number  = {260},
+  pages   = {583--621},
+  year    = {1952},
+  doi     = {10.1080/01621459.1952.10483441}
+}
+
+@article{spearman1904,
+  title   = {The Proof and Measurement of Association between Two Things},
+  author  = {Spearman, C.},
+  journal = {The American Journal of Psychology},
+  volume  = {15},
+  number  = {1},
+  pages   = {72--101},
+  year    = {1904},
+  doi     = {10.2307/1412159}
+}
+
+@article{kaplan1958,
+  title   = {Nonparametric Estimation from Incomplete Observations},
+  author  = {Kaplan, E. L. and Meier, Paul},
+  journal = {Journal of the American Statistical Association},
+  volume  = {53},
+  number  = {282},
+  pages   = {457--481},
+  year    = {1958},
+  doi     = {10.1080/01621459.1958.10501452}
+}
+
+@article{breiman2001,
+  title   = {Random Forests},
+  author  = {Breiman, Leo},
+  journal = {Machine Learning},
+  volume  = {45},
+  number  = {1},
+  pages   = {5--32},
+  year    = {2001},
+  doi     = {10.1023/A:1010933404324}
+}
+
+@article{staw1995,
+  title   = {Sunk Costs in the {NBA}: Why Draft Order Affects Playing Time and Survival in Professional Basketball},
+  author  = {Staw, Barry M. and Hoang, Ha},
+  journal = {Administrative Science Quarterly},
+  volume  = {40},
+  number  = {3},
+  pages   = {474--494},
+  year    = {1995},
+  doi     = {10.2307/2393794}
+}
+
+% Duração média de carreira na NFL por posição (Statista)
+@misc{statista_nfl_career,
+  title        = {Average career length of selected positions among active players in the {National Football League} as of {September} 2025},
+  author       = {{Statista}},
+  year         = {2026},
+  howpublished = {Dispon\'ivel em:\newline \url{https://www.statista.com/statistics/240102/average-player-career-length-in-the-national-football-league/}},
+  note         = {Acesso em: 1 nov. 2026}
+}
+
+
+% Estudo de longevidade na NFL com análise de sobrevivência (concussões)
+@article{navarro2017,
+  title   = {Short-term Outcomes Following Concussion in the {NFL}: A Study of Player Longevity, Performance, and Financial Loss},
+  author  = {Navarro, Sergio M. and Sokunbi, Olumide F. and Haeberle, Heather S. and
+             Schickendantz, Mark S. and Mont, Michael A. and Figler, Richard A. and
+             Ramkumar, Prem N.},
+  journal = {Orthopaedic Journal of Sports Medicine},
+  volume  = {5},
+  number  = {11},
+  pages   = {2325967117740847},
+  year    = {2017},
+  doi     = {10.1177/2325967117740847}
+}
+
+% Diagrama de posições ofensivas no futebol americano
+% Missing indicator method
+% Imputação por mediana e indicador de ausência
+@article{groenwold2012,
+  title   = {Missing covariate data in clinical research: when and when not to use the missing-indicator method for analysis},
+  author  = {Groenwold, Rolf H. H. and White, Ian R. and Donders, A. Rogier T. and Carpenter, James R. and Altman, Douglas G. and Moons, Karel G. M.},
+  journal = {Canadian Medical Association Journal},
+  volume  = {184},
+  number  = {11},
+  pages   = {1265--1269},
+  year    = {2012},
+  doi     = {10.1503/cmaj.110977}
+}
+
+% Imputação por indicador de ausência
+@article{donders2006,
+  title   = {Review: A gentle introduction to imputation of missing values},
+  author  = {Donders, A. Rogier T. and van der Heijden, Geert J. M. G. and Stijnen, Theo and Moons, Karel G. M.},
+  journal = {Journal of Clinical Epidemiology},
+  volume  = {59},
+  number  = {10},
+  pages   = {1087--1091},
+  year    = {2006},
+  doi     = {10.1016/j.jclinepi.2006.01.014}
+}
+
+% Imputação múltipla por equações encadeadas (mice)
+@article{vittinghoff2007,
+  title   = {Relaxing the Rule of Ten Events per Variable in Logistic and {Cox} Regression},
+  author  = {Vittinghoff, Eric and McCulloch, Charles E.},
+  journal = {American Journal of Epidemiology},
+  volume  = {165},
+  number  = {6},
+  pages   = {710--718},
+  year    = {2007},
+  doi     = {10.1093/aje/kwk052}
+}
+
+% scikit-survival (modelos de sobrevivência para ML)
+@article{polsterl2020,
+  title   = {scikit-survival: A Library for Time-to-Event Analysis Built on Top of scikit-learn},
+  author  = {P{\"o}lsterl, Sebastian},
+  journal = {Journal of Machine Learning Research},
+  volume  = {21},
+  number  = {212},
+  pages   = {1--6},
+  year    = {2020},
+  url     = {https://jmlr.org/papers/v21/20-729.html}
+}
+
+% Sample size e confiabilidade de estimativas
+
+% Bootstrap para regressão semiparamétrica de funções média e taxa
+% Teste de proporção de riscos baseado em resíduos ponderados (chi² Schoenfeld)
+@article{grambsch1994,
+  title   = {Proportional hazards tests and diagnostics based on weighted residuals},
+  author  = {Grambsch, Patricia M. and Therneau, Terry M.},
+  journal = {Biometrika},
+  volume  = {81},
+  number  = {3},
+  pages   = {515--526},
+  year    = {1994},
+  doi     = {10.1093/biomet/81.3.515}
+}
+
+% Estimador de baseline hazard de Breslow
+@article{breslow1972,
+  title   = {Discussion of the paper by {D. R. Cox}: Regression models and life-tables},
+  author  = {Breslow, Norman E.},
+  journal = {Journal of the Royal Statistical Society: Series B (Methodological)},
+  volume  = {34},
+  number  = {2},
+  pages   = {216--217},
+  year    = {1972}
+}
+
+% Gradient boosting para sobrevivência (GBSA)
+@article{hothorn2006,
+  title   = {Survival ensembles},
+  author  = {Hothorn, Torsten and B{\"u}hlmann, Peter and Dudoit, Sandrine and
+             Molinaro, Annette and {van der Laan}, Mark J.},
+  journal = {Biostatistics},
+  volume  = {7},
+  number  = {3},
+  pages   = {355--373},
+  year    = {2006},
+  doi     = {10.1093/biostatistics/kxj011}
+}
+
+% Random survival forests (RSF)
+@article{ishwaran2008,
+  title   = {Random survival forests},
+  author  = {Ishwaran, Hemant and Kogalur, Udaya B. and Blackstone, Eugene H. and Lauer, Michael S.},
+  journal = {The Annals of Applied Statistics},
+  volume  = {2},
+  number  = {3},
+  pages   = {841--860},
+  year    = {2008},
+  doi     = {10.1214/08-AOAS169}
+}
+
+% Landmarking method para predição dinâmica
+@article{van_houwelingen2007,
+  title   = {Dynamic prediction by landmarking in event history analysis},
+  author  = {van Houwelingen, Hans C.},
+  journal = {Scandinavian Journal of Statistics},
+  volume  = {34},
+  number  = {1},
+  pages   = {70--85},
+  year    = {2007},
+  doi     = {10.1111/j.1467-9469.2006.00529.x}
+}
+
+% Validação walk-forward em análise de sobrevivência com dados longitudinais
+@article{simon2011,
+  title   = {Regularization Paths for {Cox}'s Proportional Hazards Model via Coordinate Descent},
+  author  = {Simon, Noah and Friedman, Jerome and Hastie, Trevor and Tibshirani, Rob},
+  journal = {Journal of Statistical Software},
+  volume  = {39},
+  number  = {5},
+  pages   = {1--13},
+  year    = {2011},
+  doi     = {10.18637/jss.v039.i05}
+}
+
+% Cross-validation temporal (walk-forward) para dados com dependência serial
+% Missing indicator method equivalence
+
+% Collinearity threshold recommendation
+
+% Stratification in Cox models with PH violation
+
+% Endogeneity and econometric analysis
+% Endogeneity and panel data
+% Gradient boosting machines (importância de Friedman)
+@article{friedman2001,
+  title   = {Greedy Function Approximation: A Gradient Boosting Machine},
+  author  = {Friedman, Jerome H.},
+  journal = {The Annals of Statistics},
+  volume  = {29},
+  number  = {5},
+  pages   = {1189--1232},
+  year    = {2001},
+  doi     = {10.1214/aos/1013203451}
+}
+
+% Viés de seleção ao usar o mesmo critério na escolha e na avaliação
+@article{cawley2010,
+  title   = {On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation},
+  author  = {Cawley, Gavin C. and Talbot, Nicola L. C.},
+  journal = {Journal of Machine Learning Research},
+  volume  = {11},
+  pages   = {2079--2107},
+  number  = {70},
+  url     = {https://jmlr.org/papers/v11/cawley10a.html},
+  year    = {2010}
+}
+
+% Viés na estimação de erro quando a validação escolhe o modelo
+@article{varma2006,
+  title   = {Bias in error estimation when using cross-validation for model selection},
+  author  = {Varma, Sudhir and Simon, Richard},
+  journal = {BMC Bioinformatics},
+  volume  = {7},
+  pages   = {91},
+  year    = {2006},
+  doi     = {10.1186/1471-2105-7-91}
+}
+% Reamostragem bootstrap (IC do C-index e teste pareado, Cap. 5); DOIs conferidos no Crossref
+@book{davison1997,
+  title     = {Bootstrap Methods and their Application},
+  author    = {Davison, Anthony C. and Hinkley, David V.},
+  year      = {1997},
+  publisher = {Cambridge University Press},
+  address   = {Cambridge},
+  doi       = {10.1017/CBO9780511802843}
+}
+
+@article{field2007,
+  title   = {Bootstrapping Clustered Data},
+  author  = {Field, Christopher A. and Welsh, Alan H.},
+  journal = {Journal of the Royal Statistical Society: Series B (Statistical Methodology)},
+  year    = {2007},
+  volume  = {69},
+  number  = {3},
+  pages   = {369--390},
+  doi     = {10.1111/j.1467-9868.2007.00593.x}
+}
+
+% Media restrita e predicao dinamica (Cap. 2, TG-B); DOIs conferidos no Crossref
+@article{royston2013,
+  title   = {Restricted mean survival time: an alternative to the hazard ratio for the design and analysis of randomized trials with a time-to-event outcome},
+  author  = {Royston, Patrick and Parmar, Mahesh K. B.},
+  journal = {BMC Medical Research Methodology},
+  year    = {2013},
+  volume  = {13},
+  pages   = {152},
+  doi     = {10.1186/1471-2288-13-152}
+}
+
+@article{shmueli2010,
+  author  = {Shmueli, Galit},
+  title   = {To Explain or to Predict?},
+  journal = {Statistical Science},
+  volume  = {25},
+  number  = {3},
+  pages   = {289--310},
+  year    = {2010},
+  doi     = {10.1214/10-STS330}
+}
+
+@article{prentice1978,
+  title   = {Regression analysis of grouped survival data with application to breast cancer data},
+  author  = {Prentice, Ross L. and Gloeckler, Lynn A.},
+  journal = {Biometrics},
+  volume  = {34},
+  number  = {1},
+  pages   = {57--67},
+  year    = {1978},
+  doi     = {10.2307/2529588}
+}
+
+% Imputacao multipla de covariaveis no Cox (desfecho no modelo de imputacao)
+@article{white2009,
+  title   = {Imputing missing covariate values for the {Cox} model},
+  author  = {White, Ian R. and Royston, Patrick},
+  journal = {Statistics in Medicine},
+  volume  = {28},
+  number  = {15},
+  pages   = {1982--1998},
+  year    = {2009},
+  doi     = {10.1002/sim.3618}
+}
+
+@article{breslow1974,
+  title   = {Covariance analysis of censored survival data},
+  author  = {Breslow, Norman E.},
+  journal = {Biometrics},
+  volume  = {30},
+  number  = {1},
+  pages   = {89--99},
+  year    = {1974},
+  doi     = {10.2307/2529620}
+}
+
+@article{efron1977,
+  title   = {The efficiency of {Cox}'s likelihood function for censored data},
+  author  = {Efron, Bradley},
+  journal = {Journal of the American Statistical Association},
+  volume  = {72},
+  number  = {359},
+  pages   = {557--565},
+  year    = {1977}
+}
+
+@article{holm1979,
+  title   = {A simple sequentially rejective multiple test procedure},
+  author  = {Holm, Sture},
+  journal = {Scandinavian Journal of Statistics},
+  volume  = {6},
+  number  = {2},
+  pages   = {65--70},
+  year    = {1979}
+}
+
+@book{rubin1987,
+  title     = {Multiple Imputation for Nonresponse in Surveys},
+  author    = {Rubin, Donald B.},
+  year      = {1987},
+  publisher = {Wiley},
+  address   = {New York}
+}
+
+@misc{survival-package,
+  title        = {A Package for Survival Analysis in {R}},
+  author       = {Therneau, Terry M.},
+  year         = {2024},
+  note         = {Pacote R, vers\~ao 3.5-8},
+  howpublished = {Dispon\'ivel em: \url{https://CRAN.R-project.org/package=survival}}
+}
+
+@article{lifelines,
+  title   = {lifelines: survival analysis in {Python}},
+  author  = {Davidson-Pilon, Cameron},
+  journal = {Journal of Open Source Software},
+  volume  = {4},
+  number  = {40},
+  pages   = {1317},
+  year    = {2019},
+  doi     = {10.21105/joss.01317}
+}
+
+@article{breiman2001cultures,
+  title   = {Statistical Modeling: The Two Cultures},
+  author  = {Breiman, Leo},
+  journal = {Statistical Science},
+  volume  = {16},
+  number  = {3},
+  pages   = {199--231},
+  year    = {2001},
+  doi     = {10.1214/ss/1009213726}
+}
+
+% Repositório do trabalho (código e resultados)
+@misc{gon2026codigo,
+  author = {Gon, Arthur Pereira},
+  title  = {{TCC\_NFL}: código, dados e resultados de ``{S}obrevivência na {NFL}''},
+  year   = {2026},
+  note   = {Repositório no GitHub. Disponível em: \url{https://github.com/ArthurGoon/TCC_NFL}}
+}

@@ -1,0 +1,189 @@
+% ============================================================
+%  Apêndice C: sensibilidades da parte preditiva (para \input após o Capítulo 5)
+% ============================================================
+
+\section{Busca, borda da grade e sensibilidades preditivas}
+\label{sec:busca_aninhada}
+
+\subsection{Busca aninhada e valores padrão}
+\label{subsec:apend_busca}
+
+Em cada origem, os dois últimos anos do treino formam a validação: cada combinação de hiperparâmetros é ajustada no restante e avaliada pelo $C$ de Harrell \eqref{eq:cindex}, e a escolha é reajustada no treino completo antes do teste. As origens de 2022 e 2023 têm horizonte de dois e de um ano ($\tau$), e o $C$ médio delas fica entre $0{,}727$ e $0{,}823$. Como esse horizonte é outro, elas ficam fora das médias.
+
+Os valores padrão são $\lambda = 0$ no Cox e os da biblioteca \textit{scikit-survival} no GBSA e no RSF, e a Tabela~\ref{tab:tgb_padrao_busca} compara padrão e busca no mesmo \textit{walk-forward}. A busca melhora o $C$ médio em sete das nove combinações, de $0{,}005$ (Cox do WR) a $0{,}034$ (RSF do RB). No Cox e no GBSA do QB, ela fica $0{,}005$ e $0{,}009$ abaixo do padrão, menos que a variação entre origens.
+
+A Tabela~\ref{tab:tgb_grade} traz a grade de cada modelo, igual nas três posições e em todas as origens.
+
+\begin{table}[H]
+\centering
+\caption{Grade da busca aninhada por modelo. Cox: 7 valores de $\lambda$. RSF: 225 combinações. GBSA: 120 combinações sorteadas. O padrão de cada modelo entra como candidato.}
+\label{tab:tgb_grade}
+\thesistablesetup\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llp{0.52\textwidth}@{}}
+\toprule
+\textbf{Modelo} & \textbf{Hiperparâmetro} & \textbf{Valores} \\
+\midrule
+Cox & penalização $\lambda$ (L$_2$) & $0$; $0{,}01$; $0{,}05$; $0{,}1$; $0{,}3$; $0{,}5$; $1$ \\
+\midrule
+RSF & número de árvores & $500$ (fixo) \\
+RSF & variáveis por divisão & \textit{sqrt}; \textit{log2}; $0{,}3$; $0{,}5$; todas \\
+RSF & folhas mínimas & $3$; $5$; $8$; $15$; $25$ \\
+RSF & divisão mínima & $6$; $12$; $20$ \\
+RSF & profundidade máxima & $6$; $12$; sem limite \\
+\midrule
+GBSA & taxa de aprendizado & $0{,}01$; $0{,}03$; $0{,}05$; $0{,}1$; $0{,}2$ \\
+GBSA & número de árvores & $100$; $200$; $400$; $800$ \\
+GBSA & profundidade máxima & $1$ a $6$ \\
+GBSA & fração de amostragem & $0{,}5$; $0{,}7$; $0{,}85$; $1{,}0$ \\
+GBSA & folhas mínimas & $1$; $5$; $10$; $20$; $40$ \\
+GBSA & variáveis por divisão & \textit{sqrt}; todas \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{$C$ médio de Harrell no \textit{walk-forward} 2018--2021. Padrão: Cox com $\lambda = 0$; GBSA e RSF com os valores padrão do \textit{scikit-survival}. Busca: hiperparâmetros da busca aninhada.}
+\label{tab:tgb_padrao_busca}
+\thesistablesetup
+\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccccc@{}}
+\toprule
+& \multicolumn{2}{c}{\textbf{QB}} & \multicolumn{2}{c}{\textbf{RB}} & \multicolumn{2}{c}{\textbf{WR}} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+\textbf{Modelo} & \textbf{Padrão} & \textbf{Busca} & \textbf{Padrão} & \textbf{Busca} & \textbf{Padrão} & \textbf{Busca} \\
+\midrule
+Cox penalizado & $0{,}710$ & $0{,}705$ & $0{,}678$ & $0{,}704$ & $0{,}699$ & $0{,}704$ \\
+GBSA & $0{,}685$ & $0{,}676$ & $0{,}632$ & $0{,}665$ & $0{,}677$ & $0{,}687$ \\
+RSF & $0{,}688$ & $0{,}709$ & $0{,}627$ & $0{,}661$ & $0{,}673$ & $0{,}693$ \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\subsection{Borda da grade}
+\label{subsec:apend_borda}
+
+Quando a escolha cai no limite da grade, pode haver ganho além dele. Por isso, em cada hiperparâmetro escolhido na borda, avançamos um passo, com os demais fixos (Tabela~\ref{tab:tgb_fronteira}).
+
+\begin{table}[H]
+\centering
+\caption{Efeito de um passo além da borda, antes $\rightarrow$ depois. $C$ interno: validação de dois anos. $C$ teste: origem externa. Teste melhora: combinações em que o $C$ de teste sobe.}
+\label{tab:tgb_fronteira}
+\thesistablesetup
+\footnotesize\setlength{\tabcolsep}{2pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lllcccc@{}}
+\toprule
+\textbf{Modelo} & \textbf{Hiperparâmetro} & \textbf{Borda} & \textbf{Além} & \textbf{$C$ interno} & \textbf{$C$ teste} & \textbf{Teste melhora} \\
+\midrule
+Cox & penalização $\lambda$ & teto, $1$ & $2$, $3$, $5$ & $0{,}724 \to 0{,}730$ & $0{,}705 \to 0{,}701$ & 12 de 33 \\
+GBSA & taxa de aprendizado & piso, $0{,}01$ & $0{,}005$ & $0{,}739 \to 0{,}733$ & $0{,}679 \to 0{,}680$ & 2 de 5 \\
+GBSA & taxa de aprendizado & teto, $0{,}2$ & $0{,}3$ & $0{,}776 \to 0{,}766$ & $0{,}703 \to 0{,}671$ & 0 de 1 \\
+GBSA & número de árvores & piso, $100$ & $50$ & $0{,}750 \to 0{,}737$ & $0{,}678 \to 0{,}676$ & 2 de 6 \\
+GBSA & número de árvores & teto, $800$ & $1600$ & $0{,}786 \to 0{,}795$ & $0{,}581 \to 0{,}584$ & 1 de 1 \\
+GBSA & amostragem & piso, $0{,}5$ & $0{,}3$ & $0{,}767 \to 0{,}761$ & $0{,}702 \to 0{,}704$ & 2 de 5 \\
+RSF & divisão mínima & piso, $6$ & $2$, $3$, $4$ & $0{,}733 \to 0{,}733$ & $0{,}688 \to 0{,}688$ & 0 de 36 \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+O Cox escolheu $\lambda = 1$, a borda, em $11$ das $12$ origens de 2018 a 2021 e em $14$ das $18$ origens até 2023. A validação prefere o valor além em $29$ das $33$ combinações, e o teste melhora em $12$. Ampliando $\lambda$ até $10$, além da tabela, o $C$ de teste fica em $0{,}694$ no QB ($-0{,}011$ frente ao Cox da grade), $0{,}714$ no RB ($+0{,}010$) e $0{,}691$ no WR ($-0{,}012$). A direção não é consistente: piora duas posições e melhora uma. A extensão é só descritiva: a melhora interna não se transfere ao teste, e a grade fica em $\lambda \le 1$.
+
+\subsection{Janela de congelamento do X}
+\label{subsec:apend_janela_x}
+
+O filtro foi recalculado com janelas até 2015, 2016, 2018 e 2019, e com o painel inteiro. O Jaccard mínimo da lista é de $0{,}86$ no RB e $0{,}89$ no QB e no WR, e a maior diferença de $C$ é de $0{,}016$ (GBSA do RB, janela até 2015). O modelo de maior $C$ só muda no QB com o painel inteiro, em que o Cox ($0{,}714$) fica à frente do RSF ($0{,}711$).
+
+\subsection{Censura antes do último intervalo}
+\label{subsec:apend_censura_pred}
+
+Na resposta \eqref{eq:resposta_origem}, o ativo em $s$ é censurado em $s-t$, depois das saídas desse tempo. Como a saída ao fim de $s$ ainda não é conhecida em $s$, repetimos o \textit{walk-forward} do modelo principal com esse censurado fora do risco no próprio tempo, com os mesmos hiperparâmetros. O $C$ passa de $0{,}709$, $0{,}704$ e $0{,}704$ para $0{,}717$, $0{,}710$ e $0{,}715$; o viés, de $+0{,}28$, $+0{,}40$ e $+0{,}41$ para $+0{,}07$, $+0{,}15$ e $+0{,}18$ ano; e o erro absoluto médio, de $1{,}27$, $1{,}32$ e $1{,}38$ para $1{,}28$, $1{,}28$ e $1{,}34$. A ordenação se mantém, e o erro em anos segue acima de um ano. A leitura principal supõe que a saída e a censura ocorrem ao fim da temporada, a mesma convenção da inferência (Seção~\ref{sec:tratamentos_eda}) e de \citet{ducking2015}, para que os dois ramos usem o mesmo desfecho. Com ela, os anos previstos ficam um pouco maiores, e por isso se leem como comparação entre jogadores, como no Capítulo~\ref{cap:resultados_preditivos}.
+
+\section{Resultados por origem do \textit{walk-forward}}
+\label{sec:ap_wf_origens}
+
+A Tabela~\ref{tab:tgb_wf} traz o $C$ de Harrell de cada origem, a média das quatro origens, o intervalo de confiança de $95\%$ da média e o IBS médio, e a Tabela~\ref{tab:tgb_delta}, as diferenças pareadas entre modelos.
+
+\begin{table}[H]
+\centering
+\caption{C de Harrell por origem, média das quatro origens, IC 95\% dessa média e IBS no \textit{walk-forward} de 2018 a 2021, por posição e modelo.}
+\label{tab:tgb_wf}
+\thesistablesetup\footnotesize
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llccccccc@{}}
+\toprule
+\textbf{Pos.} & \textbf{Modelo} & \textbf{2018} & \textbf{2019} & \textbf{2020} & \textbf{2021} & \textbf{Média} & \textbf{IC 95\%} & \textbf{IBS} \\
+\midrule
+QB & Kaplan--Meier & $0{,}500$ & $0{,}500$ & $0{,}500$ & $0{,}500$ & $0{,}500$ & n/d & $0{,}221$ \\
+QB & Cox           & $0{,}623$ & $0{,}751$ & $0{,}668$ & $0{,}780$ & $0{,}705$ & $[0{,}630; 0{,}778]$ & $0{,}197$ \\
+QB & GBSA          & $0{,}581$ & $0{,}768$ & $0{,}651$ & $0{,}703$ & $0{,}676$ & $[0{,}609; 0{,}738]$ & $0{,}224$ \\
+QB & RSF           & $0{,}632$ & $0{,}767$ & $0{,}684$ & $0{,}755$ & $0{,}709$ & $[0{,}644; 0{,}774]$ & $0{,}194$ \\
+\midrule
+RB & Kaplan--Meier & $0{,}500$ & $0{,}500$ & $0{,}500$ & $0{,}500$ & $0{,}500$ & n/d & $0{,}241$ \\
+RB & Cox           & $0{,}665$ & $0{,}715$ & $0{,}724$ & $0{,}712$ & $0{,}704$ & $[0{,}659; 0{,}749]$ & $0{,}223$ \\
+RB & GBSA          & $0{,}637$ & $0{,}643$ & $0{,}696$ & $0{,}683$ & $0{,}665$ & $[0{,}617; 0{,}713]$ & $0{,}238$ \\
+RB & RSF           & $0{,}659$ & $0{,}625$ & $0{,}686$ & $0{,}676$ & $0{,}661$ & $[0{,}613; 0{,}707]$ & $0{,}219$ \\
+\midrule
+WR & Kaplan--Meier & $0{,}500$ & $0{,}500$ & $0{,}500$ & $0{,}500$ & $0{,}500$ & n/d & $0{,}244$ \\
+WR & Cox           & $0{,}714$ & $0{,}680$ & $0{,}696$ & $0{,}724$ & $0{,}704$ & $[0{,}664; 0{,}742]$ & $0{,}219$ \\
+WR & GBSA          & $0{,}708$ & $0{,}664$ & $0{,}685$ & $0{,}690$ & $0{,}687$ & $[0{,}648; 0{,}722]$ & $0{,}227$ \\
+WR & RSF           & $0{,}725$ & $0{,}670$ & $0{,}691$ & $0{,}688$ & $0{,}693$ & $[0{,}655; 0{,}729]$ & $0{,}211$ \\
+\bottomrule
+\end{tabular*}
+\par\smallskip
+\begin{minipage}{\textwidth}
+{\small Intervalo: \textit{bootstrap} por jogador, com $2\,000$ réplicas; cada réplica sorteia jogadores com reposição e recalcula o $C$ das quatro origens. O Kaplan--Meier tem $C$ igual a $0{,}500$ por construção.}
+\end{minipage}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Diferença de $C$ entre pares de modelos no \textit{walk-forward} 2018--2021, por posição (média das quatro origens; primeiro menos segundo), com IC 95\% por \textit{bootstrap} de jogadores e $p$ ajustado por Holm.}
+\label{tab:tgb_delta}
+\thesistablesetup
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llcccc@{}}
+\toprule
+\textbf{Posição} & \textbf{Contraste} & \textbf{$\Delta C$} & \textbf{IC 95\%} & \textbf{$p$} & \textbf{$p$ (Holm)} \\
+\midrule
+QB & GBSA $-$ Cox & $-0{,}030$ & $[-0{,}070; +0{,}008]$ & $0{,}133$ & $0{,}665$ \\
+QB & RSF $-$ Cox & $+0{,}004$ & $[-0{,}033; +0{,}039]$ & $0{,}831$ & $1{,}000$ \\
+QB & GBSA $-$ RSF & $-0{,}033$ & $[-0{,}054; -0{,}013]$ & $0{,}001$ & $0{,}009$ \\
+\midrule
+RB & GBSA $-$ Cox & $-0{,}039$ & $[-0{,}070; -0{,}010]$ & $0{,}008$ & $0{,}056$ \\
+RB & RSF $-$ Cox & $-0{,}043$ & $[-0{,}069; -0{,}017]$ & $0{,}002$ & $0{,}016$ \\
+RB & GBSA $-$ RSF & $+0{,}003$ & $[-0{,}017; +0{,}024]$ & $0{,}736$ & $1{,}000$ \\
+\midrule
+WR & GBSA $-$ Cox & $-0{,}017$ & $[-0{,}035; +0{,}001]$ & $0{,}058$ & $0{,}348$ \\
+WR & RSF $-$ Cox & $-0{,}010$ & $[-0{,}026; +0{,}005]$ & $0{,}195$ & $0{,}780$ \\
+WR & GBSA $-$ RSF & $-0{,}007$ & $[-0{,}016; +0{,}004]$ & $0{,}225$ & $0{,}780$ \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\section{\textit{Landmarking}}
+\label{sec:ap_landmark}
+
+A saída até $w$ anos é o evento, e quem segue ativo após $w$ anos é censurado em $w$. Cada célula da Tabela~\ref{tab:tgb_lm} é a média do $C$ de Harrell sobre as origens com acompanhamento completo, em que a base cobre a temporada $s_L + w + 1$, que confirma a saída: 2020 a 2022 para $w = 1$, 2020 e 2021 para $w = 2$ e só 2020 para $w = 3$. O treino de cada origem $s_L$ tem os mesmos retratos e hiperparâmetros do \textit{walk-forward} da mesma temporada, mas com o desfecho cortado em $w$.
+
+\begin{table}[H]
+\centering
+\caption{C de Harrell no \textit{landmarking} por posição, modelo e horizonte $w$ (anos): média das origens $s_L$ com acompanhamento completo ($s_L + w + 1 \le 2024$).}
+\label{tab:tgb_lm}
+\thesistablesetup\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llccc@{}}
+\toprule
+\textbf{Posição} & \textbf{Modelo} & \textbf{$w=1$} & \textbf{$w=2$} & \textbf{$w=3$} \\
+\midrule
+QB & Cox  & $0{,}733$ & $0{,}706$ & $0{,}672$ \\
+QB & GBSA & $0{,}701$ & $0{,}664$ & $0{,}657$ \\
+QB & RSF  & $0{,}774$ & $0{,}734$ & $0{,}688$ \\
+\midrule
+RB & Cox  & $0{,}763$ & $0{,}731$ & $0{,}725$ \\
+RB & GBSA & $0{,}738$ & $0{,}710$ & $0{,}710$ \\
+RB & RSF  & $0{,}750$ & $0{,}729$ & $0{,}714$ \\
+\midrule
+WR & Cox  & $0{,}782$ & $0{,}733$ & $0{,}708$ \\
+WR & GBSA & $0{,}769$ & $0{,}707$ & $0{,}696$ \\
+WR & RSF  & $0{,}784$ & $0{,}730$ & $0{,}707$ \\
+\bottomrule
+\end{tabular*}
+\end{table}

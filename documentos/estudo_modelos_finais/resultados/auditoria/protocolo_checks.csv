@@ -1,0 +1,16 @@
+ok,codigo,detalhe
+True,hp_por_fold_walkforward,linhas conferidas=36; divergencias=0; modos=['nested']
+True,hp_por_fold_landmark,origens conferidas=36; origem = HP do fold walk-forward de mesma temporada
+True,rsf_todas_posicoes,"folds oficiais com RSF por posicao={'QB': 4, 'RB': 4, 'WR': 4}"
+True,hp_sem_divergencia,nenhuma divergencia
+True,km_piso,min=0.5 max=0.5
+True,n_covs,"folds={'QB': 25, 'RB': 21, 'WR': 25} json={'QB': 25, 'RB': 21, 'WR': 25}"
+True,rsf_qb_dentro,n_folds_rsf_qb=4 (mesmo numero de folds do Cox no QB)
+True,rsf_regra_protocolo,"rsf_permitido em tgb_protocol (RSF_MIN_EVENTOS=200, diagnóstico)"
+True,rsf_qb_eventos,QB eventos=107 (diagnóstico; limiar de referência 200)
+True,2024_sem_rotulo,"eventos em 2024: QB=0, RB=0, WR=0"
+True,2024_residual_zero,"residual max 2024: QB=0.0, RB=0.0, WR=0.0"
+True,oficial_2018_2021,"[np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021)]"
+True,landmark_vanhouwelingen,"w=[np.int64(1), np.int64(2), np.int64(3)] tL=[np.int64(2020), np.int64(2021), np.int64(2022), np.int64(2023)]"
+False,uno_degenerado,Uno=Harrell neste recorte; não reportar Uno como métrica extra
+True,ibs_2022_2023_vazio,"IBS ausente nos folds curtos, como o protocolo prevê"

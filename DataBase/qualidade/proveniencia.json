@@ -1,0 +1,43 @@
+{
+  "arquivo": "DataBase/yearly_player_stats_offense.csv",
+  "sha256": "1d256c2232869b76a9821cf7a67639609cacb3d082d2a18ac2e2f3aecab96861",
+  "bytes": 27959466,
+  "linhas": 7133,
+  "colunas": 660,
+  "temporadas": {
+    "min": 2012,
+    "max": 2024,
+    "n": 13
+  },
+  "modalidades": {
+    "REG": 6150,
+    "POST": 983
+  },
+  "n_posicoes": 18,
+  "posicoes": [
+    "CB",
+    "DE",
+    "DT",
+    "FB",
+    "FS",
+    "ILB",
+    "K",
+    "LS",
+    "MLB",
+    "NT",
+    "OLB",
+    "P",
+    "QB",
+    "RB",
+    "SS",
+    "T",
+    "TE",
+    "WR"
+  ],
+  "data_coleta": null,
+  "nflverse_versao": null,
+  "nfl_data_py_versao": null,
+  "url_origem": "https://www.kaggle.com/datasets/philiphyde1/nfl-stats-1999-2022",
+  "origem_declarada": "Conjunto publico de Philip Hyde no Kaggle, montado com nfl_data_py a partir do nflverse (Capitulo 3). Versao anterior a atualizacao de 22/03/2026, com temporadas de 2012 a 2024, obtida antes de 23/03/2026 (primeiro commit do repositorio). A data exata da coleta nao esta registrada; o que identifica o arquivo usado e o sha256 acima.",
+  "gerado_por": "pipeline/49_qualidade_dados.py"
+}

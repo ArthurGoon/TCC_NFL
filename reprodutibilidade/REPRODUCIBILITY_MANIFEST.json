@@ -1,0 +1,5318 @@
+{
+  "schema_version": 1,
+  "description": "Manifesto de reprodutibilidade: classifica a entrada, as fontes, os documentos da tese, os registros de execucao e os resultados gerados pelo pipeline.",
+  "pipeline": {
+    "entrypoint": "run_all.py",
+    "step_count": 48,
+    "execution_log": "reprodutibilidade/EXECUTION_LOG.json",
+    "generated_cleanup_default": true,
+    "steps": [
+      {
+        "name": "qualidade_dados",
+        "path": "pipeline/49_qualidade_dados.py"
+      },
+      {
+        "name": "prep_cox_QB",
+        "path": "pipeline/04_prep_cox_qb.py"
+      },
+      {
+        "name": "prep_cox_RB",
+        "path": "pipeline/05_prep_cox_rb.py"
+      },
+      {
+        "name": "prep_cox_WR",
+        "path": "pipeline/06_prep_cox_wr.py"
+      },
+      {
+        "name": "eda_QB",
+        "path": "pipeline/01_eda_qb.py"
+      },
+      {
+        "name": "eda_RB",
+        "path": "pipeline/02_eda_rb.py"
+      },
+      {
+        "name": "eda_WR",
+        "path": "pipeline/03_eda_wr.py"
+      },
+      {
+        "name": "estatisticas_eda",
+        "path": "pipeline/50_estatisticas_eda.py"
+      },
+      {
+        "name": "series_figuras",
+        "path": "pipeline/52_series_figuras.py"
+      },
+      {
+        "name": "add_features",
+        "path": "pipeline/07_add_features.py"
+      },
+      {
+        "name": "covs_preditivas",
+        "path": "pipeline/38_covs_preditivas.py"
+      },
+      {
+        "name": "curvas_KM_QB",
+        "path": "pipeline/08_curvas_km_qb.py"
+      },
+      {
+        "name": "curvas_KM_RB",
+        "path": "pipeline/09_curvas_km_rb.py"
+      },
+      {
+        "name": "curvas_KM_WR",
+        "path": "pipeline/10_curvas_km_wr.py"
+      },
+      {
+        "name": "cox_tdc_QB",
+        "path": "pipeline/11_cox_tdc_qb.py"
+      },
+      {
+        "name": "cox_tdc_RB",
+        "path": "pipeline/12_cox_tdc_rb.py"
+      },
+      {
+        "name": "cox_tdc_WR",
+        "path": "pipeline/13_cox_tdc_wr.py"
+      },
+      {
+        "name": "aalen_tdc_QB",
+        "path": "pipeline/14_aalen_tdc_qb.py"
+      },
+      {
+        "name": "aalen_tdc_RB",
+        "path": "pipeline/15_aalen_tdc_rb.py"
+      },
+      {
+        "name": "aalen_tdc_WR",
+        "path": "pipeline/16_aalen_tdc_wr.py"
+      },
+      {
+        "name": "sensibilidade_inferencial",
+        "path": "pipeline/51_sensibilidade_inferencial.py"
+      },
+      {
+        "name": "sensibilidade_selecao",
+        "path": "pipeline/64_sensibilidade_selecao.py"
+      },
+      {
+        "name": "aalen_discreto",
+        "path": "pipeline/66_aalen_discreto.py"
+      },
+      {
+        "name": "compor_figuras_escrita",
+        "path": "pipeline/35_compor_figuras_escrita.py"
+      },
+      {
+        "name": "cox_aalen_inferencial",
+        "path": "pipeline/36_cox_aalen_inferencial.py"
+      },
+      {
+        "name": "tgb_pacote_default",
+        "path": "pipeline/37_tgb_pacote_default.py"
+      },
+      {
+        "name": "tune_preditivo",
+        "path": "pipeline/42_tune_preditivo.py"
+      },
+      {
+        "name": "tgb_pacote_oficial",
+        "path": "pipeline/39_tgb_pacote_oficial.py"
+      },
+      {
+        "name": "sensibilidade_hp_padrao",
+        "path": "pipeline/61_sensibilidade_hp_padrao.py"
+      },
+      {
+        "name": "tgb_auditoria",
+        "path": "pipeline/40_tgb_auditoria.py"
+      },
+      {
+        "name": "ic_preditivo",
+        "path": "pipeline/53_ic_preditivo.py"
+      },
+      {
+        "name": "diagnostico_erro",
+        "path": "pipeline/55_diagnostico_erro.py"
+      },
+      {
+        "name": "sensibilidade_metodo",
+        "path": "pipeline/58_sensibilidade_metodo.py"
+      },
+      {
+        "name": "estudo_vazamento",
+        "path": "pipeline/59_estudo_vazamento.py"
+      },
+      {
+        "name": "aalen_preditivo",
+        "path": "pipeline/45_aalen_preditivo.py"
+      },
+      {
+        "name": "fronteira_tune",
+        "path": "pipeline/54_fronteira_tune.py"
+      },
+      {
+        "name": "sensibilidade_tune",
+        "path": "pipeline/57_sensibilidade_tune.py"
+      },
+      {
+        "name": "furos_preditivos",
+        "path": "pipeline/44_furos_preditivos.py"
+      },
+      {
+        "name": "leitura_preditiva",
+        "path": "pipeline/43_leitura_preditiva.py"
+      },
+      {
+        "name": "leitura_aplicada",
+        "path": "pipeline/62_leitura_aplicada.py"
+      },
+      {
+        "name": "landmark_jogadores",
+        "path": "pipeline/65_landmark_jogadores.py"
+      },
+      {
+        "name": "testes_defesa",
+        "path": "pipeline/67_testes_defesa.py"
+      },
+      {
+        "name": "variacoes_recentes",
+        "path": "pipeline/68_variacoes_recentes.py"
+      },
+      {
+        "name": "figuras_estudo",
+        "path": "pipeline/46_figuras_estudo.py"
+      },
+      {
+        "name": "tgb_figuras",
+        "path": "pipeline/41_tgb_figuras.py"
+      },
+      {
+        "name": "campo_posicoes_nfl",
+        "path": "pipeline/48_campo_posicoes_nfl.py"
+      },
+      {
+        "name": "figura_walkforward",
+        "path": "pipeline/63_figura_walkforward.py"
+      },
+      {
+        "name": "export_figuras_tese",
+        "path": "pipeline/47_export_figuras_tese.py"
+      }
+    ],
+    "r_dependencies": {
+      "cox_tdc_QB/RB/WR": [
+        "Inferência/shared/run_schoenfeld_diagnostics.R"
+      ],
+      "aalen_tdc_QB/RB/WR": [
+        "Inferência/Modelagem de Aalen/shared/run_aalen_univariate_screening.R",
+        "Inferência/Modelagem de Aalen/shared/run_aalen_tied_inference.R"
+      ]
+    },
+    "execution_mode": "scripts_only"
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/career_lag_corr_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/career_lag_corr_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/career_lag_corr_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/career_lag_dist_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/career_lag_dist_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/career_lag_dist_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/career_lag_evo_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/career_lag_evo_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/career_lag_evo_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/corr_matrix_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/corr_matrix_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/corr_matrix_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/declinio_sazonal_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/declinio_sazonal_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/declinio_sazonal_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/delta_season_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/delta_season_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/delta_season_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/depth_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/depth_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/depth_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/dist_carreira_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/dist_carreira_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/dist_carreira_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/draft_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/draft_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/draft_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/eficiencia_acumulada_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/eficiencia_acumulada_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/eficiencia_acumulada_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/fantasy_points_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/fantasy_points_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/fantasy_points_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/games_missed_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/games_missed_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/games_missed_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/idade_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/idade_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/idade_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/km_draft_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/km_draft_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/km_draft_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/km_overall_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/km_overall_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/km_overall_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/offense_pct_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/offense_pct_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/offense_pct_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/pairplot_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/pairplot_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/pairplot_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/perfil_fisico_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/perfil_fisico_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/perfil_fisico_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/temporal_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/temporal_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/figuras/temporal_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "eda_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/estatisticas_eda.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "estatisticas_eda",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_career_lag_evo_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_career_lag_evo_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_career_lag_evo_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_corr_matrix_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_corr_matrix_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_corr_matrix_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_depth_contagem_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_depth_contagem_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_depth_contagem_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_depth_por_exp_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_depth_por_exp_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_depth_por_exp_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_dist_carreira_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_dist_carreira_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_dist_carreira_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_draft_boxplot_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_draft_boxplot_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_draft_boxplot_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_draft_media_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_draft_media_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_draft_media_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_games_missed_grupos_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_games_missed_grupos_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_games_missed_grupos_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_games_missed_serie_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_games_missed_serie_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_games_missed_serie_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/series_figuras/fig_testes.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Análise Exploratória de Dados/resultados/testes_eda.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "estatisticas_eda",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "DataBase/qualidade/ausentes_por_coluna.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "qualidade_dados",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "DataBase/qualidade/games_missed_inconsistencias.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "qualidade_dados",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "DataBase/qualidade/multitime_casos.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "qualidade_dados",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "DataBase/qualidade/proveniencia.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "qualidade_dados",
+      "artifact_type": "json"
+    },
+    {
+      "path": "DataBase/qualidade/qualidade_resumo.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "qualidade_dados",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "DataBase/yearly_player_stats_offense.csv",
+      "category": "input",
+      "required": true,
+      "description": "Base bruta ofensiva 2012-2024; nao e gerada pelo pipeline."
+    },
+    {
+      "path": "Escrita Final/figuras/aalen_cum_coefs_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/aalen_cum_coefs_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/aalen_cum_coefs_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/aalen_termos_violacao.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/c_walkforward_folds.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figura_walkforward",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/campo_posicoes_nfl.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "campo_posicoes_nfl",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/career_lag_evo_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/comparacao_cox_aalen_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/corr_matrix_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/corr_matrix_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/corr_matrix_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/depth_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/depth_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/depth_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/dist_carreira_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/dist_carreira_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/dist_carreira_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/draft_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/draft_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/draft_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/forest_plot_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/forest_plot_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/forest_plot_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/games_missed_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/games_missed_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/games_missed_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/km_depth_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/km_depth_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/km_depth_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/km_draft_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/km_draft_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/km_draft_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/km_global_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/km_global_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/km_global_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/km_idade_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/km_idade_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/km_idade_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/schoenfeld_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/schoenfeld_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/schoenfeld_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/tgb_acerto_horizontes.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_figuras",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/tgb_calibracao_quintil.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "diagnostico_erro",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/tgb_casos_individuais.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_figuras",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/tgb_casos_leitura.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/tgb_cauda_erro.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_figuras",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/tgb_cindex_walkforward.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_figuras",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/tgb_dist_erro_abs.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_figuras",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/tgb_importancia_nativa.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_figuras",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/tgb_landmark_quintis.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/tgb_lista_2024.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/tgb_lista_quintis.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "export_figuras_tese",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/figuras/tgb_previsto_vs_observado.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_figuras",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Escrita Final/texto/abstract_tg.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/agradecimentos_tg.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/apendice_dados.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/apendice_inferencia.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/apendice_predicao.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/c1_introd_tg.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/c2_exemplos_tg.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/c3_material_tg.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/c4_resultados_inferenciais.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/c5_resultados_preditivos.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/c6_discussao_tg.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/c7_conclusao_tg.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/capa_tg.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/dedicatoria_tg.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/epigrafe_tg.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/folha_rosto_1.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/folha_rosto_2.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/folha_rosto_3.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/main.pdf",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/main.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Escrita Final/texto/resumo_tg.tex",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/figuras/cox_aalen_cum_QB.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/figuras/cox_aalen_cum_RB.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/figuras/cox_aalen_cum_WR.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_beta_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_beta_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_beta_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_cum_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_cum_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_cum_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_fit_QB.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_fit_RB.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_fit_WR.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_robvar_cum_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_robvar_cum_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_robvar_cum_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_summary_QB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_summary_RB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_summary_WR.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_var_cum_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_var_cum_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_var_cum_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_vs_cox_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_vs_cox_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_vs_cox_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_vs_cox_all.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_vs_coxph_unpenalized.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_aalen_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem Cox-Aalen/shared/run_cox_aalen_inference.R",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/figuras/aalen_cum_coefs_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/figuras/aalen_cum_coefs_QB.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/figuras/aalen_cum_coefs_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/figuras/aalen_cum_coefs_RB.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/figuras/aalen_cum_coefs_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/figuras/aalen_cum_coefs_WR.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/figuras/comparacao_cox_aalen_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/figuras/comparacao_cox_aalen_QB.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/figuras/comparacao_cox_aalen_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/figuras/comparacao_cox_aalen_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_cum_coefs_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_cum_coefs_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_cum_coefs_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_final_covs_QB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_final_covs_RB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_final_covs_WR.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_fit_QB.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_fit_RB.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_fit_WR.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_input_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_input_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_input_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_robvar_cum_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_robvar_cum_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_robvar_cum_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_screening_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_screening_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_screening_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_summary_QB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_summary_RB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_summary_WR.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_var_cum_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_var_cum_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/aalen_var_cum_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/comparacao_cox_aalen_QB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/comparacao_cox_aalen_RB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/comparacao_cox_aalen_WR.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_cum_coefs_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_cum_coefs_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_cum_coefs_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_fit_QB.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_fit_RB.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_fit_WR.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_robvar_cum_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_robvar_cum_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_robvar_cum_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_summary_QB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_summary_RB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_summary_WR.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_var_cum_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_var_cum_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_var_cum_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_cum_coefs_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_cum_coefs_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_cum_coefs_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_fit_QB.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_fit_RB.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_fit_WR.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_robvar_cum_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_robvar_cum_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_robvar_cum_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_summary_QB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_summary_RB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_summary_WR.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_var_cum_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_var_cum_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_var_cum_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_cum_coefs_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_cum_coefs_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_cum_coefs_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_fit_QB.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_fit_RB.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_fit_WR.rds",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "rds"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_robvar_cum_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_robvar_cum_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_robvar_cum_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_summary_QB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_summary_RB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_summary_WR.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_var_cum_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_var_cum_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_var_cum_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/shared/listas_aalen_fixadas.json",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/shared/run_aalen_inference.R",
+      "category": "source",
+      "required": true,
+      "role": "r_dependency"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/shared/run_aalen_tied_inference.R",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "Inferência/Modelagem de Aalen/shared/run_aalen_univariate_screening.R",
+      "category": "source",
+      "required": true,
+      "role": "r_dependency"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/Curvas/figuras/km_depth_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "curvas_KM_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/Curvas/figuras/km_depth_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "curvas_KM_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/Curvas/figuras/km_depth_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "curvas_KM_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/Curvas/figuras/km_draft_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "curvas_KM_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/Curvas/figuras/km_draft_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "curvas_KM_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/Curvas/figuras/km_draft_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "curvas_KM_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/Curvas/figuras/km_global_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "curvas_KM_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/Curvas/figuras/km_global_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "curvas_KM_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/Curvas/figuras/km_global_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "curvas_KM_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/Curvas/figuras/km_idade_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "curvas_KM_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/Curvas/figuras/km_idade_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "curvas_KM_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/Curvas/figuras/km_idade_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "curvas_KM_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/figuras/forest_plot_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/figuras/forest_plot_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/figuras/forest_plot_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/figuras/schoenfeld_QB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_QB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/figuras/schoenfeld_RB.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_RB",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/figuras/schoenfeld_WR.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_WR",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/cox_hr_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/cox_hr_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/cox_hr_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/coxph_unpenalized_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/coxph_unpenalized_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/coxph_unpenalized_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/final_covs_QB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_QB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/final_covs_RB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_RB",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/final_covs_WR.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_WR",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/lr_test_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/lr_test_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/lr_test_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/schoenfeld_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/schoenfeld_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/schoenfeld_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/schoenfeld_input_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/schoenfeld_input_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Modelagem de COX/resultados/schoenfeld_input_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "cox_tdc_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Preparação Modelagem/figuras/figuras para escrita/taxa_evento_comparado.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "compor_figuras_escrita",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Inferência/Preparação Modelagem/figuras/taxa_evento_QB.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "prep_cox_QB",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Inferência/Preparação Modelagem/figuras/taxa_evento_RB.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "prep_cox_RB",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Inferência/Preparação Modelagem/figuras/taxa_evento_WR.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "prep_cox_WR",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Inferência/Preparação Modelagem/resultados/df_cox_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "prep_cox_QB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Preparação Modelagem/resultados/df_cox_QB.pkl",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "prep_cox_QB",
+      "artifact_type": "pkl"
+    },
+    {
+      "path": "Inferência/Preparação Modelagem/resultados/df_cox_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "prep_cox_RB",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Preparação Modelagem/resultados/df_cox_RB.pkl",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "prep_cox_RB",
+      "artifact_type": "pkl"
+    },
+    {
+      "path": "Inferência/Preparação Modelagem/resultados/df_cox_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "prep_cox_WR",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/Preparação Modelagem/resultados/df_cox_WR.pkl",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "prep_cox_WR",
+      "artifact_type": "pkl"
+    },
+    {
+      "path": "Inferência/Preparação Modelagem/resultados/funil_covariaveis.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "estatisticas_eda",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/Preparação Modelagem/resultados/preenchimento_por_periodo.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "estatisticas_eda",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/protocolo_inferencial.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "estatisticas_eda",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/aalen_discreto_lpm.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_discreto",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/aalen_discreto_resumo.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_discreto",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/frequencia_selecao_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_selecao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/frequencia_selecao_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_selecao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/frequencia_selecao_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_selecao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/imputacao_multipla.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/limiares_taxa.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/resumo.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/schoenfeld_direcao_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_selecao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/schoenfeld_direcao_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_selecao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/schoenfeld_direcao_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_selecao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_censura_inicio_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_selecao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_censura_inicio_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_selecao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_censura_inicio_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_selecao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_covariaveis_defasadas_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_covariaveis_defasadas_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_covariaveis_defasadas_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_empates_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_empates_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_empates_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_ep_robusto_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_ep_robusto_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_ep_robusto_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_passer_rating_zero_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_selecao_resumo.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_selecao",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_tempo_discreto_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_tempo_discreto_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/sens_tempo_discreto_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/testes_defesa_c_tau3.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "testes_defesa",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/testes_defesa_calibracao.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "testes_defesa",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/testes_defesa_censura_predicao.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "testes_defesa",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/testes_defesa_cobertura.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "testes_defesa",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/testes_defesa_hr.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "testes_defesa",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/testes_defesa_ic_quintis.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "testes_defesa",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/testes_defesa_painel_2018.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "testes_defesa",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/testes_defesa_resumo.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "testes_defesa",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/testes_defesa_sementes.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "testes_defesa",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/testes_defesa_so_experiencia.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "testes_defesa",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/testes_defesa_splines.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "testes_defesa",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/testes_defesa_vif.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "testes_defesa",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/undrafted_cenarios.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_inferencial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/variacoes_recentes_aalen.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "variacoes_recentes",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/variacoes_recentes_cox.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "variacoes_recentes",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/variacoes_recentes_cox_aalen.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "variacoes_recentes",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/variacoes_recentes_predicao.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "variacoes_recentes",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Inferência/sensibilidade/resultados/variacoes_recentes_resumo.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "variacoes_recentes",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Inferência/shared/run_schoenfeld_diagnostics.R",
+      "category": "source",
+      "required": true,
+      "role": "r_dependency"
+    },
+    {
+      "path": "Inferência/shared/survival_utils.py",
+      "category": "source",
+      "required": true,
+      "role": "library"
+    },
+    {
+      "path": "Predição/aalen/shared/run_aalen_prediction.R",
+      "category": "source",
+      "required": true,
+      "role": "r_dependency"
+    },
+    {
+      "path": "Predição/pacote_default/figuras/comparacao_auc.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Predição/pacote_default/figuras/comparacao_cindex.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Predição/pacote_default/figuras/comparacao_ibs.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "png"
+    },
+    {
+      "path": "Predição/pacote_default/resultados/comparacao_completa.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Predição/pacote_default/resultados/comparacao_landmarking.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Predição/pacote_default/resultados/comparacao_landmarking_por_w.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Predição/pacote_default/resultados/comparacao_walkforward_2018_2021.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Predição/pacote_default/resultados/metricas_landmark_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Predição/pacote_default/resultados/metricas_walkforward_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Predição/pacote_default/resultados/notas_execucao.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Predição/pacote_default/resultados/predicao_gbsa_2024_QB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Predição/pacote_default/resultados/predicao_gbsa_2024_RB.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Predição/pacote_default/resultados/predicao_gbsa_2024_WR.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_default",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "Predição/shared/add_features.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "Predição/shared/compor_figuras_escrita.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "Predição/shared/covs_preditivas_QB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "covs_preditivas",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Predição/shared/covs_preditivas_RB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "covs_preditivas",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Predição/shared/covs_preditivas_WR.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "covs_preditivas",
+      "artifact_type": "json"
+    },
+    {
+      "path": "Predição/shared/df_cox_QB_features.pkl",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "add_features",
+      "artifact_type": "pkl"
+    },
+    {
+      "path": "Predição/shared/df_cox_RB_features.pkl",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "add_features",
+      "artifact_type": "pkl"
+    },
+    {
+      "path": "Predição/shared/df_cox_WR_features.pkl",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "add_features",
+      "artifact_type": "pkl"
+    },
+    {
+      "path": "Predição/shared/glossario_variaveis.csv",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "Predição/shared/tgb_protocol.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "Predição/shared/thesis_figure_style.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "README.md",
+      "category": "manual_doc",
+      "required": true
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/diag_aalen_fold.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/figuras/cindex_contraste.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/figuras/cindex_contraste.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/figuras/frac_posto_completo.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/figuras/frac_posto_completo.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/figuras/posto_vs_t.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/figuras/posto_vs_t.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/figuras/yt_vs_p.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/figuras/yt_vs_p.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/resultados/design_stats_qb_2018.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/resultados/metricas_walkforward_aalen_spec_curta.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/resultados/posto_por_fold.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/resultados/resumo_oficial_2018_2021.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_aalen_preditivo/resultados/resumo_qb_2018.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_aalen_selecao/figuras/cindex_contraste.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_aalen_selecao/figuras/cindex_contraste.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_aalen_selecao/resultados/metricas_walkforward_aalen_spec_curta.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_aalen_selecao/resultados/posto_por_fold.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_aalen_selecao/resultados/previsao_por_experiencia.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_aalen_selecao/resultados/resumo.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_aalen_selecao/resultados/resumo_oficial_2018_2021.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_aalen_selecao/resultados/spec_aalen_preditivo_QB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_aalen_selecao/resultados/spec_aalen_preditivo_RB.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_aalen_selecao/resultados/spec_aalen_preditivo_WR.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "aalen_preditivo",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_aalen_selecao/run_aalen_fit.R",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_aalen_selecao/run_contraste.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_diagnostico_erro/resultados/calibracao_quintil.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "diagnostico_erro",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_diagnostico_erro/resultados/erro_km_por_fold.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "diagnostico_erro",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_diagnostico_erro/resultados/erro_km_referencia.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "diagnostico_erro",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_diagnostico_erro/resultados/erro_por_ano.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "diagnostico_erro",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_diagnostico_erro/resultados/erro_por_decil.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "diagnostico_erro",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_diagnostico_erro/resultados/exclusoes_erro_anos.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "diagnostico_erro",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_diagnostico_erro/resultados/grave_por_corte.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "diagnostico_erro",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_diagnostico_erro/resultados/landmark_vs_walkforward.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "diagnostico_erro",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_diagnostico_erro/resultados/pontos_figura_calibracao.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "diagnostico_erro",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_diagnostico_erro/resultados/resumo_diagnostico.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "diagnostico_erro",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_diagnostico_erro/run_diagnostico.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_fronteira_tune/resultados/fronteira_arestas.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "fronteira_tune",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_fronteira_tune/resultados/resumo_fronteira.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "fronteira_tune",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_fronteira_tune/run_fronteira.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_furos_preditivos/figuras/c_com_sem_exp.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "furos_preditivos",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_furos_preditivos/figuras/c_com_sem_exp.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "furos_preditivos",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_furos_preditivos/resultados/ablacao_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "furos_preditivos",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_furos_preditivos/resultados/ablacao_resumo.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "furos_preditivos",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_furos_preditivos/resultados/elasticnet_vs_cox.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "furos_preditivos",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_furos_preditivos/resultados/face_validity_2024.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "furos_preditivos",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_furos_preditivos/resultados/folga_campeao.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "furos_preditivos",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_furos_preditivos/resultados/resumo.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "furos_preditivos",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_furos_preditivos/run_furos.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_gbsa_rsf/figuras/cindex_oficial.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_gbsa_rsf/figuras/cindex_oficial.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_gbsa_rsf/figuras/make_cindex_fig.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_ic_preditivo/resultados/auditoria/replica_metricas.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "ic_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_ic_preditivo/resultados/bootstrap_delta_replicas.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "ic_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_ic_preditivo/resultados/comparacao_esquemas_bootstrap.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "ic_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_ic_preditivo/resultados/delta_c_pareado.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "ic_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_ic_preditivo/resultados/delta_c_pareado_intra_fold.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "ic_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_ic_preditivo/resultados/ic_metricas.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "ic_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_ic_preditivo/resultados/ic_metricas_intra_fold.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "ic_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_ic_preditivo/resultados/resumo_ic.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "ic_preditivo",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_ic_preditivo/resultados/sensibilidade_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "ic_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_ic_preditivo/run_ic.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/aalen_termos_violacao.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/aalen_termos_violacao.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/ausencias_retorno.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/casos_auge.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/concordancia_divergentes.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/concordancia_modelos.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/dp_covariaveis.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/inferencia_vs_importancia.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/landmark_casos.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "landmark_jogadores",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/landmark_jogadores.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "landmark_jogadores",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/landmark_quintis.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "landmark_jogadores",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/lista_2024_extremos.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/lista_2024_quintis.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/tgb_casos_leitura.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/tgb_landmark_quintis.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "landmark_jogadores",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/tgb_lista_2024.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/tgb_lista_quintis.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/resultados/tipologia_erro.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_aplicada",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_aplicada/run_leitura_aplicada.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/figuras/perm_importance_top.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/figuras/perm_importance_top.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/figuras/pred_2024_cox_vs_gbsa.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/figuras/pred_2024_cox_vs_gbsa.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/resultados/concordancia_importance.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/resultados/concordancia_predicao_2024.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/resultados/native_importance_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/resultados/overlap_top8.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/resultados/perm_importance_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/resultados/perm_importance_media.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/resultados/predicao_2024_modelos.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/resultados/resumo.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/resultados/retrospecto_landmark_2023_w1_gbsa.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/resultados/retrospecto_wf_2021_gbsa.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "leitura_preditiva",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_leitura_preditiva/run_leitura.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/auditar_oficial.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/fig_tese_tgb.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/figuras/concordancia_2024.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/figuras/concordancia_2024.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/figuras/dist_anos_2024.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/figuras/dist_anos_2024.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/figuras/dist_anos_oof_2018_2021.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/figuras/dist_anos_oof_2018_2021.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/figuras/scatter_cox_gbsa_2024.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/figuras/scatter_cox_gbsa_2024.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/auditoria/acerto_horizontes.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_auditoria",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/auditoria/auditoria.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_auditoria",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/auditoria/erros_oof_extremos.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_auditoria",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/auditoria/erros_oof_resumo.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_auditoria",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/auditoria/fold_winners.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_auditoria",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/auditoria/followup_max.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_auditoria",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/auditoria/mask_support.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/auditoria/protocolo_checks.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_auditoria",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/auditoria/rsf_qb_diagnostico.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_auditoria",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/concordancia_esperados.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/forma_predicoes.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/hp_usado_por_fold.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/metricas_landmark_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/metricas_walkforward_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/oof_surv_matrix.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/oof_times_grid.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/pred_oof_walkforward_2018_2021.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/predicao_2024_modelos.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/resumo.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/resumo_landmark.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/resumo_landmark_valido.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_auditoria",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/resumo_walkforward_2018_2021.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/resumo_walkforward_2022_2023.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tgb_pacote_oficial",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/auditoria/mask_support.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/concordancia_esperados.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/figuras/concordancia_2024.pdf",
+      "category": "generated",
+      "required": false,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/figuras/concordancia_2024.png",
+      "category": "generated",
+      "required": false,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/figuras/dist_anos_2024.pdf",
+      "category": "generated",
+      "required": false,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/figuras/dist_anos_2024.png",
+      "category": "generated",
+      "required": false,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/figuras/dist_anos_oof_2018_2021.pdf",
+      "category": "generated",
+      "required": false,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/figuras/dist_anos_oof_2018_2021.png",
+      "category": "generated",
+      "required": false,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/figuras/scatter_cox_gbsa_2024.pdf",
+      "category": "generated",
+      "required": false,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/figuras/scatter_cox_gbsa_2024.png",
+      "category": "generated",
+      "required": false,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/forma_predicoes.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/hp_usado_por_fold.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/metricas_landmark_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/metricas_walkforward_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/oof_surv_matrix.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/oof_times_grid.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/pred_oof_walkforward_2018_2021.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/predicao_2024_modelos.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/resumo.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/resumo_landmark.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/resumo_walkforward_2018_2021.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/resumo_walkforward_2022_2023.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_hp_padrao",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_modelos_finais/run_oficial.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_metodo/resultados/janela_x_efeito_c.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_metodo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_metodo/resultados/janela_x_estabilidade.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_metodo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_metodo/resultados/lambda_inferencial_hr.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_metodo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_metodo/resultados/lambda_inferencial_selecao.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_metodo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_metodo/resultados/resumo_sens_metodo.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_metodo",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_metodo/resultados/saidas_2023_c_preditivo.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_metodo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_metodo/resultados/saidas_2023_cox_inferencial.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_metodo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_metodo/run_sens_metodo.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_tune/resultados/cal_1ano/hps_por_fold.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_tune",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_tune/resultados/cal_1ano/metricas_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_tune",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_tune/resultados/cal_3anos/hps_por_fold.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_tune",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_tune/resultados/cal_3anos/metricas_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_tune",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_tune/resultados/cox_grade_ate_10/hps_por_fold.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_tune",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_tune/resultados/cox_grade_ate_10/metricas_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_tune",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_tune/resultados/resumo_sens_tune.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "sensibilidade_tune",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_sensibilidade_tune/run_sens_tune.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_tgb_pacote/figuras/concordancia_2024.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_tgb_pacote/figuras/concordancia_2024.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_tgb_pacote/figuras/dist_anos_2024.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_tgb_pacote/figuras/dist_anos_2024.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_tgb_pacote/make_figs.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_tgb_pacote/resultados/dist_anos_2024.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_tune_preditivo/figuras/cindex_default_vs_tunado.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tune_preditivo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/estudo_tune_preditivo/figuras/cindex_default_vs_tunado.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tune_preditivo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/estudo_tune_preditivo/resultados/hps_por_fold.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tune_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_tune_preditivo/resultados/inner_trials.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tune_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_tune_preditivo/resultados/lambda_decisao.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tune_preditivo",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_tune_preditivo/resultados/metricas_folds_default_vs_tunado.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tune_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_tune_preditivo/resultados/resumo.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tune_preditivo",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_tune_preditivo/resultados/resumo_oficial_2018_2021.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "tune_preditivo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_tune_preditivo/run_tune.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/estudo_vazamento/resultados/c_por_grupo.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "estudo_vazamento",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_vazamento/resultados/c_por_grupo_folds.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "estudo_vazamento",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_vazamento/resultados/c_por_protocolo.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "estudo_vazamento",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/estudo_vazamento/resultados/resumo_vazamento.json",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "estudo_vazamento",
+      "artifact_type": "json"
+    },
+    {
+      "path": "documentos/estudo_vazamento/run_vazamento.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/fig_story.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/acerto_horizontes.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/acerto_horizontes.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/casos_individuais.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/casos_individuais.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/cauda_erro.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/cauda_erro.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/dist_erro_abs.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/dist_erro_abs.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/importancia_familias.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/importancia_nativa.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/importancia_nativa.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/previsto_vs_observado.pdf",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "pdf"
+    },
+    {
+      "path": "documentos/pacote_preditivo_tgb/figuras/previsto_vs_observado.png",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "figuras_estudo",
+      "artifact_type": "png"
+    },
+    {
+      "path": "pipeline/01_eda_qb.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/02_eda_rb.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/03_eda_wr.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/04_prep_cox_qb.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/05_prep_cox_rb.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/06_prep_cox_wr.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/07_add_features.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/08_curvas_km_qb.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/09_curvas_km_rb.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/10_curvas_km_wr.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/11_cox_tdc_qb.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/12_cox_tdc_rb.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/13_cox_tdc_wr.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/14_aalen_tdc_qb.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/15_aalen_tdc_rb.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/16_aalen_tdc_wr.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/35_compor_figuras_escrita.py",
+      "category": "source",
+      "required": true,
+      "role": "pipeline_step"
+    },
+    {
+      "path": "pipeline/36_cox_aalen_inferencial.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/37_tgb_pacote_default.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/38_covs_preditivas.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/39_tgb_pacote_oficial.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/40_tgb_auditoria.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/41_tgb_figuras.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/42_tune_preditivo.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/43_leitura_preditiva.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/44_furos_preditivos.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/45_aalen_preditivo.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/46_figuras_estudo.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/47_export_figuras_tese.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/48_campo_posicoes_nfl.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/49_qualidade_dados.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/50_estatisticas_eda.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/51_sensibilidade_inferencial.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/52_series_figuras.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/53_ic_preditivo.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/54_fronteira_tune.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/55_diagnostico_erro.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/57_sensibilidade_tune.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/58_sensibilidade_metodo.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/59_estudo_vazamento.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/61_sensibilidade_hp_padrao.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/62_leitura_aplicada.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/63_figura_walkforward.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/64_sensibilidade_selecao.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/65_landmark_jogadores.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/66_aalen_discreto.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/67_testes_defesa.R",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/67_testes_defesa.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "pipeline/68_variacoes_recentes.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "reprodutibilidade/AUDITORIA_ESCRITA_VS_PIPELINE.md",
+      "category": "manual_doc",
+      "required": true,
+      "role": "relatorio da conferencia da tese contra os resultados"
+    },
+    {
+      "path": "reprodutibilidade/EXECUTION_CHECKPOINT.json",
+      "category": "execution_log",
+      "required": true,
+      "description": "Checkpoint atomico por passo, identidade e hashes de artefatos."
+    },
+    {
+      "path": "reprodutibilidade/EXECUTION_LOG.json",
+      "category": "execution_log",
+      "required": true,
+      "description": "Log sobrescrito por run_all.py a cada execucao."
+    },
+    {
+      "path": "reprodutibilidade/REPRODUCIBILITY_MANIFEST.json",
+      "category": "source",
+      "required": true,
+      "role": "manifest"
+    },
+    {
+      "path": "reprodutibilidade/audit_escrita_vs_pipeline.py",
+      "category": "verifier",
+      "required": true,
+      "role": "verifier"
+    },
+    {
+      "path": "reprodutibilidade/build_tese.ps1",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "reprodutibilidade/build_tese.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "reprodutibilidade/evidencia_execucao.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "reprodutibilidade/figuras_nao_citadas.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "reprodutibilidade/rastreabilidade_figuras.csv",
+      "category": "generated",
+      "required": true,
+      "cleanable": true,
+      "producer": "series_figuras",
+      "artifact_type": "csv"
+    },
+    {
+      "path": "reprodutibilidade/reproducibility_audit.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "reprodutibilidade/valores_registrados.json",
+      "category": "source",
+      "required": true,
+      "role": "registro de valores de artefato nao citados no texto (audit_escrita_vs_pipeline.py)"
+    },
+    {
+      "path": "requirements/requirements_R.txt",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "requirements/requirements_avaliacao.txt",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    },
+    {
+      "path": "run_all.py",
+      "category": "source",
+      "required": true,
+      "role": "source"
+    }
+  ]
+}

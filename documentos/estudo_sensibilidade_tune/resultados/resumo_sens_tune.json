@@ -1,0 +1,360 @@
+{
+  "oficial": "2 anos de validacao interna, grade do Cox ate 1 (estudo_tune_preditivo)",
+  "cal_1ano": {
+    "braco": "cal_1ano",
+    "n_combinacoes": 9,
+    "busca_abaixo_do_padrao": 2,
+    "c_medio": {
+      "QB-cox": {
+        "default": 0.7105,
+        "tunado": 0.7094
+      },
+      "QB-gbsa": {
+        "default": 0.6852,
+        "tunado": 0.6833
+      },
+      "QB-rsf": {
+        "default": 0.6878,
+        "tunado": 0.6959
+      },
+      "RB-cox": {
+        "default": 0.6784,
+        "tunado": 0.6983
+      },
+      "RB-gbsa": {
+        "default": 0.6323,
+        "tunado": 0.6755
+      },
+      "RB-rsf": {
+        "default": 0.6269,
+        "tunado": 0.6625
+      },
+      "WR-cox": {
+        "default": 0.6993,
+        "tunado": 0.704
+      },
+      "WR-gbsa": {
+        "default": 0.6774,
+        "tunado": 0.6889
+      },
+      "WR-rsf": {
+        "default": 0.6731,
+        "tunado": 0.6864
+      }
+    },
+    "congelado": {
+      "QB-cox": {
+        "valor_majoritario": {
+          "penalizer": 1.0
+        },
+        "n_folds_com_o_valor": 3,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"penalizer\": 1.0}",
+          "2019": "{\"penalizer\": 1.0}",
+          "2020": "{\"penalizer\": 0.3}",
+          "2021": "{\"penalizer\": 1.0}"
+        }
+      },
+      "QB-gbsa": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 1,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"learning_rate\": 0.01, \"n_estimators\": 400, \"max_depth\": 1, \"subsample\": 0.5, \"min_samples_leaf\": 10, \"max_features\": \"sqrt\"}",
+          "2019": "{\"learning_rate\": 0.05, \"n_estimators\": 100, \"max_depth\": 4, \"subsample\": 0.5, \"min_samples_leaf\": 20, \"max_features\": \"sqrt\"}",
+          "2020": "{\"learning_rate\": 0.01, \"n_estimators\": 400, \"max_depth\": 6, \"subsample\": 0.5, \"min_samples_leaf\": 5, \"max_features\": \"sqrt\"}",
+          "2021": "{\"learning_rate\": 0.2, \"n_estimators\": 800, \"max_depth\": 5, \"subsample\": 1.0, \"min_samples_leaf\": 5, \"max_features\": \"sqrt\"}"
+        }
+      },
+      "QB-rsf": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 2,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"n_estimators\": 500, \"max_features\": \"log2\", \"min_samples_leaf\": 25, \"min_samples_split\": 6, \"max_depth\": 6}",
+          "2019": "{\"n_estimators\": 500, \"max_features\": \"log2\", \"min_samples_leaf\": 25, \"min_samples_split\": 6, \"max_depth\": 6}",
+          "2020": "{\"n_estimators\": 500, \"max_features\": \"log2\", \"min_samples_leaf\": 3, \"min_samples_split\": 12, \"max_depth\": 12}",
+          "2021": "{\"n_estimators\": 500, \"max_features\": null, \"min_samples_leaf\": 3, \"min_samples_split\": 6, \"max_depth\": 12}"
+        }
+      },
+      "RB-cox": {
+        "valor_majoritario": {
+          "penalizer": 1.0
+        },
+        "n_folds_com_o_valor": 3,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"penalizer\": 1.0}",
+          "2019": "{\"penalizer\": 1.0}",
+          "2020": "{\"penalizer\": 0.0}",
+          "2021": "{\"penalizer\": 1.0}"
+        }
+      },
+      "RB-gbsa": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 1,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"learning_rate\": 0.05, \"n_estimators\": 200, \"max_depth\": 1, \"subsample\": 1.0, \"min_samples_leaf\": 5, \"max_features\": \"sqrt\"}",
+          "2019": "{\"learning_rate\": 0.05, \"n_estimators\": 100, \"max_depth\": 3, \"subsample\": 1.0, \"min_samples_leaf\": 1, \"max_features\": \"sqrt\"}",
+          "2020": "{\"learning_rate\": 0.01, \"n_estimators\": 400, \"max_depth\": 1, \"subsample\": 0.5, \"min_samples_leaf\": 10, \"max_features\": \"sqrt\"}",
+          "2021": "{\"learning_rate\": 0.03, \"n_estimators\": 100, \"max_depth\": 1, \"subsample\": 0.5, \"min_samples_leaf\": 20, \"max_features\": \"sqrt\"}"
+        }
+      },
+      "RB-rsf": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 1,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"n_estimators\": 500, \"max_features\": \"sqrt\", \"min_samples_leaf\": 25, \"min_samples_split\": 6, \"max_depth\": 6}",
+          "2019": "{\"n_estimators\": 500, \"max_features\": 0.5, \"min_samples_leaf\": 8, \"min_samples_split\": 6, \"max_depth\": 6}",
+          "2020": "{\"n_estimators\": 500, \"max_features\": \"sqrt\", \"min_samples_leaf\": 8, \"min_samples_split\": 6, \"max_depth\": 6}",
+          "2021": "{\"n_estimators\": 500, \"max_features\": \"sqrt\", \"min_samples_leaf\": 25, \"min_samples_split\": 6, \"max_depth\": 12}"
+        }
+      },
+      "WR-cox": {
+        "valor_majoritario": {
+          "penalizer": 1.0
+        },
+        "n_folds_com_o_valor": 4,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"penalizer\": 1.0}",
+          "2019": "{\"penalizer\": 1.0}",
+          "2020": "{\"penalizer\": 1.0}",
+          "2021": "{\"penalizer\": 1.0}"
+        }
+      },
+      "WR-gbsa": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 1,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"learning_rate\": 0.05, \"n_estimators\": 100, \"max_depth\": 5, \"subsample\": 0.7, \"min_samples_leaf\": 5, \"max_features\": null}",
+          "2019": "{\"learning_rate\": 0.01, \"n_estimators\": 800, \"max_depth\": 3, \"subsample\": 0.85, \"min_samples_leaf\": 10, \"max_features\": \"sqrt\"}",
+          "2020": "{\"learning_rate\": 0.2, \"n_estimators\": 400, \"max_depth\": 6, \"subsample\": 0.5, \"min_samples_leaf\": 1, \"max_features\": \"sqrt\"}",
+          "2021": "{\"learning_rate\": 0.01, \"n_estimators\": 100, \"max_depth\": 1, \"subsample\": 0.85, \"min_samples_leaf\": 1, \"max_features\": \"sqrt\"}"
+        }
+      },
+      "WR-rsf": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 1,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"n_estimators\": 100, \"max_depth\": null, \"min_samples_split\": 6, \"min_samples_leaf\": 3}",
+          "2019": "{\"n_estimators\": 500, \"max_features\": 0.3, \"min_samples_leaf\": 8, \"min_samples_split\": 20, \"max_depth\": null}",
+          "2020": "{\"n_estimators\": 500, \"max_features\": 0.3, \"min_samples_leaf\": 25, \"min_samples_split\": 6, \"max_depth\": 6}",
+          "2021": "{\"n_estimators\": 500, \"max_features\": \"log2\", \"min_samples_leaf\": 3, \"min_samples_split\": 6, \"max_depth\": 6}"
+        }
+      }
+    }
+  },
+  "cal_3anos": {
+    "braco": "cal_3anos",
+    "n_combinacoes": 9,
+    "busca_abaixo_do_padrao": 1,
+    "c_medio": {
+      "QB-cox": {
+        "default": 0.7105,
+        "tunado": 0.7078
+      },
+      "QB-gbsa": {
+        "default": 0.6852,
+        "tunado": 0.6931
+      },
+      "QB-rsf": {
+        "default": 0.6878,
+        "tunado": 0.7071
+      },
+      "RB-cox": {
+        "default": 0.6784,
+        "tunado": 0.7041
+      },
+      "RB-gbsa": {
+        "default": 0.6323,
+        "tunado": 0.6624
+      },
+      "RB-rsf": {
+        "default": 0.6269,
+        "tunado": 0.6664
+      },
+      "WR-cox": {
+        "default": 0.6993,
+        "tunado": 0.7046
+      },
+      "WR-gbsa": {
+        "default": 0.6774,
+        "tunado": 0.684
+      },
+      "WR-rsf": {
+        "default": 0.6731,
+        "tunado": 0.6851
+      }
+    },
+    "congelado": {
+      "QB-cox": {
+        "valor_majoritario": {
+          "penalizer": 1.0
+        },
+        "n_folds_com_o_valor": 3,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"penalizer\": 1.0}",
+          "2019": "{\"penalizer\": 0.5}",
+          "2020": "{\"penalizer\": 1.0}",
+          "2021": "{\"penalizer\": 1.0}"
+        }
+      },
+      "QB-gbsa": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 1,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"learning_rate\": 0.1, \"n_estimators\": 400, \"max_depth\": 1, \"subsample\": 0.7, \"min_samples_leaf\": 20, \"max_features\": \"sqrt\"}",
+          "2019": "{\"learning_rate\": 0.01, \"n_estimators\": 400, \"max_depth\": 2, \"subsample\": 0.5, \"min_samples_leaf\": 10, \"max_features\": \"sqrt\"}",
+          "2020": "{\"learning_rate\": 0.01, \"n_estimators\": 100, \"max_depth\": 1, \"subsample\": 0.85, \"min_samples_leaf\": 1, \"max_features\": \"sqrt\"}",
+          "2021": "{\"learning_rate\": 0.05, \"n_estimators\": 100, \"max_depth\": 3, \"subsample\": 1.0, \"min_samples_leaf\": 1, \"max_features\": \"sqrt\"}"
+        }
+      },
+      "QB-rsf": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 1,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"n_estimators\": 500, \"max_features\": \"sqrt\", \"min_samples_leaf\": 25, \"min_samples_split\": 6, \"max_depth\": 6}",
+          "2019": "{\"n_estimators\": 500, \"max_features\": \"sqrt\", \"min_samples_leaf\": 15, \"min_samples_split\": 6, \"max_depth\": 6}",
+          "2020": "{\"n_estimators\": 500, \"max_features\": \"log2\", \"min_samples_leaf\": 25, \"min_samples_split\": 6, \"max_depth\": 6}",
+          "2021": "{\"n_estimators\": 500, \"max_features\": \"sqrt\", \"min_samples_leaf\": 3, \"min_samples_split\": 6, \"max_depth\": 6}"
+        }
+      },
+      "RB-cox": {
+        "valor_majoritario": {
+          "penalizer": 1.0
+        },
+        "n_folds_com_o_valor": 4,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"penalizer\": 1.0}",
+          "2019": "{\"penalizer\": 1.0}",
+          "2020": "{\"penalizer\": 1.0}",
+          "2021": "{\"penalizer\": 1.0}"
+        }
+      },
+      "RB-gbsa": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 2,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"learning_rate\": 0.1, \"n_estimators\": 200, \"max_depth\": 5, \"subsample\": 0.5, \"min_samples_leaf\": 40, \"max_features\": \"sqrt\"}",
+          "2019": "{\"learning_rate\": 0.01, \"n_estimators\": 200, \"max_depth\": 2, \"subsample\": 0.85, \"min_samples_leaf\": 20, \"max_features\": \"sqrt\"}",
+          "2020": "{\"learning_rate\": 0.1, \"n_estimators\": 200, \"max_depth\": 5, \"subsample\": 0.5, \"min_samples_leaf\": 40, \"max_features\": \"sqrt\"}",
+          "2021": "{\"learning_rate\": 0.03, \"n_estimators\": 100, \"max_depth\": 1, \"subsample\": 0.5, \"min_samples_leaf\": 20, \"max_features\": \"sqrt\"}"
+        }
+      },
+      "RB-rsf": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 1,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"n_estimators\": 500, \"max_features\": 0.3, \"min_samples_leaf\": 25, \"min_samples_split\": 6, \"max_depth\": 6}",
+          "2019": "{\"n_estimators\": 500, \"max_features\": 0.3, \"min_samples_leaf\": 15, \"min_samples_split\": 6, \"max_depth\": 12}",
+          "2020": "{\"n_estimators\": 500, \"max_features\": 0.5, \"min_samples_leaf\": 25, \"min_samples_split\": 6, \"max_depth\": 12}",
+          "2021": "{\"n_estimators\": 500, \"max_features\": \"sqrt\", \"min_samples_leaf\": 25, \"min_samples_split\": 6, \"max_depth\": 6}"
+        }
+      },
+      "WR-cox": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 2,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"penalizer\": 0.3}",
+          "2019": "{\"penalizer\": 1.0}",
+          "2020": "{\"penalizer\": 1.0}",
+          "2021": "{\"penalizer\": 0.5}"
+        }
+      },
+      "WR-gbsa": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 1,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"learning_rate\": 0.1, \"n_estimators\": 400, \"max_depth\": 1, \"subsample\": 0.5, \"min_samples_leaf\": 10, \"max_features\": \"sqrt\"}",
+          "2019": "{\"learning_rate\": 0.01, \"n_estimators\": 400, \"max_depth\": 4, \"subsample\": 1.0, \"min_samples_leaf\": 40, \"max_features\": \"sqrt\"}",
+          "2020": "{\"learning_rate\": 0.01, \"n_estimators\": 400, \"max_depth\": 5, \"subsample\": 0.5, \"min_samples_leaf\": 5, \"max_features\": \"sqrt\"}",
+          "2021": "{\"learning_rate\": 0.2, \"n_estimators\": 100, \"max_depth\": 2, \"subsample\": 0.5, \"min_samples_leaf\": 1, \"max_features\": \"sqrt\"}"
+        }
+      },
+      "WR-rsf": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 1,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"n_estimators\": 500, \"max_features\": null, \"min_samples_leaf\": 8, \"min_samples_split\": 20, \"max_depth\": 12}",
+          "2019": "{\"n_estimators\": 500, \"max_features\": \"log2\", \"min_samples_leaf\": 25, \"min_samples_split\": 6, \"max_depth\": 6}",
+          "2020": "{\"n_estimators\": 500, \"max_features\": \"sqrt\", \"min_samples_leaf\": 5, \"min_samples_split\": 6, \"max_depth\": 6}",
+          "2021": "{\"n_estimators\": 500, \"max_features\": \"log2\", \"min_samples_leaf\": 5, \"min_samples_split\": 12, \"max_depth\": 6}"
+        }
+      }
+    }
+  },
+  "cox_grade_ate_10": {
+    "braco": "cox_grade_ate_10",
+    "n_combinacoes": 3,
+    "busca_abaixo_do_padrao": 2,
+    "c_medio": {
+      "QB-cox": {
+        "default": 0.7105,
+        "tunado": 0.6943
+      },
+      "RB-cox": {
+        "default": 0.6784,
+        "tunado": 0.7142
+      },
+      "WR-cox": {
+        "default": 0.6993,
+        "tunado": 0.6912
+      }
+    },
+    "congelado": {
+      "QB-cox": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 2,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"penalizer\": 2.0}",
+          "2019": "{\"penalizer\": 2.0}",
+          "2020": "{\"penalizer\": 1.0}",
+          "2021": "{\"penalizer\": 10.0}"
+        }
+      },
+      "RB-cox": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 2,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"penalizer\": 5.0}",
+          "2019": "{\"penalizer\": 2.0}",
+          "2020": "{\"penalizer\": 10.0}",
+          "2021": "{\"penalizer\": 10.0}"
+        }
+      },
+      "WR-cox": {
+        "valor_majoritario": null,
+        "n_folds_com_o_valor": 1,
+        "n_folds": 4,
+        "por_fold": {
+          "2018": "{\"penalizer\": 10.0}",
+          "2019": "{\"penalizer\": 5.0}",
+          "2020": "{\"penalizer\": 0.5}",
+          "2021": "{\"penalizer\": 2.0}"
+        }
+      }
+    },
+    "lambda_por_posicao": {
+      "QB-cox": null,
+      "RB-cox": null,
+      "WR-cox": null
+    }
+  }
+}

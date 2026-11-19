@@ -1,0 +1,218 @@
+{
+  "concordancia_importance": [
+    {
+      "posicao": "QB",
+      "par": "cox-gbsa",
+      "spearman": 0.38384615384615384,
+      "p": 0.05818916037068155,
+      "n": 25
+    },
+    {
+      "posicao": "QB",
+      "par": "cox-rsf",
+      "spearman": 0.6807692307692308,
+      "p": 0.00018012993001756097,
+      "n": 25
+    },
+    {
+      "posicao": "QB",
+      "par": "gbsa-rsf",
+      "spearman": 0.6492307692307692,
+      "p": 0.00044571032883828634,
+      "n": 25
+    },
+    {
+      "posicao": "RB",
+      "par": "cox-gbsa",
+      "spearman": 0.8480519480519481,
+      "p": 1.203804085854572e-06,
+      "n": 21
+    },
+    {
+      "posicao": "RB",
+      "par": "cox-rsf",
+      "spearman": 0.7285714285714285,
+      "p": 0.00018002754748230472,
+      "n": 21
+    },
+    {
+      "posicao": "RB",
+      "par": "gbsa-rsf",
+      "spearman": 0.7974025974025974,
+      "p": 1.5001549621912613e-05,
+      "n": 21
+    },
+    {
+      "posicao": "WR",
+      "par": "cox-gbsa",
+      "spearman": 0.7423076923076923,
+      "p": 2.153526485167541e-05,
+      "n": 25
+    },
+    {
+      "posicao": "WR",
+      "par": "cox-rsf",
+      "spearman": 0.85,
+      "p": 7.55109493220466e-08,
+      "n": 25
+    },
+    {
+      "posicao": "WR",
+      "par": "gbsa-rsf",
+      "spearman": 0.9038461538461539,
+      "p": 5.974881804733112e-10,
+      "n": 25
+    }
+  ],
+  "overlap_top8": [
+    {
+      "posicao": "QB",
+      "par": "cox-gbsa",
+      "top8_intersecao": 5,
+      "jaccard": 0.45454545454545453,
+      "comuns": "depth_team, passer_rating, team_pass_attempts_share, within_window_gap_years_before_t, years_exp"
+    },
+    {
+      "posicao": "QB",
+      "par": "cox-rsf",
+      "top8_intersecao": 7,
+      "jaccard": 0.7777777777777778,
+      "comuns": "depth_team, height, observed_career_lag_ypc_qb, passer_rating, team_pass_attempts_share, within_window_gap_years_before_t, years_exp"
+    },
+    {
+      "posicao": "QB",
+      "par": "gbsa-rsf",
+      "top8_intersecao": 6,
+      "jaccard": 0.6,
+      "comuns": "depth_team, offense_pct, passer_rating, team_pass_attempts_share, within_window_gap_years_before_t, years_exp"
+    },
+    {
+      "posicao": "RB",
+      "par": "cox-gbsa",
+      "top8_intersecao": 8,
+      "jaccard": 1.0,
+      "comuns": "depth_team, draft_ovr, games_missed, observed_career_lag_ypc, offense_pct, pre_window_veteran, team_rushing_yards_share, years_exp"
+    },
+    {
+      "posicao": "RB",
+      "par": "cox-rsf",
+      "top8_intersecao": 6,
+      "jaccard": 0.6,
+      "comuns": "depth_team, games_missed, offense_pct, pre_window_veteran, team_rushing_yards_share, years_exp"
+    },
+    {
+      "posicao": "RB",
+      "par": "gbsa-rsf",
+      "top8_intersecao": 6,
+      "jaccard": 0.6,
+      "comuns": "depth_team, games_missed, offense_pct, pre_window_veteran, team_rushing_yards_share, years_exp"
+    },
+    {
+      "posicao": "WR",
+      "par": "cox-gbsa",
+      "top8_intersecao": 7,
+      "jaccard": 0.7777777777777778,
+      "comuns": "depth_team, games_missed, offense_pct, pre_window_veteran, team_targets_share, within_window_gap_years_before_t, years_exp"
+    },
+    {
+      "posicao": "WR",
+      "par": "cox-rsf",
+      "top8_intersecao": 8,
+      "jaccard": 1.0,
+      "comuns": "depth_team, games_missed, observed_career_lag_yptarget, offense_pct, pre_window_veteran, team_targets_share, within_window_gap_years_before_t, years_exp"
+    },
+    {
+      "posicao": "WR",
+      "par": "gbsa-rsf",
+      "top8_intersecao": 7,
+      "jaccard": 0.7777777777777778,
+      "comuns": "depth_team, games_missed, offense_pct, pre_window_veteran, team_targets_share, within_window_gap_years_before_t, years_exp"
+    }
+  ],
+  "concordancia_predicao_2024": [
+    {
+      "posicao": "QB",
+      "par": "cox-gbsa",
+      "spearman": 0.8788004442798962,
+      "p": 7.79654416041732e-25,
+      "n": 74
+    },
+    {
+      "posicao": "QB",
+      "par": "cox-rsf",
+      "spearman": 0.9085079600148092,
+      "p": 5.333181805622412e-29,
+      "n": 74
+    },
+    {
+      "posicao": "QB",
+      "par": "gbsa-rsf",
+      "spearman": 0.953706034801925,
+      "p": 2.6398498117721227e-39,
+      "n": 74
+    },
+    {
+      "posicao": "RB",
+      "par": "cox-gbsa",
+      "spearman": 0.8760528126870762,
+      "p": 4.862402214322528e-35,
+      "n": 107
+    },
+    {
+      "posicao": "RB",
+      "par": "cox-rsf",
+      "spearman": 0.9439252336448598,
+      "p": 2.4035197253994662e-52,
+      "n": 107
+    },
+    {
+      "posicao": "RB",
+      "par": "gbsa-rsf",
+      "spearman": 0.9371679920480899,
+      "p": 7.919813566979838e-50,
+      "n": 107
+    },
+    {
+      "posicao": "WR",
+      "par": "cox-gbsa",
+      "spearman": 0.9683082445588975,
+      "p": 5.699790496437815e-108,
+      "n": 178
+    },
+    {
+      "posicao": "WR",
+      "par": "cox-rsf",
+      "spearman": 0.9446021986767087,
+      "p": 4.4409335981792685e-87,
+      "n": 178
+    },
+    {
+      "posicao": "WR",
+      "par": "gbsa-rsf",
+      "spearman": 0.979096293443441,
+      "p": 1.1386127764632166e-123,
+      "n": 178
+    }
+  ],
+  "n_2024": {
+    "QB|cox": 74,
+    "QB|gbsa": 74,
+    "QB|rsf": 74,
+    "RB|cox": 107,
+    "RB|gbsa": 107,
+    "RB|rsf": 107,
+    "WR|cox": 178,
+    "WR|gbsa": 178,
+    "WR|rsf": 178
+  },
+  "wf_2021_n": {
+    "QB": 70,
+    "RB": 133,
+    "WR": 202
+  },
+  "lm_2023_saidas": {
+    "QB": 13,
+    "RB": 36,
+    "WR": 51
+  }
+}

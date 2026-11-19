@@ -1,0 +1,33 @@
+{
+  "c_correto": {
+    "QB-cox": 0.7053,
+    "QB-gbsa": 0.6758,
+    "QB-rsf": 0.7093,
+    "RB-cox": 0.7041,
+    "RB-gbsa": 0.6648,
+    "RB-rsf": 0.6613,
+    "WR-cox": 0.7037,
+    "WR-gbsa": 0.6868,
+    "WR-rsf": 0.6934
+  },
+  "c_com_futuro": {
+    "QB-cox": 0.7807,
+    "QB-gbsa": 0.7937,
+    "QB-rsf": 0.7918,
+    "RB-cox": 0.7212,
+    "RB-gbsa": 0.7024,
+    "RB-rsf": 0.7174,
+    "WR-cox": 0.7348,
+    "WR-gbsa": 0.7439,
+    "WR-rsf": 0.7504
+  },
+  "faixa_correto": [
+    0.6613,
+    0.7093
+  ],
+  "faixa_com_futuro": [
+    0.7024,
+    0.7937
+  ],
+  "frac_teste_ja_no_treino": 0.7786
+}

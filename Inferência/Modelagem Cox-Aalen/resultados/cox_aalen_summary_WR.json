@@ -1,0 +1,73 @@
+{
+  "position": "WR",
+  "model": "cox_aalen_scheike_zhang_2002",
+  "janela_inicio": 2,
+  "janela_fim": 10,
+  "formula": "Surv(start, stop, event) ~ games_missed + team_targets_share +      prop(age) + prop(height) + prop(observed_career_lag_rushing_yards) +      prop(observed_career_lag_targets_redzone) + prop(offense_pct)",
+  "n_subjects": 573,
+  "n_periods": 2171,
+  "n_events": 394,
+  "n_events_janela": 254,
+  "additive_covariates": [
+    "games_missed",
+    "team_targets_share"
+  ],
+  "multiplicative_covariates": [
+    "age",
+    "height",
+    "observed_career_lag_rushing_yards",
+    "observed_career_lag_targets_redzone",
+    "offense_pct"
+  ],
+  "converged": true,
+  "tests_null_effect": {
+    "(Intercept)": {
+      "p_value": 0,
+      "significant": true
+    },
+    "games_missed": {
+      "p_value": 0,
+      "significant": true
+    },
+    "team_targets_share": {
+      "p_value": 0.008,
+      "significant": true
+    }
+  },
+  "tests_constant_effect": {
+    "(Intercept)": {
+      "p_value": 0.24,
+      "is_constant": true
+    },
+    "games_missed": {
+      "p_value": 0.863,
+      "is_constant": true
+    },
+    "team_targets_share": {
+      "p_value": 0.474,
+      "is_constant": true
+    }
+  },
+  "tests_proportionality": {
+    "age": {
+      "p_value": 0.511,
+      "proportional": true
+    },
+    "height": {
+      "p_value": 0.488,
+      "proportional": true
+    },
+    "observed_career_lag_rushing_yards": {
+      "p_value": 0.205,
+      "proportional": true
+    },
+    "observed_career_lag_targets_redzone": {
+      "p_value": 0.904,
+      "proportional": true
+    },
+    "offense_pct": {
+      "p_value": 0.491,
+      "proportional": true
+    }
+  }
+}

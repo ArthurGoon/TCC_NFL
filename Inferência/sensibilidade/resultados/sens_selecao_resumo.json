@@ -1,0 +1,128 @@
+{
+  "b_reamostras": 50,
+  "semente": 20241012,
+  "QB": {
+    "linhas_retiradas": 75,
+    "taxa_saida_por_ano": {
+      "1": 0.13,
+      "2": 0.124,
+      "3": 0.063,
+      "4": 0.087,
+      "5": 0.087,
+      "6": 0.127,
+      "7": 0.203,
+      "8": 0.021,
+      "9": 0.133,
+      "10": 0.175,
+      "11": 0.206
+    },
+    "schoenfeld_enfraquece": [],
+    "mediana_km": 7.0,
+    "mediana_km_censura_inicio": 7.0,
+    "selecao_censura_inicio": [
+      "observed_career_lag_td_pct",
+      "offense_pct",
+      "passer_rating",
+      "team_pass_attempts_share"
+    ],
+    "jaccard_censura_inicio": 0.8,
+    "teste_global_candidatas": {
+      "n_candidatas": 23,
+      "qui2": 141.94217570697606,
+      "gl": 23,
+      "p": 4.044003119859337e-19
+    },
+    "reamostras_validas": 50,
+    "reamostras_com_erro": 0,
+    "tamanho_mediano_lista": 7.0
+  },
+  "RB": {
+    "linhas_retiradas": 108,
+    "taxa_saida_por_ano": {
+      "1": 0.147,
+      "2": 0.156,
+      "3": 0.163,
+      "4": 0.187,
+      "5": 0.226,
+      "6": 0.248,
+      "7": 0.284,
+      "8": 0.222,
+      "9": 0.325
+    },
+    "schoenfeld_enfraquece": [
+      {
+        "covariavel": "games_missed",
+        "efeito_enfraquece": true
+      },
+      {
+        "covariavel": "team_rushing_yards_share",
+        "efeito_enfraquece": true
+      }
+    ],
+    "mediana_km": 5.0,
+    "mediana_km_censura_inicio": 4.0,
+    "selecao_censura_inicio": [
+      "depth_team",
+      "draft_ovr",
+      "games_missed",
+      "observed_career_lag_ypc",
+      "team_rushing_yards_share"
+    ],
+    "jaccard_censura_inicio": 1.0,
+    "teste_global_candidatas": {
+      "n_candidatas": 19,
+      "qui2": 272.74644131740024,
+      "gl": 19,
+      "p": 7.416082888094934e-47
+    },
+    "reamostras_validas": 50,
+    "reamostras_com_erro": 0,
+    "tamanho_mediano_lista": 6.0
+  },
+  "WR": {
+    "linhas_retiradas": 179,
+    "taxa_saida_por_ano": {
+      "1": 0.135,
+      "2": 0.14,
+      "3": 0.168,
+      "4": 0.19,
+      "5": 0.178,
+      "6": 0.186,
+      "7": 0.152,
+      "8": 0.241,
+      "9": 0.338,
+      "10": 0.192,
+      "11": 0.342
+    },
+    "schoenfeld_enfraquece": [
+      {
+        "covariavel": "games_missed",
+        "efeito_enfraquece": true
+      },
+      {
+        "covariavel": "team_targets_share",
+        "efeito_enfraquece": true
+      }
+    ],
+    "mediana_km": 5.0,
+    "mediana_km_censura_inicio": 4.0,
+    "selecao_censura_inicio": [
+      "age",
+      "draft_ovr",
+      "games_missed",
+      "height",
+      "observed_career_lag_rushing_yards",
+      "team_targets_share"
+    ],
+    "jaccard_censura_inicio": 0.625,
+    "teste_global_candidatas": {
+      "n_candidatas": 23,
+      "qui2": 448.51343319406396,
+      "gl": 23,
+      "p": 1.716223059429272e-80
+    },
+    "reamostras_validas": 50,
+    "reamostras_com_erro": 0,
+    "tamanho_mediano_lista": 8.0
+  }
+}

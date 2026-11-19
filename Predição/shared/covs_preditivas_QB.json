@@ -1,0 +1,33 @@
+{
+  "posicao": "QB",
+  "n": 25,
+  "freeze_train_seasons": "2012-2017",
+  "collinear_threshold": 0.85,
+  "covariates": [
+    "depth_team",
+    "draft_ovr",
+    "first_observed_season",
+    "height",
+    "observed_career_lag_comp_pct",
+    "observed_career_lag_int_pct",
+    "observed_career_lag_qb_dropback",
+    "observed_career_lag_rushing_yards",
+    "observed_career_lag_td_pct",
+    "observed_career_lag_ypa",
+    "observed_career_lag_ypc_qb",
+    "offense_pct",
+    "passer_rating",
+    "pre_window_veteran",
+    "team_pass_attempts_share",
+    "undrafted_flag",
+    "unobserved_history_flag",
+    "weight",
+    "within_window_gap_years_before_t",
+    "years_exp",
+    "observed_career_lag_comp_pct_missing",
+    "observed_career_lag_ypa_missing",
+    "observed_career_lag_int_pct_missing",
+    "observed_career_lag_td_pct_missing",
+    "observed_career_lag_ypc_qb_missing"
+  ]
+}

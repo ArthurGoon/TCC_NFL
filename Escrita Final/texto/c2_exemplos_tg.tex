@@ -1,0 +1,433 @@
+% ============================================================
+%  Capítulo 2, Metodologia
+% ============================================================
+
+\chapter{Metodologia}
+\label{cap:metodologia}
+\raggedbottom
+
+Este capítulo apresenta os métodos na ordem em que o trabalho os usa. Partimos dos conceitos de sobrevivência e do modelo de Cox, que resume o efeito de cada covariável em uma razão de riscos, e do teste de Schoenfeld, que verifica se esse resumo vale ao longo do tempo. Quando não vale, o modelo aditivo de Aalen mostra como o efeito se acumula, e o híbrido Cox--Aalen junta as duas leituras. Na parte preditiva, apresentamos o Cox penalizado, o GBSA e o RSF, a validação temporal que os avalia, por \textit{walk-forward} e \textit{landmarking}, com a escolha dos hiperparâmetros, e as métricas de avaliação: o $C$ de Harrell, o \textit{Integrated Brier Score}, o tempo médio restrito e a calibração. Por fim, vêm os procedimentos de apoio: os intervalos do Kaplan--Meier, os testes entre grupos, os intervalos por \textit{bootstrap} e a correção de Holm para comparações múltiplas.
+
+% ─────────────────────────────────────────────────────────────
+\section{Fundamentos de sobrevivência}
+\label{sec:sobrevivencia}
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Tempo, evento e censura}
+    \label{subsec:conceitos_sobrevivencia}
+
+A análise de sobrevivência estuda o tempo até a ocorrência de um evento. Seu traço próprio é a censura: para parte dos indivíduos, o acompanhamento termina antes do evento, e só se sabe que ele não ocorreu até ali. Descartar esses indivíduos, ou tratar o tempo deles como o tempo do evento, enviesaria as estimativas.
+
+Para o indivíduo $i$, seja $T_i \geq 0$ o tempo até o evento e $C_i$ o tempo de censura. Observam-se o menor dos dois e um indicador de qual deles ocorreu:
+\begin{equation}
+    t_i = \min(T_i,\, C_i),
+    \qquad
+    \delta_i = \mathbf{1}(T_i \leq C_i).
+    \label{eq:censura}
+\end{equation}
+Esse é o caso da censura à direita. A análise supõe censura independente: dentro de cada grupo de covariáveis, quem é censurado em um tempo tem o mesmo risco de quem segue em observação \citep{kleinbaum2012}. Na entrada tardia, o indivíduo só passa a ser observado depois do início da escala de tempo, e até lá não conta como em risco.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Funções de sobrevivência e de risco}
+    \label{subsec:funcoes_sobrevivencia}
+
+A função de sobrevivência, $S(t) = P(T > t)$, é a probabilidade de o evento ainda não ter ocorrido em $t$. Ela começa em $S(0) = 1$ e não cresce. A função de risco,
+\begin{equation}
+    h(t)
+    = \lim_{\Delta t \to 0}
+      \frac{P\!\left(t \leq T < t + \Delta t \mid T \geq t\right)}{\Delta t}
+    = \frac{f(t)}{S(t)},
+    \label{eq:hazard}
+\end{equation}
+é a taxa instantânea de evento entre os indivíduos ainda em risco em $t$. Não é uma probabilidade, mas, para um $\Delta t$ pequeno, $h(t)\Delta t$ aproxima a chance de o evento ocorrer logo em seguida. O risco acumulado, $H(t) = \int_0^t h(u)\,du$, liga as duas funções: $S(t) = \exp(-H(t))$ \citep{harrell2001}. Os modelos deste capítulo diferem na forma como as covariáveis atuam sobre $h(t)$.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Kaplan--Meier e Nelson--Aalen}
+    \label{subsec:kaplanmeier}
+
+Sem covariáveis, $S(t)$ e $H(t)$ são estimadas diretamente dos dados. O estimador de Kaplan--Meier (KM) é o produto-limite
+\begin{equation}
+    \hat{S}(t) = \prod_{t_{(k)} \leq t} \left(1 - \frac{d_k}{n_k}\right),
+    \label{eq:kaplanmeier}
+\end{equation}
+em que $t_{(1)} < \cdots < t_{(L)}$ são os tempos distintos de evento, $d_k$ é o número de eventos em $t_{(k)}$ e $n_k$ é o número em risco imediatamente antes dele \citep{kaplan1958,kleinbaum2012}. A cada tempo de evento, a curva é multiplicada pela fração dos que estavam em risco e não tiveram o evento. O estimador de Nelson--Aalen \citep{martinussen2006}, $\hat{H}(t) = \sum_{t_{(k)} \leq t} d_k / n_k$, soma essas taxas e estima o risco acumulado. O KM descreve os dados na análise exploratória e serve de referência para os modelos preditivos, e seus intervalos e testes de comparação estão na Seção~\ref{sec:procedimentos_apoio}.
+
+% ─────────────────────────────────────────────────────────────
+\section{Modelo de Cox}
+\label{sec:cox}
+
+Para saber como as covariáveis se associam ao risco, o ponto de partida é o modelo semiparamétrico de \citet{cox1972}. Ele mede o efeito de cada covariável em uma razão de riscos fácil de ler e não exige especificar como o risco varia ao longo do tempo.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Formulação e pressupostos}
+    \label{subsec:cox_modelo}
+
+Para um indivíduo com covariáveis $\mathbf{X} = (X_1, \ldots, X_p)^{\top}$, o modelo é
+\begin{equation}
+    h(t \mid \mathbf{X})
+    = h_0(t)\,\exp\!\left(\boldsymbol{\beta}^{\top}\mathbf{X}\right),
+    \label{eq:cox}
+\end{equation}
+em que $h_0(t)$ é o risco basal, comum a todos e sem forma especificada, e $\boldsymbol{\beta}$ são os coeficientes a estimar. O \textit{Hazard Ratio} (HR) de $X_j$,
+\begin{equation}
+    \mathrm{HR}_j = \exp(\beta_j),
+    \label{eq:hr}
+\end{equation}
+é a razão entre os riscos de dois indivíduos que diferem em uma unidade de $X_j$, com as demais covariáveis fixas. Um HR acima de 1 indica mais risco, e abaixo de 1, menos. Com covariáveis padronizadas, a unidade é o desvio-padrão.
+
+O modelo tem três pressupostos. O principal é o de riscos proporcionais: a razão entre os riscos de dois indivíduos, $\exp[\boldsymbol{\beta}^{\top}(\mathbf{X}_i - \mathbf{X}_j)]$, não depende do tempo, isto é, o efeito de cada covariável é o mesmo em toda a carreira. Os outros dois são o efeito linear de cada covariável no logaritmo do risco e a censura independente.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Estimação pela verossimilhança parcial}
+    \label{subsec:cox_estimacao}
+
+Como $h_0(t)$ é desconhecido, o Cox não modela quando o evento ocorre, e sim quem o tem entre os que estavam em risco naquele momento. Os coeficientes são estimados pela verossimilhança parcial
+\begin{equation}
+    L(\boldsymbol{\beta})
+    = \prod_{k=1}^{D}
+      \frac{\exp\!\left(\boldsymbol{\beta}^{\top}\mathbf{X}_{(k)}\right)}
+           {\displaystyle\sum_{j \in \mathcal{R}(t_{(k)})}
+            \exp\!\left(\boldsymbol{\beta}^{\top}\mathbf{X}_j\right)},
+    \label{eq:pl}
+\end{equation}
+em que $t_{(1)} < \cdots < t_{(D)}$ são os tempos distintos de evento, $\mathbf{X}_{(k)}$ é o vetor do indivíduo que falha em $t_{(k)}$ e $\mathcal{R}(t_{(k)})$ é o conjunto de risco naquele instante. Cada fator é a probabilidade de que a falha ocorra justamente naquele indivíduo, entre os que estavam em risco, e o risco basal se cancela no quociente. Por isso, toda a informação sobre $\boldsymbol{\beta}$ vem da variação das covariáveis dentro dos conjuntos de risco: uma covariável com o mesmo valor em todo o conjunto de risco, em todos os tempos de evento, não tem coeficiente estimável.
+
+O estimador $\hat{\boldsymbol{\beta}}$ maximiza o logaritmo de~\eqref{eq:pl}, obtido pelo método de Newton--Raphson. Ele é assintoticamente normal, com variância dada pela inversa da informação observada \citep{andersen1982}. Daí saem os intervalos de confiança do HR e a estatística de Wald para testar $\beta_j = 0$:
+\begin{equation}
+    \chi^2_j = \left(\frac{\hat{\beta}_j}{\mathrm{EP}(\hat{\beta}_j)}\right)^{2},
+    \label{eq:wald}
+\end{equation}
+com distribuição aproximadamente qui-quadrado com um grau de liberdade.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Covariáveis dependentes do tempo e formato \textit{start--stop}}
+    \label{subsec:cox_vdt}
+
+Quando as covariáveis mudam durante o acompanhamento, o risco passa a ser $h(t \mid \mathbf{X}(t)) = h_0(t)\exp(\boldsymbol{\beta}^{\top}\mathbf{X}(t))$, e cada fator de~\eqref{eq:pl} usa os valores vigentes em $t_{(k)}$. Os dados ficam no formato de processo de contagem \citep{andersen1982}: cada linha é um intervalo $(\text{start}, \text{stop}]$ com covariáveis constantes, e o evento vale 1 apenas no último intervalo de quem falha (Tabela~\ref{tab:startstop}). O conjunto de risco é $\mathcal{R}(t_{(k)}) = \{i : \text{start}_i < t_{(k)} \leq \text{stop}_i\}$, o que também acomoda a entrada tardia.
+
+\begin{table}[H]
+\centering
+\caption{Formato \textit{start--stop} de um jogador (id 1) em quatro intervalos: cada linha é uma janela de tempo, e o evento (event = 1) ocorre só no último.}
+\label{tab:startstop}
+\begin{tabular}{ccccccc}
+\toprule
+\textbf{id} & \textbf{start} & \textbf{stop} & \textbf{event}
+            & $X_1(t)$ & $X_2(t)$ & $\cdots$ \\
+\midrule
+1 & 0 & 1 & 0 & $x_{1,1}$ & $x_{2,1}$ & $\cdots$ \\
+1 & 1 & 2 & 0 & $x_{1,2}$ & $x_{2,2}$ & $\cdots$ \\
+1 & 2 & 3 & 0 & $x_{1,3}$ & $x_{2,3}$ & $\cdots$ \\
+1 & 3 & 4 & 1 & $x_{1,4}$ & $x_{2,4}$ & $\cdots$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Empates}
+    \label{subsec:empates}
+
+O Cox supõe tempo contínuo, em que dois eventos nunca coincidem. Quando o tempo é medido em unidades grossas, como anos, muitos eventos caem no mesmo valor: são os empates. Como~\eqref{eq:pl} depende da ordem dos eventos, é preciso uma regra para os empatados. A aproximação de \citet{efron1977} é mais precisa que a de Breslow, porque desconta do denominador, aos poucos, os indivíduos que falham naquele tempo, e a diferença pesa mais quanto mais empates há \citep{breslow1974}. Seja $D_k$ o conjunto dos que falham em $t_{(k)}$, com $d_k = |D_k|$, e $\mathbf{S}_k = \sum_{l \in D_k} \mathbf{X}_l$:
+\begin{equation}
+    L_{\mathrm{E}}(\boldsymbol{\beta})
+    = \prod_{k=1}^{D}
+      \frac{\exp\!\left(\boldsymbol{\beta}^{\top}\mathbf{S}_k\right)}
+           {\displaystyle\prod_{q=0}^{d_k-1}
+            \left[\sum_{j \in \mathcal{R}(t_{(k)})} \exp\!\left(\boldsymbol{\beta}^{\top}\mathbf{X}_j\right)
+            - \frac{q}{d_k}\sum_{l \in D_k} \exp\!\left(\boldsymbol{\beta}^{\top}\mathbf{X}_l\right)\right]}.
+    \label{eq:pl_efron}
+\end{equation}
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Verificação da proporcionalidade}
+    \label{subsec:schoenfeld_c2}
+
+Se o efeito de uma covariável muda com o tempo, o HR único é apenas uma média desse efeito \citep{van_houwelingen2007}, de leitura difícil \citep{royston2013}. Os resíduos de \citet{schoenfeld1982} permitem verificar isso. Para o indivíduo que falha em $t_{(k)}$, o resíduo da covariável $j$ é
+\begin{equation}
+    r_{jk}
+    = X_{j(k)}
+      - \frac{\displaystyle\sum_{i \in \mathcal{R}(t_{(k)})}
+              X_{ji}\,\exp\!\left(\hat{\boldsymbol{\beta}}^{\top}\mathbf{X}_i\right)}
+             {\displaystyle\sum_{i \in \mathcal{R}(t_{(k)})}
+              \exp\!\left(\hat{\boldsymbol{\beta}}^{\top}\mathbf{X}_i\right)},
+    \label{eq:schoenfeld}
+\end{equation}
+isto é, o valor observado menos sua média ponderada pelo risco estimado no conjunto de risco. Sob proporcionalidade, os resíduos não se correlacionam sistematicamente com o tempo. O teste de \citet{grambsch1994} pondera os resíduos por uma função $g(t)$ e compara a soma ponderada com sua variância estimada, por uma estatística aproximadamente qui-quadrado com um grau de liberdade por covariável. A função usada é a transformação por postos, $g(t_{(k)}) = k$. Um valor-$p$ acima do nível adotado indica ausência de evidência contra a proporcionalidade, e não sua comprovação.
+
+Quando o teste rejeita, é preciso um modelo que deixe o efeito variar no tempo. Esse é o papel do modelo de Aalen.
+
+% ─────────────────────────────────────────────────────────────
+\section{Modelo aditivo de Aalen}
+\label{sec:aalen}
+
+O modelo de \citet{aalen1980}, proposto como complemento do Cox, não supõe proporcionalidade: deixa cada efeito mudar livremente com o tempo e o mede na escala absoluta do risco \citep{martinussen2006}. Enquanto o Cox responde quantas vezes o risco aumenta, o Aalen responde quanto se soma ao risco em cada momento.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Formulação e coeficientes acumulados}
+    \label{subsec:aalen_formulacao}
+
+O risco é a soma de um risco basal e dos efeitos das covariáveis:
+\begin{equation}
+    \lambda\!\left(t \mid \mathbf{x}\right)
+    = \beta_0(t) + \mathbf{x}^{\top}\boldsymbol{\beta}(t).
+    \label{eq:aalen}
+\end{equation}
+Um aumento de uma unidade em $X_j$ soma $\beta_j(t)$ ao risco instantâneo em $t$. Não há garantia de que a soma seja não negativa \citep{aalen1980,martinussen2006}, e por isso este trabalho lê o modelo pelos efeitos, sem convertê-lo em curvas de sobrevivência individuais.
+
+As funções $\beta_j(t)$ são difíceis de estimar ponto a ponto. O que se estima bem é o coeficiente acumulado,
+\begin{equation}
+    B_j(t) = \int_0^{t} \beta_j(s)\,ds,
+    \label{eq:cum_coef}
+\end{equation}
+o acréscimo total ao risco associado a $X_j$ até $t$. A leitura é pela inclinação da curva de $B_j(t)$: subida indica mais risco naquele período, descida indica menos, e trecho plano indica ausência de efeito. Uma reta sugere efeito constante, e uma curva, efeito que muda com o tempo.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Estimação e posto completo}
+    \label{subsec:aalen_coef}
+
+Em cada tempo de evento $t_{(k)}$, o Aalen faz uma regressão de mínimos quadrados do indicador de evento sobre as covariáveis dos indivíduos em risco \citep{aalen1980}. Com $\mathbf{X}_{(k)}$ a matriz dessas covariáveis, incluindo o intercepto, e $d\mathbf{N}(t_{(k)})$ o vetor que vale 1 para quem falha em $t_{(k)}$ e 0 para os demais, o incremento é
+\begin{equation}
+    d\hat{\mathbf{B}}(t_{(k)}) = \bigl(\mathbf{X}_{(k)}^{\top}\mathbf{X}_{(k)}\bigr)^{-1}\,\mathbf{X}_{(k)}^{\top}\,d\mathbf{N}(t_{(k)}),
+    \label{eq:aalen_est}
+\end{equation}
+e $\hat{\mathbf{B}}(t)$ é a soma dos incrementos até $t$. Os empates são tratados em bloco: as saídas de um mesmo tempo entram juntas em $d\mathbf{N}(t_{(k)})$, com o mesmo conjunto de risco.
+
+Aqui está a principal diferença prática em relação ao Cox. O Cox estima um único coeficiente por covariável, somando a informação de todos os tempos de evento, e basta que essa informação total tenha posto completo. O Aalen resolve uma regressão por tempo, e a matriz precisa ter posto completo em cada um deles \citep{aalen1980,martinussen2006}. Por isso, a estimação fica restrita a uma janela: o maior trecho contínuo de tempos em que essa condição vale e há pelo menos $3p$ linhas em risco, com $p$ o número de covariáveis.
+\label{subsec:cox_aalen_comparacao}
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Testes sobre os efeitos}
+    \label{subsec:aalen_testes}
+
+Dois testes respondem a perguntas diferentes. O teste de média nula verifica se a média ponderada dos incrementos de $B_j(t)$ na janela é zero. O teste de constância, $H_0: B_j(t) = \beta_j t$, verifica se esse efeito muda com o tempo: rejeitá-lo indica que a leitura temporal é necessária \citep{martinussen2006}.
+
+% ─────────────────────────────────────────────────────────────
+\section{Modelo híbrido Cox--Aalen}
+\label{subsec:cox_aalen}
+
+O Cox resume cada efeito em um HR, e o Aalen mostra como o efeito evolui. Quando só parte das covariáveis viola a proporcionalidade, não é preciso escolher entre as duas leituras. O modelo aditivo-multiplicativo de \citet{scheike2002} reúne as duas em uma única especificação:
+\begin{equation}
+    h(t \mid \mathbf{X}, \mathbf{Z})
+    = \bigl[h_0(t) + \boldsymbol{\alpha}(t)^{\top} \mathbf{X}\bigr]
+    \exp(\boldsymbol{\beta}^{\top} \mathbf{Z}).
+    \label{eq:cox_aalen}
+\end{equation}
+O bloco $\mathbf{X}$ entra de forma aditiva, com trajetórias $\boldsymbol{\alpha}(t)$: para $\mathbf{Z}$ na média, elas descrevem diferenças absolutas de risco ao longo do tempo. O bloco $\mathbf{Z}$ entra de forma multiplicativa, com coeficientes constantes $\boldsymbol{\beta}$ lidos como razões de riscos. O modelo reduz-se ao Cox quando o bloco aditivo é nulo e ao Aalen quando o bloco multiplicativo é nulo.
+
+O modelo usa as covariáveis finais do Cox: as que violam a proporcionalidade no teste de Schoenfeld (Seção~\ref{subsec:schoenfeld_c2}) vão para o bloco aditivo, e as demais para o multiplicativo. O critério não é o teste de constância do Aalen, porque o bloco multiplicativo supõe razão de riscos constante, e não diferença de risco constante. Como o estimador exige tempos de evento distintos, as saídas de um mesmo tempo recebem uma ordem sorteada \citep{schoenfeld1982,martinussen2006} e continuam no conjunto de risco de seu tempo.
+
+% ─────────────────────────────────────────────────────────────
+\section{Modelos preditivos de sobrevivência}
+\label{sec:modelos_preditivos}
+
+A parte preditiva faz outra pergunta: dado o retrato de um indivíduo em um momento, quanto tempo falta até o evento? Cada modelo produz uma curva individual $\hat{S}(t \mid \mathbf{x})$, e os três recebem as mesmas covariáveis, para que a comparação seja entre modelos, e não entre listas de preditores. O Kaplan--Meier, que dá a mesma curva para todos, é a referência mínima. A importância das covariáveis é medida do mesmo modo nos três, pela queda do $C$-index quando os valores de uma covariável são embaralhados, a partir da ideia de \citet{breiman2001}.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Cox penalizado}
+    \label{subsec:cox_preditor}
+
+É o modelo de Cox da Seção~\ref{sec:cox}, com empates por Efron, acrescido de uma penalização $L_2$ (regressão \textit{ridge}) que encolhe os coeficientes em direção a zero. Isso estabiliza a estimação quando há muitas covariáveis em relação ao tamanho da amostra \citep{simon2011}. Com as covariáveis padronizadas, os coeficientes maximizam
+\begin{equation}
+  \ell(\boldsymbol{\beta}) - \frac{n\lambda}{2} \sum_{j} \beta_j^2, \qquad \lambda \geq 0,
+  \label{eq:ridge}
+\end{equation}
+em que $\ell$ é o logaritmo de~\eqref{eq:pl_efron}, $n$ é o número de linhas do treino e $\lambda$ é o hiperparâmetro; $\lambda = 0$ devolve o Cox usual.
+
+O preditor linear $\hat{\eta} = \hat{\boldsymbol{\beta}}^{\top}\mathbf{x}$ só ordena os indivíduos. Para obter a curva, é preciso o risco acumulado basal, dado pelo estimador de \citet{breslow1972}:
+\begin{equation}
+  \hat{H}_0(t)=\sum_{t_{(k)}\le t} \frac{d_k}{\sum_{j\in\mathcal{R}(t_{(k)})} e^{\hat{\eta}_j}},
+  \qquad
+  \hat{S}(t \mid \mathbf{x}) = \exp\bigl(-\hat{H}_0(t)\,e^{\hat{\eta}}\bigr).
+  \label{eq:cox_surv_pred}
+\end{equation}
+Apesar do nome, esse estimador do risco basal não é a aproximação de empates de Breslow: os coeficientes continuam estimados com Efron, e a etapa de~\eqref{eq:cox_surv_pred} vem depois do ajuste.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Gradient boosting de sobrevivência (GBSA)}
+    \label{subsec:gbsa}
+
+O GBSA mantém a estrutura do Cox, $h(t \mid \mathbf{x}) = h_0(t)\exp\{F(\mathbf{x})\}$, mas troca o preditor linear por um escore $F$ construído em etapas, por \textit{gradient boosting} \citep{friedman2001} adaptado a dados censurados \citep{hothorn2006}, na implementação de \citet{polsterl2020}. A cada iteração, uma árvore pequena $\phi_m$ corrige o que o conjunto anterior errou:
+\begin{equation}
+  F_m(\mathbf{x}) = F_{m-1}(\mathbf{x}) + \nu \cdot \phi_m(\mathbf{x}),
+  \label{eq:gbsa}
+\end{equation}
+em que $\nu \in (0,1]$ é a taxa de aprendizado, que dosa o tamanho de cada correção.
+
+O erro é medido pela verossimilhança parcial de Cox. Na implementação usada, ela trata os empates pela aproximação de Breslow, em que cada evento empatado enfrenta o conjunto de risco inteiro. Cada árvore ajusta-se aos resíduos martingais do modelo corrente:
+\begin{equation}
+  r_{i} = \delta_i - \exp\{F_{m-1}(\mathbf{x}_i)\}\,\hat{H}_{m-1}(t_i),
+  \qquad
+  \hat{H}_{m-1}(t) = \sum_{t_{(k)} \leq t} \frac{d_k}{\sum_{j \in \mathcal{R}(t_{(k)})} \exp\{F_{m-1}(\mathbf{x}_j)\}},
+  \label{eq:gbsa_residuo}
+\end{equation}
+isto é, o indicador de evento menos o número de eventos que o modelo espera até $t_i$. Resíduo positivo indica evento antes do esperado, e o escore sobe. A previsão usa o escore final no lugar de $\hat{\eta}$ em~\eqref{eq:cox_surv_pred}.
+
+Os hiperparâmetros são o número de iterações $M$, a taxa $\nu$, a profundidade máxima das árvores, a fração de subamostragem, o tamanho mínimo de folha e o número de covariáveis candidatas em cada divisão. Mais iterações e árvores mais profundas aumentam a flexibilidade e o risco de sobreajuste.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Random Survival Forests (RSF)}
+    \label{subsec:rsf}
+
+A floresta de sobrevivência aleatória \citep{ishwaran2008} constrói cada árvore sobre uma amostra \textit{bootstrap} e, em cada nó, considera apenas um subconjunto aleatório de covariáveis. A divisão escolhida é a que maximiza a separação, medida pela estatística de log-rank, entre os dois subgrupos resultantes.
+
+A predição é a média dos riscos acumulados de Nelson--Aalen das folhas terminais:
+\begin{equation}
+  \hat{H}(t \mid \mathbf{x}) = \frac{1}{B_{\mathrm{RSF}}} \sum_{b=1}^{B_{\mathrm{RSF}}} \hat{H}_b(t \mid \mathbf{x}),
+  \label{eq:rsf}
+\end{equation}
+em que $B_{\mathrm{RSF}}$ é o número de árvores, fixado em 500 e não ajustado. A curva $\hat S(t \mid \mathbf{x})$ usada na média restrita é a média das curvas de Kaplan--Meier das folhas, como na implementação de \citet{polsterl2020}. Os hiperparâmetros ajustados são o número de covariáveis candidatas em cada divisão, os tamanhos mínimos de folha e de divisão e a profundidade máxima.
+
+% ─────────────────────────────────────────────────────────────
+\section{Validação temporal}
+\label{sec:validacao_temporal}
+
+Partições aleatórias treino-teste ignoram a dependência serial entre as temporadas e deixam o modelo aprender com o futuro. Por isso a avaliação preditiva respeita a ordem cronológica, o que é mais preciso quando os dados não são estacionários \citep{cerqueira2020}. Dois protocolos usam esse princípio e respondem a perguntas diferentes. O \textit{walk-forward}, principal, pergunta quanto tempo resta a cada indivíduo. O \textit{landmarking}, complementar, pergunta quem sofre o evento dentro de um prazo fixo.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{\textit{Walk-forward}: quanto tempo resta}
+    \label{subsec:walkforward}
+
+A validação \textit{walk-forward} (ou \textit{expanding window}) reproduz o uso real do modelo: em uma data, com o que se sabe até ela, prever o que ainda vai acontecer. Cada \textit{fold} é uma origem $s$: o treino reúne os períodos anteriores a $s$, e o teste, o período $s$:
+\begin{equation}
+  \mathcal{D}_s^{\text{treino}} = \{(i, t) : t < s\}, \quad
+  \mathcal{D}_s^{\text{teste}} = \{(i, t) : t = s\}.
+  \label{eq:walkforward}
+\end{equation}
+A separação vale também para a variável resposta: no treino, ela usa apenas o que se sabia em $s$. Com $U_i$ o último período em que o indivíduo $i$ foi observado em risco até $s$,
+\begin{equation}
+  \tilde{T}_{it} = \min(U_i,\, s) - t,
+  \qquad
+  \tilde{\delta}_{it} = \mathbf{1}(U_i < s).
+  \label{eq:resposta_origem}
+\end{equation}
+Quem teve o evento antes de $s$ tem o evento observado; quem ainda estava em risco em $s$ fica censurado em $s$. O teste é avaliado com o desfecho real, conhecido depois. O protocolo mede se o modelo ordena os indivíduos pelo tempo que ainda lhes resta.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{\textit{Landmarking}: quem sai em \texorpdfstring{$w$}{w} anos}
+    \label{subsec:landmarking}
+
+Ordenar bem o tempo restante não garante antecipar quem sai em breve. O \textit{landmarking}, ideia que adaptamos de \citet{van_houwelingen2007}, olha para isso: parte dos indivíduos em risco em uma data de calendário $s_L$, e não em um tempo de seguimento, e fixa um horizonte de $w$ períodos. Entre os que estão em risco em $s_L$, quem sofre o evento até $s_L + w$? O desfecho é o tempo cortado no horizonte, tanto no treino quanto no teste:
+\begin{equation}
+  T^{w} = \min(T,\, w),
+  \qquad
+  \delta^{w} = \mathbf{1}(T \leq w,\ \delta = 1).
+  \label{eq:landmark}
+\end{equation}
+O protocolo só vale quando a base cobre os $w$ períodos depois de $s_L$ e mais um: o evento ao fim de um período só se confirma pela ausência no seguinte. Sua contribuição é a leitura de curto prazo: o que acontece depois de $w$ não conta. Como o desfecho é outro, o $C$-index do \textit{landmarking} não se compara ao do \textit{walk-forward}, ainda que na mesma origem e com $w = 1$.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Escolha dos hiperparâmetros}
+    \label{subsec:validacao_interna}
+
+Em cada origem, cada modelo escolhe seus hiperparâmetros por validação aninhada \citep{varma2006}, usando só o treino daquela origem:
+\begin{enumerate}
+    \item separar do treino uma validação formada por seus últimos períodos; o restante é o treino interno, com a resposta recalculada como em~\eqref{eq:resposta_origem}, tomando como referência o início da validação;
+    \item ajustar cada combinação de hiperparâmetros no treino interno e avaliá-la na validação, ficando com a de maior $C$-index;
+    \item reajustar essa combinação em todo o treino e avaliar o modelo no teste, que não participa de nenhuma dessas etapas.
+\end{enumerate}
+Se a mesma informação serve para selecionar e para avaliar, a métrica torna-se otimista \citep{cawley2010}.
+
+% ─────────────────────────────────────────────────────────────
+\section{Métricas de avaliação preditiva}
+\label{sec:avaliacao_metodos}
+
+As métricas precisam lidar com a censura: o $C$-index de Harrell resume a discriminação, o \textit{Brier Score} e o \textit{Integrated Brier Score}, o erro probabilístico, e o tempo médio restrito traduz a previsão em anos.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Índice de concordância (C-index)}
+    \label{subsec:cindex}
+
+O índice de concordância \citep{harrell1982,harrell2001} é a proporção de pares comparáveis em que o modelo atribui maior risco ao indivíduo que falhou primeiro. Um par é comparável quando o indivíduo de menor tempo teve o evento. Seja $\hat{\eta}_i$ o escore de risco do indivíduo $i$:
+\begin{equation}
+    C = \frac{\sum_{i \neq j} \mathbf{1}(t_i < t_j)\,\delta_i\,
+              \bigl[\mathbf{1}(\hat{\eta}_i > \hat{\eta}_j) + \tfrac{1}{2}\,\mathbf{1}(\hat{\eta}_i = \hat{\eta}_j)\bigr]}
+             {\sum_{i \neq j} \mathbf{1}(t_i < t_j)\,\delta_i}.
+    \label{eq:cindex}
+\end{equation}
+$C = 0{,}5$ corresponde a discriminação aleatória, e $C = 1$, à ordenação perfeita.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{\textit{Brier Score} e \textit{Integrated Brier Score}}
+    \label{subsec:brier}
+
+O \textit{Brier Score} em $t$ mede o erro quadrático entre $\hat{S}(t \mid \mathbf{X}_i)$ e o desfecho observado em $t$. Para tratar a censura, cada termo recebe o peso inverso de $\hat{G}$, o Kaplan--Meier aplicado ao indicador de censura, em um esquema de \textit{inverse probability of censoring weighting} (IPCW) \citep{graf1999}. A distribuição de censura $\hat{G}$ é estimada no próprio conjunto de teste em que o escore é avaliado, e não no treino:
+\begin{equation}
+    \mathrm{BS}(t)
+    = \frac{1}{n}\sum_{i=1}^{n}
+      \left[
+        \frac{\hat{S}(t \mid \mathbf{X}_i)^2\,\mathbf{1}(t_i \leq t,\,\delta_i=1)}
+             {\hat{G}(t_i)}
+        +
+        \frac{\left(1 - \hat{S}(t \mid \mathbf{X}_i)\right)^2\,\mathbf{1}(t_i > t)}
+             {\hat{G}(t)}
+      \right].
+    \label{eq:brier}
+\end{equation}
+Valores menores indicam menor erro. Para resumir o desempenho, usa-se o \textit{Integrated Brier Score}, a média de $\mathrm{BS}(t)$ nos horizontes $u_1 < \cdots < u_K$ de $\{1, 2, 3, 5\}$ anos em que há casos e controles no teste, pela regra do trapézio:
+\begin{equation}
+    \mathrm{IBS} = \frac{1}{u_K - u_1} \sum_{k=1}^{K-1} \frac{u_{k+1} - u_k}{2}\,\bigl[\mathrm{BS}(u_k) + \mathrm{BS}(u_{k+1})\bigr].
+    \label{eq:ibs}
+\end{equation}
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Tempo médio restrito}
+    \label{subsec:tempo_esperado}
+
+Dada $\hat{S}(t \mid \mathbf{x})$, o tempo médio restrito a um horizonte $\tau$ é
+\begin{equation}
+  \hat{\mu}_\tau(\mathbf{x}) = \int_{0}^{\tau} \hat{S}(t \mid \mathbf{x})\,dt,
+  \label{eq:rmst}
+\end{equation}
+que estima $\mathrm{E}[\min(T, \tau) \mid \mathbf{x}]$ \citep{royston2013}. É essa média que se converte em previsão de anos, e o erro $\hat{\mu}_\tau - \min(T,\tau)$ é medido nos indivíduos com desfecho observável até $\tau$, isto é, com o evento observado ou seguimento de pelo menos $\tau$. A taxa de acerto dentro de uma janela de $\varepsilon$ anos, $\mathbf{1}\bigl(|\hat{\mu}_\tau - \min(T,\tau)| \le \varepsilon\bigr)$, resume o tamanho típico do erro.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Calibração e concordância entre modelos}
+    \label{subsec:calibracao_concordancia}
+
+A calibração por quintil compara, em cada quintil de risco previsto, a probabilidade prevista de permanecer até um horizonte $\tau$, $\hat{S}(\tau)$, com a estimativa de Kaplan--Meier do mesmo grupo. A correlação de postos de \citet{spearman1904} entre as previsões de dois modelos, dentro de cada origem, mede se eles ordenam os indivíduos do mesmo modo, sem depender da escala.
+
+% ─────────────────────────────────────────────────────────────
+\section{Procedimentos estatísticos de apoio}
+\label{sec:procedimentos_apoio}
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Intervalos do Kaplan--Meier e testes entre grupos}
+    \label{subsec:ic_km}
+    \label{subsec:testes_grupos}
+
+O intervalo de 95\% de $\hat{S}(t)$ usa a fórmula de Greenwood na escala $\log(-\log)$, que mantém os limites dentro de $[0, 1]$ \citep{harrell2001}. O intervalo da mediana sai dessas bandas: o limite inferior é o primeiro instante em que a banda inferior chega a $0{,}5$, e o superior, o primeiro em que a banda superior chega a $0{,}5$.
+
+Para comparar a sobrevivência de dois grupos, o teste log-rank soma, em cada tempo de evento, a diferença entre eventos observados e esperados sob a hipótese de sobrevivências iguais \citep{kleinbaum2012}. Com $d_{1k}$ eventos e $n_{1k}$ indivíduos em risco no primeiro grupo,
+\begin{equation}
+    \chi^2 = \frac{U^2}{V},
+    \qquad
+    U = \sum_{k} \left(d_{1k} - \frac{n_{1k}\, d_k}{n_k}\right),
+    \qquad
+    V = \sum_{k} \frac{n_{1k}\,(n_k - n_{1k})\,d_k\,(n_k - d_k)}{n_k^{2}\,(n_k - 1)},
+    \label{eq:logrank}
+\end{equation}
+e $\chi^2$ segue aproximadamente uma distribuição qui-quadrado com um grau de liberdade sob a hipótese nula.
+
+Para três ou mais grupos, o teste de Kruskal--Wallis compara as somas de postos $R_g$ dos $n_g$ indivíduos do grupo $g = 1, \ldots, J$, com $N = \sum_g n_g$, pela estatística $H_{\mathrm{KW}} = \frac{12}{N(N+1)}\sum_{g} \frac{R_g^2}{n_g} - 3(N+1)$, aproximadamente qui-quadrado com $J-1$ graus de liberdade, com a correção para empates \citep{kruskal1952}. Para dois grupos, o equivalente é o teste de \citet{mann1947}, com $U_{\mathrm{MW}} = R_1 - n_1(n_1+1)/2$.
+
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \subsection{Intervalos por \textit{bootstrap} e comparações múltiplas}
+    \label{subsec:incerteza_metricas}
+
+Os intervalos das métricas são percentis de uma distribuição \textit{bootstrap} com $B = 2000$ réplicas \citep{davison1997}, obtida por reamostragem por agrupamento, que preserva a dependência entre as linhas de um mesmo indivíduo \citep{field2007,davison1997,harrell2001}:
+\begin{enumerate}
+    \item sortear, com reposição, os indivíduos, e não as linhas;
+    \item levar todas as linhas de cada indivíduo sorteado, em todas as origens;
+    \item recalcular a métrica em cada réplica; o intervalo de $95\%$ é o percentil $2{,}5$ a $97{,}5$ da distribuição das réplicas.
+\end{enumerate}
+O valor-$p$ de uma diferença entre dois modelos usa a mesma reamostragem para os dois, de modo que a comparação é pareada. Se $\delta_b^{*}$ é a diferença na réplica $b$,
+\begin{equation}
+    p = \min\Bigl\{1,\ 2\min\Bigl[\frac{\#\{b:\ \delta_b^{*} \leq 0\}+1}{B+1},\ \frac{\#\{b:\ \delta_b^{*} \geq 0\}+1}{B+1}\Bigr]\Bigr\}.
+    \label{eq:pboot}
+\end{equation}
+
+Com vários contrastes, o ajuste de Holm \citep{holm1979} controla o erro do tipo I da família. Ordenam-se os valores-$p$, $p_{(1)} \leq \cdots \leq p_{(m)}$, em que $m$ é o número de contrastes, e cada um recebe o valor ajustado
+\begin{equation}
+    \tilde{p}_{(k)} = \min\Bigl\{1,\ \max_{j \leq k}\,(m-j+1)\,p_{(j)}\Bigr\}.
+    \label{eq:holm}
+\end{equation}
+Rejeita-se a hipótese do $k$-ésimo contraste quando $\tilde{p}_{(k)} \leq \alpha$.

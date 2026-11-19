@@ -1,0 +1,31 @@
+{
+  "QB": {
+    "max_dif_ols_aalen": 8.477593627098656e-15,
+    "janela": [
+      1,
+      11
+    ],
+    "n_covariaveis": 10
+  },
+  "RB": {
+    "max_dif_ols_aalen": 2.3592239273284576e-15,
+    "janela": [
+      1,
+      9
+    ],
+    "n_covariaveis": 9
+  },
+  "WR": {
+    "max_dif_ols_aalen": 1.84297022087776e-14,
+    "janela": [
+      2,
+      10
+    ],
+    "n_covariaveis": 13
+  },
+  "total": {
+    "n": 32,
+    "mesmo_lado_5pct": 29,
+    "max_dif": 1.84297022087776e-14
+  }
+}

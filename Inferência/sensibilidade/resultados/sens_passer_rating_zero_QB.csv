@@ -1,0 +1,4 @@
+cenario,descricao,n_linhas,n_eventos,n_linhas_sem_tentativas_no_modelo,HR_passer_rating,coef_passer_rating,EP_passer_rating,p_passer_rating
+a_mediana,mediana global do pipeline (atual),848,107,26,0.647375,-0.43482912674240787,0.09574847739914065,5.5890221686285985e-06
+b_zero,valor 0 nas linhas sem tentativas,848,107,26,0.630858,-0.46067457499192127,0.10359076082668164,8.70525660454476e-06
+c_excluir,exclui as linhas sem tentativas,822,100,0,0.602951,-0.5059198542521791,0.10504393247829168,1.4626718281815675e-06

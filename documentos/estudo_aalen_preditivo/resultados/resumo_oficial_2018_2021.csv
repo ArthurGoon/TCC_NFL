@@ -1,0 +1,4 @@
+posicao,n_folds,n_covs,c_index,c_index_sd,ibs,frac_posto_completo,max_abs_B_min,n_degenerado,protocolo_poshoc,avaliacao_prospectiva,comparavel_com_ranking_principal,backtest_honesto,periodo_selecao_covariaveis,periodo_folds_diagnosticos
+QB,4,10,0.5489417600076861,0.029380947094103486,0.29553384369707225,0.8034188034188035,2.5523,0,True,False,False,False,2012-2024,2018-2021
+RB,4,9,0.656435902728687,0.029719102077119232,0.24255626805187736,0.7837579087579088,2.6773,0,True,False,False,False,2012-2024,2018-2021
+WR,4,13,0.6165081626333718,0.02443393376628712,0.29107691164699956,0.5386029411764706,5.055,0,True,False,False,False,2012-2024,2018-2021

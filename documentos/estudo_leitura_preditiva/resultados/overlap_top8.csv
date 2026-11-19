@@ -1,0 +1,10 @@
+posicao,par,top8_intersecao,jaccard,comuns
+QB,cox-gbsa,5,0.45454545454545453,"depth_team, passer_rating, team_pass_attempts_share, within_window_gap_years_before_t, years_exp"
+QB,cox-rsf,7,0.7777777777777778,"depth_team, height, observed_career_lag_ypc_qb, passer_rating, team_pass_attempts_share, within_window_gap_years_before_t, years_exp"
+QB,gbsa-rsf,6,0.6,"depth_team, offense_pct, passer_rating, team_pass_attempts_share, within_window_gap_years_before_t, years_exp"
+RB,cox-gbsa,8,1.0,"depth_team, draft_ovr, games_missed, observed_career_lag_ypc, offense_pct, pre_window_veteran, team_rushing_yards_share, years_exp"
+RB,cox-rsf,6,0.6,"depth_team, games_missed, offense_pct, pre_window_veteran, team_rushing_yards_share, years_exp"
+RB,gbsa-rsf,6,0.6,"depth_team, games_missed, offense_pct, pre_window_veteran, team_rushing_yards_share, years_exp"
+WR,cox-gbsa,7,0.7777777777777778,"depth_team, games_missed, offense_pct, pre_window_veteran, team_targets_share, within_window_gap_years_before_t, years_exp"
+WR,cox-rsf,8,1.0,"depth_team, games_missed, observed_career_lag_yptarget, offense_pct, pre_window_veteran, team_targets_share, within_window_gap_years_before_t, years_exp"
+WR,gbsa-rsf,7,0.7777777777777778,"depth_team, games_missed, offense_pct, pre_window_veteran, team_targets_share, within_window_gap_years_before_t, years_exp"

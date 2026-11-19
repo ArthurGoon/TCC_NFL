@@ -1,0 +1,4 @@
+posicao,n_eventos,rsf_ajustado,n_folds,regra_aplicada,limiar_eventos,fonte_regra
+QB,107,True,4,posicao_em_RSF_POSICOES_COM_RSF,200,Predição/shared/tgb_protocol.py::rsf_permitido
+RB,289,True,4,posicao_em_RSF_POSICOES_COM_RSF,200,Predição/shared/tgb_protocol.py::rsf_permitido
+WR,394,True,4,posicao_em_RSF_POSICOES_COM_RSF,200,Predição/shared/tgb_protocol.py::rsf_permitido

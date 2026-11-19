@@ -1,0 +1,136 @@
+{
+  "gerado_por": "pipeline/50_estatisticas_eda.py",
+  "constantes": {
+    "cox.penalizer": 0.0,
+    "cox.threshold_p": 0.05,
+    "cox.threshold_p_fallback": 0.1,
+    "cox.max_vars": "max(2, piso(E/10))",
+    "cox.ordem_colinearidade": "identificaveis antes do filtro |r|>0,85",
+    "colinearidade.limiar": 0.85,
+    "taxa_lag.denominador_minimo": 50,
+    "aalen.triagem": "survival::aareg univariado; sem sorteio nem semente",
+    "aalen.metodo": "survival::aareg; empates nativos; sem sorteio",
+    "aalen.janela": "janela de suporte por covariavel (posto completo)",
+    "cox_aalen.metodo": "timereg::cox.aalen (Scheike & Zhang 2002)",
+    "cox_aalen.n_sim": 1000,
+    "cox_aalen.desempate": "dentro da temporada (stop - 0,5; stop)",
+    "cox_aalen.semente_desempate": 20241012,
+    "predicao.seed": 42,
+    "km.entrada_tardia": "entry = start"
+  },
+  "verificacao": [
+    {
+      "campo": "cox.penalizer",
+      "valor": 0.0,
+      "arquivo": "pipeline/11_cox_tdc_qb.py",
+      "literal_procurado": "penalizer=0.0",
+      "confere": true
+    },
+    {
+      "campo": "cox.threshold_p",
+      "valor": 0.05,
+      "arquivo": "pipeline/11_cox_tdc_qb.py",
+      "literal_procurado": "threshold = 0.05 if n_events >= 50 else 0.10",
+      "confere": true
+    },
+    {
+      "campo": "cox.threshold_p_fallback",
+      "valor": 0.1,
+      "arquivo": "pipeline/11_cox_tdc_qb.py",
+      "literal_procurado": "else 0.10",
+      "confere": true
+    },
+    {
+      "campo": "cox.max_vars",
+      "valor": "max(2, piso(E/10))",
+      "arquivo": "pipeline/11_cox_tdc_qb.py",
+      "literal_procurado": "max_vars = max(2, int(n_events / 10))",
+      "confere": true
+    },
+    {
+      "campo": "cox.ordem_colinearidade",
+      "valor": "identificaveis antes do filtro |r|>0,85",
+      "arquivo": "pipeline/11_cox_tdc_qb.py",
+      "literal_procurado": "covariaveis_identificaveis_cox(df_fit, cov_cols)\\n'\n    'cov_cols_filtered = filter_collinear_covariates",
+      "confere": true
+    },
+    {
+      "campo": "colinearidade.limiar",
+      "valor": 0.85,
+      "arquivo": "Inferência/shared/survival_utils.py",
+      "literal_procurado": "threshold=0.85",
+      "confere": true
+    },
+    {
+      "campo": "taxa_lag.denominador_minimo",
+      "valor": 50,
+      "arquivo": "pipeline/04_prep_cox_qb.py",
+      "literal_procurado": "den_lag] > 50",
+      "confere": true
+    },
+    {
+      "campo": "aalen.triagem",
+      "valor": "survival::aareg univariado; sem sorteio nem semente",
+      "arquivo": "Inferência/Modelagem de Aalen/shared/run_aalen_univariate_screening.R",
+      "literal_procurado": "fit <- survival::aareg(as.formula(",
+      "confere": true
+    },
+    {
+      "campo": "aalen.metodo",
+      "valor": "survival::aareg; empates nativos; sem sorteio",
+      "arquivo": "Inferência/Modelagem de Aalen/shared/run_aalen_tied_inference.R",
+      "literal_procurado": "survival::aareg(formula, data = data, cluster = player_id, dfbeta = TRUE, taper = 1)",
+      "confere": true
+    },
+    {
+      "campo": "aalen.janela",
+      "valor": "janela de suporte por covariavel (posto completo)",
+      "arquivo": "Inferência/Modelagem de Aalen/shared/run_aalen_tied_inference.R",
+      "literal_procurado": "select_supported_window(df, covariates)",
+      "confere": true
+    },
+    {
+      "campo": "cox_aalen.metodo",
+      "valor": "timereg::cox.aalen (Scheike & Zhang 2002)",
+      "arquivo": "Inferência/Modelagem Cox-Aalen/shared/run_cox_aalen_inference.R",
+      "literal_procurado": "do.call(cox.aalen, c(list(",
+      "confere": true
+    },
+    {
+      "campo": "cox_aalen.n_sim",
+      "valor": 1000,
+      "arquivo": "Inferência/Modelagem Cox-Aalen/shared/run_cox_aalen_inference.R",
+      "literal_procurado": "n.sim = 1000",
+      "confere": true
+    },
+    {
+      "campo": "cox_aalen.desempate",
+      "valor": "dentro da temporada (stop - 0,5; stop)",
+      "arquivo": "Inferência/Modelagem Cox-Aalen/shared/run_cox_aalen_inference.R",
+      "literal_procurado": "desempata_saidas(df)",
+      "confere": true
+    },
+    {
+      "campo": "cox_aalen.semente_desempate",
+      "valor": 20241012,
+      "arquivo": "Inferência/Modelagem Cox-Aalen/shared/run_cox_aalen_inference.R",
+      "literal_procurado": "set.seed(20241012L)",
+      "confere": true
+    },
+    {
+      "campo": "predicao.seed",
+      "valor": 42,
+      "arquivo": "documentos/estudo_modelos_finais/run_oficial.py",
+      "literal_procurado": "SEED = 42",
+      "confere": true
+    },
+    {
+      "campo": "km.entrada_tardia",
+      "valor": "entry = start",
+      "arquivo": "pipeline/08_curvas_km_qb.py",
+      "literal_procurado": "entry=df_player['entry']",
+      "confere": true
+    }
+  ],
+  "divergencias": []
+}

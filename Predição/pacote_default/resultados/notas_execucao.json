@@ -1,0 +1,28 @@
+{
+  "notas": [
+    "Cox QB: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox QB: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox QB: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox QB: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox QB: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox QB: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox RB: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox RB: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox RB: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox RB: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox RB: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox RB: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox WR: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox WR: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox WR: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox WR: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox WR: penalizer=0.1 (stability0.1) — o padrao nao convergiu.",
+    "Cox WR: penalizer=0.1 (stability0.1) — o padrao nao convergiu."
+  ],
+  "hps": {
+    "gbsa": "n_estimators=100, learning_rate=0.1, max_depth=3, subsample=1.0, random_state=42",
+    "rsf": "n_estimators=100, max_depth=None, min_samples_split=6, min_samples_leaf=3, random_state=42",
+    "cox": "penalizer padrao (tgb_protocol.cox_penalizer, sensibilidade): QB=0.0, RB=0.0, WR=0.0",
+    "km": "KaplanMeier sem covariáveis"
+  }
+}

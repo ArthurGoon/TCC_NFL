@@ -1,0 +1,121 @@
+posicao,modelo,teste_em_temporada,hp_json,fonte
+QB,km,2018,,walkforward
+QB,cox,2018,"{""penalizer"": 0.0}",walkforward
+QB,gbsa,2018,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+QB,rsf,2018,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+QB,km,2019,,walkforward
+QB,cox,2019,"{""penalizer"": 0.0}",walkforward
+QB,gbsa,2019,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+QB,rsf,2019,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+QB,km,2020,,walkforward
+QB,cox,2020,"{""penalizer"": 0.0}",walkforward
+QB,gbsa,2020,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+QB,rsf,2020,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+QB,km,2021,,walkforward
+QB,cox,2021,"{""penalizer"": 0.0}",walkforward
+QB,gbsa,2021,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+QB,rsf,2021,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+QB,km,2022,,walkforward
+QB,cox,2022,"{""penalizer"": 0.0}",walkforward
+QB,gbsa,2022,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+QB,rsf,2022,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+QB,km,2023,,walkforward
+QB,cox,2023,"{""penalizer"": 0.0}",walkforward
+QB,gbsa,2023,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+QB,rsf,2023,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+RB,km,2018,,walkforward
+RB,cox,2018,"{""penalizer"": 0.0}",walkforward
+RB,gbsa,2018,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+RB,rsf,2018,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+RB,km,2019,,walkforward
+RB,cox,2019,"{""penalizer"": 0.0}",walkforward
+RB,gbsa,2019,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+RB,rsf,2019,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+RB,km,2020,,walkforward
+RB,cox,2020,"{""penalizer"": 0.0}",walkforward
+RB,gbsa,2020,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+RB,rsf,2020,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+RB,km,2021,,walkforward
+RB,cox,2021,"{""penalizer"": 0.0}",walkforward
+RB,gbsa,2021,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+RB,rsf,2021,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+RB,km,2022,,walkforward
+RB,cox,2022,"{""penalizer"": 0.0}",walkforward
+RB,gbsa,2022,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+RB,rsf,2022,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+RB,km,2023,,walkforward
+RB,cox,2023,"{""penalizer"": 0.0}",walkforward
+RB,gbsa,2023,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+RB,rsf,2023,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+WR,km,2018,,walkforward
+WR,cox,2018,"{""penalizer"": 0.0}",walkforward
+WR,gbsa,2018,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+WR,rsf,2018,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+WR,km,2019,,walkforward
+WR,cox,2019,"{""penalizer"": 0.0}",walkforward
+WR,gbsa,2019,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+WR,rsf,2019,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+WR,km,2020,,walkforward
+WR,cox,2020,"{""penalizer"": 0.0}",walkforward
+WR,gbsa,2020,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+WR,rsf,2020,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+WR,km,2021,,walkforward
+WR,cox,2021,"{""penalizer"": 0.0}",walkforward
+WR,gbsa,2021,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+WR,rsf,2021,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+WR,km,2022,,walkforward
+WR,cox,2022,"{""penalizer"": 0.0}",walkforward
+WR,gbsa,2022,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+WR,rsf,2022,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+WR,km,2023,,walkforward
+WR,cox,2023,"{""penalizer"": 0.0}",walkforward
+WR,gbsa,2023,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",walkforward
+WR,rsf,2023,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",walkforward
+QB,km,2020,,landmark(origem=t_L)
+QB,cox,2020,"{""penalizer"": 0.0}",landmark(origem=t_L)
+QB,gbsa,2020,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",landmark(origem=t_L)
+QB,rsf,2020,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",landmark(origem=t_L)
+QB,km,2021,,landmark(origem=t_L)
+QB,cox,2021,"{""penalizer"": 0.0}",landmark(origem=t_L)
+QB,gbsa,2021,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",landmark(origem=t_L)
+QB,rsf,2021,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",landmark(origem=t_L)
+QB,km,2022,,landmark(origem=t_L)
+QB,cox,2022,"{""penalizer"": 0.0}",landmark(origem=t_L)
+QB,gbsa,2022,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",landmark(origem=t_L)
+QB,rsf,2022,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",landmark(origem=t_L)
+QB,km,2023,,landmark(origem=t_L)
+QB,cox,2023,"{""penalizer"": 0.0}",landmark(origem=t_L)
+QB,gbsa,2023,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",landmark(origem=t_L)
+QB,rsf,2023,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",landmark(origem=t_L)
+RB,km,2020,,landmark(origem=t_L)
+RB,cox,2020,"{""penalizer"": 0.0}",landmark(origem=t_L)
+RB,gbsa,2020,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",landmark(origem=t_L)
+RB,rsf,2020,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",landmark(origem=t_L)
+RB,km,2021,,landmark(origem=t_L)
+RB,cox,2021,"{""penalizer"": 0.0}",landmark(origem=t_L)
+RB,gbsa,2021,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",landmark(origem=t_L)
+RB,rsf,2021,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",landmark(origem=t_L)
+RB,km,2022,,landmark(origem=t_L)
+RB,cox,2022,"{""penalizer"": 0.0}",landmark(origem=t_L)
+RB,gbsa,2022,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",landmark(origem=t_L)
+RB,rsf,2022,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",landmark(origem=t_L)
+RB,km,2023,,landmark(origem=t_L)
+RB,cox,2023,"{""penalizer"": 0.0}",landmark(origem=t_L)
+RB,gbsa,2023,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",landmark(origem=t_L)
+RB,rsf,2023,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",landmark(origem=t_L)
+WR,km,2020,,landmark(origem=t_L)
+WR,cox,2020,"{""penalizer"": 0.0}",landmark(origem=t_L)
+WR,gbsa,2020,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",landmark(origem=t_L)
+WR,rsf,2020,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",landmark(origem=t_L)
+WR,km,2021,,landmark(origem=t_L)
+WR,cox,2021,"{""penalizer"": 0.0}",landmark(origem=t_L)
+WR,gbsa,2021,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",landmark(origem=t_L)
+WR,rsf,2021,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",landmark(origem=t_L)
+WR,km,2022,,landmark(origem=t_L)
+WR,cox,2022,"{""penalizer"": 0.0}",landmark(origem=t_L)
+WR,gbsa,2022,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",landmark(origem=t_L)
+WR,rsf,2022,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",landmark(origem=t_L)
+WR,km,2023,,landmark(origem=t_L)
+WR,cox,2023,"{""penalizer"": 0.0}",landmark(origem=t_L)
+WR,gbsa,2023,"{""n_estimators"": 100, ""learning_rate"": 0.1, ""max_depth"": 3, ""subsample"": 1.0}",landmark(origem=t_L)
+WR,rsf,2023,"{""n_estimators"": 100, ""max_depth"": null, ""min_samples_split"": 6, ""min_samples_leaf"": 3}",landmark(origem=t_L)

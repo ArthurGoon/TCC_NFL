@@ -1,0 +1,1160 @@
+{
+  "schema_version": 1,
+  "run_id": "f9a8c888-f0d3-4fe7-8033-04b5345ad252",
+  "fingerprint": "6475c78943319b58037bedcdccb3d7b9e2f872953d9fc926d05c9077f3b28d92",
+  "identity": {
+    "files": {
+      "sources": {
+        ".gitignore": "9a00cb33a0334dd19f4221952405cb8f43f48c6d485336e3c652d2bd55b636c8",
+        "Inferência/Modelagem Cox-Aalen/shared/run_cox_aalen_inference.R": "ad8e6beff7b74ce85482d190ae8343c27aa3460347e5dcfaa8fc9986a7ccade1",
+        "Inferência/Modelagem de Aalen/shared/listas_aalen_fixadas.json": "03ddeb64df01d96d37f786c64c5010a24c7fb95b80ae96bf29b1d0cd3cb17478",
+        "Inferência/Modelagem de Aalen/shared/run_aalen_inference.R": "d83e403f140af60fbffc01abde90e9b4187beb29ed2006789f045258570dafb2",
+        "Inferência/Modelagem de Aalen/shared/run_aalen_tied_inference.R": "6ad02615cd3acfd34bba03d6ab941f522ca328c8f376c0fd2341f027fc08d699",
+        "Inferência/Modelagem de Aalen/shared/run_aalen_univariate_screening.R": "a62a4b3f56b59ac09c902bbea8ce6d3f1dfff6f8a09ffa2eca02fa2206d136c5",
+        "Inferência/shared/run_schoenfeld_diagnostics.R": "2dd30069d602a6916fd2734c429f80714c6f84a5c8ac321a5b9d8e79d439af36",
+        "Inferência/shared/survival_utils.py": "4e30eceaab9e723105cb43514a7e3db96282967a1914c2c482f2766e5e45f2de",
+        "Predição/aalen/shared/run_aalen_prediction.R": "28014ee8d517652480316c03150cf3b1dc30f70cfb463e44b0a6176bb61753de",
+        "Predição/shared/add_features.py": "e62d64218dd46e644e35ff9c19bfee7fc3c35b2f60266bd5d3767a9557193959",
+        "Predição/shared/compor_figuras_escrita.py": "21273fd7b7a73352e6354e08071ba3f6d15693768fc28be985e60e9913928da7",
+        "Predição/shared/glossario_variaveis.csv": "af0a7d61e598935dea62a2e3118aee8ce2f44c073970f8feb40a75b64e433464",
+        "Predição/shared/tgb_protocol.py": "cb3b365005e5dc21a84e17cf21d82a7fede40f3008a5b739f565f7b146ef1ef7",
+        "Predição/shared/thesis_figure_style.py": "31117b97644f0d5cb6970d5e21e1df8107c7f3f5906882080496f7d3d072bb8a",
+        "documentos/estudo_aalen_preditivo/diag_aalen_fold.py": "2582834a7b3945e6be0d9b6c2c3dccbd35da6530b756c0e14f3aff0c276bd933",
+        "documentos/estudo_aalen_selecao/run_aalen_fit.R": "b32f9611af12c70c93731b1ca84cd205e0a3fe0c4416c4c30dc57dc3c9ba79b8",
+        "documentos/estudo_aalen_selecao/run_contraste.py": "24de77e55a4eba8746034268719c2fd7b6c9ba717972fad2d84960da1d00f654",
+        "documentos/estudo_diagnostico_erro/run_diagnostico.py": "c2268da18d35f65d1c89a24f7e354939a3d3a3c9a008367c4948665699e48562",
+        "documentos/estudo_fronteira_tune/run_fronteira.py": "c3aef60f2ce6356f97b3e71943c6a56206384ab09c09e51aec489ed2b2f3dc21",
+        "documentos/estudo_furos_preditivos/run_furos.py": "6cd478e8f6d37f891bd4f60dd2b6bce04413e431ba552154d646cbe7db8cbc63",
+        "documentos/estudo_gbsa_rsf/figuras/make_cindex_fig.py": "6e1b9a613cc92a282a1e291890743ba730bc83cad4ab900fa78fb40ac0c966a9",
+        "documentos/estudo_ic_preditivo/run_ic.py": "f931738bd6a8994c15b6898b09bcb55fa45f5842057444f5342fd4fdcd68e894",
+        "documentos/estudo_leitura_aplicada/run_leitura_aplicada.py": "fff804bde87079ff04bf1d653c438a51730cc26f9a8307f5506d40850fc226c4",
+        "documentos/estudo_leitura_preditiva/run_leitura.py": "2368867a8d36d47cb60d91376a49506b57da9be40af215f5742daae655b7d832",
+        "documentos/estudo_modelos_finais/auditar_oficial.py": "6f2d13c708c19e8efbf37546bb3783a5fcf4fd7adf2137e4384bfef2a463f16f",
+        "documentos/estudo_modelos_finais/fig_tese_tgb.py": "5c4bbd7b62f42eba38d464a836e1c766802053a6e6a1ee930351d963e5ca7377",
+        "documentos/estudo_modelos_finais/run_oficial.py": "2e2ae740b9768a4af1d4e57fbad3327997625730ca064f7f05bc397a997fc114",
+        "documentos/estudo_sensibilidade_metodo/run_sens_metodo.py": "92ac367a4935dcfd90e61e9a5f1393d13a917116400abb68fd057fc73a5f4823",
+        "documentos/estudo_sensibilidade_tune/run_sens_tune.py": "0fcb6018d9d721e27aeba22b5f21a65ee394f973e32b985b4c532b66a26dc3b5",
+        "documentos/estudo_tgb_pacote/make_figs.py": "0e267948c38063068a2e735a36229402f63d5581422a350f309dc9f37fffe7f2",
+        "documentos/estudo_tune_preditivo/run_tune.py": "7277aa11628b4e880d68f1d0edeb3dea847e13de5d7b86e6ee8d331a609584ca",
+        "documentos/estudo_vazamento/run_vazamento.py": "eb9576ee530299f5515c0ee440516f62699d08b8fd2960c011e83ea2418ea102",
+        "documentos/pacote_preditivo_tgb/fig_story.py": "37f14230bb658dd40a1db4dff66d8cdcac88ec67be659ca45b533581e9cb64a4",
+        "pipeline/01_eda_qb.py": "80f526b8fe79a969fc1f619453c54f8e43dcdf98d22108c8f9614883fefb10f8",
+        "pipeline/02_eda_rb.py": "7b5ae8783156c8148117df188f714118f8a103f34e870c21f2771b0277b2c68f",
+        "pipeline/03_eda_wr.py": "7930555e01f5329c3ebcf156a95e9d6adf2828313e937967d48af56d9b11c970",
+        "pipeline/04_prep_cox_qb.py": "d873086566ebff3efe6083397a452b4b2bd9eec50e70a10ed5cb3587d6a7bfea",
+        "pipeline/05_prep_cox_rb.py": "757464a998ac110759850cac62277f28dcd206aa35f786b20a6549e6c8a318eb",
+        "pipeline/06_prep_cox_wr.py": "d9adc12fbae68a8645236aef3053e3cf7e2b516686d5f552f02ab0cf20bf0fe0",
+        "pipeline/07_add_features.py": "7ded84401cad0b74c66d562c6b688f1a551bd4af39e2a3a61d07b1c01cf9f31b",
+        "pipeline/08_curvas_km_qb.py": "4e73682e983b161a732afcf9f170d43efa7aced49ea422b017ee7df644a21dcb",
+        "pipeline/09_curvas_km_rb.py": "bd242194a9fabf61ea2c17c650aa430ddb691ad81d30792c37c9da0a380d9426",
+        "pipeline/10_curvas_km_wr.py": "e5beef97f2a8527938ae34468c6b6a02115cf44851d93beae0bc912870a77e46",
+        "pipeline/11_cox_tdc_qb.py": "cb63b6c8e1815a8d95ad0739d7bdcfec4890044521f7e5dc8b1cbb16f9f5e4df",
+        "pipeline/12_cox_tdc_rb.py": "f85c4f4fe73e5e4ad192e6748765da1f0a628e8c665c7e60ac6a39f4b4eb0ced",
+        "pipeline/13_cox_tdc_wr.py": "c93d7b0c99812100bc19021497e5cfc1845a48b5a514bf04062a7ba489664dfe",
+        "pipeline/14_aalen_tdc_qb.py": "bfe343a968f1b2dcb974abd4f1f72e804ddfd767050933277daaeffc5cc08921",
+        "pipeline/15_aalen_tdc_rb.py": "a2008d0eba45cbad8b1b138b051d30421f9cbe75b1fe53ff6b1e6834f3f1474f",
+        "pipeline/16_aalen_tdc_wr.py": "8d631fb66bef8622282b455658eac6476abab37bb7b6fa5980cbec5926c382d5",
+        "pipeline/35_compor_figuras_escrita.py": "58aeace9faf68d7280c40fe8f46b444c19696e92872cc3c2f2f8840d80e292a2",
+        "pipeline/36_cox_aalen_inferencial.py": "5b378f3caac797774f12e043d006892d03fbfe272ae118283a061fa628abe995",
+        "pipeline/37_tgb_pacote_default.py": "50c4c5a38dc86e48c632abfbe1499d072f86b159b93977bc00d4dde404015bdc",
+        "pipeline/38_covs_preditivas.py": "f98d2a0f5983e94d00b718ad5b3bc83c355a6ef1c570215d0f3fa3fb948a9d76",
+        "pipeline/39_tgb_pacote_oficial.py": "b1e608b63ee14360748780df8e476a0689beda32ed32b185f2e6cd492aa7bdd7",
+        "pipeline/40_tgb_auditoria.py": "6cb7b05ef16b09058bef0739f2327861a7a35fab181bc810e18e861c0cfc4b39",
+        "pipeline/41_tgb_figuras.py": "aa97b84bea7b5b47cf56f5504f6e535cc8b456d2998ea9dc2601726a6f55dc03",
+        "pipeline/42_tune_preditivo.py": "fe73fd13835fcb872834c8e5ee223902e2fc493d73b7f3684f341e1f0c5883c3",
+        "pipeline/43_leitura_preditiva.py": "650ef219a70ad669addd9ba93c0863e7a5d4433263fc0e28aa2f5c7a3af86007",
+        "pipeline/44_furos_preditivos.py": "ff16982470bfaec162e816f1028afd6cf95f3baa23aacdef7eb47bf87f80247d",
+        "pipeline/45_aalen_preditivo.py": "3749f3f715b411f02a74bfd594c329330a723f3df9561e1a94a62ffce7efc1ec",
+        "pipeline/46_figuras_estudo.py": "64de39b89cf7e813ec82dd1bbc296e1fe63d66271070870a4728b410660ca8e3",
+        "pipeline/47_export_figuras_tese.py": "acc670fdb40098ce295b8c0423a59a686b713039329d7aa4d56ae89cec358712",
+        "pipeline/48_campo_posicoes_nfl.py": "3c2972c2dd45e3639cf190843e18c02fe31ea55917870486a204cd4678c0a8bb",
+        "pipeline/49_qualidade_dados.py": "a0fd3b6ecd870c2b32de3dabb6ff5ce8919b21e585bf6e01345402033b20ce81",
+        "pipeline/50_estatisticas_eda.py": "3d7cee7cdc7649f4ac31b06fa9772983fc01f3431a68e7778a5eea22a06162d1",
+        "pipeline/51_sensibilidade_inferencial.py": "acb16da1e5cc2eaf7038fd08c31f017c2ae9bd16e63ccb434c74a9d94567dc9d",
+        "pipeline/52_series_figuras.py": "fd870bbb50497017bb7217e5581ae726936398e7c350e00d28ca4d2b6adf9115",
+        "pipeline/53_ic_preditivo.py": "198e97cb1a38d9b275d007908b90fbec726a7ea71023dc578b33cb6779fd61b7",
+        "pipeline/54_fronteira_tune.py": "94d83438b91d828bb564074f3ef7331f809948ff676ef7bde2ca10f7f875228d",
+        "pipeline/55_diagnostico_erro.py": "f04cd91274c5778d5c0d936aca51af7f334ed65374ada27153c422fcfadc1e27",
+        "pipeline/57_sensibilidade_tune.py": "db3a08cc7fe79563f434a4ac44e33da7398d552424a072a3330b53962f534449",
+        "pipeline/58_sensibilidade_metodo.py": "590fdc44e9b2cba2b1feb91a9c396899eac775d77b0cdadd0e8793da7b0208aa",
+        "pipeline/59_estudo_vazamento.py": "05cbed105fe2a8be45715a2f1b5d33d21f84f025600889ec00c2a67ec772a5da",
+        "pipeline/61_sensibilidade_hp_padrao.py": "022c4ae9488c9cfa09cca67552fee8123a8015ad89c729c91d5882da07604e02",
+        "pipeline/62_leitura_aplicada.py": "624fddd8cbac6a462400894a5a3aeb8d4f4d3549ff40a42c59a5b65ceafad1d7",
+        "pipeline/63_figura_walkforward.py": "e585c11aa337df40c72163059bb45b151c5e695a740a9e79ce1f3ec4acd5b62e",
+        "pipeline/64_sensibilidade_selecao.py": "327ecf8d5994619aef42ff7920feb8d186cdf8931772f1e1aaec03a7ec06e1f9",
+        "pipeline/65_landmark_jogadores.py": "53e5eb6641a79cf6b8709a1f401ffdcb19bba6248bb60e2a22d0af894f73cffc",
+        "pipeline/66_aalen_discreto.py": "276f9786760c1a9975a91484bfc5b2986b449762af14b93ebabb3130b0a4ebab",
+        "pipeline/67_testes_defesa.R": "1f8a78b1897a8d17e2a691c65ca8e2b0a4d3e2a2eeccfd7d64b135266dbe9cbb",
+        "pipeline/67_testes_defesa.py": "b049957d8df91919d8ab842350ec2ab9d9c37e1c33db6c228731c9b44fa2ce40",
+        "pipeline/68_variacoes_recentes.py": "6e5de90aba1b824be1b7a6abf1624caf921953fa5831372e633e47fa6d72b4f0",
+        "reprodutibilidade/REPRODUCIBILITY_MANIFEST.json": "a4b11a8bf21b9f12ce2e5abbb160cf2a9427498d0a0f4e2d7039c8f553a027c7",
+        "reprodutibilidade/build_tese.ps1": "2206193bd83db6aa64915825c529c0175e3789abcd0cd8794e4afd939c575688",
+        "reprodutibilidade/build_tese.py": "3d7133955b9e7459547d8840eb6f087f3fec948d5d27d6956dd115f0b45aa714",
+        "reprodutibilidade/evidencia_execucao.py": "e0068d1ad518754b1cd05e965ebfe1e00065ecefa5596d0fe71b65c43cf66780",
+        "reprodutibilidade/reproducibility_audit.py": "dd60b5a7f8348b701ca37fa5d6c11fa38caccb75ffc2532ef6243380df73a215",
+        "reprodutibilidade/valores_registrados.json": "faff2515a597e7d64fa0d138adeffd37e77a9709f3874ed8990b4cdcf8fb5742",
+        "requirements/requirements_R.txt": "5c6b6143356cad8723794138cf16c54f2e5bcd4f23f2cbc24e46bf0f4c43a56e",
+        "requirements/requirements_avaliacao.txt": "c3850ee948dbd714257cf9e00be390225327cb3be341c27e394c576395bc1613",
+        "run_all.py": "88807b3cbb79e58474b9a6d901a353285754c4093c2171f13918391b42c93bcb"
+      },
+      "inputs": {
+        "DataBase/yearly_player_stats_offense.csv": "1d256c2232869b76a9821cf7a67639609cacb3d082d2a18ac2e2f3aecab96861"
+      },
+      "execution_sources": {
+        "run_all.py": "88807b3cbb79e58474b9a6d901a353285754c4093c2171f13918391b42c93bcb",
+        "reprodutibilidade/evidencia_execucao.py": "e0068d1ad518754b1cd05e965ebfe1e00065ecefa5596d0fe71b65c43cf66780",
+        "reprodutibilidade/reproducibility_audit.py": "dd60b5a7f8348b701ca37fa5d6c11fa38caccb75ffc2532ef6243380df73a215",
+        "reprodutibilidade/build_tese.py": "3d7133955b9e7459547d8840eb6f087f3fec948d5d27d6956dd115f0b45aa714"
+      },
+      "configuration": {
+        "manifest": "a4b11a8bf21b9f12ce2e5abbb160cf2a9427498d0a0f4e2d7039c8f553a027c7",
+        "requirements_R": "5c6b6143356cad8723794138cf16c54f2e5bcd4f23f2cbc24e46bf0f4c43a56e",
+        "requirements_python": "c3850ee948dbd714257cf9e00be390225327cb3be341c27e394c576395bc1613"
+      }
+    },
+    "environment": {
+      "python_executable": "/usr/bin/python3.12",
+      "python_version": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+      "python_subprocess": {
+        "executable": "/usr/bin/python3.12",
+        "version": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]"
+      },
+      "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+      "python_packages": [
+        [
+          "attrs",
+          "26.1.0"
+        ],
+        [
+          "autograd",
+          "1.9.1"
+        ],
+        [
+          "autograd-gamma",
+          "0.5.0"
+        ],
+        [
+          "cloudpickle",
+          "3.1.2"
+        ],
+        [
+          "contourpy",
+          "1.4.0"
+        ],
+        [
+          "cycler",
+          "0.12.1"
+        ],
+        [
+          "ecos",
+          "2.0.14"
+        ],
+        [
+          "fastjsonschema",
+          "2.22.2"
+        ],
+        [
+          "fonttools",
+          "4.66.1"
+        ],
+        [
+          "formulaic",
+          "1.2.2"
+        ],
+        [
+          "interface_meta",
+          "2.0.1"
+        ],
+        [
+          "jinja2",
+          "3.1.6"
+        ],
+        [
+          "joblib",
+          "1.6.0"
+        ],
+        [
+          "jsonschema",
+          "4.26.0"
+        ],
+        [
+          "jsonschema-specifications",
+          "2025.9.1"
+        ],
+        [
+          "jupyter_core",
+          "5.9.1"
+        ],
+        [
+          "kiwisolver",
+          "1.5.1"
+        ],
+        [
+          "lifelines",
+          "0.30.3"
+        ],
+        [
+          "markupsafe",
+          "3.0.4"
+        ],
+        [
+          "matplotlib",
+          "3.10.9"
+        ],
+        [
+          "narwhals",
+          "2.27.1"
+        ],
+        [
+          "nbformat",
+          "5.10.4"
+        ],
+        [
+          "numexpr",
+          "2.14.2"
+        ],
+        [
+          "numpy",
+          "2.4.4"
+        ],
+        [
+          "osqp",
+          "1.1.3"
+        ],
+        [
+          "packaging",
+          "26.3"
+        ],
+        [
+          "pandas",
+          "2.3.3"
+        ],
+        [
+          "pillow",
+          "12.3.0"
+        ],
+        [
+          "pip",
+          "24.0"
+        ],
+        [
+          "platformdirs",
+          "4.13.0"
+        ],
+        [
+          "pymupdf",
+          "1.27.2.2"
+        ],
+        [
+          "pyparsing",
+          "3.3.3"
+        ],
+        [
+          "python-dateutil",
+          "2.9.0.post0"
+        ],
+        [
+          "pytz",
+          "2026.5"
+        ],
+        [
+          "referencing",
+          "0.37.0"
+        ],
+        [
+          "rpds-py",
+          "2026.9.1"
+        ],
+        [
+          "scikit-learn",
+          "1.8.0"
+        ],
+        [
+          "scikit-survival",
+          "0.27.0"
+        ],
+        [
+          "scipy",
+          "1.17.1"
+        ],
+        [
+          "seaborn",
+          "0.13.2"
+        ],
+        [
+          "setuptools",
+          "84.0.0"
+        ],
+        [
+          "six",
+          "1.17.0"
+        ],
+        [
+          "threadpoolctl",
+          "3.7.0"
+        ],
+        [
+          "traitlets",
+          "5.16.1"
+        ],
+        [
+          "typing_extensions",
+          "4.16.0"
+        ],
+        [
+          "tzdata",
+          "2026.5"
+        ],
+        [
+          "wrapt",
+          "2.5.0"
+        ]
+      ],
+      "rscript": "/usr/bin/Rscript",
+      "r_version": "R version 4.3.3 (2024-02-29) ",
+      "r_packages": [
+        "backports\t1.5.0",
+        "base\t4.3.3",
+        "base64enc\t0.1-6",
+        "bit\t4.6.0",
+        "boot\t1.3-30",
+        "bslib\t0.10.0",
+        "cachem\t1.1.0",
+        "class\t7.3-22",
+        "cli\t3.6.5",
+        "cluster\t2.1.6",
+        "codetools\t0.2-19",
+        "compiler\t4.3.3",
+        "cpp11\t0.5.4",
+        "datasets\t4.3.3",
+        "DBI\t1.2.3",
+        "digest\t0.6.39",
+        "dplyr\t1.2.1",
+        "evaluate\t1.0.5",
+        "farver\t2.1.2",
+        "fastmap\t1.2.0",
+        "fontawesome\t0.5.3",
+        "foreign\t0.8-86",
+        "fs\t1.6.6",
+        "future\t1.70.0",
+        "future.apply\t1.20.2",
+        "generics\t0.1.4",
+        "ggplot2\t4.0.3",
+        "globals\t0.19.1",
+        "glue\t1.8.0",
+        "graphics\t4.3.3",
+        "grDevices\t4.3.3",
+        "grid\t4.3.3",
+        "gtable\t0.3.6",
+        "highr\t0.11",
+        "htmltools\t0.5.9",
+        "isoband\t0.3.0",
+        "jquerylib\t0.1.4",
+        "jsonlite\t2.0.0",
+        "KernSmooth\t2.23-22",
+        "knitr\t1.51",
+        "labeling\t0.4.3",
+        "lattice\t0.22-5",
+        "lava\t1.9.0",
+        "lifecycle\t1.0.5",
+        "listenv\t0.10.1",
+        "magrittr\t2.0.4",
+        "MASS\t7.3-60.0.1",
+        "Matrix\t1.6-5",
+        "memoise\t2.0.1",
+        "methods\t4.3.3",
+        "mgcv\t1.9-1",
+        "mime\t0.13",
+        "minqa\t1.2.8",
+        "mitools\t2.7",
+        "nlme\t3.1-164",
+        "nnet\t7.3-19",
+        "numDeriv\t2016.8-1.1",
+        "parallel\t4.3.3",
+        "parallelly\t1.47.0",
+        "pillar\t1.11.1",
+        "pkgconfig\t2.0.3",
+        "prettyunits\t1.2.0",
+        "progressr\t0.19.0",
+        "ps\t1.9.1",
+        "purrr\t1.2.2",
+        "R6\t2.6.1",
+        "rappdirs\t0.3.4",
+        "RColorBrewer\t1.1-3",
+        "Rcpp\t1.1.2",
+        "RcppArmadillo\t15.6.2-1",
+        "rematch\t2.0.0",
+        "rlang\t1.1.7",
+        "rmarkdown\t2.30",
+        "rpart\t4.1.23",
+        "S7\t0.2.2",
+        "sass\t0.4.10",
+        "scales\t1.4.0",
+        "spatial\t7.3-17",
+        "splines\t4.3.3",
+        "SQUAREM\t2026.1",
+        "stats\t4.3.3",
+        "stats4\t4.3.3",
+        "stringi\t1.8.7",
+        "stringr\t1.6.0",
+        "survey\t4.5",
+        "survival\t3.5-8",
+        "sys\t3.4.3",
+        "tcltk\t4.3.3",
+        "tibble\t3.3.1",
+        "tidyselect\t1.2.1",
+        "timereg\t2.0.7",
+        "tinytex\t0.58",
+        "tools\t4.3.3",
+        "utf8\t1.2.6",
+        "utils\t4.3.3",
+        "vctrs\t0.7.1",
+        "viridisLite\t0.4.3",
+        "withr\t3.0.2",
+        "xfun\t0.56",
+        "yaml\t2.3.12"
+      ],
+      "environment_variables": {
+        "PYTHONHASHSEED": "0",
+        "PYTHONPATH": "<unset>",
+        "OMP_NUM_THREADS": "<unset>",
+        "OMP_THREAD_LIMIT": "<unset>",
+        "OMP_DYNAMIC": "<unset>",
+        "OMP_PLACES": "<unset>",
+        "OMP_PROC_BIND": "<unset>",
+        "OPENBLAS_NUM_THREADS": "<unset>",
+        "OPENBLAS_DEFAULT_NUM_THREADS": "<unset>",
+        "BLAS_NUM_THREADS": "<unset>",
+        "GOTO_NUM_THREADS": "<unset>",
+        "MKL_NUM_THREADS": "<unset>",
+        "MKL_DYNAMIC": "<unset>",
+        "BLIS_NUM_THREADS": "<unset>",
+        "VECLIB_MAXIMUM_THREADS": "<unset>",
+        "NUMEXPR_NUM_THREADS": "<unset>",
+        "RCPP_PARALLEL_NUM_THREADS": "<unset>",
+        "R_LIBS": "<unset>",
+        "R_LIBS_USER": "<unset>",
+        "TZ": "<unset>",
+        "LANG": "pt_BR.UTF-8",
+        "LC_ALL": "<unset>",
+        "PATH": "/usr/bin:/bin:/usr/local/bin:/home/arthur/Downloads/TCC - 11_10/TCC_NFL_aberto/../.venv/bin",
+        "MPLCONFIGDIR": "<repo>/tmp/matplotlib",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUTF8": "1"
+      }
+    },
+    "config": {
+      "fast": false,
+      "clean": true,
+      "skip_post_audit": false,
+      "pythonhashseed": "0",
+      "random_seed": 42
+    },
+    "code_input_sha256": "5b99b8fab598d07561174481fa2f65974e32331db0e92e1bf51a143f6212313d",
+    "environment_sha256": "3cf7a4d672b6d89575811811bd8a81f4f88c4fb04fc2c62acd808007ef9a0bd9",
+    "fingerprint": "6475c78943319b58037bedcdccb3d7b9e2f872953d9fc926d05c9077f3b28d92"
+  },
+  "expected_steps": [
+    {
+      "name": "qualidade_dados",
+      "path": "pipeline/49_qualidade_dados.py"
+    },
+    {
+      "name": "prep_cox_QB",
+      "path": "pipeline/04_prep_cox_qb.py"
+    },
+    {
+      "name": "prep_cox_RB",
+      "path": "pipeline/05_prep_cox_rb.py"
+    },
+    {
+      "name": "prep_cox_WR",
+      "path": "pipeline/06_prep_cox_wr.py"
+    },
+    {
+      "name": "eda_QB",
+      "path": "pipeline/01_eda_qb.py"
+    },
+    {
+      "name": "eda_RB",
+      "path": "pipeline/02_eda_rb.py"
+    },
+    {
+      "name": "eda_WR",
+      "path": "pipeline/03_eda_wr.py"
+    },
+    {
+      "name": "estatisticas_eda",
+      "path": "pipeline/50_estatisticas_eda.py"
+    },
+    {
+      "name": "series_figuras",
+      "path": "pipeline/52_series_figuras.py"
+    },
+    {
+      "name": "add_features",
+      "path": "pipeline/07_add_features.py"
+    },
+    {
+      "name": "covs_preditivas",
+      "path": "pipeline/38_covs_preditivas.py"
+    },
+    {
+      "name": "curvas_KM_QB",
+      "path": "pipeline/08_curvas_km_qb.py"
+    },
+    {
+      "name": "curvas_KM_RB",
+      "path": "pipeline/09_curvas_km_rb.py"
+    },
+    {
+      "name": "curvas_KM_WR",
+      "path": "pipeline/10_curvas_km_wr.py"
+    },
+    {
+      "name": "cox_tdc_QB",
+      "path": "pipeline/11_cox_tdc_qb.py"
+    },
+    {
+      "name": "cox_tdc_RB",
+      "path": "pipeline/12_cox_tdc_rb.py"
+    },
+    {
+      "name": "cox_tdc_WR",
+      "path": "pipeline/13_cox_tdc_wr.py"
+    },
+    {
+      "name": "aalen_tdc_QB",
+      "path": "pipeline/14_aalen_tdc_qb.py"
+    },
+    {
+      "name": "aalen_tdc_RB",
+      "path": "pipeline/15_aalen_tdc_rb.py"
+    },
+    {
+      "name": "aalen_tdc_WR",
+      "path": "pipeline/16_aalen_tdc_wr.py"
+    },
+    {
+      "name": "sensibilidade_inferencial",
+      "path": "pipeline/51_sensibilidade_inferencial.py"
+    },
+    {
+      "name": "sensibilidade_selecao",
+      "path": "pipeline/64_sensibilidade_selecao.py"
+    },
+    {
+      "name": "aalen_discreto",
+      "path": "pipeline/66_aalen_discreto.py"
+    },
+    {
+      "name": "compor_figuras_escrita",
+      "path": "pipeline/35_compor_figuras_escrita.py"
+    },
+    {
+      "name": "cox_aalen_inferencial",
+      "path": "pipeline/36_cox_aalen_inferencial.py"
+    },
+    {
+      "name": "tgb_pacote_default",
+      "path": "pipeline/37_tgb_pacote_default.py"
+    },
+    {
+      "name": "tune_preditivo",
+      "path": "pipeline/42_tune_preditivo.py"
+    },
+    {
+      "name": "tgb_pacote_oficial",
+      "path": "pipeline/39_tgb_pacote_oficial.py"
+    },
+    {
+      "name": "sensibilidade_hp_padrao",
+      "path": "pipeline/61_sensibilidade_hp_padrao.py"
+    },
+    {
+      "name": "tgb_auditoria",
+      "path": "pipeline/40_tgb_auditoria.py"
+    },
+    {
+      "name": "ic_preditivo",
+      "path": "pipeline/53_ic_preditivo.py"
+    },
+    {
+      "name": "diagnostico_erro",
+      "path": "pipeline/55_diagnostico_erro.py"
+    },
+    {
+      "name": "sensibilidade_metodo",
+      "path": "pipeline/58_sensibilidade_metodo.py"
+    },
+    {
+      "name": "estudo_vazamento",
+      "path": "pipeline/59_estudo_vazamento.py"
+    },
+    {
+      "name": "aalen_preditivo",
+      "path": "pipeline/45_aalen_preditivo.py"
+    },
+    {
+      "name": "fronteira_tune",
+      "path": "pipeline/54_fronteira_tune.py"
+    },
+    {
+      "name": "sensibilidade_tune",
+      "path": "pipeline/57_sensibilidade_tune.py"
+    },
+    {
+      "name": "furos_preditivos",
+      "path": "pipeline/44_furos_preditivos.py"
+    },
+    {
+      "name": "leitura_preditiva",
+      "path": "pipeline/43_leitura_preditiva.py"
+    },
+    {
+      "name": "leitura_aplicada",
+      "path": "pipeline/62_leitura_aplicada.py"
+    },
+    {
+      "name": "landmark_jogadores",
+      "path": "pipeline/65_landmark_jogadores.py"
+    },
+    {
+      "name": "testes_defesa",
+      "path": "pipeline/67_testes_defesa.py"
+    },
+    {
+      "name": "variacoes_recentes",
+      "path": "pipeline/68_variacoes_recentes.py"
+    },
+    {
+      "name": "figuras_estudo",
+      "path": "pipeline/46_figuras_estudo.py"
+    },
+    {
+      "name": "tgb_figuras",
+      "path": "pipeline/41_tgb_figuras.py"
+    },
+    {
+      "name": "campo_posicoes_nfl",
+      "path": "pipeline/48_campo_posicoes_nfl.py"
+    },
+    {
+      "name": "figura_walkforward",
+      "path": "pipeline/63_figura_walkforward.py"
+    },
+    {
+      "name": "export_figuras_tese",
+      "path": "pipeline/47_export_figuras_tese.py"
+    }
+  ],
+  "completed_step_count": 48,
+  "log_sha256": "7a9d97153145f70aa4c9cc9ca9396a4df951ebab5089a1bbddb7169259b4afb5",
+  "artifact_hashes": {
+    "Análise Exploratória de Dados/figuras/career_lag_evo_QB.pdf": "719bb1b127168998de5edf24770903dc7ad2c8242aef853a1215aea6f693f181",
+    "Análise Exploratória de Dados/figuras/depth_QB.pdf": "f82f0684a4006b44dfbf609beded920acbc9af87f47c3cfedcb9d012e95b84ff",
+    "Análise Exploratória de Dados/figuras/depth_RB.pdf": "813eb627c2d64e5b855d139f11d608287ee943a1c785797d41f7bda8bab4d395",
+    "Análise Exploratória de Dados/figuras/depth_WR.pdf": "dfb73b76f3879aa2f3bdccdacf785502d163bb4e735e2eaed093fe5d0493be8d",
+    "Análise Exploratória de Dados/figuras/draft_QB.pdf": "f373b8dbcf1431712734e4c953fe98dcd6dcc0f7a3498252c2f4ef7a18617ab2",
+    "Análise Exploratória de Dados/figuras/draft_RB.pdf": "f7bb6e89dbfa995b95d8402361069d0b2c556b251355ea82529641841c4099df",
+    "Análise Exploratória de Dados/figuras/draft_WR.pdf": "75df52b2a2f903d20efe7fe61e0fb254773bb2b8c100c600795f61a9ae2eea74",
+    "Análise Exploratória de Dados/resultados/estatisticas_eda.csv": "c23a54568ab4bd319ab3b285e49bc91601d7ca002318e6ef895bd2ff76c7464a",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_career_lag_evo_QB.csv": "8b6fcfdc9d6a8276a30379876e5a3829996c4ee23ceaad0b1fbe0c259f822d28",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_career_lag_evo_RB.csv": "0c0c521867d7ea58d5f7102b9da33b83efbb1b3fb3a2219f481c14c4c919fb07",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_career_lag_evo_WR.csv": "79d792f9399af05d517248eeca2e315035b5f42e8823edd54862ef3c25bc7d47",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_corr_matrix_QB.csv": "a8f5b22b591f4d7b5921621a2d9c30772728397cc641abfb7a25e8ad8aa18ac0",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_corr_matrix_RB.csv": "deae251ab6886178afb23a9180dd43ae16130aee96c06f45553e4f488bf11118",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_corr_matrix_WR.csv": "cf275239b6b9b7263e313ec21b8fc6a6424aa027cf698eb235d9b01a0c85601f",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_depth_contagem_QB.csv": "7326c44c58854d2ae2763a690e290fe3b614af6117cebc6cc09c68cbdbe7d62c",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_depth_contagem_RB.csv": "9fadca1d0a85c5dfb2e09a8a92d96a3a65dd95923535af2e6b939f9dbd650040",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_depth_contagem_WR.csv": "3e1c939ffc55c2e67cf683527c1dc9ea11f6df1213c40f24bdd01108f72e35d2",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_depth_por_exp_QB.csv": "dc6410420aa1cf5dc5e602f2670f3735b9b8e551379c12fb2b97cfd44408389f",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_depth_por_exp_RB.csv": "2ff346fc6fc9a5ed73c4756a8273e15466db92533f016a22e9a3eb0b18e55cac",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_depth_por_exp_WR.csv": "273cf842f788d858133c5ea392ba56a1396ed12783dad6057fc44af36bdd45d0",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_dist_carreira_QB.csv": "fb93d1d17b28ec4af24d9b23b1da917ccdb24084932f13eb8593cc122b455899",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_dist_carreira_RB.csv": "f5b725f08066ac80d4fd191df5a653cc012c25ce71f6acee3053750196d1f9fa",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_dist_carreira_WR.csv": "32fc45a8980cc728d9c4cf2824b2273bc831002e39b75de1a98c740143ce3d8c",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_draft_boxplot_QB.csv": "191273302fb5e3e4234ffddb0bf6721ea4d92554bcb45a272829e4eaf28a99a8",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_draft_boxplot_RB.csv": "ba097c7ace76e3e52cf3831d478484ec11b6e214bf30f4875bb9bcf42527a1a0",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_draft_boxplot_WR.csv": "4721f5c09964215fb6e671a692ceae3133fe90a5203d16ffc335b207c93c2e5f",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_draft_media_QB.csv": "eb9113ce0c87254a577c2fb4028fd7da1219cd833f770825359eb9b69591878d",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_draft_media_RB.csv": "688834bfadc7ffecb5428f401b4430c9068685aa1a7a86cc38e4fccbb43aec19",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_draft_media_WR.csv": "7a41aefc9bab3186b658e7088b571fcf5919fe5731fee2bfc4f997a311df0120",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_games_missed_grupos_QB.csv": "e4386c8ae290b7c80f5d163bd797b1492d465451b13f4599261574827273294d",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_games_missed_grupos_RB.csv": "0ba854eb820d96e7e66c674df5343e17c548fc4d41b444105e889bd936333f8d",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_games_missed_grupos_WR.csv": "8d4be94b868d9e6a8d6ecb82b5415e72081b7d717f520b77d85a4fefa5a8fb06",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_games_missed_serie_QB.csv": "02cf2c9493fa14422686ae6790ff6af24bef8b015a06e46d5ea761a9d6080863",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_games_missed_serie_RB.csv": "0a3f4690e3b64e94cc1cab2b94e8ba5d993a686ae9235e6b39278e5c9c413056",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_games_missed_serie_WR.csv": "4fb225da5116fb242cd476b1b76881b05b187e7ac7b8f5c6e7e41652fc8fe8b6",
+    "Análise Exploratória de Dados/resultados/series_figuras/fig_testes.csv": "a7fa28f6643138ee9a5839f2e365dce1e66b04cc24cdd7db13b32a96c89da83d",
+    "Análise Exploratória de Dados/resultados/testes_eda.csv": "ecce1d762e017c9faed8857148029bf923fbf39b208536bc7857297a31862c91",
+    "DataBase/qualidade/ausentes_por_coluna.csv": "38418b1fdd3ff0f63ab6b04113f5ad0c2e23763f3c3a0a65a0539141c5601659",
+    "DataBase/qualidade/games_missed_inconsistencias.csv": "0990cba582a28c70b8ba563c385001b6e55bbaa22dd8d2a3586c2c6d9998e133",
+    "DataBase/qualidade/multitime_casos.csv": "58097e688955cbf8a5faf760ee453acb09b4b9fe2f437f55ee811581f76432f1",
+    "DataBase/qualidade/proveniencia.json": "84637290a1be7452455dc8298f16776cb309c00bf5ecf4dd0903d652764e33e3",
+    "DataBase/qualidade/qualidade_resumo.csv": "30ddca3fa3548bcc61f447b56c2485bea8a9aa227931b5e0845d07ec6b556b0b",
+    "Escrita Final/figuras/aalen_termos_violacao.pdf": "bb554ab39f079b7b1ea0894c90de2d24733da55797b9c623441d6014a08cbab7",
+    "Escrita Final/figuras/c_walkforward_folds.pdf": "fd8d203c32aae9fe9bed9cfab2f8ce4738a6baba700d96467d68a40b607a6752",
+    "Escrita Final/figuras/campo_posicoes_nfl.pdf": "9bb1bb9e4c8529150a0ecdeaa5464e569a288763730e41bc0912da20799e0f17",
+    "Escrita Final/figuras/career_lag_evo_QB.pdf": "719bb1b127168998de5edf24770903dc7ad2c8242aef853a1215aea6f693f181",
+    "Escrita Final/figuras/depth_QB.pdf": "f82f0684a4006b44dfbf609beded920acbc9af87f47c3cfedcb9d012e95b84ff",
+    "Escrita Final/figuras/depth_RB.pdf": "813eb627c2d64e5b855d139f11d608287ee943a1c785797d41f7bda8bab4d395",
+    "Escrita Final/figuras/depth_WR.pdf": "dfb73b76f3879aa2f3bdccdacf785502d163bb4e735e2eaed093fe5d0493be8d",
+    "Escrita Final/figuras/draft_QB.pdf": "f373b8dbcf1431712734e4c953fe98dcd6dcc0f7a3498252c2f4ef7a18617ab2",
+    "Escrita Final/figuras/draft_RB.pdf": "f7bb6e89dbfa995b95d8402361069d0b2c556b251355ea82529641841c4099df",
+    "Escrita Final/figuras/draft_WR.pdf": "75df52b2a2f903d20efe7fe61e0fb254773bb2b8c100c600795f61a9ae2eea74",
+    "Escrita Final/figuras/forest_plot_QB.pdf": "5379288a561678fd8ee01921d4e09b4b54930669b99750b7a105492488daf0c9",
+    "Escrita Final/figuras/forest_plot_RB.pdf": "32a27e832b4852e25f6f744aa11337ee01e7263075840c8d3eabb92d27dfbb69",
+    "Escrita Final/figuras/forest_plot_WR.pdf": "9e43d3b4d5bb3fd06362fa20f4c4c72c0c2892c9570446853785e2c2c31b7222",
+    "Escrita Final/figuras/km_global_QB.pdf": "07d34cb8c961878b08409129158880b0fdfb844598b5c79b62013744d8a2c72a",
+    "Escrita Final/figuras/km_global_RB.pdf": "b71551cf38a65b891cd4e8dc4f238ea97d5e9d4e7746d39f02fbdaf290a79f0d",
+    "Escrita Final/figuras/km_global_WR.pdf": "22691f23aee72e185599d345409d8228645bcab4ed217958b98e636e3c012775",
+    "Escrita Final/figuras/tgb_calibracao_quintil.pdf": "fec8b293d040f08b0b10ef44c96bf44f4e9dadf3c1a1b13e2f71a4f3914361b5",
+    "Escrita Final/figuras/tgb_casos_leitura.pdf": "2a4d93ded48662b46057707dd57a8d39e3f8c42b2ae03c1c5f55a1a72bade2fa",
+    "Escrita Final/figuras/tgb_landmark_quintis.pdf": "8029493d9f351600ab5f8ed2f5034465774144e635eddf76a4e27935adefbd5f",
+    "Escrita Final/figuras/tgb_lista_2024.pdf": "810aa52182f9b2fc443e191b24869df500f5f03bbf9b99434837f0662448c235",
+    "Escrita Final/figuras/tgb_lista_quintis.pdf": "b8becd385aa20304f8538e1ffd8f56a1144da4ae61837cdcdba0a425bd46d75c",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_beta_QB.csv": "6978772a5f88d9f0b543dbbb86e5a91aa1b1559eafb83273300fa9cfcad7ddce",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_beta_RB.csv": "fd2e1594114e892f63fbc186baf6e537316fb74fee6dbbfd7ee4e5af66d793de",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_beta_WR.csv": "33978adcac972aac200ef1f61af66f9cf8816863d35570573c9f40deb8f9a07c",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_cum_QB.csv": "2cc04214d4b9db9cda12d77294efe41c845cc28e9d84ab8ef5ada91a7d0b96e0",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_cum_RB.csv": "8cc1616b853d9b331a8df236e019128d75efbb4b8c597adc458a3e056faebebd",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_cum_WR.csv": "6317d1747ea83a54c30decb6b087a601e788df52b4faedd4244312663e0d23b0",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_fit_QB.rds": "30f991710a3406766e836aae0af6a2776c3e3047f3702891c22825152cf31e18",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_fit_RB.rds": "6d416eec667a2f22c343dbcd6964c49c643e4ba5182977eba977ebc7ce0e3aca",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_fit_WR.rds": "1273a24321eb831d015677721018eaebb0d028aea14adca5a268cf973c05b471",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_robvar_cum_QB.csv": "994d732dcdf9dcf8084e7dcc285c154cf19172760af8fa28c4ccbf8a0d6cac61",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_robvar_cum_RB.csv": "0984245295556187a4673da0dd898eb63be00ae00bd4bf2c9a24f2b64465b1e8",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_robvar_cum_WR.csv": "781922a8434c770dbdc04d6add258970dab118621e3b1e1da5c930af9a6245d7",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_summary_QB.json": "2cabe506a8629050c6e3f555b57f43d1e8ee7f987106c7d7d7db91e04ed34bee",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_summary_RB.json": "5e375b21c757a665ff720a7c86e86d228cc17405c9dea703382d68ad9fa4f001",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_summary_WR.json": "47e2b7db17953d4b15413df42408be30495b11d784741cd41c9c9758036d6181",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_var_cum_QB.csv": "8f7d11ecd762c675db91c4b3edf6a0e1763aef2aa4d7608f092b4ef3c358b9fc",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_var_cum_RB.csv": "40527b00bacc04106d11278e87a4c5374ebfa288a1de94ea73042d56f0fd85b5",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_var_cum_WR.csv": "62f44ada33133f55def92de56d9701e4e6c154fa4bed4d2d0c1bc3eac58a7695",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_vs_cox_QB.csv": "ba723fce9e7db5485826bf3de341db01bdcb8272528bb07ea53f959e876cfda5",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_vs_cox_RB.csv": "c1b6dd33c052151313d942a9956ececbc0cc985a517999e23cb9f4134f7f6b9b",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_vs_cox_WR.csv": "51321fb12912d02e23ac1a33447073707a49581780d0c9bb3ae3c735689d7a84",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_vs_cox_all.csv": "0b98f4bf32af9bc4ca2f2d8a7a7740d6ad7cf7ea078771ce1d786d92329226c1",
+    "Inferência/Modelagem Cox-Aalen/resultados/cox_aalen_vs_coxph_unpenalized.csv": "de6308ff2280643bc0c44befe1d8106ee437ddb6f78b17643f6157878f133c10",
+    "Inferência/Modelagem de Aalen/resultados/aalen_cum_coefs_QB.csv": "41377ef366f41cb597c16931d5235f025369795f7feb04daef1fd927468bb0ad",
+    "Inferência/Modelagem de Aalen/resultados/aalen_cum_coefs_RB.csv": "039d2f9681ef830196fceceea6c97425e49b10d74964e14f0bf48ede8b653666",
+    "Inferência/Modelagem de Aalen/resultados/aalen_cum_coefs_WR.csv": "087bb6e9970d4773c092650b1f768d566e54e2bc2a8e5582e09c9f88d03f693b",
+    "Inferência/Modelagem de Aalen/resultados/aalen_final_covs_QB.json": "e8ac8022d907a9723c086cd66022516f6209bce20de79f42ab47e70d43f70b4d",
+    "Inferência/Modelagem de Aalen/resultados/aalen_final_covs_RB.json": "840f92550bcf96090676bb1e863c354ff1bf261d22bc63d3f1748375d29d0e5c",
+    "Inferência/Modelagem de Aalen/resultados/aalen_final_covs_WR.json": "f18107e91dd01809d0a3334111f548a3935c6b89ddbe1d7124cfc6c2037acff6",
+    "Inferência/Modelagem de Aalen/resultados/aalen_fit_QB.rds": "3a45cab98abbcb71777aaeb1f314285f5b13f4d220a02ced04c5b28e1d711073",
+    "Inferência/Modelagem de Aalen/resultados/aalen_fit_RB.rds": "46c569c16938fbefa2ef6e89c0df9d52f820a13432c97667c69e6fa3d7168e0b",
+    "Inferência/Modelagem de Aalen/resultados/aalen_fit_WR.rds": "862f6b5eb65ffd208e955d8877e516f6f3a841b0dbd89288ec5b684c06fad387",
+    "Inferência/Modelagem de Aalen/resultados/aalen_input_QB.csv": "1a25df9e4bfedca78c7124aaa55ba65bd134207fe6294ea7af52039d6d4b3502",
+    "Inferência/Modelagem de Aalen/resultados/aalen_input_RB.csv": "001f987465043f14ea78499a73bd5cdf339bcfdb337130b61e218c74ff14f83a",
+    "Inferência/Modelagem de Aalen/resultados/aalen_input_WR.csv": "d3aeded4c66f59b9ba7a981ff016585136f8c1087fc2d8591dbad4f2e68e569b",
+    "Inferência/Modelagem de Aalen/resultados/aalen_robvar_cum_QB.csv": "8aae2d6d1496a7c75d28bd9e1e461ea93a5611b0d02424f5bddafcc4b727ec5e",
+    "Inferência/Modelagem de Aalen/resultados/aalen_robvar_cum_RB.csv": "9ae2f7c7e8adf7088c3606f33744c022605332178d2909d610440a02492711ef",
+    "Inferência/Modelagem de Aalen/resultados/aalen_robvar_cum_WR.csv": "a6d9ba28e7808e376551de956b526e8865577f32575b9618b394cb67b8eb7d67",
+    "Inferência/Modelagem de Aalen/resultados/aalen_screening_QB.csv": "78090473c0b17628def12b5beb63977e4972630f27532352cfb917127c02a402",
+    "Inferência/Modelagem de Aalen/resultados/aalen_screening_RB.csv": "2e16b10cfd4473ea62e705d4f8c63f2fa0df52e68d1e15ff3f15a28e7b368039",
+    "Inferência/Modelagem de Aalen/resultados/aalen_screening_WR.csv": "043cbedf0048dedd2511626127195db1f936852150d1e889f0f6b6005f7ec5fa",
+    "Inferência/Modelagem de Aalen/resultados/aalen_summary_QB.json": "e683b1c9f0643ae8764fb8f013c463f6296eb1ad92bfaf2bd23555f276a72c6f",
+    "Inferência/Modelagem de Aalen/resultados/aalen_summary_RB.json": "2e31ec3f7dec98b53f566ede991cc5f714cf20feb748afba6b06f59bff980b2c",
+    "Inferência/Modelagem de Aalen/resultados/aalen_summary_WR.json": "417a0db897c1c75c542d51ba90e052e27056372dcbfebbc4d8a54d0c6cbcdca7",
+    "Inferência/Modelagem de Aalen/resultados/aalen_var_cum_QB.csv": "c8f05a4d565de7b61639f3f7b86079128b189f264d66beaeff54510fe2ac3ed8",
+    "Inferência/Modelagem de Aalen/resultados/aalen_var_cum_RB.csv": "761f14859165f5f0ae7223743baa1f12cc2c5802c378218a67443a93790aeab5",
+    "Inferência/Modelagem de Aalen/resultados/aalen_var_cum_WR.csv": "6952d8a541de5419be1e75d7f0c143287f5225229284cd5b99c496281dc3feb2",
+    "Inferência/Modelagem de Aalen/resultados/comparacao_cox_aalen_QB.json": "6b084d98d4a9b2e5d1198ef021eb8f9f2903b2d368d34428b0bc5d35ac6711f5",
+    "Inferência/Modelagem de Aalen/resultados/comparacao_cox_aalen_RB.json": "13b134b2fec2856b7cf88808d6213efc422851ce87727325bb91043d97ff1e6e",
+    "Inferência/Modelagem de Aalen/resultados/comparacao_cox_aalen_WR.json": "10f7bdab7bacde7a1326dc7336b176e193c06ef3e18406e9cbe435a851b7ae64",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_cum_coefs_QB.csv": "d7b8879ab0e246ef41e3f0ce46c3ad63b1ce34ccba5475962363f882d5b5ef9b",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_cum_coefs_RB.csv": "0e9a4e444079004abbec3fda9cac7fd65cba335ee3768744add9e41c4815766a",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_cum_coefs_WR.csv": "dbd5ea7437281391cb5ae60d02a152b9b9159d0d1af64f645732952a896ed2f4",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_fit_QB.rds": "77f521bb15ee74105b48fc4cedfd5caa52a39bad484461f38b0143d3f79d4cbc",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_fit_RB.rds": "2420b52ec08ee8e74629a61f279916d36cad05b7dcd271e21ec4023eb20e104b",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_fit_WR.rds": "a8f9f0c3615a9bba3f41c1faf134e24ffd1562fc73d371b6a5d536167a9ce943",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_robvar_cum_QB.csv": "e17e06b07956664bd3eba6535d69efde6773edbf06b358861848c9195135a947",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_robvar_cum_RB.csv": "24fcafc30befebba67c108f4fefbbe8ae05fba6224038f7ee1526cc5a80892d4",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_robvar_cum_WR.csv": "6bfbc5628927c153c55bbb247e14e01adbe63b640d1c42f1fd311485da932ab3",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_summary_QB.json": "61ce51c334c9b37d8732cf0df3227fb9232f6a6c95316d2de4b5e69b2b0dc72b",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_summary_RB.json": "ae2db88c5fbf03848c9282ea3733c32ccdd80fbf89d23dc31359c0c074cc9f01",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_summary_WR.json": "5cae4f49a9a872a00418a554261825b6d8d6ac6d2becd3a4f572966eeaa08690",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_var_cum_QB.csv": "1a3e6df95c9828987316b54f8031d8a18d451837af784e70edbb8f196365aaf6",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_var_cum_RB.csv": "9af788cf6d234726523d524f49475a6938915cd64ed99b0393ab9baccd3d62bc",
+    "Inferência/Modelagem de Aalen/resultados/nmin1_sensitivity/aalen_var_cum_WR.csv": "7a4e874d5e5a62210e412bf15754db86b43af85eda81a9f372c29fe17e48bad0",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_cum_coefs_QB.csv": "5f6e6ecc2f7231714230deb3af87beef727dd9a31c7c86d668bb595ed3cc331c",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_cum_coefs_RB.csv": "d143aad70f27a195100f4c8673e891bb4f8755eed1a6cff279ad6754bc861145",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_cum_coefs_WR.csv": "087bb6e9970d4773c092650b1f768d566e54e2bc2a8e5582e09c9f88d03f693b",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_fit_QB.rds": "8e84d79e501c6ccf876a626572ff1b76c5b36a2a9b8d71559af2187d4c852c13",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_fit_RB.rds": "e2c5817fc2abd1653c0445eb04525445da93e01664824cfc986b8e395a0ba8f8",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_fit_WR.rds": "862f6b5eb65ffd208e955d8877e516f6f3a841b0dbd89288ec5b684c06fad387",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_robvar_cum_QB.csv": "4ab04737f81c984fe409421fcf637d74eba6eabe216a6fde46694d4ced8d7e30",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_robvar_cum_RB.csv": "1003425f0acfc04dea7fb078a0aee87a633ad7ec12c130e84fc55077bccca36c",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_robvar_cum_WR.csv": "a6d9ba28e7808e376551de956b526e8865577f32575b9618b394cb67b8eb7d67",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_summary_QB.json": "84d8d70e7a1ffdbc37dd166eb70a146a378c948a543672f815c9e496030400e2",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_summary_RB.json": "50ed9df452653ead206abddf35eb831396277e3db0968f2005e6796ef3f3d5f4",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_summary_WR.json": "417a0db897c1c75c542d51ba90e052e27056372dcbfebbc4d8a54d0c6cbcdca7",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_var_cum_QB.csv": "524521e3bb2e28b13397625620f2ac88da54a3880861ae2f1268966960273653",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_var_cum_RB.csv": "c4413adc35d7d4f971a45be0bb9a78714b62c29a3f32747d5fc3d055d532eb29",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/aalen_var_cum_WR.csv": "6952d8a541de5419be1e75d7f0c143287f5225229284cd5b99c496281dc3feb2",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_cum_coefs_QB.csv": "a2f986f267475774f545e292779eaa225114d657f2a97caa725ef699c3ea676c",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_cum_coefs_RB.csv": "3adc2f95af4ce1b7482f07d1cf46c68c824f679af13cfe27cc3d50e4cdada311",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_cum_coefs_WR.csv": "dbd5ea7437281391cb5ae60d02a152b9b9159d0d1af64f645732952a896ed2f4",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_fit_QB.rds": "a7903f27874346341d098c25d194d12d6667ad7acf57bad8484e0e29a6f2b343",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_fit_RB.rds": "8d3135853981f309b753e13ad3cdfeb0140eb30f01a7128a13ae37716d9ad494",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_fit_WR.rds": "a8f9f0c3615a9bba3f41c1faf134e24ffd1562fc73d371b6a5d536167a9ce943",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_robvar_cum_QB.csv": "82a111abb895dacad81ea2492a7a6742202e5c1375f7fca20e64623f6ba0057c",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_robvar_cum_RB.csv": "d354a9f9bcb3b4b8b873cee3d0c037660cd0f5643f8c81285b9f192942f3bac0",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_robvar_cum_WR.csv": "6bfbc5628927c153c55bbb247e14e01adbe63b640d1c42f1fd311485da932ab3",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_summary_QB.json": "385eb719dcb34a3cbd7d9298e098c4cb3aa207c32512b0df91348e882aa4864d",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_summary_RB.json": "3c00d4b4e91588367aee55c35fdc4b6cbcc95869bf150770a2b22b0533413626",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_summary_WR.json": "5cae4f49a9a872a00418a554261825b6d8d6ac6d2becd3a4f572966eeaa08690",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_var_cum_QB.csv": "5d9b3f3e0726cc0b9ec34e09f0de6e8ed5f6c1c4a25007fb2a62058eb9d81aee",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_var_cum_RB.csv": "3b9734dd1193d40c904f3c1492aa46effbe5bae2103375522bf4e7ab15adf899",
+    "Inferência/Modelagem de Aalen/resultados/triagem_corrigida/nmin1_sensitivity/aalen_var_cum_WR.csv": "7a4e874d5e5a62210e412bf15754db86b43af85eda81a9f372c29fe17e48bad0",
+    "Inferência/Modelagem de COX/Curvas/figuras/km_global_QB.pdf": "07d34cb8c961878b08409129158880b0fdfb844598b5c79b62013744d8a2c72a",
+    "Inferência/Modelagem de COX/Curvas/figuras/km_global_RB.pdf": "b71551cf38a65b891cd4e8dc4f238ea97d5e9d4e7746d39f02fbdaf290a79f0d",
+    "Inferência/Modelagem de COX/Curvas/figuras/km_global_WR.pdf": "22691f23aee72e185599d345409d8228645bcab4ed217958b98e636e3c012775",
+    "Inferência/Modelagem de COX/figuras/forest_plot_QB.pdf": "5379288a561678fd8ee01921d4e09b4b54930669b99750b7a105492488daf0c9",
+    "Inferência/Modelagem de COX/figuras/forest_plot_RB.pdf": "32a27e832b4852e25f6f744aa11337ee01e7263075840c8d3eabb92d27dfbb69",
+    "Inferência/Modelagem de COX/figuras/forest_plot_WR.pdf": "9e43d3b4d5bb3fd06362fa20f4c4c72c0c2892c9570446853785e2c2c31b7222",
+    "Inferência/Modelagem de COX/resultados/cox_hr_QB.csv": "c49e9fd7b50806fce0111afac73dca445b7a3e09ee474ce28b003f6fb8422a4d",
+    "Inferência/Modelagem de COX/resultados/cox_hr_RB.csv": "e258966a26e6f359c0e453fdad822e31894340c713ab3107887276f2f58c9d02",
+    "Inferência/Modelagem de COX/resultados/cox_hr_WR.csv": "85da163b008106d1de40fc3b783e456b42cddcdd67cf235e18ae028fd415899a",
+    "Inferência/Modelagem de COX/resultados/coxph_unpenalized_QB.csv": "69781a0b8992153cd2bc3a639808277894b5ad2573216a572e4df1a000c5c5f2",
+    "Inferência/Modelagem de COX/resultados/coxph_unpenalized_RB.csv": "209b7e12d11280b6f84dcc79448071842afb2db0580412d52fba7624ec79a414",
+    "Inferência/Modelagem de COX/resultados/coxph_unpenalized_WR.csv": "0e47de134b78441bf6e6b6e4bb851bbd672365738e27472d0316c7d3c65f33f7",
+    "Inferência/Modelagem de COX/resultados/final_covs_QB.json": "8f407250d284fa95699f5ae6c325fa3590deacbec6280d0185c7723eafd950cc",
+    "Inferência/Modelagem de COX/resultados/final_covs_RB.json": "a638a009958dd4c0bfb5a759afa1f331367301c0ceb5a5997f48341407d5b7ff",
+    "Inferência/Modelagem de COX/resultados/final_covs_WR.json": "b80421fcec55ebccb9dfc664fc8fa2ffd3c4359406f9cd4d87882f457933c956",
+    "Inferência/Modelagem de COX/resultados/lr_test_QB.csv": "c6be33cd5ffb5f4beadf2fa6c2d8f847a6be46bc3b9b8f77c82d7850731c58ba",
+    "Inferência/Modelagem de COX/resultados/lr_test_RB.csv": "4e220ee6a8c670946c30daba45f3912a260a99d52de9c119ee9dd0c7d27e1528",
+    "Inferência/Modelagem de COX/resultados/lr_test_WR.csv": "7c3601b6b9c30f27b81ab7605d0b1eb6be1221adfbe581854c11989ab83d2e26",
+    "Inferência/Modelagem de COX/resultados/schoenfeld_QB.csv": "21fa025270c22a8bd6df4cdf1113379fe17af6e66b13dc358d1ec91e51752b38",
+    "Inferência/Modelagem de COX/resultados/schoenfeld_RB.csv": "60a130bd598217209b834b820915fcfb6643e5261a7d64dcf26ab19d52488048",
+    "Inferência/Modelagem de COX/resultados/schoenfeld_WR.csv": "f26373b11f55278c049265fcfba77d9c9f1e4be962bca03db1b6488bfff9f23f",
+    "Inferência/Modelagem de COX/resultados/schoenfeld_input_QB.csv": "51bc475bb2e81514a595be4a3f2fc52264f90b266b256868bedf8b17108fa096",
+    "Inferência/Modelagem de COX/resultados/schoenfeld_input_RB.csv": "508d073bc3a9c944d0fa029c9a45a83961ce0f994eaaaee799a22febb328de86",
+    "Inferência/Modelagem de COX/resultados/schoenfeld_input_WR.csv": "6d5a202edbdc768ce00d73b7b23688608cafc0e461e668d3e9258d1ef4d8ee17",
+    "Inferência/Preparação Modelagem/resultados/df_cox_QB.csv": "ee6e2913fc6a8f1f5d929ea4b6db2c77a4b9deb4f9d1c621494f59ba7e0b321f",
+    "Inferência/Preparação Modelagem/resultados/df_cox_QB.pkl": "d35da2a2476e690423d23ef5a41bf8d994054b7694bf80d597e4ec1d94b9e15f",
+    "Inferência/Preparação Modelagem/resultados/df_cox_RB.csv": "8ccb4877923d12bd7c0b6191fe19ed06e07d16d86e97595121f329af957f1485",
+    "Inferência/Preparação Modelagem/resultados/df_cox_RB.pkl": "3e7b7c861ddc756636e8b3a392a304e035ba2dab9533fe2b1651a584e6010643",
+    "Inferência/Preparação Modelagem/resultados/df_cox_WR.csv": "9c224c2d2a54747ef37dd5035dbb9d46a622bd34f8de8cc5927fb055f9feaf77",
+    "Inferência/Preparação Modelagem/resultados/df_cox_WR.pkl": "68dbfa194f5bf4ab7f96ee9c63b5e2fd5a13edf28df7dfa9060719df0802ee69",
+    "Inferência/Preparação Modelagem/resultados/funil_covariaveis.json": "9c1e214bd166a7aacfafd09e44b8e857e97a24f29708f703c778b88d84da60ec",
+    "Inferência/Preparação Modelagem/resultados/preenchimento_por_periodo.csv": "ea6017a2f1dd73daf851e880abaea5d0adb991b95fb5c4287704659e137b8b8c",
+    "Inferência/protocolo_inferencial.json": "2ad3202f5bd6bb484341297595d61b8e0c7448776c16c5124b2efe3626193ca0",
+    "Inferência/sensibilidade/resultados/aalen_discreto_lpm.csv": "b06d4380f1a3662ae92f1c528a11c78907685dc6253b1d4824d721d15fb823e6",
+    "Inferência/sensibilidade/resultados/aalen_discreto_resumo.json": "a7a2b4269800aaebd9467cbff24ab1e57282bcf0a520e69f2c9ed89dbaf3ccd3",
+    "Inferência/sensibilidade/resultados/frequencia_selecao_QB.csv": "fa5c73426f884b6f415b5d1596ba53ee181010ad6506add8addc042fd7d324c4",
+    "Inferência/sensibilidade/resultados/frequencia_selecao_RB.csv": "275e6c1ac1355f4a2c0502c9b0ac5cab6ad1cc9e54dfcb99674b62b036edfafa",
+    "Inferência/sensibilidade/resultados/frequencia_selecao_WR.csv": "e69b0891783a9f41048fd10ad0bc537bb0b371b009b0723ba0eb31fb560a2481",
+    "Inferência/sensibilidade/resultados/imputacao_multipla.csv": "418a2093743e5e9858c19b09d1c64ec9b9c8287a028314c4553a441e86708aa8",
+    "Inferência/sensibilidade/resultados/limiares_taxa.csv": "c67b077b144bdc7402b948973c69c6004c69f3e59c01779cfd2e5a184d9eb9bc",
+    "Inferência/sensibilidade/resultados/resumo.json": "b6d5228d7fd20668e44383501006b52a40b0577b94e7ba4ab2d4b8ec4698f006",
+    "Inferência/sensibilidade/resultados/schoenfeld_direcao_QB.csv": "7eff868c4323bdf05132037cedd5227cba36b35cc7f2df87a8118583eeb65c89",
+    "Inferência/sensibilidade/resultados/schoenfeld_direcao_RB.csv": "f6299f9f247e0838914c7f1ce2d42299c2c08416a36cb6cc09a3b60f34b818bc",
+    "Inferência/sensibilidade/resultados/schoenfeld_direcao_WR.csv": "eb15703e7eb2c9f0f82f52181bb64c4d28cdc1ba2b4016525ad615e6c8fe6629",
+    "Inferência/sensibilidade/resultados/sens_censura_inicio_QB.csv": "f3cd96c3c98ba63b3ccc469587ee9cf8c63a724a2e3b13be3600d1381ed21039",
+    "Inferência/sensibilidade/resultados/sens_censura_inicio_RB.csv": "8af62b132993d9292bd35c56f52d48413f3eb326c994f1cd05fdf4c7e98c8e28",
+    "Inferência/sensibilidade/resultados/sens_censura_inicio_WR.csv": "f17df1bfeab8373deee31d8f97fb7fce84ca413e71c0a08b4adc7c5291f98845",
+    "Inferência/sensibilidade/resultados/sens_covariaveis_defasadas_QB.csv": "3def9beb668ed60edb9fa2d309a952963db23a1e53b89a2391af46253b04d032",
+    "Inferência/sensibilidade/resultados/sens_covariaveis_defasadas_RB.csv": "cb96b500c984d11acfd6088c3f4aad641cdfd4ce47c145911852c312852ff6fc",
+    "Inferência/sensibilidade/resultados/sens_covariaveis_defasadas_WR.csv": "e5502a72271ac5e3f1e6781d8008899bf037f50c1a61db438b773fd17efdc860",
+    "Inferência/sensibilidade/resultados/sens_empates_QB.csv": "8a4919c1d46577f882f404fa6b2f5f89541e5abe8b6fa70618360e0e57af84c3",
+    "Inferência/sensibilidade/resultados/sens_empates_RB.csv": "5eb00ffc739c22d8eedcd6e6f8b116517d43ff429a9f7d61f95ee5ff5569e9fb",
+    "Inferência/sensibilidade/resultados/sens_empates_WR.csv": "ea01f09866116f3ba8d3cbb4dc611c02f9f3d187cf2b08ead9529f81993e1978",
+    "Inferência/sensibilidade/resultados/sens_ep_robusto_QB.csv": "07b170d1928fb1079349c4f47ff5b6c2ca6529d730b36bd274c9f1f1401285a4",
+    "Inferência/sensibilidade/resultados/sens_ep_robusto_RB.csv": "6a817273c26b71f7608f7462ebee70ad8f9cedf7198fbc94be382d9275fd870b",
+    "Inferência/sensibilidade/resultados/sens_ep_robusto_WR.csv": "15eb97b62c7dd41cd7428911b8d53a315cd3c043ff7ed673e2faff9ba756157d",
+    "Inferência/sensibilidade/resultados/sens_passer_rating_zero_QB.csv": "2efd20aca9a07b22c3f579d36d4cb1aea9ba9f895707411c71dd50c9bb97c0ec",
+    "Inferência/sensibilidade/resultados/sens_selecao_resumo.json": "45660cc3a016c94d1a353b6f7253b0cf2a37895f669eab8713067a99871e7626",
+    "Inferência/sensibilidade/resultados/sens_tempo_discreto_QB.csv": "2fc51b41c72ee97ae3d06c3259451c9cf33c7456830a3611e666fa3e99b69893",
+    "Inferência/sensibilidade/resultados/sens_tempo_discreto_RB.csv": "9d0ec348d1c2e9de67e5550e51137f1cf49ae53925a9feda0778772384a8aeb9",
+    "Inferência/sensibilidade/resultados/sens_tempo_discreto_WR.csv": "914d5140bb436e1a69347724886766b8ca418c7fd9bd79f01b19e582dd63fabf",
+    "Inferência/sensibilidade/resultados/testes_defesa_c_tau3.csv": "2cc13cea9e26c6d11398bd25a4ce9af5a19c347a10b2f125442556227e1ac2d6",
+    "Inferência/sensibilidade/resultados/testes_defesa_calibracao.csv": "77c22e7a8589d52deb09ade9fe1e1b901cd2cde66115a0060131d25a2f4437c8",
+    "Inferência/sensibilidade/resultados/testes_defesa_censura_predicao.csv": "46cfde70027f264faeac80404156c034b0de6fe40c59b5dfb6581cca068b4cc0",
+    "Inferência/sensibilidade/resultados/testes_defesa_cobertura.csv": "7c43647a302bab936e14a384220baff5d175cf290ddee56771b02ec5491dfb53",
+    "Inferência/sensibilidade/resultados/testes_defesa_hr.csv": "6a3b4f900e081bc6bcb4d7f1160d3917302b0ce8cdde3a57ecd0b991ad093a3b",
+    "Inferência/sensibilidade/resultados/testes_defesa_ic_quintis.csv": "a81828f85ce2770ddadbaab4c5cbf1819a16cf65c52cc28d98e0d18c80800b19",
+    "Inferência/sensibilidade/resultados/testes_defesa_painel_2018.csv": "1486ecf95b25ef14fd052123a7e82cac5cefb679c0b1cc8cc6b28365dd20a5d4",
+    "Inferência/sensibilidade/resultados/testes_defesa_resumo.json": "de6b30724bb2d6c10f804d2ec557f6ea028f3629a6d98fa24287f99845246bff",
+    "Inferência/sensibilidade/resultados/testes_defesa_sementes.csv": "7574c92ad613cba2cf0ebdc9b11de914d98cafb48ecbb2d094eddfc6cbe1c920",
+    "Inferência/sensibilidade/resultados/testes_defesa_so_experiencia.csv": "e04435dd1f22b53788c01266cc4ac670009262923d6a9eb240e49c2f8a65bda4",
+    "Inferência/sensibilidade/resultados/testes_defesa_splines.csv": "de42ed5574f6ec15312227090f4a577a8a8cbfcae220ad2e80879aa3886f9e66",
+    "Inferência/sensibilidade/resultados/testes_defesa_vif.csv": "cb7bdc7acbe69234fe298963e9f2aa1567cd78ab429d836bbf2c94747f78a3f3",
+    "Inferência/sensibilidade/resultados/undrafted_cenarios.csv": "fdf41921650654d41a79e2137772cc5bb66f269a87593208a945796ae76eec68",
+    "Inferência/sensibilidade/resultados/variacoes_recentes_aalen.csv": "52988e11c796d7a4a1a4f3224d455e4813fdaab8da68c79928ec7a43b37aa386",
+    "Inferência/sensibilidade/resultados/variacoes_recentes_cox.csv": "1382ccf0c2f5bd5180bc850cc37d8eff015487ee9aee485554ecdf8db4f6841c",
+    "Inferência/sensibilidade/resultados/variacoes_recentes_cox_aalen.csv": "9093439a20c4d5da67c9b485d3b5febdca126a7514c6facbf11904586e835a7c",
+    "Inferência/sensibilidade/resultados/variacoes_recentes_predicao.csv": "cb52f7cca6d4af4a21548ef086d9a2ecb8d40ea576aaaabd94727ab3a121f4f4",
+    "Inferência/sensibilidade/resultados/variacoes_recentes_resumo.json": "0116e65732f74926092a4768e22fa79beaab70c5f8db228484f8f2edef91c7ad",
+    "Predição/pacote_default/resultados/comparacao_completa.csv": "f1c68677e27f6c63de66cdffb953321aa4c74beac71e90b1e5a3957ea5c62365",
+    "Predição/pacote_default/resultados/comparacao_landmarking.csv": "d68f12c11361b39052af97f9f17e6cc797c0683115ce5cdd5b16a6a31778304d",
+    "Predição/pacote_default/resultados/comparacao_landmarking_por_w.csv": "d68f12c11361b39052af97f9f17e6cc797c0683115ce5cdd5b16a6a31778304d",
+    "Predição/pacote_default/resultados/comparacao_walkforward_2018_2021.csv": "08445b531242c3c7a5cb8f6fe6dc9ebb1d2592aeb27295230205dc0badf12384",
+    "Predição/pacote_default/resultados/metricas_landmark_folds.csv": "97643e08be589de065a306219090d700bfaf845a2d64175fefa9c7afea855c4c",
+    "Predição/pacote_default/resultados/metricas_walkforward_folds.csv": "541b2ccb729a52f99a229e71e13ac6c66a304038139054e80e05ce6aac263f17",
+    "Predição/pacote_default/resultados/notas_execucao.json": "aada9fa7d21fd5e247ad72986cb9dd7f38d1b2b999fb91785e6c405a6755f481",
+    "Predição/pacote_default/resultados/predicao_gbsa_2024_QB.csv": "c09afe7de138d35f5a1ee5f06d6b4143d72527746de5c92b7bcdad9bde1d7883",
+    "Predição/pacote_default/resultados/predicao_gbsa_2024_RB.csv": "427ee512ea1ddf9e7906ad0fb70071feb5587b03846e2e63d56a3df1c065441d",
+    "Predição/pacote_default/resultados/predicao_gbsa_2024_WR.csv": "c2e406852c63addc1254f450ee36e246cf054867b3fd8cce7543b954181c4594",
+    "Predição/shared/covs_preditivas_QB.json": "c408ee26c3bb5a265f6f2f57bec5ccc7ab33945835a29a69cd98ec84f981ef3d",
+    "Predição/shared/covs_preditivas_RB.json": "d0d1f82fb35d3d9f75282bd40355856bc58d1ad50c3fe99543ad973b5536a2b2",
+    "Predição/shared/covs_preditivas_WR.json": "13195eff169079dcb1daa2854fbe3f472df1f0f97caed276631ee162da82cdac",
+    "Predição/shared/df_cox_QB_features.pkl": "5b2dca540860674058f9c6f1c35f68bea68d053500ab0a6d8dafbe1c21853e73",
+    "Predição/shared/df_cox_RB_features.pkl": "e5c0bcbea22f4056b822bd6d2d47fa3752fff04dab71cfa7e495c9c184581b45",
+    "Predição/shared/df_cox_WR_features.pkl": "bb5b851d9416ab06ba3be3a839c0ad6d9afca15799e4092b9f7fcd0eff3b8d86",
+    "documentos/estudo_aalen_preditivo/resultados/design_stats_qb_2018.csv": "6c767fbb52f6ed2a0c06d0acd4fa747c125eb21b35861379f222a285b442f55a",
+    "documentos/estudo_aalen_preditivo/resultados/metricas_walkforward_aalen_spec_curta.csv": "59a216490858e8d3c85557db8befb81f3ae3fc85a6086dc849ed91cfc5b38115",
+    "documentos/estudo_aalen_preditivo/resultados/posto_por_fold.csv": "0cb701b90fe5dc585caeba6f4ebec4ca81f554dd8fb880415b4725b92513b9eb",
+    "documentos/estudo_aalen_preditivo/resultados/resumo_oficial_2018_2021.csv": "9d25117fb45b8f5d10b29926700215b29f3fda25958b3131228d395236f3638c",
+    "documentos/estudo_aalen_preditivo/resultados/resumo_qb_2018.json": "3bc381296e6b2deff0dccf06e48e59d579adedd7e148fd99296f366cc1dcea5e",
+    "documentos/estudo_aalen_selecao/resultados/metricas_walkforward_aalen_spec_curta.csv": "59a216490858e8d3c85557db8befb81f3ae3fc85a6086dc849ed91cfc5b38115",
+    "documentos/estudo_aalen_selecao/resultados/posto_por_fold.csv": "0cb701b90fe5dc585caeba6f4ebec4ca81f554dd8fb880415b4725b92513b9eb",
+    "documentos/estudo_aalen_selecao/resultados/previsao_por_experiencia.csv": "f41f97011e9881d7c64254a0bf52b5750132ce5e4ada29bb13f2a9bb0108f40a",
+    "documentos/estudo_aalen_selecao/resultados/resumo.json": "7eb344f567f159b474cea8a35b5c6e88405090d71cd82ed8e67a68b51187f25d",
+    "documentos/estudo_aalen_selecao/resultados/resumo_oficial_2018_2021.csv": "9d25117fb45b8f5d10b29926700215b29f3fda25958b3131228d395236f3638c",
+    "documentos/estudo_aalen_selecao/resultados/spec_aalen_preditivo_QB.json": "ee2462d516d2f36a0904510771aa53a6e2d2e7acce5d6921c2e6097dbc8b2ab1",
+    "documentos/estudo_aalen_selecao/resultados/spec_aalen_preditivo_RB.json": "5cfa97926cd06d0ba861f8b8bf19eeb7febafad8eaa9d8c331a37296c449bc79",
+    "documentos/estudo_aalen_selecao/resultados/spec_aalen_preditivo_WR.json": "969552efc349b5d9bc513fee46abdf4e5c7b90803c199b838a6d56659b051579",
+    "documentos/estudo_diagnostico_erro/resultados/calibracao_quintil.csv": "c24bb5172b5e2ea854bd779fdec1848c68dcf6f06d27fe869638bd35b71acf2d",
+    "documentos/estudo_diagnostico_erro/resultados/erro_km_por_fold.csv": "174ba68a66e2b970298b5d7bf57795a0925fefad5b61fd2f196487510bdaa36b",
+    "documentos/estudo_diagnostico_erro/resultados/erro_km_referencia.csv": "ec38dc8ec04dc9bda717cfc4dd6cab828f7ec3935a930d4f1820fce84967e18b",
+    "documentos/estudo_diagnostico_erro/resultados/erro_por_ano.csv": "b69e48b94c93dd01b536a34339aaf6217066e968aa59bb3297f4e53b642d44c1",
+    "documentos/estudo_diagnostico_erro/resultados/erro_por_decil.csv": "5d0ff70c75c5715f67c8a692aadd18cb17b77c79a606987b8a34b63829f607f1",
+    "documentos/estudo_diagnostico_erro/resultados/exclusoes_erro_anos.csv": "8de6def02fcbdd7c31acc06f0c36ada3433b433b6499779bb84fd05d3d5ddef6",
+    "documentos/estudo_diagnostico_erro/resultados/grave_por_corte.csv": "eaf98a9208aca44140e48b99a1d654cff645ce5a60e7df3c781db58ea57b7220",
+    "documentos/estudo_diagnostico_erro/resultados/landmark_vs_walkforward.csv": "fef66cb0fad5843fb3340b7896516df600b7d60ddf9315410505c1482d5a85b7",
+    "documentos/estudo_diagnostico_erro/resultados/pontos_figura_calibracao.json": "c2998216903660a501fe08146b722670231112f111f00c5cddfaa0cb671fe467",
+    "documentos/estudo_diagnostico_erro/resultados/resumo_diagnostico.json": "ce713323c6ae1e375cb347b090e5f5a566179bf46f6a1d6a7af619c15b492f1b",
+    "documentos/estudo_fronteira_tune/resultados/fronteira_arestas.csv": "5f89ef7ef4392f5e99eb31cf260c3ca2069cababbe61c722580dca5db15d2a82",
+    "documentos/estudo_fronteira_tune/resultados/resumo_fronteira.json": "a6edfb12b566bf60a23bc8121d22b36dc267a89ccd534cdc4bd7599454ef5739",
+    "documentos/estudo_furos_preditivos/resultados/ablacao_folds.csv": "ba9bfba683042f2b65e73d4893cde78551aed6906312dc6fd23541af73f18f8c",
+    "documentos/estudo_furos_preditivos/resultados/ablacao_resumo.csv": "4de9a03adb31c88db644a573cfa1df867d0b43f1078c4f1e334ef13094129a3b",
+    "documentos/estudo_furos_preditivos/resultados/elasticnet_vs_cox.csv": "f980343f5fc104044a0ea11845a99f49fd3d93c63f8c492eca972ba29a602a52",
+    "documentos/estudo_furos_preditivos/resultados/face_validity_2024.csv": "a422b0022a220f92e5b322be581f0a2def33d569684a4d36444f248527d3c1ac",
+    "documentos/estudo_furos_preditivos/resultados/folga_campeao.csv": "0707f550fd61ba4abbad33d599827af93215e42708f08cd64999aead765c5453",
+    "documentos/estudo_furos_preditivos/resultados/resumo.json": "0fe416504155606d7e40289b9a2d43323914afcaf346d7b472d1814cde24ad29",
+    "documentos/estudo_ic_preditivo/resultados/auditoria/replica_metricas.csv": "f80356eea7edcfc07427445901ada1629a00aae20ec2a5bc8484c3b6345a59a7",
+    "documentos/estudo_ic_preditivo/resultados/bootstrap_delta_replicas.csv": "23738139f9ba2913e3e1af6a4d98d64c5632176c60a9135c2be81233957d264c",
+    "documentos/estudo_ic_preditivo/resultados/comparacao_esquemas_bootstrap.csv": "f03e33c5934ae577ce53f008e91b2a98d403718cbc9b2613ec73297b46a15a76",
+    "documentos/estudo_ic_preditivo/resultados/delta_c_pareado.csv": "a7094034bdd1b8cce89258c08e3998821de4cc044d62d9cd82dd8919f72a754a",
+    "documentos/estudo_ic_preditivo/resultados/delta_c_pareado_intra_fold.csv": "4496ecaf55c58ceaa07ebf5609aa3563763a1d8dd338bb8eaa8dc6369e219e3b",
+    "documentos/estudo_ic_preditivo/resultados/ic_metricas.csv": "158c96c828705f103235aca4f7d324e3235e4c5c684b97c8832d7898baabc4a8",
+    "documentos/estudo_ic_preditivo/resultados/ic_metricas_intra_fold.csv": "19560f149451014a3fc178ce8c9922f8ee4bb7660e2737609c0af1845a239d5c",
+    "documentos/estudo_ic_preditivo/resultados/resumo_ic.json": "facf57837edbde8e892c0bb5cf483fff1ead6677e43ffa39a18931da43bac54d",
+    "documentos/estudo_ic_preditivo/resultados/sensibilidade_folds.csv": "99b9e7ac934a2ed1f31084185c1d96195d20d4c64cdc6ee4e99297817a0e75cf",
+    "documentos/estudo_leitura_aplicada/resultados/aalen_termos_violacao.csv": "789a1060b7402e448902fe19a7ccc2e4025b156e37ed0f3772aa762884135e4d",
+    "documentos/estudo_leitura_aplicada/resultados/aalen_termos_violacao.pdf": "bb554ab39f079b7b1ea0894c90de2d24733da55797b9c623441d6014a08cbab7",
+    "documentos/estudo_leitura_aplicada/resultados/ausencias_retorno.csv": "b54c9a0531d18f2e62a6368cd8bae3998d1a51f8290ff6ba2d758737f8e82994",
+    "documentos/estudo_leitura_aplicada/resultados/casos_auge.csv": "4854250eefad880cd328558b89089208c362ff4798a472f306ad02028cadfab9",
+    "documentos/estudo_leitura_aplicada/resultados/concordancia_divergentes.csv": "d6ab19d432dfd76bff2d9990b05f0b1711555db76c993f5b271a7af63dfc5cb2",
+    "documentos/estudo_leitura_aplicada/resultados/concordancia_modelos.csv": "f2a8a8d1cd4133d5a61360e9c2c6bc974881316216b833c75c830c0434061210",
+    "documentos/estudo_leitura_aplicada/resultados/dp_covariaveis.csv": "22fce329eceb01e17e3d18c77d0ef9fe7de11adf7a431f853a2b3afa08259728",
+    "documentos/estudo_leitura_aplicada/resultados/inferencia_vs_importancia.csv": "4fb9bd84a0889886e4d46e8e723a003cb6957fa6fff81b45328242d2545424bd",
+    "documentos/estudo_leitura_aplicada/resultados/landmark_casos.csv": "bbb4034b6d6e8f1ce719241bf41e242d1a359995859761c80b505e8cb8706c96",
+    "documentos/estudo_leitura_aplicada/resultados/landmark_jogadores.csv": "706a05d250738dc698391b37bd8f6de900a5ab22cbf2d705e37a09dd99da2629",
+    "documentos/estudo_leitura_aplicada/resultados/landmark_quintis.csv": "fe1c1437d73c8754fb7e296ed556344049d051e027e7bf983812bf161cf75c5e",
+    "documentos/estudo_leitura_aplicada/resultados/lista_2024_extremos.csv": "da3d029ab218f1abde85a215f42a2b269705317cac8988778e18df93f816535a",
+    "documentos/estudo_leitura_aplicada/resultados/lista_2024_quintis.csv": "2f276a4abbb104de699837e67d5e265537e316b06ed343c89c083f4757ee8a12",
+    "documentos/estudo_leitura_aplicada/resultados/tgb_casos_leitura.pdf": "2a4d93ded48662b46057707dd57a8d39e3f8c42b2ae03c1c5f55a1a72bade2fa",
+    "documentos/estudo_leitura_aplicada/resultados/tgb_landmark_quintis.pdf": "8029493d9f351600ab5f8ed2f5034465774144e635eddf76a4e27935adefbd5f",
+    "documentos/estudo_leitura_aplicada/resultados/tgb_lista_2024.pdf": "810aa52182f9b2fc443e191b24869df500f5f03bbf9b99434837f0662448c235",
+    "documentos/estudo_leitura_aplicada/resultados/tgb_lista_quintis.pdf": "b8becd385aa20304f8538e1ffd8f56a1144da4ae61837cdcdba0a425bd46d75c",
+    "documentos/estudo_leitura_aplicada/resultados/tipologia_erro.csv": "091674985cf6c878ee474be437429037bec173922242a3db933a97c8e0644300",
+    "documentos/estudo_leitura_preditiva/resultados/concordancia_importance.csv": "167526f58949248a3ad4aac0ba1075ab00efba6f9744788fe21085f358f123ae",
+    "documentos/estudo_leitura_preditiva/resultados/concordancia_predicao_2024.csv": "96696908dfcedb37fac5a87daf47a7cfd14911172b71194ca39e4a54e3ab6827",
+    "documentos/estudo_leitura_preditiva/resultados/native_importance_folds.csv": "34a5f8a313529436e3e5d98814337a297567f7d1ecf16e928b6c3a9f01ef5893",
+    "documentos/estudo_leitura_preditiva/resultados/overlap_top8.csv": "f3e4036ba94ab4486947d2350bf121bb4289945743ebc542aa3a5c28e64694c6",
+    "documentos/estudo_leitura_preditiva/resultados/perm_importance_folds.csv": "ca75ba8ef15986fe47ea481d67256eafc44d62968bb11004859e76778459e708",
+    "documentos/estudo_leitura_preditiva/resultados/perm_importance_media.csv": "fbb4c2c11971726c53b0af0217042848eb58a529150b1b46b2a3d40222e3a722",
+    "documentos/estudo_leitura_preditiva/resultados/predicao_2024_modelos.csv": "e24a7c50bd72feb3f0b850e27671f2f0c74c8c9e31ba0c0dc4d48d2b116d66fe",
+    "documentos/estudo_leitura_preditiva/resultados/resumo.json": "ac9f8d64128acfb355554d4478512878c3a110a4e264547ea011bb660463b6cc",
+    "documentos/estudo_leitura_preditiva/resultados/retrospecto_landmark_2023_w1_gbsa.csv": "ecef5a94b1772524ce70d4683d1044c34816dddf5a02e4be4f19f6dc5d46861c",
+    "documentos/estudo_leitura_preditiva/resultados/retrospecto_wf_2021_gbsa.csv": "811b243f66aaf6ae1ea7f0eef15f6ce91aaa1f5422c02dc556543e88d9b5b647",
+    "documentos/estudo_modelos_finais/resultados/auditoria/acerto_horizontes.csv": "665c844bc9e46fec5830c47b0ad853678fbf58668b69efc3e13efc14ad40001b",
+    "documentos/estudo_modelos_finais/resultados/auditoria/auditoria.json": "1441585eacf6bec06cbacf599bc387e4d933ce958dcab0165a93d6481b8a820d",
+    "documentos/estudo_modelos_finais/resultados/auditoria/erros_oof_extremos.csv": "1475725c41d9a9f493be47a72bc4681c3ec0607344e32d479ba84c1e1f011575",
+    "documentos/estudo_modelos_finais/resultados/auditoria/erros_oof_resumo.csv": "5e327e4f5753ac6162b8ddf71887799ad0e47e8d64a8d0dd13d73b38d9d1091c",
+    "documentos/estudo_modelos_finais/resultados/auditoria/fold_winners.csv": "9865612e68165c69b638012491a4616944a645221154c01b57174a47f864b347",
+    "documentos/estudo_modelos_finais/resultados/auditoria/followup_max.csv": "cc5947fde5da58caa57001ca7658bd2aa9079d14db1e41b708e548fa6c18a7e7",
+    "documentos/estudo_modelos_finais/resultados/auditoria/mask_support.csv": "cff8dd2c719517b3d05608bbf4d2af3e4c36efae2023bf8c0572edaca0cfb421",
+    "documentos/estudo_modelos_finais/resultados/auditoria/protocolo_checks.csv": "f19e7ff425fe18b822ac3dfe4e27ef320b03b366d2c5a0f63dd40aa11babf3a3",
+    "documentos/estudo_modelos_finais/resultados/auditoria/rsf_qb_diagnostico.csv": "2ae3cfbdf5d2cbf0b247602c565e9564570615e4ea54e26a59940bc2608e9ced",
+    "documentos/estudo_modelos_finais/resultados/concordancia_esperados.csv": "5f6604ce8590276cbe28961f4eb81cf4a93a76ec0429698697df3634633122e9",
+    "documentos/estudo_modelos_finais/resultados/forma_predicoes.csv": "58745ab8e8d80d66595650db9380c15afdae926c650950029238208ec2a1632a",
+    "documentos/estudo_modelos_finais/resultados/hp_usado_por_fold.csv": "0e201ae97da4329d0139a553e48e7b1779b0b4d68a2aa0f54b838345030f7a95",
+    "documentos/estudo_modelos_finais/resultados/metricas_landmark_folds.csv": "6dddfdfbe92b449b91721a21a4ad89ce2fb4c180aa068195585fa25684cc9473",
+    "documentos/estudo_modelos_finais/resultados/metricas_walkforward_folds.csv": "7bfb6b9ad7df00566fabdf16c59f9e65e24c80f3a7c16b550ab6c1d52ed37977",
+    "documentos/estudo_modelos_finais/resultados/oof_surv_matrix.csv": "5938470fb3bf901fb7aeef08d1c8f9a548eb987660e75232d2577601055068f5",
+    "documentos/estudo_modelos_finais/resultados/oof_times_grid.csv": "6083a4c8276ec4169b3e2242be48e40f5ac0461aca29609d12e9dc02ec678466",
+    "documentos/estudo_modelos_finais/resultados/pred_oof_walkforward_2018_2021.csv": "eb843fe5c318534ec6f462c8547849797330f84efdcc3f6f66bb944198304cf1",
+    "documentos/estudo_modelos_finais/resultados/predicao_2024_modelos.csv": "ae42a319ebe715b9783679af393ccbf874e244c28505d6393184bb9c303fb303",
+    "documentos/estudo_modelos_finais/resultados/resumo.json": "6fe085d8cf6de2320ac7362f1af99a334fa23cff49977810e2234a440e9cfdf0",
+    "documentos/estudo_modelos_finais/resultados/resumo_landmark.csv": "f347519846cf217e1528e83c45cf4b29218e4b717ad05b4508c07f73c3919171",
+    "documentos/estudo_modelos_finais/resultados/resumo_landmark_valido.csv": "342949db38fdd95c1c850168a73411dd89048b964af8ba233747bd4652730fd5",
+    "documentos/estudo_modelos_finais/resultados/resumo_walkforward_2018_2021.csv": "e3c196acf9d96192d5227e9c54910188e8f410693e8d781ae236b7c75f020574",
+    "documentos/estudo_modelos_finais/resultados/resumo_walkforward_2022_2023.csv": "5a3a30e1b9fe8db96240915536cda742388b914b17fc1e0a8c36cf1ead4204a5",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/auditoria/mask_support.csv": "cff8dd2c719517b3d05608bbf4d2af3e4c36efae2023bf8c0572edaca0cfb421",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/concordancia_esperados.csv": "6f2b388bb7936e0dab8eda05c1f5e02566d240fcc45dae6a785145bae7b74a3c",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/forma_predicoes.csv": "906c0e2f8b56cc038aa22f1cd6afc3253e65f77fcab7d4e2da1fa71db32c194a",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/hp_usado_por_fold.csv": "c0147090cbf28260542dd1eafcfe71e640f397771e7c300dc3dbce247cbd60e2",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/metricas_landmark_folds.csv": "89d89f7a0306bd2f83f129f7a0d11ed9d3ca5ad05cdc091f784e7db2f7e4f62b",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/metricas_walkforward_folds.csv": "35b8ed97a3e87d9a3046bdf56c2fb8dffceb7d5bb5f9cc1493b19237d4cf7b92",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/oof_surv_matrix.csv": "8f01d3723c05f8c6b15a87ac8252f04b03149ecf4054798f27a5b6ee5ed6a079",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/oof_times_grid.csv": "6083a4c8276ec4169b3e2242be48e40f5ac0461aca29609d12e9dc02ec678466",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/pred_oof_walkforward_2018_2021.csv": "618bbe80f1c322295b1832bd7e970fb8f2e498a0b45fd8631585adaf6c8a543b",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/predicao_2024_modelos.csv": "c5e83d8b3121e3cba2aac5adf3b13834009c8f85d508736161d442fbd4cf5393",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/resumo.json": "dc1bce1ccdf8cf9ec5b184f36bcd05cf73267f0875a2c12760f451c375c3d885",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/resumo_landmark.csv": "0b25427c18124addd9c9e1f7ce5df37683e89f01104dcc22abe41594b38fc4ac",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/resumo_walkforward_2018_2021.csv": "9c0d1fabb29041d8c5ba55c2af3b47fa1761afa0cc2e73631a6a0fd9b57aad21",
+    "documentos/estudo_modelos_finais/resultados/sensibilidade_hp_default/resumo_walkforward_2022_2023.csv": "7ed05321c9cca8c9dffbd171cca3b5f0effe3ff1b680a9325c4d8f239d1b7029",
+    "documentos/estudo_sensibilidade_metodo/resultados/janela_x_efeito_c.csv": "06212c86dcb4c1d5b1a1ddbb442281abc3992a0a1a7f1094470aba1bf748a79c",
+    "documentos/estudo_sensibilidade_metodo/resultados/janela_x_estabilidade.csv": "dd871a3ee77c5f08ba1a50d71d712bc827cf45828bdabc987c003d8147d0c4a8",
+    "documentos/estudo_sensibilidade_metodo/resultados/lambda_inferencial_hr.csv": "3a257007ebd8eb0ce9e551865477141140d7f02ef3bfe804f83d88a7e9383ad7",
+    "documentos/estudo_sensibilidade_metodo/resultados/lambda_inferencial_selecao.csv": "726b6abdbee6e93314d9f947f9b3c62e4161ccc36fe91c87e10b7d8e06eab958",
+    "documentos/estudo_sensibilidade_metodo/resultados/resumo_sens_metodo.json": "76f953c765aaef589fee9fd286ab46219a1494ebbd657c3dc9e35d697032e40e",
+    "documentos/estudo_sensibilidade_metodo/resultados/saidas_2023_c_preditivo.csv": "bc08ad1a98a9d2a6e395d60fc86e362fcf5474b1778aee40543cc8ada75fe7b0",
+    "documentos/estudo_sensibilidade_metodo/resultados/saidas_2023_cox_inferencial.csv": "aa0d29f7721ae482b3639dd1ff88aa700f78a595fe67b421025c7b937b0d1333",
+    "documentos/estudo_sensibilidade_tune/resultados/cal_1ano/hps_por_fold.csv": "1602a1909b474e55b4484c454fbc75f0e482582f3f2e03d88a151aefb1ec3d27",
+    "documentos/estudo_sensibilidade_tune/resultados/cal_1ano/metricas_folds.csv": "8934f7fabc6f0a88cafa43d279327103e88bef712526c04ba3a9ed0eda49770e",
+    "documentos/estudo_sensibilidade_tune/resultados/cal_3anos/hps_por_fold.csv": "72992ad5706b3b2e91ff52aa6dc599f4c821882e68cb483483fcbfa15dfdedbd",
+    "documentos/estudo_sensibilidade_tune/resultados/cal_3anos/metricas_folds.csv": "a0beb27812a4d483ddbdb7b88e1214c4462b2dd1465bb53e69e2fb114d1def51",
+    "documentos/estudo_sensibilidade_tune/resultados/cox_grade_ate_10/hps_por_fold.csv": "d8b3cd4614a7737aadfc9368101a792dd0b94361910ce887ea8c7c75139d5c1e",
+    "documentos/estudo_sensibilidade_tune/resultados/cox_grade_ate_10/metricas_folds.csv": "ad7525d9a4910f0cab3aa8d5e3377503fc16f51092a3a1db0cd05b62c41cfa4f",
+    "documentos/estudo_sensibilidade_tune/resultados/resumo_sens_tune.json": "9a2b1981dfa7bf129e12715e09b6184b70c82c2d5fd11758bfdb64c3586068bd",
+    "documentos/estudo_tgb_pacote/resultados/dist_anos_2024.csv": "bf3423a2934c1bea1a4fdd025393a1584ef4c27cb4b9ea816c5adc0d1542b992",
+    "documentos/estudo_tune_preditivo/resultados/hps_por_fold.csv": "401c204d90eb66a7080956cfc4fd892b632e81907ab93cec60e059148663de6d",
+    "documentos/estudo_tune_preditivo/resultados/inner_trials.csv": "1c2bc7d6c63eda4877c1348d5bc6b6eb0bd8543fc364033c8071f2fc25c2ee35",
+    "documentos/estudo_tune_preditivo/resultados/lambda_decisao.json": "06dcc1530690867f6148ffd19e538ba4f5ebe6ebdce27a2e7e18fc18abee9217",
+    "documentos/estudo_tune_preditivo/resultados/metricas_folds_default_vs_tunado.csv": "51056e93aee2404bce0153c02d66d5adaa443c4c36ed4662dff04f49e9ecf07a",
+    "documentos/estudo_tune_preditivo/resultados/resumo.json": "a8914ca12c04b8ae311e1887599fde3438e8122669bdfc60fe2db3dcf3b2a1b1",
+    "documentos/estudo_tune_preditivo/resultados/resumo_oficial_2018_2021.csv": "ae1474a24845ae72a6da934a9b1e93655823f29db8aaae7b35c659744450a10f",
+    "documentos/estudo_vazamento/resultados/c_por_grupo.csv": "8c8849372f9526fd8c4cded434c45f60381f138ff21475d6e8d4776a297fd27e",
+    "documentos/estudo_vazamento/resultados/c_por_grupo_folds.csv": "66ee77d4f7818a57b5982d25a59424cefe5cbc87c324d8fc7560f35f68a5251c",
+    "documentos/estudo_vazamento/resultados/c_por_protocolo.csv": "6b0952ce253beb9f3305280e5bcb1f46c9e0642a7daa8ec2c24f0d168827bc43",
+    "documentos/estudo_vazamento/resultados/resumo_vazamento.json": "c3eb0098a93acc97272eb0419188c2fe89a35a511acffd07c74f1aa5c51fbe93",
+    "documentos/pacote_preditivo_tgb/figuras/importancia_familias.csv": "f3661c747c7340cda9fa7405a8d9c56bf2cb9a9c5da434a5437cc3d3b6e8283a",
+    "reprodutibilidade/figuras_nao_citadas.csv": "8487aaf289a86c2b9b552b5494cce6e8cac4671b3b37fa9c4798abbda83a6f86",
+    "reprodutibilidade/rastreabilidade_figuras.csv": "0f5aea2f49f6a2ff86582f5fb8f4e3af9640b0ad781882d2f7fd79d7d39e4050"
+  },
+  "artifact_scan_error": "",
+  "attempts": [],
+  "writing_audit": {
+    "status": "PASS",
+    "error": "",
+    "auditor_sha256": "8e8c4dd5091305db0781a2d5ba0d2b1348f06e2d3a7d068be9c6cad560268386",
+    "report_sha256": "d0a100ae4920c9087ccc5b3b53cb312fd1aa2b88ea7f7d7290d88ba1ab00bd47",
+    "checked_values": 2398,
+    "covered_checks": {
+      "checa_termos_e_limitacoes": 12,
+      "checa_numeros_registros": 10,
+      "checa_tab_concordancia": 107,
+      "checa_tgb_robustez": 9,
+      "checa_tgb_tip": 37,
+      "checa_substitutos_c5_c7": 6,
+      "checa_translacoes_c4": 27,
+      "checa_tgb_conc_div": 266,
+      "checa_amostra": 15,
+      "checa_cox_ajuste": 12,
+      "checa_schoenfeld": 12,
+      "checa_aalen_consolidada": 3,
+      "checa_aalen_aareg": 295,
+      "checa_tgb_wf": 124,
+      "checa_tgb_delta": 45,
+      "checa_predicao_erro_restrito": 366,
+      "checa_ic_bootstrap_replicas": 212,
+      "checa_rmst_p04": 15,
+      "checa_tgb_lm": 27,
+      "checa_tgb_tabelas": 72,
+      "checa_tgb_prosa_c5": 186,
+      "checa_tgb_prosa_fim": 36,
+      "checa_tgb_protocolo": 6,
+      "checa_tgb_metricas_complementares": 3,
+      "checa_tgb_landmark": 12,
+      "checa_landmark_leitura": 84,
+      "checa_tgb_idade": 5,
+      "checa_inferencia_complementar": 20,
+      "checa_aalen_preditivo_posto": 1,
+      "checa_ca_prosa_e_sensibilidades": 60,
+      "checa_prosa_l2": 3,
+      "checa_prosa_screening": 3,
+      "checa_prosa_funil": 2,
+      "checa_prosa_blocos": 2,
+      "checa_prosa_km_sem_bandas": 3,
+      "checa_prosa_logrank_draft": 1,
+      "checa_prosa_medianas_carreira": 1,
+      "checa_aalen_sem_missing": 3,
+      "checa_fonte_bruta": 15,
+      "checa_painel_inferencial": 1,
+      "checa_estatisticas_eda": 33,
+      "checa_protocolo_inferencial": 6,
+      "checa_preenchimento_e_casos": 8,
+      "checa_sensibilidade_c3": 16,
+      "checa_sensibilidade_selecao": 54,
+      "checa_conjunto_covariaveis_c3": 6,
+      "checa_rsf_qb_protocolo": 2,
+      "checa_citacoes": 4,
+      "checa_series_figuras": 79,
+      "checa_rastreabilidade_figuras": 5,
+      "checa_figuras_nao_citadas": 4,
+      "checa_mask_support": 8,
+      "checa_anotacoes_figuras": 54
+    }
+  },
+  "model_documentation_snapshot": {
+    "files": {
+      "Escrita Final/texto/abstract_tg.tex": "09764c11779352069b50349d73802bf23618c5b4eedb83de4dafce4d91e6e12e",
+      "Escrita Final/texto/agradecimentos_tg.tex": "ae30945f128c4d8485747483ca6088de8a08e76a2a4523c7789a8ac035b430d2",
+      "Escrita Final/texto/apendice_dados.tex": "8afd62e2855c25973c3c4c748db1f3c785e0b8532b063c0ac722ddcccfe0e167",
+      "Escrita Final/texto/apendice_inferencia.tex": "5aa95e455806d1a23db428b4a2a55138ed2f94c88fdf04c0a3c8e6ac5b353236",
+      "Escrita Final/texto/apendice_predicao.tex": "61910144ad45ce7e10ba26ba3eacb60be40e2e1727fb599c161cfd49c0d5f58a",
+      "Escrita Final/texto/c1_introd_tg.tex": "e30343d0cc465fa36776a16f44015754b2d2568af1affd78e5a6153a8f38149d",
+      "Escrita Final/texto/c2_exemplos_tg.tex": "9141cc20ce78b8b075af2dc45bb80e5a234dd43d81f1cf2d967614d4845029ee",
+      "Escrita Final/texto/c3_material_tg.tex": "bd825897d658655451e85fc34649f54724dcb6c8efb7d23f7f50fd7b414c0362",
+      "Escrita Final/texto/c4_resultados_inferenciais.tex": "7fb3c25f386c0ec604beebbe09d14950f3bbf0f937c2bb1490131d8eab41f81a",
+      "Escrita Final/texto/c5_resultados_preditivos.tex": "bdaf205179ff1c17eccf94d901bae4f70a4b536f275b0edb06e18adb39512a30",
+      "Escrita Final/texto/c6_discussao_tg.tex": "2528f4e0a53c64b65c5a366b21654a88eca93411490703dc005e09d528a58e1a",
+      "Escrita Final/texto/c7_conclusao_tg.tex": "34fccb6bfa6be29a687b21385d79f0414516c1ba76073a2c66a488e06d0801c6",
+      "Escrita Final/texto/capa_tg.tex": "f1dadf15a60e1eab56a60c179e4ff890341109eef0cd61e53075da90d071145b",
+      "Escrita Final/texto/dedicatoria_tg.tex": "c28ead3eaa32b0d994b133190d740eebe47a87be61e68d00047a8f6f9a48631f",
+      "Escrita Final/texto/epigrafe_tg.tex": "b296aee7c3064ff47772f06b5e13020ad346b962220b8dc036e7458d610d7dd9",
+      "Escrita Final/texto/folha_rosto_1.tex": "a9a5a725c945d2363200efaa596a83874ccc79273c05667a199e2c37f70e744e",
+      "Escrita Final/texto/folha_rosto_2.tex": "20f1f04355371fc3a7ad08d3579cab33d71705b73a7a66ee5175079afcdc610e",
+      "Escrita Final/texto/folha_rosto_3.tex": "047fee6b1d9a13322233ae4dba098e0464c014e1d0ba55264640b6015d611926",
+      "Escrita Final/texto/main.tex": "1f9d5c8d411c20dea1e09c923b919de09bba995e3c54b51ce37b3a16364dd85a",
+      "Escrita Final/texto/resumo_tg.tex": "b1be0e320f5e2739e267f420be4bdd1ea0a1777dc7b98a87d7ac77b4641128eb"
+    },
+    "sha256": "ae38dd2f3faf2573eff4a2a3e73b66ffb7630a227e2a3a3df4805c5761b0001c"
+  },
+  "model_run_status": "PASS",
+  "release_audit_status": "PASS",
+  "development_incomplete": false,
+  "started_at": "2026-11-19T11:47:39.372639+00:00",
+  "updated_at": "2026-11-19T18:08:07.741493+00:00",
+  "release_documentation_snapshot": {
+    "files": {
+      "Escrita Final/texto/abstract_tg.tex": "09764c11779352069b50349d73802bf23618c5b4eedb83de4dafce4d91e6e12e",
+      "Escrita Final/texto/agradecimentos_tg.tex": "ae30945f128c4d8485747483ca6088de8a08e76a2a4523c7789a8ac035b430d2",
+      "Escrita Final/texto/apendice_dados.tex": "8afd62e2855c25973c3c4c748db1f3c785e0b8532b063c0ac722ddcccfe0e167",
+      "Escrita Final/texto/apendice_inferencia.tex": "5aa95e455806d1a23db428b4a2a55138ed2f94c88fdf04c0a3c8e6ac5b353236",
+      "Escrita Final/texto/apendice_predicao.tex": "61910144ad45ce7e10ba26ba3eacb60be40e2e1727fb599c161cfd49c0d5f58a",
+      "Escrita Final/texto/c1_introd_tg.tex": "e30343d0cc465fa36776a16f44015754b2d2568af1affd78e5a6153a8f38149d",
+      "Escrita Final/texto/c2_exemplos_tg.tex": "9141cc20ce78b8b075af2dc45bb80e5a234dd43d81f1cf2d967614d4845029ee",
+      "Escrita Final/texto/c3_material_tg.tex": "bd825897d658655451e85fc34649f54724dcb6c8efb7d23f7f50fd7b414c0362",
+      "Escrita Final/texto/c4_resultados_inferenciais.tex": "7fb3c25f386c0ec604beebbe09d14950f3bbf0f937c2bb1490131d8eab41f81a",
+      "Escrita Final/texto/c5_resultados_preditivos.tex": "bdaf205179ff1c17eccf94d901bae4f70a4b536f275b0edb06e18adb39512a30",
+      "Escrita Final/texto/c6_discussao_tg.tex": "2528f4e0a53c64b65c5a366b21654a88eca93411490703dc005e09d528a58e1a",
+      "Escrita Final/texto/c7_conclusao_tg.tex": "34fccb6bfa6be29a687b21385d79f0414516c1ba76073a2c66a488e06d0801c6",
+      "Escrita Final/texto/capa_tg.tex": "f1dadf15a60e1eab56a60c179e4ff890341109eef0cd61e53075da90d071145b",
+      "Escrita Final/texto/dedicatoria_tg.tex": "c28ead3eaa32b0d994b133190d740eebe47a87be61e68d00047a8f6f9a48631f",
+      "Escrita Final/texto/epigrafe_tg.tex": "b296aee7c3064ff47772f06b5e13020ad346b962220b8dc036e7458d610d7dd9",
+      "Escrita Final/texto/folha_rosto_1.tex": "a9a5a725c945d2363200efaa596a83874ccc79273c05667a199e2c37f70e744e",
+      "Escrita Final/texto/folha_rosto_2.tex": "20f1f04355371fc3a7ad08d3579cab33d71705b73a7a66ee5175079afcdc610e",
+      "Escrita Final/texto/folha_rosto_3.tex": "047fee6b1d9a13322233ae4dba098e0464c014e1d0ba55264640b6015d611926",
+      "Escrita Final/texto/main.tex": "1f9d5c8d411c20dea1e09c923b919de09bba995e3c54b51ce37b3a16364dd85a",
+      "Escrita Final/texto/resumo_tg.tex": "b1be0e320f5e2739e267f420be4bdd1ea0a1777dc7b98a87d7ac77b4641128eb"
+    },
+    "sha256": "ae38dd2f3faf2573eff4a2a3e73b66ffb7630a227e2a3a3df4805c5761b0001c"
+  }
+}

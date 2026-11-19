@@ -1,0 +1,41 @@
+{
+  "descricao": "Listas finais do Aalen, fixadas. A triagem com o agrupamento corrigido do aareg fica como sensibilidade em resultados/triagem_corrigida/.",
+  "QB": [
+    "depth_team",
+    "draft_ovr",
+    "observed_career_lag_comp_pct",
+    "observed_career_lag_int_pct",
+    "observed_career_lag_qb_dropback",
+    "observed_career_lag_rushing_yards",
+    "observed_career_lag_td_pct",
+    "offense_pct",
+    "passer_rating",
+    "team_pass_attempts_share"
+  ],
+  "RB": [
+    "age",
+    "depth_team",
+    "draft_ovr",
+    "games_missed",
+    "observed_career_lag_rush_touchdown_redzone",
+    "observed_career_lag_yards_after_catch",
+    "observed_career_lag_ypc",
+    "offense_pct",
+    "team_rushing_yards_share"
+  ],
+  "WR": [
+    "age",
+    "depth_team",
+    "draft_ovr",
+    "games_missed",
+    "observed_career_lag_catch_rate",
+    "observed_career_lag_fumble_lost",
+    "observed_career_lag_rushing_yards",
+    "observed_career_lag_targets_redzone",
+    "observed_career_lag_yptarget",
+    "offense_pct",
+    "team_targets_share",
+    "undrafted_flag",
+    "within_window_gap_years_before_t"
+  ]
+}

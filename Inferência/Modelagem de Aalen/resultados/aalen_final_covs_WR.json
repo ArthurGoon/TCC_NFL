@@ -1,0 +1,15 @@
+[
+  "age",
+  "depth_team",
+  "draft_ovr",
+  "games_missed",
+  "observed_career_lag_catch_rate",
+  "observed_career_lag_fumble_lost",
+  "observed_career_lag_rushing_yards",
+  "observed_career_lag_targets_redzone",
+  "observed_career_lag_yptarget",
+  "offense_pct",
+  "team_targets_share",
+  "undrafted_flag",
+  "within_window_gap_years_before_t"
+]

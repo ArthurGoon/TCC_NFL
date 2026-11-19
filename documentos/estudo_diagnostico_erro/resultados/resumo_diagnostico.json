@@ -1,0 +1,45 @@
+{
+  "estimando": "erro com sinal = E(previsto) - min(T, tau), apenas quando evento==1 ou follow-up>=tau; mesma coorte identificavel para todos os modelos",
+  "decil": "percentil de risco normalizado dentro do fold, cortado em decil no OOF agregado",
+  "calibracao": "S(3) prevista media contra Kaplan-Meier do mesmo OOF, folds 2018-2020 (no fold de 2021 o horizonte de tres anos nao existe na grade); quintil porque o decil deixa o KM quantizado",
+  "grave": "superestimacao grave = previsto - observado > corte, mesmo par jogador e fold nos modelos",
+  "km_referencia": "erro em anos do Kaplan-Meier (mesmo tempo para todos) no mesmo protocolo: erro_km_referencia.csv",
+  "n_linhas_oof": 4701,
+  "n_coortes_excluidas": 4,
+  "n_pares_excluidos_modelo": 12,
+  "ids_excluidos": [
+    {
+      "posicao": "QB",
+      "fold": 2018,
+      "player_id": "00-0033357",
+      "player_name": "Taysom Hill",
+      "T": 5.0,
+      "tau": 6.0
+    },
+    {
+      "posicao": "QB",
+      "fold": 2019,
+      "player_id": "00-0033357",
+      "player_name": "Taysom Hill",
+      "T": 4.0,
+      "tau": 5.0
+    },
+    {
+      "posicao": "QB",
+      "fold": 2020,
+      "player_id": "00-0033357",
+      "player_name": "Taysom Hill",
+      "T": 3.0,
+      "tau": 4.0
+    },
+    {
+      "posicao": "QB",
+      "fold": 2021,
+      "player_id": "00-0033357",
+      "player_name": "Taysom Hill",
+      "T": 2.0,
+      "tau": 3.0
+    }
+  ],
+  "segundos": 2.8
+}

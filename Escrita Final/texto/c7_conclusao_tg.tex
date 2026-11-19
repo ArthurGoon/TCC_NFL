@@ -1,0 +1,63 @@
+% ============================================================
+%  Capítulo 7: Conclusão
+% ============================================================
+
+\chapter{Conclusão}
+\label{cap:conclusao}
+
+Este trabalho estudou a duração das carreiras de \textit{quarterbacks}, \textit{running backs} e \textit{wide receivers} na NFL entre 2012 e 2024, a partir do retrato anual de cada jogador. A conclusão central é que o retrato de uma temporada acompanha parte da saída e ordena os jogadores bem acima do acaso, com sinais que mudam de uma posição para outra, mas não fixa o prazo de uma carreira.
+
+\section{Respostas aos objetivos}
+\label{sec:respostas_objetivos}
+
+\begin{enumerate}
+  \item \textbf{Painel de sobrevivência.} Construído no formato \textit{start--stop}, com uma linha por jogador e temporada, covariáveis atualizadas a cada ano e saída definida como a última temporada na liga (Seção~\ref{sec:tratamentos_eda}).
+  \item \textbf{Análise descritiva.} A duração mediana é de 7 anos no QB e de 5 no RB e no WR. Nessas duas posições, ela é maior para os selecionados nas primeiras rodadas do \textit{draft}, e, nas três, para quem é titular no primeiro ano observado (Seção~\ref{sec:eda}).
+  \item \textbf{Cox por posição.} No QB, a fatia de passes tem o maior efeito em HR, e a eficiência de passe, com HR de $0{,}65$ por desvio-padrão, é o sinal mais estável. No RB e no WR, as ausências se associam a mais risco; no WR, a fatia de alvos se associa a menos, com HR de $0{,}27$ (Seção~\ref{sec:res_posicoes}). O modelo de tempo discreto concorda em sinal e em significância em todos os termos finais (Seção~\ref{sec:res_procedimentos}).
+  \item \textbf{Proporcionalidade.} O teste de Schoenfeld rejeita a proporcionalidade global no RB e no WR, por causa das ausências e da fatia da equipe, e não rejeita no QB (Seção~\ref{subsec:schoenfeld}).
+  \item \textbf{Aalen.} O efeito acumulado das ausências cresce quase em linha reta no RB e no WR, na janela de cada posição, e o da eficiência do QB desce de forma regular (Seção~\ref{sec:aalen_res}).
+  \item \textbf{Leitura conjunta.} Nove associações têm $p<0{,}05$ nos três ajustes: no QB, eficiência de passe, fatia de passes e participação ofensiva; no RB, ausências, profundidade no elenco e eficiência de corrida; no WR, ausências, idade e fatia de alvos. No RB e no WR, o híbrido não rejeita um efeito constante por ano das ausências e da fatia da equipe (Seções~\ref{sec:res_coxaalen} e~\ref{sec:res_lado}).
+  \item \textbf{Tempo restante e saída próxima.} O modelo de maior $C$ é o RSF no QB e o Cox penalizado no RB e no WR. O erro absoluto médio fica entre $1{,}27$ e $1{,}40$ ano nos nove modelos, com viés de carreira mais longa que a observada, em grande parte devido à convenção de censura (Apêndice~\ref{subsec:apend_censura_pred}), e o ganho do modelo principal sobre o Kaplan--Meier vai de 6\% a 14\% (Tabela~\ref{tab:tgb_hit}). O \textit{landmarking} separa com clareza quem sai em breve (Seção~\ref{sec:landmark_leitura}). A Tabela~\ref{tab:sintese_preditiva} resume os resultados.
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\caption{Síntese da predição por posição, com o modelo principal: ordenação, erro, carreira restante esperada em 2024 e quem não volta na temporada seguinte nos quintis extremos de risco.}
+\label{tab:sintese_preditiva}
+\thesistablesetup
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc@{}}
+\toprule
+ & \textbf{QB (RSF)} & \textbf{RB (Cox)} & \textbf{WR (Cox)} \\
+\midrule
+$C$ no \textit{walk-forward} & $0{,}709$ & $0{,}704$ & $0{,}704$ \\
+Erro absoluto médio (anos) & $1{,}27$ & $1{,}32$ & $1{,}38$ \\
+Erro de até um ano & 52,0\% & 40,5\% & 40,3\% \\
+Mediana prevista em 2024 (anos) & $5{,}39$ & $3{,}28$ & $3{,}83$ \\
+Não volta na temporada seguinte, menor risco & 0\% & 1\% & 2\% \\
+Não volta na temporada seguinte, maior risco & 45\% & 52\% & 50\% \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\section{Limitações}
+\label{sec:limitacoes}
+
+Os resultados se leem dentro do alcance dos dados e dos métodos usados, e os apêndices indicados mostram o efeito de cada escolha.
+
+\begin{itemize}
+  \item \textbf{Dados.} São anuais e não registram o motivo da saída, de modo que lesão, contrato e decisão da equipe não se distinguem. A cobertura da base cresce com o tempo: a razão entre jardas recebidas e passadas por equipe tem mediana de 0,84 em 2012 e de cerca de 0,97 desde 2019, e as conclusões valem para esta base (Apêndice~\ref{apx:regras_painel}). Jogos perdidos não distinguem lesão, banco ou corte. A saída é reconhecida pela ausência nas temporadas seguintes, o que torna as saídas de 2023 as de leitura mais delicada. As taxas faltantes seguem uma regra de preenchimento comparada à imputação múltipla (Apêndice~\ref{subsec:imputacao_apend}).
+  \item \textbf{Interpretação.} Os resultados são associações, e não efeitos causais. As covariáveis de temporada descrevem o último ano antes da saída e podem refleti-la. Com a temporada anterior no lugar da corrente, a eficiência do QB e os jogos perdidos do RB se mantêm, e a fatia e a participação do QB e os jogos perdidos do WR deixam de ser significativos (Apêndice~\ref{subsec:apend_temp_ant}). O \textit{draft} e o lugar no elenco refletem também a avaliação dos times.
+  \item \textbf{Seleção.} As listas finais vêm dos mesmos dados da estimação, o que pede leitura cuidadosa dos valores-$p$ e dos HR \citep{harrell2001}, e os três modelos inferenciais usam os mesmos dados, de modo que a concordância entre eles não é replicação. A triagem do Aalen refeita com as linhas ordenadas está no Apêndice~\ref{subsec:apend_janela}. A frequência de cada covariável em reamostras está no Apêndice~\ref{subsec:apend_frequencia}.
+  \item \textbf{Aalen.} É estimado na faixa de anos com posto completo e descreve a parte intermediária da carreira (Apêndice~\ref{subsec:apend_janela}).
+  \item \textbf{Predição.} O $C$ mede ordenação, e por isso o acompanhamos com o IBS e o erro em anos. Os intervalos dos contrastes reamostram jogadores com as predições fixas. No QB, de menor amostra, a ordem entre os modelos muda de uma origem para outra. A base termina em 2024, e a lista não tem desfecho nela.
+\end{itemize}
+
+\section{Trabalhos futuros}
+\label{sec:futuros}
+
+Três direções se destacam. A primeira é incorporar dados de lesão e de contrato, para separar o motivo da saída e tratar cada motivo como um risco próprio. A segunda é acompanhar a lista de 2024 nas próximas temporadas, o que dará desfecho a essas previsões. A terceira é estender o estudo a outras posições, como linha ofensiva, \textit{tight ends} e defesa, para ver se o padrão de ausências e de papel na equipe se repete.
+
+\section{Código e reprodutibilidade}
+\label{sec:codigo}
+
+Todo o código deste trabalho está em repositório público \citep{gon2026codigo}: a construção do painel, a análise exploratória, os modelos inferenciais e preditivos, as sensibilidades dos apêndices e a geração das tabelas e das figuras. O repositório traz também os resultados que sustentam cada número do texto, e uma rotina única refaz toda a análise a partir da base de dados.
